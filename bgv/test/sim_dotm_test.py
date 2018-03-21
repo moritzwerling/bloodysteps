@@ -1,4 +1,5 @@
 import sim_dotm as dotm
+import riccati_lateral_controller as riccati
 import numpy as np
 
 
@@ -46,3 +47,11 @@ class TestSimDotm(object):
         x_actual = dotm.simulate(x0, v, ti)
 
         np.testing.assert_allclose(x_desired, x_actual, rtol=1e-5, atol=0)
+
+
+class TestRiccati(object):
+    def test_size(self):
+        Q = np.diag([1, 1, 1])
+        R = np.array([1])
+        controller = riccati.RiccatiLatControl(Q,R)
+        assert(controller.gain.shape == (1,3))
