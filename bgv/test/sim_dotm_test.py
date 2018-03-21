@@ -1,6 +1,5 @@
 import sim_dotm as dotm
 import numpy as np
-from numpy.testing import assert_almost_equal
 
 
 def test_fun():
@@ -27,6 +26,22 @@ def test_simulate_const_velocity():
     ti = np.linspace(0,1,10)
     v = 10
     x_desired = np.zeros((len(ti),5))
-    x_actual = dotm.simulate(x0, v, ti)
     x_desired[:,0] = ti*v
+    x_actual = dotm.simulate(x0, v, ti)
+
     np.testing.assert_allclose(x_desired,x_actual,rtol=1e-5, atol=0)
+
+
+def test_simulate_const_veolicty_diagonal():
+    psi_const = np.pi/4
+    x0 = [0, 0, psi_const, 0, 0]
+    ti = np.linspace(0, 1, 10)
+    v = 12
+    s = ti*v
+    x_desired = np.zeros((len(ti), 5))
+    x_desired[:, 0] = s * np.cos(psi_const)
+    x_desired[:, 1] = s * np.sin(psi_const)
+    x_desired[:, 2] = np.ones(s.shape) * psi_const
+    x_actual = dotm.simulate(x0, v, ti)
+
+    np.testing.assert_allclose(x_desired, x_actual, rtol=1e-5, atol=0)

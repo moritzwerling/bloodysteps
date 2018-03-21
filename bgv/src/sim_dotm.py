@@ -3,15 +3,16 @@ from scipy.integrate import odeint
 
 
 def fun(x,t,v): # x_dot = f(x,t)
+    x,y,psi,r,beta = x
 
-    psi = 0
-    beta = 0
     theta = psi + beta
-    dxdt = [v*np.cos(theta), #x
-            v*np.sin(theta), #y
-            0, #psi
-            0, #r
-            0] #beta
+    x_dot = v*np.cos(theta)
+    y_dot = v*np.sin(theta)
+    psi_dot = r
+    r_dot = 0
+    beta_dot = 0
+
+    dxdt = [x_dot, y_dot, psi_dot, r_dot, beta_dot]
     return dxdt
 
 
