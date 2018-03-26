@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.patches import Circle, Wedge, Polygon
+from matplotlib.collections import PatchCollection
+
+fig, ax = plt.subplots()
+thickness_half = 0.15
+thickness_outer_circle = 0.2
+epsilon = thickness_half / 5
+
+patches= [
+    Wedge((0, 0), .5, 0, 360),             # Full circle
+    Wedge((0, 0), 1., 0, 360, width=thickness_outer_circle),
+    Polygon([[thickness_half, 0], [thickness_half, -1 + epsilon], [-thickness_half, -1 + epsilon], [-thickness_half, 0]], closed=True),
+    Polygon([[-1 + epsilon, thickness_half], [1 - epsilon, thickness_half], [1 - epsilon, -thickness_half], [-1 + epsilon, -thickness_half]], closed=True)]  # Full ring
+
+p = PatchCollection(patches)
+ax.add_collection(p)
+plt.show()
+plt.axis('equal')
