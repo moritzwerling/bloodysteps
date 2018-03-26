@@ -1,8 +1,7 @@
 import scipy.io as sio
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.collections import PatchCollection
-from matplotlib.patches import Polygon
+import plot_vehicle as pv
 
 f10_mat = sio.loadmat("f10.mat")
 
@@ -23,16 +22,20 @@ geometries = {'wheel1': wheel1, 'wheel2': wheel2,
 
 np.save('f10', geometries)
 
-geo = np.load('f10.npy')[()]
-
 fig, ax = plt.subplots()
+t = np.arange(0.0, 10.0, 0.01)
+plt.plot(t,np.sin(t))
 
-patches = []
-for key, value in geo.items():
-    print(value)
-    polygon = Polygon(value, closed=True, alpha = 0.5)
-    #plt.plot(value[:, 0], value[:, 1])
-    ax.add_patch(polygon)
+plt.show
+
+x = 0
+y = 0
+psi = np.pi/4
+delta = -np.pi/8
+length = 10
+width = 2
+
+pv.plot_vehicle(ax, x, y, psi, delta, length, width)
 
 plt.axis('equal')
 plt.show()
