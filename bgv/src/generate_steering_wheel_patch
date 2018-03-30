@@ -29,7 +29,7 @@ class SteeringWheel(object):
         self.p.set_transform(tf)
         ax.add_collection(self.p)
 
-    def set_pose(self, x, y, angle):
+    def update_pose(self, x, y, angle):
         tf = transforms.Affine2D().rotate(angle).translate(x, y) + ax.transData
         self.p.set_transform(tf)
 
@@ -38,5 +38,5 @@ fig, ax = plt.subplots()
 sw = SteeringWheel(ax)
 ax.margins(0.05)
 ax.axis('equal')
-sw.set_pose(.2, .5, 3.14/8)
+sw.update_pose(.2, .5, 3.14 / 8)
 plt.show()
