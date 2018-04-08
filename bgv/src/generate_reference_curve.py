@@ -15,11 +15,19 @@ def generate_reference_curve(xx, yy, delta):
     x_curve = interpolate.splev(s_sampled, sp_x, der=0)
     y_curve = interpolate.splev(s_sampled, sp_y, der=0)
 
-    # ... and its first derivative.
+    # ... and its first ...
     x_diff = interpolate.splev(s_sampled, sp_x, der=1)
     y_diff = interpolate.splev(s_sampled, sp_y, der=1)
+
+    # ... and its second derivative ...
+    x_ddiff = interpolate.splev(s_sampled, sp_x, der=2)
+    y_ddiff = interpolate.splev(s_sampled, sp_y, der=2)
+
 
     # tan(theta) = dy/dx = (dy/ds) / (dx/ds)
     theta_curve = np.arctan2(y_diff, x_diff)
 
-    return {'x': x_curve, 'y': y_curve, 'theta': theta_curve}
+    # kappa = (x'y'' - y'x'')/(x'² + y'²)^(3/2)
+    kappa_curve = (x_diff * y_ddiff - y_diff * x_ddiff) / (x_diff**2 + y_diff**2)**(3/2)
+
+    return {'x': x_curve, 'y': y_curve, 'theta': theta_curve, 'kappa': kappa_curve}
