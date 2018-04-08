@@ -8,23 +8,30 @@ def pick_points_from_plot():
     ax.set_xlim([0, 100])
     ax.set_ylim([0, 100])
     ax.set_aspect('equal', 'box')
-    print("Please select points for the spline! Press Enter when you're done.")
-    xy = np.array(plt.ginput(10))
+    while True:
+        print("Please select 4 or more points for the spline! Press Enter when you're done.")
+        xy = np.array(plt.ginput(0, 0))  # infinite number of points, not timeout
+        if len(xy) > 3:  # Spline requires more than 3 points.
+            break
     x_input = xy[:, 0]
     y_input = xy[:, 1]
     curve = generate_reference_curve(x_input, y_input, 1)
-    ax.plot(x_input, y_input, 'bo')
     ax.plot(curve['x'], curve['y'], 'r-')
-    plt.show()
+    ax.plot(x_input, y_input, 'bo')
+    plt.draw()
+    print("Press any key to exit")
+    plt.waitforbuttonpress(0)
+    plt.close(fig)
+    return curve
 
 
 def generate_reference_curve(xx, yy, delta):
     delta_s = np.sqrt(np.diff(xx)**2 + np.diff(yy)**2)
     chords = np.cumsum(np.concatenate([[0], delta_s]))
 
-    # Generate non-smoothing spline for xx(s) and yy(s)
-    sp_x = interpolate.splrep(chords, xx, s=0)
-    sp_y = interpolate.splrep(chords, yy, s=0)
+    # Generate spline for xx(s) and yy(s)
+    sp_x = interpolate.splrep(chords, xx)
+    sp_y = interpolate.splrep(chords, yy)
 
     # At every delta meter, evaluate spline...
     s_sampled = np.arange(0, max(chords)+delta, delta)
@@ -52,7 +59,8 @@ def generate_reference_curve(xx, yy, delta):
 
 
 def main():
-    pick_points_from_plot()
+    curve = pick_points_from_plot()
+    print(curve)
 
 
 if __name__ == "__main__":
