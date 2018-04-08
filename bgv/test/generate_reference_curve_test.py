@@ -51,3 +51,20 @@ class TestGenerateReferenceCurve(object):
         curve_actual = rc.generate_reference_curve(x, y, delta)
         kappa_desired = -1/r
         np.testing.assert_allclose(np.min(np.max(curve_actual['kappa'])), kappa_desired, atol=1e-3)
+
+
+    def test_distance(self):
+        alpha = np.linspace(0, -np.pi, 30)
+        r = 20.
+        x = r * np.cos(alpha)
+        y = r * np.sin(alpha)
+        delta = 0.8
+        curve_actual = rc.generate_reference_curve(x, y, delta)
+        x_actual = curve_actual['x']
+        y_actual = curve_actual['y']
+        s_actual = curve_actual['s']
+        delta_s_from_postions = np.sqrt(np.diff(x_actual)**2 + np.diff(y_actual)**2)
+        delta_s_actual = np.diff(s_actual)
+
+        assert s_actual[0] == 0.0
+        np.testing.assert_allclose(delta_s_actual, delta_s_from_postions)
