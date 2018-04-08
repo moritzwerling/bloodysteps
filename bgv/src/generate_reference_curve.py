@@ -1,5 +1,21 @@
 import numpy as np
 from scipy import interpolate
+import matplotlib.pyplot as plt
+
+
+def pick_points_from_plot():
+    fig, ax = plt.subplots()
+    ax.set_xlim([0, 100])
+    ax.set_ylim([0, 100])
+    ax.set_aspect('equal', 'box')
+    print("Please select points for the spline! Press Enter when you're done.")
+    xy = np.array(plt.ginput(10))
+    x_input = xy[:, 0]
+    y_input = xy[:, 1]
+    curve = generate_reference_curve(x_input, y_input, 1)
+    ax.plot(x_input, y_input, 'bo')
+    ax.plot(curve['x'], curve['y'], 'r-')
+    plt.show()
 
 
 def generate_reference_curve(xx, yy, delta):
@@ -33,3 +49,11 @@ def generate_reference_curve(xx, yy, delta):
     kappa_curve = (x_prime * y_pprime - y_prime * x_pprime) / (x_prime**2 + y_prime**2)**(3/2)
 
     return {'s': s_curve, 'x': x_curve, 'y': y_curve, 'theta': theta_curve, 'kappa': kappa_curve}
+
+
+def main():
+    pick_points_from_plot()
+
+
+if __name__ == "__main__":
+    main()
