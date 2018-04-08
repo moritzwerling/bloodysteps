@@ -1,5 +1,5 @@
-import generate_reference_curve as rc
 import numpy as np
+import generate_reference_curve as rc
 
 
 class TestGenerateReferenceCurve(object):
@@ -40,7 +40,7 @@ class TestGenerateReferenceCurve(object):
         delta = 1
         curve_actual = rc.generate_reference_curve(x, y, delta)
         kappa_desired = 1/r
-        np.testing.assert_allclose(np.min(np.max(curve_actual['kappa'])), kappa_desired, atol=1e-3)
+        np.testing.assert_almost_equal(np.min(np.max(curve_actual['kappa'])), kappa_desired, decimal=3)
 
     def test_negative_curvature(self):
         alpha = np.linspace(0, -np.pi, 30)
