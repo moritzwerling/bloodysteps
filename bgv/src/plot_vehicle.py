@@ -13,9 +13,9 @@ def plot_vehicle(ax, x, y, psi, delta=0, length = 4.899, width=2.094):
     width_scale = width/width_data
 
     for key, value in geo.items(): # make rear axis 0,0
-        value[:,0] -= x_offset
-        value[:,0] *= length_scale
-        value[:,1] *= width_scale
+        value[:, 0] -= x_offset
+        value[:, 0] *= length_scale
+        value[:, 1] *= width_scale
 
     for key, value in geo.items():
 

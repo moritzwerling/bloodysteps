@@ -15,7 +15,6 @@ class TestSimDotm(object):
 
     def test_simulate_standstill(self):
         x0 = [0,0,0,0,0]
-        delta_t = 0.01
         ti = np.linspace(0,1,10)
         v = 0
         x_desired = np.zeros((len(ti),5))
@@ -47,11 +46,3 @@ class TestSimDotm(object):
         x_actual = dotm.simulate(x0, v, ti)
 
         np.testing.assert_allclose(x_desired, x_actual, rtol=1e-5, atol=0)
-
-
-class TestRiccati(object):
-    def test_size(self):
-        Q = np.diag([1, 1, 1])
-        R = np.array([1])
-        controller = riccati.RiccatiLatControl(Q,R)
-        assert(controller.gain.shape == (1,3))
