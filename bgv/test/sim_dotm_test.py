@@ -1,5 +1,4 @@
 import sim_dotm as dotm
-import riccati_lateral_controller as riccati
 import numpy as np
 
 
