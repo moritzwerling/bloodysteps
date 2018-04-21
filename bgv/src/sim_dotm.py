@@ -2,8 +2,8 @@ import numpy as np
 from scipy.integrate import odeint
 
 
-def fun(x,t,v): # x_dot = f(x,t)
-    x,y,psi,r,beta = x
+def fun(x, t, v): # x_dot = f(x,t)
+    x, y, psi, r, beta = x
 
     x_dot = v*np.cos(psi + beta)
     y_dot = v*np.sin(psi + beta)
