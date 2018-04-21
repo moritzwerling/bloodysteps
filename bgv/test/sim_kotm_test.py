@@ -10,10 +10,6 @@ class TestSimKotm(object):
         x0 = [0, 0, psi_const]
         delta0 = 0
 
-        t = np.array([0., 0.])
-        delta = np.array([delta0, delta0])
-        delta_of_t = interp1d(t, delta, kind='linear', fill_value='extrapolate')
-        delta_test = delta_of_t([0.0, ])
         ti = np.linspace(0, 1, 10)
         v = 5
         s = ti * v
@@ -21,7 +17,7 @@ class TestSimKotm(object):
         x_desired[:, 0] = s * np.cos(psi_const)
         x_desired[:, 1] = s * np.sin(psi_const)
         x_desired[:, 2] = np.ones(s.shape) * psi_const
-        x_actual = kotm.simulate(x0, v, delta_of_t, ti)
+        x_actual = kotm.simulate(x0, v, delta0, ti)
 
         np.testing.assert_allclose(x_desired, x_actual, rtol=1e-5, atol=0)
 
