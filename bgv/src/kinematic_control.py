@@ -1,18 +1,17 @@
 import numpy as np
 
 
-def feedback_law(d, theta_r, kappa_r, psi):
-    steering_ratio = 18
+def feedback_law(d, psi, theta_r, kappa_r):
     axis_distance = 2.9680
     k_0 = 0.2
     k_1 = 1.
 
     # Stabilization
-    u = - k_0 * d - k_1 * normalize_angle(psi-theta_r)
+    u = kappa_r - k_0 * d - k_1 * normalize_angle(psi-theta_r)
 
     # Re-substitution
-    delta = np.atan(axis_distance*u)
-    stwa = delta*steering_ratio
+    delta = np.arctan(axis_distance*u)
+    return delta
 
 
 def normalize_angle(angle):
