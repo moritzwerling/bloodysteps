@@ -45,5 +45,18 @@ class TestPseudoProjection(object):
         proj_actual = pp.project2curve(s_c, x_c, y_c, theta_c, kappa_c, x, y)
         np.testing.assert_allclose(proj_desired, proj_actual)
 
+    def test_three_points_variable_distance(self):
+        x_c = [-1, 0, 2]
+        y_c = [0, 0, 0]
+        s_c = [0, 1, 3]
+        theta_c = [0, 0, 0]
+        kappa_c = [0, 0, 0]
+
+        x = .6
+        y = 1
+        proj_desired = [0.6, 0, 1.6, 1.0, 0.0, 0.0]
+        proj_actual = pp.project2curve(s_c, x_c, y_c, theta_c, kappa_c, x, y)
+        np.testing.assert_allclose(proj_desired, proj_actual)
+
 
 

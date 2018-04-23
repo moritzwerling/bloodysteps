@@ -5,38 +5,57 @@ import kinematic_control as kc
 
 
 def project2curve(s_c, x_c, y_c, theta_c, kappa_c, x, y):
-    temp = np.array([x_c, y_c]).transpose()
-    print(temp)
-    pt = [x, y]
-    #x = distance.cdist([x, y], temp)
-    distance, mindex = spatial.KDTree(temp).query(pt)
-    if mindex == 0:
-        mindex = 1
-    p1 = np.array([x_c[mindex - 1], y_c[mindex - 1]])
-    p2 = np.array([x_c[mindex], y_c[mindex]])
-    theta1 = theta_c[mindex - 1]
-    theta2 = theta_c[mindex]
-    s1 = s_c[mindex - 1]
-    s2 = s_c[mindex]
 
-    px_, lambda_, sign = pseudo_projection([x, y], p1, p2, theta1, theta2)
+    # Find closest curve point to [x, y]
+    distance, mindex = spatial.KDTree(np.array([x_c, y_c]).transpose()).query([x, y])
+
+    if mindex == 0:  # at the beginning
+        start_index = mindex
+        px_, lambda_, sign = pseudo_projection(start_index, x, y, x_c, y_c, theta_c)
+        if lambda_ < 0:
+            print('Extrapolating over start!')
+    elif mindex == len(s_c)-1:  # at the end
+        start_index = mindex - 2
+        px_, lambda_, sign = pseudo_projection(start_index, x, y, x_c, y_c, theta_c)
+        if lambda_ > 1:
+            print('ExtrapolatI are somewhere in betweening over end!')
+    else:  # in between
+        start_index = mindex
+        px_lower, lambda_lower, sign_lower = pseudo_projection(start_index, x, y, x_c, y_c, theta_c)
+        px_, lambda_, sign = px_lower, lambda_lower, sign_lower
+        if lambda_lower > 1:
+            px_upper, lambda_upper, sign_upper = pseudo_projection(mindex+1, x, y, x_c, y_c, theta_c)
+            px_, lambda_, sign = px_upper, lambda_upper, sign_upper
+
+    assert(0. <= lambda_ <= 1.)
+
     x_p = px_[0]
     y_p = px_[1]
+    s1 = s_c[start_index]
+    s2 = s_c[start_index+1]
+    s_p = lambda_ * s2 + (1.0 - lambda_) * s1
 
     d = sign * np.sqrt((x_p - x)**2 + (y_p - y)**2)
-    s_p = lambda_ * s2 + (1.0 - lambda_) * s1
-    kappa1 = kappa_c[mindex - 1]
-    kappa2 = kappa_c[mindex]
+
+    theta1 = theta_c[start_index]
+    theta2 = theta_c[start_index+1]
     delta_theta = theta2 - theta1
     delta_theta = kc.normalize_angle(delta_theta)
     theta_p = theta1 + lambda_ * delta_theta
     theta_p = kc.normalize_angle(theta_p)
+
+    kappa1 = kappa_c[start_index]
+    kappa2 = kappa_c[start_index+1]
     kappa_p = lambda_ * kappa2 + (1.0 - lambda_) * kappa1
 
     return [px_[0], px_[1], s_p, d, theta_p, kappa_p]
 
 
-def pseudo_projection(x, p1, p2, theta1, theta2):
+def pseudo_projection(start_index, x, y, x_c, y_c, theta_c):
+    p1 = np.array([x_c[start_index], y_c[start_index]])
+    p2 = np.array([x_c[start_index + 1], y_c[start_index + 1]])
+    theta1 = theta_c[start_index]
+    theta2 = theta_c[start_index + 1]
     delta = np.array(p2) - np.array(p1)
     l = LA.norm(delta)
 
@@ -45,17 +64,17 @@ def pseudo_projection(x, p1, p2, theta1, theta2):
     sin_ = np.sin(-alpha)
     cos_ = np.cos(-alpha)
     R = np.array([[cos_, -sin_],
-                  [sin_,  cos_]])
-    x_ = np.dot(R, (np.array(x)-np.array(p1)))
-    m1 = np.tan(theta1-alpha)
-    m2 = np.tan(theta2-alpha)
+                  [sin_, cos_]])
+    x_ = np.dot(R, (np.array([x, y]) - np.array(p1)))
+    m1 = np.tan(theta1 - alpha)
+    m2 = np.tan(theta2 - alpha)
     devi = (m1 - m2) * x_[1] + l
     if abs(devi) > 0.001:
         lambda_ = (m1 * x_[1] + x_[0]) / devi
     else:
         lambda_ = .5
 
-    px = lambda_ * np.array(p2) + (1.0-lambda_) * np.array(p1)
+    px = lambda_ * np.array(p2) + (1.0 - lambda_) * np.array(p1)
 
     sgn = 0
     if x_[1] > 0:
