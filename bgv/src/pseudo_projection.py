@@ -1,16 +1,23 @@
 from numpy import linalg as LA
 import numpy as np
+from scipy import spatial
 import kinematic_control as kc
 
 
 def project2curve(s_c, x_c, y_c, theta_c, kappa_c, x, y):
-    p1 = [x_c[0], y_c[0]]
-    p2 = [x_c[1], y_c[1]]
-    theta1 = theta_c[0]
-    theta2 = theta_c[1]
-    s1 = s_c[0]
-    s2 = s_c[1]
-    mindex = 1
+    temp = np.array([x_c, y_c]).transpose()
+    print(temp)
+    pt = [x, y]
+    #x = distance.cdist([x, y], temp)
+    distance, mindex = spatial.KDTree(temp).query(pt)
+    if mindex == 0:
+        mindex = 1
+    p1 = np.array([x_c[mindex - 1], y_c[mindex - 1]])
+    p2 = np.array([x_c[mindex], y_c[mindex]])
+    theta1 = theta_c[mindex - 1]
+    theta2 = theta_c[mindex]
+    s1 = s_c[mindex - 1]
+    s2 = s_c[mindex]
 
     px_, lambda_, sign = pseudo_projection([x, y], p1, p2, theta1, theta2)
     x_p = px_[0]
@@ -24,7 +31,7 @@ def project2curve(s_c, x_c, y_c, theta_c, kappa_c, x, y):
     delta_theta = kc.normalize_angle(delta_theta)
     theta_p = theta1 + lambda_ * delta_theta
     theta_p = kc.normalize_angle(theta_p)
-    kappa_p = lambda_ * kappa2 + (1.0 - lambda_) * kappa1;
+    kappa_p = lambda_ * kappa2 + (1.0 - lambda_) * kappa1
 
     return [px_[0], px_[1], s_p, d, theta_p, kappa_p]
 
