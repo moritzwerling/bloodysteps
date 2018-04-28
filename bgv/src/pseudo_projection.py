@@ -18,13 +18,14 @@ def project2curve(s_c, x_c, y_c, theta_c, kappa_c, x, y):
         start_index = mindex - 2
         px_, lambda_, sign = pseudo_projection(start_index, x, y, x_c, y_c, theta_c)
         if lambda_ > 1:
-            print('ExtrapolatI are somewhere in betweening over end!')
+            print('Extrapolating over end!')
     else:  # in between
         start_index = mindex
         px_lower, lambda_lower, sign_lower = pseudo_projection(start_index, x, y, x_c, y_c, theta_c)
         px_, lambda_, sign = px_lower, lambda_lower, sign_lower
         if lambda_lower > 1:
-            px_upper, lambda_upper, sign_upper = pseudo_projection(mindex+1, x, y, x_c, y_c, theta_c)
+            start_index = mindex + 1
+            px_upper, lambda_upper, sign_upper = pseudo_projection(start_index, x, y, x_c, y_c, theta_c)
             px_, lambda_, sign = px_upper, lambda_upper, sign_upper
 
     assert(0. <= lambda_ <= 1.)
