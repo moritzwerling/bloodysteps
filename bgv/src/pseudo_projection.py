@@ -15,7 +15,7 @@ def project2curve(s_c, x_c, y_c, theta_c, kappa_c, x, y):
         if lambda_ < 0:
             print('Extrapolating over start!')
     elif mindex == len(s_c)-1:  # at the end
-        start_index = mindex - 2
+        start_index = mindex - 1
         px_, lambda_, sign = pseudo_projection(start_index, x, y, x_c, y_c, theta_c)
         if lambda_ > 1:
             print('Extrapolating over end!')
