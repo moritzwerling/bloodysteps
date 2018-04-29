@@ -6,7 +6,6 @@ import pseudo_projection as pp
 
 class TestPseudoProjection(object):
 
-    #@pytest.mark.skip(reason="no way of currently testing this")
     def test_two_points(self):
         x_c = [0, 1]
         y_c = [0, 0]
@@ -63,20 +62,20 @@ class TestPseudoProjection(object):
         x_c = [1.2, 2.1]
         y_c = [3.2, 4.1]
         s_c = [5.2, 5.2 + np.sqrt((x_c[1] - x_c[0])**2 + (y_c[1] - y_c[0])**2)]
-        theta_c = [np.pi/4., np.pi/4.]
+        theta_c = [0.9*np.pi/4., 1.2*np.pi/4.]
         kappa_c = [3.3, 4.4]
 
-        lambda_ = 1.0
-        d_desired = -.3
+        lambda_ = 0.9
+        d_desired = -1.3
 
         x_desired, y_desired, s_desired, theta_desired, kappa_desired = \
             (1.0 - lambda_) * np.array([x_c[0], y_c[0], s_c[0], theta_c[0], kappa_c[0]]) \
                   + lambda_ * np.array([x_c[1], y_c[1], s_c[1], theta_c[1], kappa_c[1]])
 
         # Linear interpolation of tangent vector
-        cos_theta_desired, sin_theta_desired = (1.0 - lambda_) * np.array([np.cos(theta_c[0]), np.sin(theta_c[0])]) \
+        tangent_vector = (1.0 - lambda_) * np.array([np.cos(theta_c[0]), np.sin(theta_c[0])]) \
                                                      + lambda_ * np.array([np.cos(theta_c[1]), np.sin(theta_c[1])])
-        tangent_vector = np.array([cos_theta_desired, sin_theta_desired])
+        tangent_vector = tangent_vector / LA.norm(tangent_vector)
         normal_vector = np.array([- tangent_vector[1], tangent_vector[0]])
 
         # Forward generation of point to be projected
@@ -84,7 +83,7 @@ class TestPseudoProjection(object):
 
         proj_desired = [x_desired, y_desired, s_desired, d_desired, theta_desired, kappa_desired]
         proj_actual = pp.project2curve(s_c, x_c, y_c, theta_c, kappa_c, x, y)
-        np.testing.assert_allclose(proj_desired, proj_actual)
+        np.testing.assert_allclose(proj_desired, proj_actual, atol=0.001)
 
 
 
