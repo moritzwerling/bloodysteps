@@ -20,13 +20,5 @@ def normalize_angle(angle):
     return (angle+np.pi) % (2*np.pi) - np.pi
 
 
-def f_closed_loop(x_, t, curve):
-    x, y, psi = x_
-    _, _, _, d, theta_r, kappa_r = \
-        pro.project2curve(curve['s'], curve['x'], curve['y'], curve['theta'], curve['kappa'],
-                          x, y)
-    delta = feedback_law(d, psi, theta_r, kappa_r)
-    v = 1  # const velocity
-    x_dot_ = kotm.fun(x_, t, v, delta)
-    return x_dot_
+
 
