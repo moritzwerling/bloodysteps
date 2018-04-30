@@ -10,25 +10,23 @@ def project2curve(s_c, x_c, y_c, theta_c, kappa_c, x, y):
     distance, mindex = spatial.KDTree(np.array([x_c, y_c]).transpose()).query([x, y])
 
     if mindex == 0:  # at the beginning
-        start_index = mindex
+        start_index = 0
         px_, lambda_, sign = pseudo_projection(start_index, x, y, x_c, y_c, theta_c)
         if lambda_ < 0:
-            print('Extrapolating over start!')
+            print('Extrapolating over start of reference!')
     elif mindex == len(s_c)-1:  # at the end
         start_index = mindex - 1
         px_, lambda_, sign = pseudo_projection(start_index, x, y, x_c, y_c, theta_c)
         if lambda_ > 1:
-            print('Extrapolating over end!')
+            print('Extrapolating over end of reference!')
     else:  # in between
         start_index = mindex
-        px_lower, lambda_lower, sign_lower = pseudo_projection(start_index, x, y, x_c, y_c, theta_c)
-        px_, lambda_, sign = px_lower, lambda_lower, sign_lower
-        if lambda_lower > 1:
-            start_index = mindex + 1
-            px_upper, lambda_upper, sign_upper = pseudo_projection(start_index, x, y, x_c, y_c, theta_c)
-            px_, lambda_, sign = px_upper, lambda_upper, sign_upper
+        px_, lambda_, sign = pseudo_projection(start_index, x, y, x_c, y_c, theta_c)
+        if lambda_ < 0:  # Special case of variable distance sampling might require to shift start_index up.
+            start_index = mindex - 1
+            px_, lambda_, sign = pseudo_projection(start_index, x, y, x_c, y_c, theta_c)
 
-    assert(0. <= lambda_ <= 1.)
+        assert(0. <= lambda_ <= 1.)
 
     x_p = px_[0]
     y_p = px_[1]
