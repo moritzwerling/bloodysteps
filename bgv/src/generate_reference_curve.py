@@ -26,6 +26,7 @@ def pick_points_from_plot():
 
 
 def generate_reference_curve(xx, yy, delta):
+    assert len(xx) == len(yy) >= 4
     delta_s = np.sqrt(np.diff(xx)**2 + np.diff(yy)**2)
     chords = np.cumsum(np.concatenate([[0], delta_s]))
 
