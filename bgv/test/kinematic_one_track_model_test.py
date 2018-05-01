@@ -1,4 +1,4 @@
-import sim_kotm as kotm
+import kinematic_one_track_model as kotm
 import numpy as np
 import numpy.testing as npt
 from scipy.interpolate import interp1d

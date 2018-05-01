@@ -1,4 +1,4 @@
-import sim_dotm as dotm
+import dynamic_one_track_model as dotm
 import numpy as np
 
 

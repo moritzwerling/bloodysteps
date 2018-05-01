@@ -1,6 +1,6 @@
 import numpy as np
 from scipy.integrate import odeint
-import sim_kotm as kotm
+import kinematic_one_track_model as kotm
 import kinematic_control as kc
 import pseudo_projection as pro
 

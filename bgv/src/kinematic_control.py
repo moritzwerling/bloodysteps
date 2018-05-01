@@ -1,6 +1,6 @@
 import numpy as np
 import pseudo_projection as pro
-import sim_kotm as kotm
+import kinematic_one_track_model as kotm
 
 
 def feedback_law(d, psi, theta_r, kappa_r):
