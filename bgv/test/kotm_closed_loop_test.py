@@ -29,5 +29,5 @@ def test_closed_loop_circle_without_initial_error():
     ti = np.arange(0, 20, 0.1)
     model = cl.KotmClosedLoop(x0, curve)
     sol = model.simulate(ti)
-    y = sol[:, 1]
-    #np.testing.assert_almost_equal(0.0, y[-1], decimal=3)
+    d = sol[:, 3]
+    #np.testing.assert_almost_equal(0.0, d[-1], decimal=3)

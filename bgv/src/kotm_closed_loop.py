@@ -1,3 +1,4 @@
+import numpy as np
 from scipy.integrate import odeint
 import sim_kotm as kotm
 import kinematic_control as kc
@@ -10,8 +11,9 @@ class KotmClosedLoop(object):
         self.curve = curve
 
     def simulate(self, t_vector):
-        x = odeint(self._f_system_dynamics, self.x0, t_vector)
-        return x
+        state_trajectory = odeint(self._f_system_dynamics, self.x0, t_vector)
+        output_trajectory = np.array([self._g_system_output(x) for x in state_trajectory])
+        return output_trajectory
 
     def _f_system_dynamics(self, x_, t):
         x, y, psi = x_
@@ -22,6 +24,16 @@ class KotmClosedLoop(object):
         v = 1  # const velocity
         x_dot = kotm.fun(x_, t, v, delta)
         return x_dot
+
+    def _g_system_output(self, x_):
+        x, y, psi = x_
+        _, _, _, d, theta_r, kappa_r = \
+            pro.project2curve(self.curve['s'], self.curve['x'], self.curve['y'], self.curve['theta'],
+                              self.curve['kappa'],
+                              x, y)
+        delta = kc.feedback_law(d, psi, theta_r, kappa_r)
+
+        return [x, y, psi, d, delta]
 
 
 
