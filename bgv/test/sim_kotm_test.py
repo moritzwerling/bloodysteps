@@ -26,8 +26,7 @@ class TestSimKotm(object):
         delta0 = np.pi/4
         v = 10
 
-        length = 2
-        radius = length / np.tan(delta0)
+        radius = kotm.params()['l'] / np.tan(delta0)
         t_pi_half = np.pi * radius / v
         ti = np.linspace(0, t_pi_half, 10)
 

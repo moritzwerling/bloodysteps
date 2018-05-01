@@ -2,6 +2,10 @@ import numpy as np
 from scipy.integrate import odeint
 
 
+def params():
+    return {'l': 2.9680}
+
+
 def fun(x, t, v): # x_dot = f(x,t)
     x, y, psi, r, beta = x
 
