@@ -2,7 +2,7 @@ import numpy as np
 import kotm_closed_loop as cl
 import generate_reference_curve as ref
 
-def test_closed_loop_straigt_without_initial_error():
+def test_closed_loop_straight_without_initial_error():
     x0 = [0.0, 0.0, 0.0]
     curve = ref.generate_reference_curve([0, 10, 20, 30], [0, 0, 0, 0], 1.0)
     ti = np.arange(0, 20, 0.1)

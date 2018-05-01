@@ -28,6 +28,6 @@ def test_kinematic_control_feedforward():
 
     kappa_desired = -0.1234
     delta = kc.feedback_law(0.0, 0.0, 0.0, kappa_desired)
-    kappa_actual = np.tan(delta) / kotm.params()['l']
+    kappa_actual = np.tan(delta) / kotm.KinematicOneTrackModel.params()['l']
     np.testing.assert_almost_equal(kappa_desired, kappa_actual)
 

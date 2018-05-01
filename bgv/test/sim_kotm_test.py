@@ -17,7 +17,7 @@ class TestSimKotm(object):
         x_desired[:, 0] = s * np.cos(psi_const)
         x_desired[:, 1] = s * np.sin(psi_const)
         x_desired[:, 2] = np.ones(s.shape) * psi_const
-        x_actual = kotm.simulate(x0, v, delta0, ti)
+        x_actual = kotm.KinematicOneTrackModel().simulate(x0, v, delta0, ti)
 
         np.testing.assert_allclose(x_desired, x_actual, rtol=1e-5, atol=0)
 
@@ -26,11 +26,11 @@ class TestSimKotm(object):
         delta0 = np.pi/4
         v = 10
 
-        radius = kotm.params()['l'] / np.tan(delta0)
+        radius = kotm.KinematicOneTrackModel.params()['l'] / np.tan(delta0)
         t_pi_half = np.pi * radius / v
         ti = np.linspace(0, t_pi_half, 10)
 
-        x_actual = kotm.simulate(x0, v, delta0, ti)
+        x_actual = kotm.KinematicOneTrackModel().simulate(x0, v, delta0, ti)
 
         npt.assert_almost_equal(np.pi, x_actual[-1][2], decimal=10)
 

@@ -22,7 +22,7 @@ class KotmClosedLoop(object):
                               x, y)
         delta = kc.feedback_law(d, psi, theta_r, kappa_r)
         v = 1  # const velocity
-        x_dot = kotm.fun(x_, t, v, delta)
+        x_dot = kotm.KinematicOneTrackModel().system_dynamics(x_, t, v, delta)
         return x_dot
 
     def _g_system_output(self, x_):
