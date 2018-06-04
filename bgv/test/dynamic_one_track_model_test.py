@@ -30,7 +30,6 @@ class TestSimDotm(object):
 
         np.testing.assert_allclose(x_desired, x_actual, rtol=1e-5, atol=0)
 
-
     def test_simulate_const_velocity_diagonal(self):
         psi_const = np.pi/4
         x0 = [0, 0, psi_const, 0, 0]
