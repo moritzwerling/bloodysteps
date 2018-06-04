@@ -1,5 +1,4 @@
-from State import State
-from StateMachine import StateMachine
+from StateMachine import StateMachine, State
 
 
 class Waiting(State):

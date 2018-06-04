@@ -8,4 +8,7 @@ moves = ['mouse appears', 'mouse runs away', 'mouse appears', 'mouse enters trap
 actions = map(MouseAction, moves)
 
 mouse_trap_state_machine = MouseTrap()
-mouse_trap_state_machine.run_all(actions)
+mouse_trap_state_machine.update(MouseAction('mouse appears'))
+
+
+# mouse_trap_state_machine.run_all(actions)
