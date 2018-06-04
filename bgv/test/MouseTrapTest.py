@@ -1,5 +1,4 @@
-from MouseAction import MouseAction
-from MouseTrap import MouseTrap
+from MouseTrap import MouseTrap, MouseAction
 
 moves = ['mouse appears', 'mouse runs away', 'mouse appears', 'mouse enters trap',
          'mouse escapes', 'mouse appears', 'mouse enters trap', 'mouse trapped',
