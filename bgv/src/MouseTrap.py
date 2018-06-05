@@ -46,16 +46,21 @@ class Holding(State):
 
 
 class MouseTrap(StateMachine):
+    waiting = Waiting()
+    luring = Luring()
+    trapping = Trapping()
+    holding = Holding()
+
     def __init__(self):
         # Initial state
         StateMachine.__init__(self, MouseTrap.waiting)
 
 
 # Static variable initialization:
-MouseTrap.waiting = Waiting()
-MouseTrap.luring = Luring()
-MouseTrap.trapping = Trapping()
-MouseTrap.holding = Holding()
+# MouseTrap.waiting = Waiting()
+# MouseTrap.luring = Luring()
+# MouseTrap.trapping = Trapping()
+# MouseTrap.holding = Holding()
 
 
 class MouseAction:
