@@ -3,9 +3,10 @@ from StateMachine import StateMachine, State, Event
 
 class Go(State):
     def run(self):
-        print("vehicles: green, pedestrians: red")
+        print("vehicles: grn, pedestrians: red")
 
     def next(self, event):
+        print(event)
         if event == TrafficLightFSM.button_pressed_event:
             return TrafficLightFSM.prepare_to_stop_state
         return TrafficLightFSM.go_state
@@ -13,9 +14,10 @@ class Go(State):
 
 class PrepareToStop(State):
     def run(self):
-        print("vehicles: yellow, pedestrians: yellow")
+        print("vehicles: yel, pedestrians: yel")
 
     def next(self, event):
+        print(event)
         if event == TrafficLightFSM.light_change_timer_elapsed_event:
             return TrafficLightFSM.stop_state
         return TrafficLightFSM.prepare_to_stop_state
@@ -23,9 +25,10 @@ class PrepareToStop(State):
 
 class Stop(State):
     def run(self):
-        print("vehicles: red, pedestrians: green")
+        print("vehicles: red, pedestrians: grn")
 
     def next(self, event):
+        print(event)
         if event == TrafficLightFSM.pedestrian_green_timer_elapsed_event:
             return TrafficLightFSM.prepare_to_start_state
         return TrafficLightFSM.stop_state
@@ -33,9 +36,10 @@ class Stop(State):
 
 class PrepareToStart(State):
     def run(self):
-        print("vehicles: yellow, pedestrians: yellow")
+        print("vehicles: yel, pedestrians: yel")
 
     def next(self, event):
+        print(event)
         if event == TrafficLightFSM.light_change_timer_elapsed_event:
             return TrafficLightFSM.go_state
         return TrafficLightFSM.prepare_to_start_state
@@ -47,7 +51,7 @@ class TrafficLightFSM(StateMachine):
     stop_state = Stop()
     prepare_to_start_state = PrepareToStart()
 
-    button_pressed_event = Event("button_pressed")
+    button_pressed_event = Event("button pressed")
     light_change_timer_elapsed_event = Event("light change timer elapsed")
     pedestrian_green_timer_elapsed_event = Event("pedestrian green timer elapsed")
 
