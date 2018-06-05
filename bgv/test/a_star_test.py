@@ -13,18 +13,25 @@ class TestAStar(object):
     def test_single_node(self):
         start = Tile(0, 0)
         end = start
-        graph = {}
-        graph[start] = []
+        graph = {start: []}
 
         path_actual = a_star.a_star(graph, start, end)
         path_desired = [start]
         assert path_desired == path_actual
 
+    def test_two_nodes_no_solution(self):
+        start = Tile(0, 0)
+        end = Tile(1, 1)
+        graph = {start: []}
+
+        path_actual = a_star.a_star(graph, start, end)
+        path_desired = []
+        assert path_desired == path_actual
+
     def test_two_nodes(self):
         start = Tile(0, 0)
         end = Tile(1, 1)
-        graph = {}
-        graph[start] = [end]
+        graph = {start: [end]}
 
         path_actual = a_star.a_star(graph, start, end)
         path_desired = [start, end]
@@ -34,9 +41,7 @@ class TestAStar(object):
         start = Tile(0, 0)
         middle = Tile(1, 1)
         end = Tile(2, 2)
-        graph = {}
-        graph[start] = [middle]
-        graph[middle] = [end]
+        graph = {start: [middle], middle: [end]}
 
         path_actual = a_star.a_star(graph, start, end)
         path_desired = [start, middle, end]
@@ -46,8 +51,7 @@ class TestAStar(object):
         start = Tile(0, 0)
         alt = Tile(1.9, 1.9)
         end = Tile(2, 2)
-        graph = {}
-        graph[start] = [alt, end]
+        graph = {start: [alt, end]}
 
         path_actual = a_star.a_star(graph, start, end)
         path_desired = [start, end]
@@ -58,10 +62,7 @@ class TestAStar(object):
         middle = Tile(-100, 0)
         end = Tile(2, 2)
         alt = Tile(1.9, 1.9)
-        graph = {}
-        graph[start] = [alt, middle]
-        graph[alt] = []
-        graph[middle] = [end]
+        graph = {start: [alt, middle], alt: [], middle: [end]}
 
         path_actual = a_star.a_star(graph, start, end)
         path_desired = [start, middle, end]
