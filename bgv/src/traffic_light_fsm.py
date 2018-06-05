@@ -1,4 +1,4 @@
-from StateMachine import StateMachine, State
+from StateMachine import StateMachine, State, Event
 
 
 class Go(State):
@@ -6,9 +6,9 @@ class Go(State):
         print("vehicles: green, pedestrians: red")
 
     def next(self, event):
-        if event == TrafficLightsEvents.button_pressed:
-            return TrafficLightFSM.prepare_to_stop
-        return TrafficLightFSM.go
+        if event == TrafficLightFSM.button_pressed_event:
+            return TrafficLightFSM.prepare_to_stop_state
+        return TrafficLightFSM.go_state
 
 
 class PrepareToStop(State):
@@ -16,9 +16,9 @@ class PrepareToStop(State):
         print("vehicles: yellow, pedestrians: yellow")
 
     def next(self, event):
-        if event == TrafficLightsEvents.light_change_timer_elapsed:
-            return TrafficLightFSM.stop
-        return TrafficLightFSM.prepare_to_stop
+        if event == TrafficLightFSM.light_change_timer_elapsed_event:
+            return TrafficLightFSM.stop_state
+        return TrafficLightFSM.prepare_to_stop_state
 
 
 class Stop(State):
@@ -26,49 +26,31 @@ class Stop(State):
         print("vehicles: red, pedestrians: green")
 
     def next(self, event):
-        if event == TrafficLightsEvents.pedestrian_green_timer_elapsed:
-            return TrafficLightFSM.prepare_to_start
-        return TrafficLightFSM.stop
+        if event == TrafficLightFSM.pedestrian_green_timer_elapsed_event:
+            return TrafficLightFSM.prepare_to_start_state
+        return TrafficLightFSM.stop_state
+
 
 class PrepareToStart(State):
     def run(self):
         print("vehicles: yellow, pedestrians: yellow")
 
     def next(self, event):
-        if event == TrafficLightsEvents.light_change_timer_elapsed:
-            return TrafficLightFSM.go
-        return TrafficLightFSM.prepare_to_start
+        if event == TrafficLightFSM.light_change_timer_elapsed_event:
+            return TrafficLightFSM.go_state
+        return TrafficLightFSM.prepare_to_start_state
 
 
 class TrafficLightFSM(StateMachine):
-    go = Go()
-    prepare_to_stop = PrepareToStop()
-    stop = Stop()
-    prepare_to_start = PrepareToStart()
+    go_state = Go()
+    prepare_to_stop_state = PrepareToStop()
+    stop_state = Stop()
+    prepare_to_start_state = PrepareToStart()
+
+    button_pressed_event = Event("button_pressed")
+    light_change_timer_elapsed_event = Event("light change timer elapsed")
+    pedestrian_green_timer_elapsed_event = Event("pedestrian green timer elapsed")
 
     def __init__(self):
         # Initial state
-        StateMachine.__init__(self, TrafficLightFSM.go)
-
-
-# todo move to generic class Events in StateMachine
-class TrafficLightsEvents:
-    def __init__(self, event):
-        self.event = event
-
-    def __str__(self): return self.event
-
-    def __eq__(self, other):
-        return self.event == other.event
-
-    # Necessary when __cmp__ or __eq__ is defined
-    # in order to make this class usable as a
-    # dictionary key:
-    def __hash__(self):
-        return hash(self.event)
-
-
-# Static fields; an enumeration of instances:
-TrafficLightsEvents.button_pressed = TrafficLightsEvents("button_pressed")
-TrafficLightsEvents.light_change_timer_elapsed = TrafficLightsEvents("light change timer elapsed")
-TrafficLightsEvents.pedestrian_green_timer_elapsed = TrafficLightsEvents("pedestrian green timer elapsed")
+        StateMachine.__init__(self, TrafficLightFSM.go_state)
