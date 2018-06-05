@@ -19,19 +19,20 @@ def a_star(graph, start, end):
 
     open_set.add(start)
     open_heap.append((0, start))
+
     while open_set:
-        start = heapq.heappop(open_heap)[1]
-        if start == end:
-            return retrace_path(start)
-        open_set.remove(start)
-        closed_set.add(start)
-        for node in graph[start]:
+        current = heapq.heappop(open_heap)[1]
+        if current == end:
+            return retrace_path(current)
+        open_set.remove(current)
+        closed_set.add(current)
+        for node in graph[current]:
             if node not in closed_set:
                 node.H = (abs(end.x - node.x)+abs(end.y-node.y))
                 if node not in open_set:
                     open_set.add(node)
                     heapq.heappush(open_heap, (node.H, node))
-                node.parent = start
+                node.parent = current
     return []
 
 
