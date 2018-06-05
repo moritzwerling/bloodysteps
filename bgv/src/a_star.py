@@ -9,7 +9,7 @@ def a_star(graph, current, end):
     open_heap = []
     closed_set = set()
 
-    def retracePath(c):
+    def retrace_path(c):
         path = [c]
         while c.parent is not None:
             c = c.parent
@@ -22,7 +22,7 @@ def a_star(graph, current, end):
     while open_set:
         current = heapq.heappop(open_heap)[1]
         if current == end:
-            return retracePath(current)
+            return retrace_path(current)
         open_set.remove(current)
         closed_set.add(current)
         for tile in graph[current]:
@@ -33,4 +33,10 @@ def a_star(graph, current, end):
                     heapq.heappush(open_heap, (tile.H, tile))
                 tile.parent = current
     return []
+
+
+class Node(object):
+    def __init__(self):
+        self.H = 0
+        self.parent = None
 
