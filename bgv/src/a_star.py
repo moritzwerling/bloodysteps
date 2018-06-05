@@ -22,7 +22,7 @@ def a_star(start, end):
     while open_set:
         current = heapq.heappop(open_heap)[1]
         if current == end:
-            return retrace_path(current)
+            return retrace_path(current), open_heap, closed_set
         open_set.remove(current)
         closed_set.add(current)
         for node in current.expand():
@@ -32,7 +32,7 @@ def a_star(start, end):
                     open_set.add(node)
                     heapq.heappush(open_heap, (node.H, node))
                 node.parent = current
-    return []
+    return [], open_heap, closed_set
 
 
 class Node(object):
