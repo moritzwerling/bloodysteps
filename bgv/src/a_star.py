@@ -4,7 +4,7 @@
 import heapq
 
 
-def a_star(graph, current, end):
+def a_star(graph, start, end):
     open_set = set()
     open_heap = []
     closed_set = set()
@@ -17,21 +17,21 @@ def a_star(graph, current, end):
         path.reverse()
         return path
 
-    open_set.add(current)
-    open_heap.append((0, current))
+    open_set.add(start)
+    open_heap.append((0, start))
     while open_set:
-        current = heapq.heappop(open_heap)[1]
-        if current == end:
-            return retrace_path(current)
-        open_set.remove(current)
-        closed_set.add(current)
-        for tile in graph[current]:
-            if tile not in closed_set:
-                tile.H = (abs(end.x - tile.x)+abs(end.y-tile.y))
-                if tile not in open_set:
-                    open_set.add(tile)
-                    heapq.heappush(open_heap, (tile.H, tile))
-                tile.parent = current
+        start = heapq.heappop(open_heap)[1]
+        if start == end:
+            return retrace_path(start)
+        open_set.remove(start)
+        closed_set.add(start)
+        for node in graph[start]:
+            if node not in closed_set:
+                node.H = (abs(end.x - node.x)+abs(end.y-node.y))
+                if node not in open_set:
+                    open_set.add(node)
+                    heapq.heappush(open_heap, (node.H, node))
+                node.parent = start
     return []
 
 
