@@ -1,4 +1,4 @@
-from StateMachine import StateMachine, State, Event
+from state_machine import StateMachine, State, Event
 
 
 class Go(State):
