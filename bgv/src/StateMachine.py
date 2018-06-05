@@ -3,7 +3,7 @@ class StateMachine:
         self.currentState = initial_state
         self.currentState.run()
 
-    def update(self, event):
+    def transition(self, event):
         self.currentState = self.currentState.next(event)
         self.currentState.run()
 
