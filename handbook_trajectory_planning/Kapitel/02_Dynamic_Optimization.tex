@@ -1,0 +1,5 @@
+\section{Dynamic Optimization}\label{S:DO}
+
+When engineers speak about optimization, they usually refer to static optimization, in which the optimization variables p are finite, also called parameters (e.g., finding the most efficient operating point of an engine). Then optimal refers to some well-defined optimization criterion, usually the minimization of a cost function J(p) (e.g., fuel consumption per hour). 
+Trajectory optimization is different in that the optimization variables are functions x(t) of an independent variable t, usually time. It is also called dynamic or infinite-dimensional optimization. Evaluating x(t) therefore requires a cost functional (a “function of a function”), which quantifies the “quality” of the trajectory x(t) by a scalar value. 
+Due to the vehicular focus, a special case will be considered, one that requires the trajectory x(t) to be consistent with some dynamical system model which has an input u. Without such model, the optimization cannot incorporate the inherent properties and physical limitations of the vehicle. This special case of dynamic optimization is called an optimal control problem (e.g., Lewis and Syrmos 1995).
