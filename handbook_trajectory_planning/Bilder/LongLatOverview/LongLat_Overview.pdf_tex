@@ -1,0 +1,113 @@
+%% Creator: Inkscape 1.0.1 (3bc2e813f5, 2020-09-07), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'LongLat_Overview.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{333.18739043bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.59553633)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{LongLat_Overview.pdf}}%
+    \put(0.69412153,0.39998933){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}EPS\end{tabular}}}}%
+    \put(0.67591635,0.15862648){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Mot\end{tabular}}}}%
+    \put(0.67574627,0.21829005){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Brk\end{tabular}}}}%
+    \put(0.58359226,0.22570492){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\tau_\mathrm{brk,d}$\end{tabular}}}}%
+    \put(0.58399673,0.18707824){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\tau_\mathrm{mot,d}$\end{tabular}}}}%
+    \put(0.82292949,0.40017104){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Vh\sus{lat}\end{tabular}}}}%
+    \put(0.82376761,0.19104337){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Vh\sus{long}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{LongLat_Overview.pdf}}%
+    \put(0.96200049,0.29421793){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Vh\sus{kin}\end{tabular}}}}%
+    \put(0.03073466,0.29427656){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}TP\end{tabular}}}}%
+    \put(0.14958481,0.40001276){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}TC\sus{lat}\end{tabular}}}}%
+    \put(0.27634973,0.18856377){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}DO\sus{$a_x$}\end{tabular}}}}%
+    \put(0.27538839,0.39977828){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}DO\sus{$\kappa$}\end{tabular}}}}%
+    \put(0.49272787,0.39977831){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\tilde k_{\kappa}^{-1}$\end{tabular}}}}%
+    \put(0.38749645,0.18856378){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\tilde k_{a_x}^{-1}$\end{tabular}}}}%
+    \put(0.21296637,0.41781713){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\kappa_\mathrm{d}$\end{tabular}}}}%
+    \put(0.21348272,0.20639158){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a_{x\mathrm d}$\end{tabular}}}}%
+    \put(0.49670616,0.18856376){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CA\sus{x}\end{tabular}}}}%
+    \put(0.58172649,0.39998932){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}C\sus{$\delta$}\end{tabular}}}}%
+    \put(0.334291,0.41781713){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\kappaDPrime$\end{tabular}}}}%
+    \put(0.53514365,0.41781713){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\delta_\mathrm d$\end{tabular}}}}%
+    \put(0.33690089,0.20639158){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\aXDPrime$\end{tabular}}}}%
+    \put(0.42725327,0.20639158){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\tau_{x\mathrm d}$\end{tabular}}}}%
+    \put(0.62790302,0.41781713){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\tau_{\!\delta\mathrm{d}}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{LongLat_Overview.pdf}}%
+    \put(0.15037613,0.18858721){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}TC\sus{long}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{LongLat_Overview.pdf}}%
+    \put(0.69378739,0.55722961){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Drv\end{tabular}}}}%
+    \put(0.74127117,0.41781713){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\delta$\end{tabular}}}}%
+    \put(0.87792198,0.41781713){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\kappa$\end{tabular}}}}%
+    \put(0.87993987,0.20639159){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a_x$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{LongLat_Overview.pdf}}%
+    \put(0.39320892,0.39998933){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CA\sus{$\kappa$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{LongLat_Overview.pdf}}%
+    \put(0.61998432,0.50677561){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}TB\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{LongLat_Overview.pdf}}%
+    \put(0.53804123,0.50692216){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}AccP\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{LongLat_Overview.pdf}}%
+    \put(0.45534765,0.50638282){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}BrkP\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{LongLat_Overview.pdf}}%
+    \put(0.75995465,0.14081517){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\tau_x$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{LongLat_Overview.pdf}}%
+    \put(0.10488676,0.05528209){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\underbrace{\hspace{24.776mm}}_{\displaystyle\text{Bahnführung}}$\end{tabular}}}}%
+    \put(0.41504546,0.05528209){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\underbrace{\hspace{46.803mm}}_{\displaystyle\text{Fahrzeugführung}}$\end{tabular}}}}%
+    \put(0.80837858,0.05528209){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\underbrace{\hspace{44.792mm}}_{\displaystyle\text{Regelstrecke}}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{LongLat_Overview.pdf}}%
+    \put(0.50167668,0.29381812){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\tau_\mathrm{mot,drv}$\end{tabular}}}}%
+    \put(0.50167668,0.2640413){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\tau_\mathrm{brk,drv}$\end{tabular}}}}%
+    \put(0.60060752,0.08474273){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\begin{bmatrix}x & y &\theta & v_x\end{bmatrix}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{LongLat_Overview.pdf}}%
+    \put(0.04580432,0.42244082){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\begin{bmatrix}x\hspace{0.6ex} \\ y\hspace{0.6ex} \\ \theta\hspace{0.6ex} \\ \kappa\hspace{0.6ex} \\ v_x \hspace{-0.4ex} \\ a_x \hspace{-0.4ex} \end{bmatrix}_\mathrm{traj}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{LongLat_Overview.pdf}}%
+    \put(0.62401148,0.47052048){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\tau_{\delta\mathrm{,drv}}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{LongLat_Overview.pdf}}%
+    \put(0.44771137,0.41781713){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\kappa_{\delta\mathrm{d}}$\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

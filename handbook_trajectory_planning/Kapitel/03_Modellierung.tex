@@ -1,0 +1,188 @@
+\section{Fahrzeugmodelle}
+\label{ch_Modellierung}
+In diesem Abschnitt werden die Modelle der Fahrzeuglängs- und -querdynamik sowie die Modelle der  Aktuatoren beschrieben, die später Grundlage des Reglerentwurfs sind. Durch die verwendete Reglerstruktur, die robust gegen Modellfehler ist, konnte erreicht werden, dass sehr einfache lineare Modelle eingesetzt werden können.
+
+%Die Regelung der Fahrzeugbewegung erfolgt Stand heute im Linearbereich der Fahrdynamik. Aufgabe der Trajektorienfolgeregelung und der unterlagerten Fahrzeugführungsregelung ist es bspw. einer bestimmten Trajektorienvorgabe zu folgen. Für die Längs- bzw. Quer-/Gierdynamik werden für den Funktionsentwurf separate quasilineare Modelle angenommen, die Vertikaldynamik wird vernachlässigt.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Lenkung}\label{subS:SteeringModels}
+Zwei Modelle, die das Verhalten des Vorderachslenksystems beschreiben, werden für die später formulierten Verfahren der Querregelung des Fahrzeugs benötigt.
+Das Lenkungsmodell~1 beschreibt, wie sich der Vorderachslenkwinkel $\delta$ unter dem Einfluß der Stellgröße $\tau_{\delta\mathrm{d}}$ verhält, siehe \refFig{LongLatOverview}. 
+Das Lenkungsmodell~2, beschreibt das Verhalten der Lenkung bei aktiver Lenkwinkelregelung mit dem Solllenkwinkel $\delta_\mathrm{d}$ als Eingang und dem Ist-Vorderachslenkwinkel 
+$\delta$ als Ausgang, siehe \refFig{LongLatOverview}.
+
+\subsubsection{Lenkungsmodell~1: Lenkmoment zu Lenkwinkelgeschwindigkeit}
+Das Lenkungsmodell~1 ist ein stark vereinfachtes, lineares Modell der Vorderachslenkung mit dem Lenkmoment $\tau_{\delta\mathrm{d}}$ als Eingang und der Lenkwinkelgeschwindigkeit an der Vorderachse $\dot\delta$ als Ausgang.
+$\tau_{\delta\mathrm{d}}$ ist dabei das Moment, welches zusätzlich zu den Momenten der Lenkunterstützungsfunktionen am Lenkaktuator angefordert wird. Als Übertragungsfunktion geschrieben hat das Modell die Form
+\begin{equation}
+G_{\tau\delta}(s)=\frac{1}{ms+b}\;\frac{1}{Ts+1}\label{eq:GL1}
+\end{equation}
+mit der Trägheit $m$, einem Dämpfungsbeiwert $b$ und einer Zeitkonstante $T$.
+$G_{\tau\delta}$ wird als internes Modell für den in Abschnitt \ref{subS:DO_Delta} vorgestellten Störgrößenbeobachter im Lenkwinkelregler verwendet. 
+Die Identifikation erfolgt mit aktiven Lenkunterstützungsfunkionen, die dadurch in ihrer Wirkung mit erfasst werden. Außerdem steht das Fahrzeug dabei auf einer Hebebühne, so dass die Rückkopplungen über die Reifenquerkräfte und Bohrmomente ausgeschaltet sind. \refFig{EpsIdent} zeigt beispielhaft den Vergleich des gemessenen und durch das Modell vorhergesagten Verlaufs der Lenkwinkelgeschwindigkeit. Die deutlichen Abweichungen lassen sich mit dem einfachen Modell nicht vermeiden. Der Störgrößenbeobachter ist aber, wie in Abschnitt \ref{subS:DO_Basic} ausgeführt wird, gegen diese Abweichungen robust und erzwingt im unteren Frequenzbereich das durch das Modell vorgegebene lineare Verhalten.
+
+
+%\begin{figure}[htp!]
+%\centering
+%\import{Bilder/EpsIdent/}{EpsIdent.pdf_tex}
+%\caption{Identifikation eines einfachen linearen Lenkungsmodells}\label{fig:EpsIdent}
+%\label{fig:EpsIdent}
+%\end{figure}
+
+
+\subsubsection{Lenkungsmodell~2: Solllenkwinkel zu Istlenkwinkel}
+Das Lenkungsmodell~2 fasst in einem einfachen linearen Modell das Verhalten der Lenkung inklusive Lenkwinkelregelung zusammen und beschreibt damit den dynamischen Zusammenhang zwischen Solllenkwinkel $\delta_\mathrm{d}$ und Istlenkwinkel $\delta$.
+Dieses Modell wird zum einen als internes Modell für den in Abschnitt \ref{subS:DO_Kappa} vorgestellten Krümmungsstörgrößenbeobachter verwendet, der additive Störungen auf die Querdynamik kompensiert. Zum anderen wird das durch das Lenkungsmodell~2 beschriebene Verhalten bei der dynamischen Vorsteuerung im Trajektorienfolgeregler Quer berücksichtigt. Als Übertragungsfunktion geschrieben hat das Modell die Form
+
+\begin{equation}
+G_\delta^*(s)=\underbrace{\frac{k\omega_0^2}{s^2+2D\omega_0 s + \omega_0^2}}_{\displaystyle{G_\delta}}\;\mathrm{e}^{-T_\mathrm{D}s}\label{eq:GL2}
+\end{equation}
+
+
+Die Identifikation erfolgt im Fahrversuch anhand von Solllenkwinkelrampen $\delta_\mathrm{d}$ bei verschiedenen Fahrzeuggeschwindigkeiten, siehe \refFig{ident_zff}
+
+\begin{figure}[htp!]
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\scalebox{0.9}{\import{Bilder/EpsIdent/}{EpsIdent.pdf_tex}}
+\parbox{0.9\textwidth}{\captionof{figure}{Identifikation Lenkungsverhalten Moment zu Lenkwinkelgeschwindigkeit, Vergleich Messung und Modell}\label{fig:EpsIdent}}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\centering
+\setlength\figureheight{2.5cm} 
+\setlength\figurewidth{5cm}
+\scalebox{0.9}{\input{Bilder/Plots/ident_zff.tikz}}
+\parbox{0.8\textwidth}{\captionof{figure}{Identifikation Lenkungsverhalten Solllenkwinkel zu Istlenkwinkel, Vergleich Messung und Modell}\label{fig:ident_zff}}
+\end{minipage}
+\end{figure}
+
+   %
+% \begin{figure}[thpb]
+% 	 \centering
+%	 \setlength\figureheight{2.5cm} 
+%	 \setlength\figurewidth{5cm}
+%	  \input{Bilder/Plots/ident_zff.tikz} 
+%      \begin{center}
+%       \caption{Vergleich zwischen simuliertem und gemessenem Lenkwinkel bei verschiedenen Solllenkwinkelrampen bei einer Fahrzeuggeschwindigkeit von 50 km/h}
+%     		 \label{abb_ident_zff}
+%       \end{center}
+%   \end{figure}      
+%   %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Einspurmodell}
+Das lineare Einspurmodell für die Quer- und Gierdynamik des Fahrzeugs als Streckenmodell für die Synthese der Trajektorienfolge- und Fahrzeugführungsregelung Quer lässt sich vereinfacht anhand des Übertragungsverhaltens zwischen dem Radlenkwinkel und der Gierrate und dem Schwimmwinkel beschreiben zu 
+\begin{equation}
+  G_{\dot{\psi}}(s) = k_{\dot{\psi}}\,{\scriptstyle \frac{(T_{\dot{\psi}}  s +1){\omega_0}^2}{s^2+2  d  \omega_0  s +{\omega_0}^2}},\,\,\,\,
+%\end{equation}
+%
+%\begin{equation}
+  G_{\beta}(s) =  k_{\beta}\,{\scriptstyle \frac{(T_{\beta}  s +1){\omega_0}^2}{s^2+2  d  \omega_0  s +{\omega_0}^2}}\,.
+ \label{eq:GpsiP}
+\end{equation}
+Weiterhin ist die (gefahrene) Krümmung des Fahrzeugs $\kappa=(\dot{\psi}+\dot{\beta})/v$. Entsprechend gilt für das Übertragungsverhalten von Lenkwinkel zu Krümmung 
+\begin{equation}
+  G_{\kappa}(s) = {\displaystyle [G_{\dot{\psi}}(s)+s \cdot G_{\beta}(s)]/v = k_{\kappa}}\,{\scriptstyle \frac{s^2+2  d_{\kappa}  \omega_{\kappa}  s +{\omega_{\kappa}}^2}{s^2+2  d  \omega_0  s +{\omega_0}^2}\, \frac{{\omega_0}^2}{{\omega_{\kappa}}^2}}\,. 
+ \label{eq:Gkappa}
+\end{equation}
+Hierbei beschreiben die Größen $k_{\dot{\psi}}$, $k_{\beta}$ und $k_\kappa$ die stationäre Gierraten-, Schwimmwinkel- und Krümmungsverstärkung, $T_{\dot{\psi}}$ und $T_{\dot{\beta}}$ die Vorhaltezeit, $\omega_0$ die natürliche Frequenz und $d$ die Dämpfung der Gier- und Querdynamik.
+Die Krümmungsübertragungsfunktion hat ein konjugiert komplexes also schwingungsfähiges Nullstellenpaar mit Bandbreite $\omega_\kappa=2 \pi f_\kappa$ und Dämpfung $d_\kappa$.  
+Sämtliche Größen ergeben sich aus den um die Geradeausfahrt linearisierten Bewegungsgleichungen des Einspurmodells mit konstant angenommener Fahrgeschwindigkeit. Abb.~\ref{fig:esm} zeigt hierzu den Verlauf der Größen in Abhängigkeit der Fahrgeschwindigkeit mit beispielhaft angenommenen Fahrzeugparametern.
+%%%\begin{equation}
+%%%\begin{aligned}
+%%% k_{\dot{\psi}} & =  {\scriptstyle\frac{v}{\ell
+%%%[1+(v/v_{ch})^2]}},\,\,
+%%%k_{\beta} = {\scriptstyle\frac{c_f (c_r \ell_r \ell - \ell_f m v^2)}{c_r c_f \ell^2 + (c_r  \ell_r - c_f \ell_f) m v^2}},\,\,
+%%%k_{\kappa}= {\scriptstyle\frac{k_{\dot{\psi}}}{v}}\\
+%%%T_{\dot{\psi}} &= {\scriptstyle\frac{\ell_f m v}{c_r \ell}},\,\, %(lv m v)/(ch ll)
+%%%T_{\beta} = {\scriptstyle\frac{i_z v}{c_r \ell_r \ell- \ell_f m v^2}}\\ %(iz v)/(ch lh ll - lv m v^2)\\
+%%%\omega^2_0 &=  {\scriptstyle\frac{c_r \ell_r - c_f \ell_f + \frac{c_f c_r \ell^2}{m v^2}}{i_z}},\,\,
+%%%\omega^2_{\kappa}=  {\scriptstyle\frac{c_r \ell}{i_z}},\,\,
+%%%\omega^2_{\infty} = {\scriptstyle\frac{c_r \ell_r -c_f \ell_f }{i_z}}\\
+%%%d^2 &= {\scriptstyle\frac{1}{2}\frac{[c_r (i_z + {\ell^2_r} m) + c_f (i_z + {\ell^2_f} m)]^2}{
+%%%i_z m [c_r c_f \ell^2 + (c_r \ell_r - c_f \ell_f) m v^2]}},\,\,
+%%%d^2_{\kappa}= {\scriptstyle\frac{1}{4}\frac{c_r {\ell_r}^2 \ell}{i_z v^2}} \\
+%%%v^2_{ch} &= {\scriptstyle\frac{c_r c_f \ell^2}{m (c_r \ell_r - c_f \ell_f)}},\,\,
+%%%v^2_{nm} =  {\scriptstyle\frac{c_r \ell_r \ell}{\ell_f m}}\\
+%%%v^2_{min} &= {\scriptstyle\frac{(c_r+c_f)^2 i^2_z+2 i_z (c_r (c_r+c_f) l^2_r-2 c_r c_f \ell^2+c_f (c_r+c_f) \ell^2_f) m+(c_r l^2_r+c_f \ell^2_f)^2 m^2}{4 i_z (c_r l_r-c_f \ell_f) m^2}}
+%%%\end{aligned}
+%%%\end{equation}
+
+\begin{figure}[thpb]
+%\newcommand{\ckpsiP}{$k_{\cdot{\psi}}, k_{\beta} [rad/s]$}
+
+%\psfrag{kpsiP,kbeta}[][]{$k_{\cdot{\psi}}, k_{\beta} [rad/s]$}
+%\psfrag{TpsiP,Tbeta}[][]{$T_{\cdot{\psi}}, T_{\beta} [rad/s]$}
+%\psfrag{f0}[][]{$f_0 [Hz]$}
+%\psfrag{vx}[][]{$v_x [km/h]$}
+%\psfrag{wlim}[][]{$\omega_{lim}$}
+%\psfrag{vnm}[][]{$v_{nm}$}
+%\psfrag{vch}[][]{$v_{ch}$}
+%\psfrag{d}[][]{$d [-]$}
+%\psfrag{nichtminimalphasig}[][]{nichtminimalphasig}
+
+ 	 \centering
+	   \includegraphics[width=12cm]{Bilder/ESM/esm_erg.eps} 
+%	   \includegraphics[scale=1]{Bilder/ESM/esm.eps} 
+%		\input{Bilder/ESM/esm.tex}
+      \begin{center}
+       \caption{Kenngrößen des dynamischen Übertragungsverhaltens}
+     		 \label{fig:esm}
+       \end{center}
+\end{figure}      
+Der Grenzwert $\omega_\infty=\lim_{v\to\infty} \omega(v)= (c_r \ell_r -c_f \ell_v)/i_z=2\pi f_\infty$ beschreibt die Bandbreite der Quer- und Gierdynamik für hohe Fahrgeschwindigkeiten. 
+%Für große Geschwindigkeiten ist also die Schwerpunktlage, die über Reifen und Achskinematik definierte Balance  als Verhältnis der %Schräglaufsteifigkeiten und das Gierträgheitsmoment für die Bandbreite der Quer- und Gierdynamik bestimmend.  
+Es ist leicht zu sehen, daß der Grenzwert der Bandbreite $\lim_{v\to 0} \omega(v)$ gegen $\infty$ geht. Weiterhin wird für $v=v_{\rm lim}$ die Dämpfung $d=1$ (aperiodischer Grenzfall), d.~h. für $v<v_{\rm lim}$ (ca. 20-30km/h) werden die Pole der Übertragungsfunktionen reell und der langsamere Pol der näher am Ursprung liegt wäre dominant und würde das Übertragungsverhalten dominieren. In Fahrversuchen hat sich jedoch gezeigt, dass für niedrige Geschwindigkeiten $v<v_{\rm lim}$ nichtmodellierte Dynamiken eine größere Rolle spielen und    
+das vereinfachte lineare Einspurmodell 2. Ordnung nicht geeignet ist, diese Effekte abzubilden. Entsprechende Erweiterungen oder Vereinfachungen müssen für den Niedriggeschwindigkeitsbereich vorgenommen werden, auf die jedoch an dieser Stelle nicht weiter eingegangen werden soll.
+Weitere Kenngrößen sind die charakteristische Fahrgeschwindigkeit die sehr gut das stationäre Gierübertragungsverhalten beschreibt. Für $v=v_{ch}$ wird die stationäre Gierverstärkung maximal, d.~h. die Gierempfindlichkeit des Fahrzeugs für diese Fahrgeschwindigkeit ist maximal. Die Geschwindigkeit $v_{nm}$ beschreibt die Fahrgeschwindigkeit oberhalb derer das Schwimmwinkelübertragungsverhalten nichtminimalphasig wird, d.~h. die Nullstellen dieser Übertragungsfunktion wandern im Eigenwertbereich in die rechte Halbebene. Während des Übergangs wechselt gleichzeitig die Schwimmwinkelverstärkung ihr Vorzeichen. Die langsamen Nullstellen haben wegen der geringen Verstärkung in diesem Geschwindigkeitsbereich $v\approx v_{nm}$ keinen bzw. wenig Einfluss auf das Übertragungsverhalten.    
+
+Die Fahrzeugparameter und charakteristischen Kenngrößen des Einspurmodells und damit das Übertragungsverhalten hängen wesentlich von der Fahrzeuggeschwindigkeit, der Fahrzeugbeladung und dem reibwertabhängigen Reifen-Fahrbahnkontakt und damit vom Straßenzustand und der Bereifung ab.
+Zusatzbeladung, Reifen und witterungsbedingter Reibwert bewirken Änderungen der Größen $m = m(m_{zus})$, $i_z(m_{zus})$, $l_f(m_{zus})$, $l_r(m_{zus})$, $c_f(m_{zus},\mu)$, $c_r(m_{zus},\mu)$. Für den regelungstechnischen Entwurf ist es notwendig, sich an die mess-, schätz- oder beobachtbaren variierenden Parameter zu adaptieren und entsprechend robust gegenüber nicht mess-, schätz- oder beobachtbaren variierenden Parametern zu sein. Eine Adaption der Reglerfunktionen an die Fahrgeschwindigkeit - ein variierender aber bekannter Parameter des Einspurmodells und gleichzeitig ein beobachteter Fahrzustand - über klassisches \textit{gainscheduling} ist Standard. Eine Adaption an eine veränderliche Zusatzbeladung mit ihrem Einfluss auf mehrere Fahrzeugparameter ist deutlich schwieriger. Das wird dann häufiger erst durch robuste Regleransätze beherrscht. 
+Mit dem Betriebsbereich definiert durch die beladungsabhängige Schwerpunktlage, Masse und die variierende Fahrgeschwindigkeit $v\in[v^-, v^+]$, $R_1: m_{R1}$... ................. 
+
+Die Identifikation des Einspurmodells erfolgt im Fahrversuch anhand von bidirektionalen Lenkwinkelsprüngen mit konstanter Querbeschleunigung über den gesamten Geschwindigkeitsbereich. Dieser Vorgang wiederholt für unterschiedliche Zusatzbeladungen und Bereifungen kann als Grundlage für die Bedatung der Parameter des Einspurmodells und für eine Beschreibung der zu betrachtenden Unsicherheiten dienen. 
+\begin{figure}[thpb]
+ 	 \centering
+	   \includegraphics[width=12cm]{Bilder/ESM/esm_bidi_erg.eps} 
+      \begin{center}
+       \caption{Vergleich zwischen Einspurmodell- und gemessener Gierrate bei bidirektionalen Lenkwinkelsprüngen bei Fahrzeuggeschwindigkeiten zwischen 150 und 120 km/h}
+     		 \label{abb_ident_esm}
+       \end{center}
+\end{figure}      
+
+
+\subsection{Längsdynamik}
+Zur Ansteuerung des Antriebs und der Bremse hat sich in heutigen Fahrzeug-Architekturen die Schnittstelle der Summen-Radmomente durchgesetzt.  Dies ist für die meisten Fahrerassistenzfunktionen ausreichend da keine Einzelradmomente zur Stabilisierung gestellt werden müssen und bietet den Vorteil, dass da so beide Aktuatoren, Antrieb und Bremse,  über die gleiche physikalische Größe angesteuert werden können.  Im Verlauf des Kapitels wird das Übertragungsverhalten vom Sollantriebsmoment $\tau_\mathrm{mot,d}$ bzw. Sollbremsmoment $\tau_\mathrm{brk,d}$ zum gemessen Radmoment $\tau_{xd}$ als System zweiter Ordnung mit Totzeit modelliert:
+\begin{equation}
+G_{\tau_x}^*(s)=\underbrace{\frac{k\omega_0^2}{s^2+2D\omega_0 s + \omega_0^2}}_{\displaystyle{G_{\tau_x}}}\;\mathrm{e}^{-T_\mathrm{D}s}\label{eq:GLong}
+\end{equation}
+Wie beim Lenkungsmodell 2 erfolgt die Identifikation im Fahrversuch anhand von Sollradmomentensprüngen bei verschiedenen Fahrzeuggeschwindigkeiten.  Abb.  \ref{abb_ident_antrieb_bremse} veranschaulicht die gute Übereinstimmung zwischen gemessenem und modelliertem Verhalten.
+   \begin{figure}[thpb]
+      \centering
+	\setlength\figureheight{7cm} 
+	\setlength\figurewidth{10.5cm}
+    \input{Bilder/Plots/ident_antrieb_bremse.tikz} 
+ \begin{center}
+       \caption{Vergleich zwischen simuliertem und gemessenem Summen-Radantriebsmoment (links) und Summen-Radbremsmoment (rechts)}
+      \label{abb_ident_antrieb_bremse}
+       \end{center}
+   \end{figure}    
+Das Übertragungsverhalten von Summen-Radmoment $\tau_{x\mathrm{d}}$ zur Fahrzeuglängsbeschleunigung $a_x$ wird stark vereinfacht als $PT_1$-Übertragungsverhalten betrachtet. Mittels der angenommenen Fahrzeugmasse $m$ und des Rollradiuses $r$ ergibt sich die Längsbeschleunigung über die Übertragungsfunktion
+\begin{equation}
+G_{a_x}(s) = \frac{1/(mr)}{Ts+1} 
+\label{eq:Gwhl}
+\end{equation}
+\subsection{Kinematik}
+Die globale Position des Fahrzeug ergibt sich aus der Bewegungsrichtung und damit der Richtung der Fahrzeuggeschwindigkeit $v$.
+\begin{equation}
+\dot x = v \cos \theta \quad \mathrm{und} \quad \dot y = v \sin \theta.
+\end{equation}
+$\theta$ beschreibt den Kurswinkel des Fahrzeugs und stellt den Winkel des Geschwindigkeitsvektors relativ zum Inertialsystem dar. Dieser ergibt sich als Summe des Gierwinkels $\psi$ und dem Schwimmwinkel $\beta$
+\begin{equation}
+\theta = \psi + \beta.
+\end{equation}
+
+
+
+\FloatBarrier

@@ -1,0 +1,33 @@
+Indizierung/Namen/Akzente English
+
+d     Disturbance
+_d    desired
+tilde beobachtet
+G     allg. ÜFkt, Strecke: G(s) wenn Ausdruck mit s angegebnen, sonst, z.B. GesamtÜkt oder Gleichgung ohne (s)
+K     Regler
+S	Sensitivitätsfkt (Indizierung? oder extra Symbol für komplementäre S.)
+
+Indices: wenn Wörter oder Abkürzungen (traj, ffw, d) dann \mathrm
+
+Capitals: Matrizen, Laplace
+Small: Skalare, Komponenten
+
+kappa  Krümmung
+delta  Lenkwinkel 
+a	Beschleunigung
+x,y    Koordinaten
+t      Zeit
+T      spezielle Zeiten (Zeitkonst, Totzeit, ...)
+g	Gravitationskonst.
+mu	Reibwert
+
+
+psi   Gierwinkel in Welt (Fzg. Längs)
+theta Kurswinkel v-Vektor in Welt
+theta_ref Straße in Welt
+beta  Schwimmwinkel (Linkskurve, Heck draußen  ist negativ)
+
+_x   längs
+_y   quer
+_f    front (VA)
+_r    rear (HA)

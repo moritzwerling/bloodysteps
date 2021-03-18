@@ -1,0 +1,44 @@
+\section{Fahrversuche}
+Zur Demonstration der Leistungsfähigkeit der vorgestellten Regelungsstruktur werden im Folgenden verschiedene,  repräsentative Fahrmanöver vorgestellt.  Die Umsetzung erfolgt auf einem Fahrzeug der BMW 3er Reihe.  Das Fahrzeug ist mit Umfeld- und Referenzsensorik ausgerüstet. Zur Berechnung der Sollvorgaben wurde die Trajektorienplanung entsprechend \cite{Rathgeber2015b} umgesetzt. 
+
+Zunächst wird das Verhalten des Gesamtsystems bei einem kombinierten Quer-Längsmanöver vorgestellt.  Abb.~\ref{abb_LQ_Bremsung} zeigt die geplanten und gemessenen Zustände. 
+Durch die Trajektorienplanung wird eine dynamische Verzögerung bei gleichzeitigem Spurwechsel gefordert.        
+ \begin{figure}[thpb]
+ 	 \centering
+	 \setlength\figureheight{5.5cm} 
+	 \setlength\figurewidth{10.5cm}
+	  \input{Bilder/Plots/LQ_Bremsung.tikz} 
+      \begin{center}
+       		\caption{gekoppeltes Quer-Längsmanöver zum Ausweichen mit gleichzeitigem Abbremsen in den Stillstand}
+     		 \label{abb_LQ_Bremsung}
+       \end{center}
+   \end{figure}   
+Das Manöver findet ohne Fahrereingriffe statt. Aus einer Anfangsgeschwindigkeit von 50 km/h wird in den Stillstand abgebremst und gleichzeitig eine Querablage von 3 m relativ zur Ausgangslage aufgebaut. Die geplante Trajektorie wird dabei durch die Regelung mit minimalen Regelfehlern umgesetzt.
+ 
+In zwei weiteren Versuchen soll auf die speziellen Eigenschaften des verwendeten Störgrößenbeobachters eingegangen werden.  Abb.~\ref{abb_messung_fahrer} zeigt dazu das Ergebnis einer Messung mit Fahrerinteraktion.  
+\begin{figure}[thpb]
+	 \centering 
+		\begin{minipage}[t]{0.45\linewidth} 
+			\centering
+			\setlength\figureheight{6cm} 
+			\setlength\figurewidth{4cm}
+			\input{Bilder/Plots/fahrereingriff_2.tikz}
+			\caption{Verhalten des Krümmungs-Störgrößenbeobachters bei aktivem Fahrereingriff}
+			\label{abb_messung_fahrer}
+		\end{minipage}
+	 \hfill
+		 \begin{minipage}[t]{0.45\linewidth} 
+			\centering
+			\setlength\figureheight{6cm} 
+			\setlength\figurewidth{4cm}
+			\input{Bilder/Plots/messung_stoerung2.tikz}	
+			\caption{Unterdrückung von Seitenkraftstörungen}
+			\label{abb_stoerunterdrueckung_sgs}
+		\end{minipage}
+\end{figure}
+Das Fahrzeug fährt entlang einer geraden Referenz mit einer Geschwindigkeit von 50 km/h. Der Fahrer greift dabei in die Querführung ein (gut sichtbar am Fahrerhandmoment $\tau_{\delta,\mathrm{drv}}$) und lenkt das Fahrzeug einige Meter neben die geplante Trajektorie.  Gewöhnliche Folgeregler mit integrierendem Verhalten würden in diesem Fall stetig die Stellgröße erhöhen und gegen den Fahrer arbeiten.  Durch die Verwendung der präsentierten Regelungsstruktur mit Störgrößenbeobachter lässt sich dagegen kooperatives Fahrerverhalten, wie es beispielsweise für Spurhalteassistenten erforderlich ist, darstellen.  Der Ausgang des Störgrößenbeobachters $\kappa_\mathrm{do}$ ist über die ganze Dauer des Fahrereingriffs nahezu 0 1/m da keine Störung außer dem Fahrer auf das Fahrzeug wirkt.  Lediglich das Stellgesetz der Trajektorienfolgeregelung arbeitet gegen den Fahrer. Dies ist wie bereits zuvor erwähnt gewünscht, um dem Fahrer Rückmeldung über das Ziel des umgesetzten Fahrerassistenzsystems zu geben. Nach dem Handmomentenabfall führt der Trajektoriefolgeregler das Fahrzeug zurück zur Referenz.  
+
+Störungen die von außen auf das Fahrzeug wirken (wie z.B. Seitenwinde oder hängende Fahrbahnen) werden im Gegensatz zu den Fahrereingriffen robust unterdrückt. Diese wird in
+Abb.~\ref{abb_stoerunterdrueckung_sgs} demonstriert.  Wieder hat das Fahrzeug das Ziel, der geraden Fahrspur mit einer Geschwindigkeit von 50 km/h zu folgen. Zur Nachstellung von reproduzierbaren Seitenkraftstörungen werden einseitige Bremseneingriffe eingesetzt. Dazu werden die rechten Räder der Vorder- und Hinterachse mit jeweils 500 Nm Bremsmoment beaufschlagt. Dies führt zu einer Seitenkraftstörung. Der Störgrößenbeobachter kompensiert die Störung, ohne dass sich ein nennenswerter Querablagefehler $\Delta d$ aufbaut.
+
+\FloatBarrier

@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generiert durch Microsoft Visio, SVG Export Fahrer_FAS_FKR_V01.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="6.8025in" height="8.97638in"
+		viewBox="0 0 489.78 646.3" xml:space="preserve" color-interpolation-filters="sRGB" class="st27">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {visibility:visible}
+		.st2 {fill:#5b9bd5;fill-opacity:0.22;filter:url(#filter_2);stroke:none}
+		.st3 {fill:#d8d8d8;stroke:none;stroke-width:1}
+		.st4 {fill:#000000;font-family:Times New Roman;font-size:0.833336em}
+		.st5 {fill:#bfbfbf;stroke:none;stroke-width:1}
+		.st6 {fill:#a5a5a5;stroke:none;stroke-width:1}
+		.st7 {fill:#7f7f7f;stroke:none;stroke-width:1}
+		.st8 {fill:#5b9bd5;fill-opacity:0.22;filter:url(#filter_2);stroke:#5b9bd5;stroke-opacity:0.22}
+		.st9 {fill:#ffffff;fill-opacity:0.8;stroke:#000000;stroke-width:1}
+		.st10 {font-size:1em}
+		.st11 {marker-end:url(#mrkr13-39);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st12 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.28409090909091}
+		.st13 {fill:none;stroke:none;stroke-width:0.25}
+		.st14 {fill:#000000;font-family:Times New Roman;font-size:0.833336em;font-style:italic}
+		.st15 {baseline-shift:-32.4947%;font-size:0.649894em;font-style:normal}
+		.st16 {fill:#ffffff;fill-opacity:0.4;stroke:#000000;stroke-width:1}
+		.st17 {fill:#ffffff;fill-opacity:0.2;stroke:#000000;stroke-width:1}
+		.st18 {fill:#ffffff;fill-opacity:0.6;stroke:#000000;stroke-width:1}
+		.st19 {fill:#ffffff;stroke:#000000;stroke-width:0.75}
+		.st20 {fill:#000000;font-family:Times New Roman;font-size:0.75em}
+		.st21 {fill:none;filter:url(#filter_2);stroke:#5b9bd5;stroke-dasharray:7,5;stroke-opacity:0.22}
+		.st22 {fill:none;stroke:#000000;stroke-dasharray:7,5;stroke-width:1}
+		.st23 {fill:none;filter:url(#filter_2);stroke:#5b9bd5;stroke-opacity:0.22}
+		.st24 {fill:#5b9bd5;filter:url(#filter_2);font-family:Times New Roman;font-size:0.833336em;opacity:0.219608}
+		.st25 {fill:none;stroke:#000000;stroke-width:1}
+		.st26 {marker-end:url(#mrkr13-39);marker-start:url(#mrkr13-343);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st27 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Markers">
+		<g id="lend13">
+			<path d="M 3 1 L 0 0 L 3 -1 L 3 1 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr13-39" class="st12" v:arrowType="13" v:arrowSize="2" v:setback="10.56" refX="-10.56" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend13" transform="scale(-3.52,-3.52) "/>
+		</marker>
+		<marker id="mrkr13-343" class="st12" v:arrowType="13" v:arrowSize="2" v:setback="10.2" refX="10.2" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend13" transform="scale(3.52) "/>
+		</marker>
+	</defs>
+	<defs id="Filters">
+		<filter id="filter_2">
+			<feGaussianBlur stdDeviation="2"/>
+		</filter>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="Verbinder" v:index="0"/>
+		<g id="group1-1" transform="translate(-160.365,640.827) rotate(-90)" v:mID="1" v:groupContext="group">
+			<title>Tabelle.1</title>
+			<g id="shape2-2" v:mID="2" v:groupContext="shape" transform="translate(476.22,-127.559)">
+				<title>DO.Block.132</title>
+				<desc>Regelstrecke</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="2"/>
+				<v:textRect cx="78.6614" cy="493.937" width="157.33" height="304.724"/>
+				<g id="shadow2-3" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="341.575" width="157.323" height="304.724" class="st2"/>
+				</g>
+				<rect x="0" y="341.575" width="157.323" height="304.724" class="st3"/>
+				<text x="4" y="639.3" class="st4" v:langID="1031"><v:paragraph/><v:tabList/>Regelstrecke</text>			</g>
+			<g id="shape3-8" v:mID="3" v:groupContext="shape" transform="translate(266.457,-127.559)">
+				<title>DO.Block.131</title>
+				<desc>Fahrzeugführungsebene</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="2"/>
+				<v:textRect cx="104.882" cy="493.937" width="209.77" height="304.724"/>
+				<g id="shadow3-9" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="341.575" width="209.764" height="304.724" class="st2"/>
+				</g>
+				<rect x="0" y="341.575" width="209.764" height="304.724" class="st5"/>
+				<text x="4" y="639.3" class="st4" v:langID="1031"><v:paragraph/><v:tabList/>Fahrzeugführungsebene</text>			</g>
+			<g id="shape4-14" v:mID="4" v:groupContext="shape" transform="translate(90.7087,-127.559)">
+				<title>DO.Block.130</title>
+				<desc>Bahnführungsebene</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="2"/>
+				<v:textRect cx="87.874" cy="493.937" width="175.75" height="304.724"/>
+				<g id="shadow4-15" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="341.575" width="175.748" height="304.724" class="st2"/>
+				</g>
+				<rect x="0" y="341.575" width="175.748" height="304.724" class="st6"/>
+				<text x="4" y="639.3" class="st4" v:langID="1031"><v:paragraph/><v:tabList/>Bahnführungsebene</text>			</g>
+			<g id="shape5-20" v:mID="5" v:groupContext="shape" transform="translate(1.9984E-013,-127.559)">
+				<title>DO.Block.129</title>
+				<desc>Navigationsebene</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="2"/>
+				<v:textRect cx="45.3543" cy="493.937" width="90.71" height="304.724"/>
+				<g id="shadow5-21" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="341.575" width="90.7087" height="304.724" class="st2"/>
+				</g>
+				<rect x="0" y="341.575" width="90.7087" height="304.724" class="st7"/>
+				<text x="4" y="639.3" class="st4" v:langID="1031"><v:paragraph/><v:tabList/>Navigationsebene</text>			</g>
+			<g id="shape6-26" v:mID="6" v:groupContext="shape" transform="translate(520.157,-212.598)">
+				<title>Rechteck.12</title>
+				<desc>Lenksystem Bremssystem Antriebssystem</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="42.5197" cy="596.693" width="85.04" height="99.2126"/>
+				<g id="shadow6-27" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="547.087" width="85.0394" height="99.2126" class="st8"/>
+				</g>
+				<rect x="0" y="547.087" width="85.0394" height="99.2126" class="st9"/>
+				<text x="18.36" y="587.69" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Lenksystem<v:newlineChar/><tspan
+							x="15.58" dy="1.2em" class="st10">Bremssystem<v:newlineChar/></tspan><tspan x="11.41" dy="1.2em"
+							class="st10">Antriebssystem</tspan></text>			</g>
+			<g id="shape7-34" v:mID="7" v:groupContext="shape" v:layerMember="0" transform="translate(612.283,-297.638)">
+				<title>DO.Verbindung.119</title>
+				<path d="M-7.09 646.3 L3.54 646.3 L3.54 568.35 L3.47 568.35" class="st11"/>
+			</g>
+			<g id="shape8-40" v:mID="8" v:groupContext="shape" v:layerMember="0" transform="translate(362.835,-297.638)">
+				<title>DO.Verbindung.133</title>
+				<path d="M0 653.39 L6.45 653.39" class="st11"/>
+			</g>
+			<g id="shape9-45" v:mID="9" v:groupContext="shape" transform="translate(520.157,-155.906)">
+				<title>DO.Block_klein</title>
+				<desc>Impedanz Fahrzeug</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="42.5197" cy="625.04" width="85.04" height="42.5197"/>
+				<g id="shadow9-46" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="603.78" width="85.0394" height="42.5197" class="st8"/>
+				</g>
+				<rect x="0" y="603.78" width="85.0394" height="42.5197" class="st9"/>
+				<text x="22.81" y="622.04" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Impedanz<v:newlineChar/><tspan
+							x="23.92" dy="1.2em" class="st10">Fahrzeug</tspan></text>			</g>
+			<g id="shape10-52" v:mID="10" v:groupContext="shape" v:layerMember="0" transform="translate(612.283,-226.772)">
+				<title>DO.Verbindung.122</title>
+				<path d="M-7.09 646.3 L3.54 646.3 L3.54 695.91 L3.47 695.91" class="st11"/>
+			</g>
+			<g id="shape11-57" v:mID="11" v:groupContext="shape" v:layerMember="0" transform="translate(527.244,-177.165)">
+				<title>DO.Verbindung.121</title>
+				<path d="M-7.09 646.3 L-17.72 646.3 L-17.72 596.69 L-17.65 596.69" class="st11"/>
+			</g>
+			<g id="shape12-62" v:mID="12" v:groupContext="shape" transform="translate(520.157,-354.331)">
+				<title>DO.Block.64</title>
+				<desc>Impedanz Fahrer Lenkrad/ Brems-/Fahrpedal</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="42.5197" cy="625.04" width="85.04" height="42.5197"/>
+				<g id="shadow12-63" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="603.78" width="85.0394" height="42.5197" class="st8"/>
+				</g>
+				<rect x="0" y="603.78" width="85.0394" height="42.5197" class="st9"/>
+				<text x="8.51" y="616.04" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Impedanz Fahrer<v:newlineChar/><tspan
+							x="24.47" dy="1.2em" class="st10">Lenkrad</tspan>/<v:newlineChar/><tspan x="6.42" dy="1.2em"
+							class="st10">Brems</tspan>-/Fahrpedal</text>			</g>
+			<g id="shape13-70" v:mID="13" v:groupContext="shape" v:layerMember="0" transform="translate(491.811,-375.591)">
+				<title>DO.Verbindung.131</title>
+				<path d="M0 646.3 L-171.5 646.3 L-171.5 699.52" class="st11"/>
+			</g>
+			<g id="shape14-75" v:mID="14" v:groupContext="shape" transform="translate(398.268,-372.598)">
+				<title>Tabelle.14</title>
+				<desc>MFahrer</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="36.8504" cy="636.3" width="73.71" height="20"/>
+				<rect x="0" y="626.3" width="73.7008" height="20" class="st13"/>
+				<text x="44.41" y="639.3" class="st14" v:langID="1031"><v:paragraph v:horizAlign="2"/><v:tabList/>M<tspan
+							dy="-0.279em" class="st15" v:baseFontSize="10">Fahrer</tspan></text>			</g>
+			<g id="shape15-79" v:mID="15" v:groupContext="shape" transform="translate(187.087,-212.598)">
+				<title>Rechteck.15</title>
+				<desc>Trajektorien-folgeregler Quer</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="34.0157" cy="625.04" width="68.04" height="42.5197"/>
+				<g id="shadow15-80" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="603.78" width="68.0315" height="42.5197" class="st8"/>
+				</g>
+				<rect x="0" y="603.78" width="68.0315" height="42.5197" class="st16"/>
+				<text x="7.64" y="616.04" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Trajektorien-<tspan
+							x="12.08" dy="1.2em" class="st10">folgeregler </tspan><tspan x="24.02" dy="1.2em" class="st10">Quer</tspan></text>			</g>
+			<g id="shape16-87" v:mID="16" v:groupContext="shape" transform="translate(102.047,-212.598)">
+				<title>Rechteck.45</title>
+				<desc>Trajektorien- Planung Längs/Quer</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="34.0157" cy="596.693" width="68.04" height="99.2126"/>
+				<g id="shadow16-88" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="547.087" width="68.0315" height="99.2126" class="st8"/>
+				</g>
+				<rect x="0" y="547.087" width="68.0315" height="99.2126" class="st16"/>
+				<text x="7.64" y="587.69" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Trajektorien-<v:newlineChar/><tspan
+							x="17.63" dy="1.2em" class="st10">Planung<v:newlineChar/></tspan><tspan x="10.41" dy="1.2em"
+							class="st10">Längs</tspan>/Quer</text>			</g>
+			<g id="shape17-95" v:mID="17" v:groupContext="shape" transform="translate(11.3386,-212.598)">
+				<title>Rechteck.17</title>
+				<desc>Navigation/ Fahrstrategie</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="34.0157" cy="596.693" width="68.04" height="99.2126"/>
+				<g id="shadow17-96" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="547.087" width="68.0315" height="99.2126" class="st8"/>
+				</g>
+				<rect x="0" y="547.087" width="68.0315" height="99.2126" class="st17"/>
+				<text x="10.41" y="593.69" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Navigation/<v:newlineChar/><tspan
+							x="7.91" dy="1.2em" class="st10">Fahrstrategie</tspan></text>			</g>
+			<g id="shape18-102" v:mID="18" v:groupContext="shape" transform="translate(187.087,-269.291)">
+				<title>Rechteck.18</title>
+				<desc>Trajektorien-folgeregler Längs</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="34.0157" cy="625.04" width="68.04" height="42.5197"/>
+				<g id="shadow18-103" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="603.78" width="68.0315" height="42.5197" class="st8"/>
+				</g>
+				<rect x="0" y="603.78" width="68.0315" height="42.5197" class="st16"/>
+				<text x="7.64" y="616.04" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Trajektorien-<tspan
+							x="12.08" dy="1.2em" class="st10">folgeregler </tspan><tspan x="21.8" dy="1.2em" class="st10">Längs</tspan></text>			</g>
+			<g id="shape19-110" v:mID="19" v:groupContext="shape" transform="translate(277.795,-212.598)">
+				<title>Rechteck.19</title>
+				<desc>Kooperative Fahrzeugführung Quer</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="42.5197" cy="625.04" width="85.04" height="42.5197"/>
+				<g id="shadow19-111" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="603.78" width="85.0394" height="42.5197" class="st8"/>
+				</g>
+				<rect x="0" y="603.78" width="85.0394" height="42.5197" class="st18"/>
+				<text x="17.81" y="616.04" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Kooperative<v:newlineChar/><tspan
+							x="8.09" dy="1.2em" class="st10">Fahrzeugführung<v:newlineChar/></tspan><tspan x="32.52" dy="1.2em"
+							class="st10">Quer</tspan></text>			</g>
+			<g id="shape20-118" v:mID="20" v:groupContext="shape" v:layerMember="0" transform="translate(491.811,-375.591)">
+				<title>DO.Verbindung.50</title>
+				<path d="M0 646.3 L-5.31 646.3 L-5.31 724.25 L17.79 724.25" class="st11"/>
+			</g>
+			<g id="shape21-123" v:mID="21" v:groupContext="shape" v:layerMember="0" transform="translate(362.835,-226.772)">
+				<title>DO.Verbindung.21</title>
+				<path d="M0 639.21 L6.45 639.21" class="st11"/>
+			</g>
+			<g id="shape22-128" v:mID="22" v:groupContext="shape" v:layerMember="0" transform="translate(255.118,-297.638)">
+				<title>DO.Verbindung.22</title>
+				<path d="M0 653.39 L12.12 653.39" class="st11"/>
+			</g>
+			<g id="shape23-133" v:mID="23" v:groupContext="shape" v:layerMember="0" transform="translate(255.118,-240.945)">
+				<title>DO.Verbindung.23</title>
+				<path d="M0 653.39 L12.12 653.39" class="st11"/>
+			</g>
+			<g id="shape24-138" v:mID="24" v:groupContext="shape" v:layerMember="0" transform="translate(170.079,-297.638)">
+				<title>DO.Verbindung.24</title>
+				<path d="M0 653.39 L6.45 653.39" class="st11"/>
+			</g>
+			<g id="shape25-143" v:mID="25" v:groupContext="shape" v:layerMember="0" transform="translate(170.079,-226.772)">
+				<title>DO.Verbindung.25</title>
+				<path d="M0 639.21 L6.45 639.21" class="st11"/>
+			</g>
+			<g id="shape26-148" v:mID="26" v:groupContext="shape" v:layerMember="0" transform="translate(79.3701,-269.291)">
+				<title>DO.Verbindung.26</title>
+				<path d="M0 653.39 L12.12 653.39" class="st11"/>
+			</g>
+			<g id="shape27-153" v:mID="27" v:groupContext="shape" transform="translate(17.0079,-396.85)">
+				<title>Rechteck.57</title>
+				<desc>Navigation</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="31.1811" cy="632.126" width="62.37" height="28.3465"/>
+				<g id="shadow27-154" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="617.953" width="62.3622" height="28.3465" class="st8"/>
+				</g>
+				<rect x="0" y="617.953" width="62.3622" height="28.3465" class="st17"/>
+				<text x="8.96" y="635.13" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Navigation</text>			</g>
+			<g id="shape28-159" v:mID="28" v:groupContext="shape" transform="translate(102.047,-396.815)">
+				<title>Rechteck.58</title>
+				<desc>Bahnführung</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="76.5354" cy="632.091" width="153.08" height="28.4178"/>
+				<g id="shadow28-160" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="617.882" width="153.071" height="28.4178" class="st8"/>
+				</g>
+				<rect x="0" y="617.882" width="153.071" height="28.4178" class="st16"/>
+				<text x="50.15" y="635.09" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Bahnführung</text>			</g>
+			<g id="shape29-165" v:mID="29" v:groupContext="shape" transform="translate(277.795,-396.309)">
+				<title>Rechteck.59</title>
+				<desc>Fahrzeugführung</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="94.9606" cy="631.585" width="189.93" height="29.4284"/>
+				<g id="shadow29-166" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="616.871" width="189.921" height="29.4284" class="st8"/>
+				</g>
+				<rect x="0" y="616.871" width="189.921" height="29.4284" class="st18"/>
+				<text x="60.53" y="634.59" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Fahrzeugführung</text>			</g>
+			<g id="shape30-171" v:mID="30" v:groupContext="shape" transform="translate(379.843,-212.598)">
+				<title>Rechteck.61</title>
+				<desc>Fahrdynamik-/ Antriebs- Vorsteuerung/Regelung</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="42.5197" cy="596.693" width="85.04" height="99.2126"/>
+				<g id="shadow30-172" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="547.087" width="85.0394" height="99.2126" class="st8"/>
+				</g>
+				<rect x="0" y="547.087" width="85.0394" height="99.2126" class="st18"/>
+				<text x="12.8" y="581.69" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Fahrdynamik-/<v:newlineChar/><tspan
+							x="23.64" dy="1.2em" class="st10">Antriebs</tspan>-<v:newlineChar/><tspan x="13.92" dy="1.2em"
+							class="st10">Vorsteuerung</tspan>/<tspan x="23.36" dy="1.2em" class="st10">Regelung</tspan></text>			</g>
+			<g id="shape31-180" v:mID="31" v:groupContext="shape" v:layerMember="0" transform="translate(464.882,-269.291)">
+				<title>DO.Verbindung.63</title>
+				<path d="M0 653.39 L44.72 653.39" class="st11"/>
+			</g>
+			<g id="shape32-185" v:mID="32" v:groupContext="shape" v:layerMember="0" transform="translate(467.717,-418.381)">
+				<title>DO.Verbindung.64</title>
+				<path d="M0 646.3 L94.96 646.3 L94.96 657.27" class="st11"/>
+			</g>
+			<g id="shape33-190" v:mID="33" v:groupContext="shape" v:layerMember="0" transform="translate(255.118,-418.11)">
+				<title>DO.Verbindung.65</title>
+				<path d="M0 653.39 L12.12 653.39" class="st11"/>
+			</g>
+			<g id="shape34-195" v:mID="34" v:groupContext="shape" v:layerMember="0" transform="translate(79.3701,-418.11)">
+				<title>DO.Verbindung.66</title>
+				<path d="M0 653.39 L12.12 653.39" class="st11"/>
+			</g>
+			<g id="shape35-200" v:mID="35" v:groupContext="shape" v:layerMember="0" transform="translate(520.157,-382.677)">
+				<title>DO.Verbindung.67</title>
+				<path d="M-0 653.39 L-3.61 653.39" class="st11"/>
+			</g>
+			<g id="shape36-205" v:mID="36" v:groupContext="shape" transform="translate(491.811,-368.504)">
+				<title>DO.Addition.18</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<path d="M0 639.21 A7.08661 7.08661 0 0 1 14.17 639.21 A7.08661 7.08661 0 1 1 0 639.21 Z" class="st19"/>
+			</g>
+			<g id="shape37-207" v:mID="37" v:groupContext="shape" v:layerMember="0" transform="translate(327.402,-269.291)">
+				<title>DO.Verbindung.69</title>
+				<path d="M-7.09 646.3 L-7.09 649.91" class="st11"/>
+			</g>
+			<g id="shape38-212" v:mID="38" v:groupContext="shape" v:layerMember="0" transform="translate(467.717,-403.667)">
+				<title>DO.Verbindung.14</title>
+				<path d="M0 646.3 L31.18 646.3 L31.18 656.73" class="st11"/>
+			</g>
+			<g id="shape39-217" v:mID="39" v:groupContext="shape" transform="translate(476.22,-414.311)">
+				<title>Tabelle.39</title>
+				<desc>Steifigkeit, Dämpfung</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="53.1496" cy="636.3" width="106.3" height="20"/>
+				<rect x="0" y="626.3" width="106.299" height="20" class="st13"/>
+				<text x="21.81" y="639" class="st20" v:langID="1031"><v:paragraph v:horizAlign="2"/><v:tabList/>Steifigkeit, Dämpfung</text>			</g>
+			<g id="shape40-220" v:mID="40" v:groupContext="shape" transform="translate(453.543,-400.394)">
+				<title>Tabelle.40</title>
+				<desc>MFahrer,aktiv</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="36.8504" cy="636.3" width="73.71" height="20"/>
+				<rect x="0" y="626.3" width="73.7008" height="20" class="st13"/>
+				<text x="29.79" y="639.3" class="st14" v:langID="1031"><v:paragraph v:horizAlign="2"/><v:tabList/>M<tspan
+							dy="-0.279em" class="st15" v:baseFontSize="10">Fahrer</tspan><tspan class="st15" v:baseFontSize="10">,</tspan><tspan
+							class="st15" v:baseFontSize="10">aktiv</tspan></text>			</g>
+			<g id="shape41-226" v:mID="41" v:groupContext="shape" transform="translate(1.59872E-013,-340.157)">
+				<title>DO.Block</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow41-227" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<path d="M0 646.3 L473.39 646.3 L473.39 554.17 L0 554.17 L0 646.3 Z" class="st21"/>
+				</g>
+				<path d="M0 646.3 L473.39 646.3 L473.39 554.17 L0 554.17 L0 646.3 Z" class="st22"/>
+			</g>
+			<g id="shape42-231" v:mID="42" v:groupContext="shape" transform="translate(0,-127.559)">
+				<title>DO.Block.82</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow42-232" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<path d="M0 646.3 L473.39 646.3 L473.39 447.87 L0 447.87 L0 646.3 Z" class="st21"/>
+				</g>
+				<path d="M0 646.3 L473.39 646.3 L473.39 447.87 L0 447.87 L0 646.3 Z" class="st22"/>
+			</g>
+			<g id="shape43-236" v:mID="43" v:groupContext="shape" transform="translate(479.055,-127.559)">
+				<title>DO.Block.125</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow43-237" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<path d="M0 646.3 L154.49 646.3 L154.49 341.58 L0 341.58 L0 646.3 Z" class="st21"/>
+				</g>
+				<path d="M0 646.3 L154.49 646.3 L154.49 341.58 L0 341.58 L0 646.3 Z" class="st22"/>
+			</g>
+			<g id="shape44-241" v:mID="44" v:groupContext="shape" transform="translate(277.795,-269.291)">
+				<title>Rechteck.20</title>
+				<desc>Kooperative Fahrzeugführung Längs</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="42.5197" cy="625.04" width="85.04" height="42.5197"/>
+				<g id="shadow44-242" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="603.78" width="85.0394" height="42.5197" class="st8"/>
+				</g>
+				<rect x="0" y="603.78" width="85.0394" height="42.5197" class="st18"/>
+				<text x="17.81" y="616.04" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Kooperative<v:newlineChar/><tspan
+							x="8.09" dy="1.2em" class="st10">Fahrzeugführung<v:newlineChar/></tspan><tspan x="30.3" dy="1.2em"
+							class="st10">Längs</tspan></text>			</g>
+			<g id="shape45-249" v:mID="45" v:groupContext="shape" transform="translate(477.638,-341.417)">
+				<title>Tabelle.45</title>
+				<desc>MFahrer,passiv</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="36.8504" cy="636.3" width="73.71" height="20"/>
+				<rect x="0" y="626.3" width="73.7008" height="20" class="st13"/>
+				<text x="26.54" y="639.3" class="st14" v:langID="1031"><v:paragraph v:horizAlign="2"/><v:tabList/>M<tspan
+							dy="-0.279em" class="st15" v:baseFontSize="10">Fahrer</tspan><tspan class="st15" v:baseFontSize="10">,</tspan><tspan
+							class="st15" v:baseFontSize="10">passiv</tspan></text>			</g>
+			<g id="shape46-255" v:mID="46" v:groupContext="shape" transform="translate(519.82,-70.8661)">
+				<title>Rechteck.6</title>
+				<desc>Fahrzeug-bewegung</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="42.5197" cy="632.126" width="85.04" height="28.3465"/>
+				<g id="shadow46-256" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="617.953" width="85.0394" height="28.3465" class="st23"/>
+					<text x="22.25" y="629.13" class="st24" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Fahrzeug-<tspan
+								x="21.97" dy="1.2em" class="st10">bewegung</tspan></text>				</g>
+				<rect x="0" y="617.953" width="85.0394" height="28.3465" class="st25"/>
+				<text x="22.25" y="629.13" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Fahrzeug-<tspan
+							x="21.97" dy="1.2em" class="st10">bewegung</tspan></text>			</g>
+			<g id="shape47-265" v:mID="47" v:groupContext="shape" transform="translate(519.82,-28.3465)">
+				<title>Rechteck.7</title>
+				<desc>Fahrraum Verkehrssituation</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="42.5197" cy="632.126" width="85.04" height="28.3465"/>
+				<g id="shadow47-266" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="617.953" width="85.0394" height="28.3465" class="st23"/>
+					<text x="23.08" y="629.13" class="st24" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Fahrraum<v:newlineChar/><tspan
+								x="6.97" dy="1.2em" class="st10">Verkehrssituation</tspan></text>				</g>
+				<rect x="0" y="617.953" width="85.0394" height="28.3465" class="st25"/>
+				<text x="23.08" y="629.13" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Fahrraum<v:newlineChar/><tspan
+							x="6.97" dy="1.2em" class="st10">Verkehrssituation</tspan></text>			</g>
+			<g id="shape48-275" v:mID="48" v:groupContext="shape" transform="translate(520.157,0)">
+				<title>Rechteck.8</title>
+				<desc>Straßennetz</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="42.5197" cy="632.126" width="85.04" height="28.3465"/>
+				<g id="shadow48-276" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="617.953" width="85.0394" height="28.3465" class="st23"/>
+					<text x="18.92" y="635.13" class="st24" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Straßennetz</text>				</g>
+				<rect x="0" y="617.953" width="85.0394" height="28.3465" class="st25"/>
+				<text x="18.92" y="635.13" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Straßennetz</text>			</g>
+			<g id="shape49-283" v:mID="49" v:groupContext="shape" transform="translate(328.819,-63.7795)">
+				<title>Rechteck.9</title>
+				<desc>Fahrzustands-erfassung (Odometrie)</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="42.5197" cy="625.04" width="85.04" height="42.5197"/>
+				<g id="shadow49-284" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="603.78" width="85.0394" height="42.5197" class="st23"/>
+					<text x="14.47" y="616.04" class="st24" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Fahrzustands-<tspan
+								x="23.36" dy="1.2em" class="st10">erfassung<v:newlineChar/></tspan><tspan x="17.81" dy="1.2em"
+								class="st10">(</tspan>Odometrie)</text>				</g>
+				<rect x="0" y="603.78" width="85.0394" height="42.5197" class="st25"/>
+				<text x="14.47" y="616.04" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Fahrzustands-<tspan
+							x="23.36" dy="1.2em" class="st10">erfassung<v:newlineChar/></tspan><tspan x="17.81" dy="1.2em"
+							class="st10">(</tspan>Odometrie)</text>			</g>
+			<g id="shape50-295" v:mID="50" v:groupContext="shape" transform="translate(136.361,-28.3465)">
+				<title>DO.Block.162</title>
+				<desc>Umfeld- erfassung (Perzeption)</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="42.5197" cy="610.867" width="85.04" height="70.8661"/>
+				<g id="shadow50-296" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,-1.97279,0.345598)" class="st1">
+					<rect x="0" y="575.433" width="85.0394" height="70.8661" class="st23"/>
+					<text x="25.58" y="601.87" class="st24" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Umfeld-<v:newlineChar/><tspan
+								x="23.36" dy="1.2em" class="st10">erfassung<v:newlineChar/></tspan><tspan x="17.81" dy="1.2em"
+								class="st10">(</tspan>Perzeption)</text>				</g>
+				<rect x="0" y="575.433" width="85.0394" height="70.8661" class="st25"/>
+				<text x="25.58" y="601.87" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Umfeld-<v:newlineChar/><tspan
+							x="23.36" dy="1.2em" class="st10">erfassung<v:newlineChar/></tspan><tspan x="17.81" dy="1.2em"
+							class="st10">(</tspan>Perzeption)</text>			</g>
+			<g id="shape51-307" v:mID="51" v:groupContext="shape" v:layerMember="0" transform="translate(519.82,-77.9528)">
+				<title>DO.Verbindung.154</title>
+				<path d="M0 639.21 L-95.4 639.21" class="st11"/>
+			</g>
+			<g id="shape52-312" v:mID="52" v:groupContext="shape" v:layerMember="0" transform="translate(519.82,-35.4331)">
+				<title>DO.Verbindung.153</title>
+				<path d="M0 639.21 L-287.86 639.21" class="st11"/>
+			</g>
+			<g id="shape53-317" v:mID="53" v:groupContext="shape" v:layerMember="0" transform="translate(569.426,-70.8661)">
+				<title>DO.Verbindung.155</title>
+				<path d="M-7.09 646.3 L-7.09 649.91" class="st11"/>
+			</g>
+			<g id="shape54-322" v:mID="54" v:groupContext="shape" v:layerMember="0" transform="translate(520.157,-14.1732)">
+				<title>DO.Verbindung.156</title>
+				<path d="M0 646.3 L-341.28 646.3 L-341.28 642.69" class="st11"/>
+			</g>
+			<g id="shape55-327" v:mID="55" v:groupContext="shape" v:layerMember="0" transform="translate(171.496,-99.2126)">
+				<title>DO.Verbindung.157</title>
+				<path d="M7.09 646.3 L7.09 628.51" class="st11"/>
+			</g>
+			<g id="shape56-332" v:mID="56" v:groupContext="shape" v:layerMember="0" transform="translate(136.361,-63.7795)">
+				<title>DO.Verbindung.158</title>
+				<path d="M0 646.3 L-91.01 646.3 L-91.01 593.08" class="st11"/>
+			</g>
+			<g id="shape57-337" v:mID="57" v:groupContext="shape" v:layerMember="0" transform="translate(328.819,-77.9528)">
+				<title>DO.Verbindung.159</title>
+				<path d="M-10.2 639.21 L-10.56 639.21 L-96.86 639.21" class="st26"/>
+			</g>
+			<g id="shape58-345" v:mID="58" v:groupContext="shape" v:layerMember="0" transform="translate(555.422,-99.2126)">
+				<title>DO.Verbindung.160</title>
+				<path d="M6.98 636.1 L6.98 635.74 L7.19 600.17" class="st26"/>
+			</g>
+			<g id="shape59-352" v:mID="59" v:groupContext="shape" v:layerMember="0" transform="translate(364.252,-106.299)">
+				<title>DO.Verbindung.161</title>
+				<path d="M7.09 646.3 L7.09 635.6" class="st11"/>
+			</g>
+			<g id="shape60-357" v:mID="60" v:groupContext="shape" v:layerMember="0" transform="translate(186.378,-460.63)">
+				<title>DO.Verbindung.164</title>
+				<path d="M-6.38 646.3 L-7.27 664.1" class="st11"/>
+			</g>
+			<g id="shape61-362" v:mID="61" v:groupContext="shape" v:layerMember="0" transform="translate(52.4409,-474.803)">
+				<title>DO.Verbindung.165</title>
+				<path d="M-7.09 646.3 L-7.09 678.26" class="st11"/>
+			</g>
+			<g id="shape62-367" v:mID="62" v:groupContext="shape" v:layerMember="0" transform="translate(364.252,-466.299)">
+				<title>DO.Verbindung.166</title>
+				<path d="M7.09 646.3 L7.09 669.76" class="st11"/>
+			</g>
+		</g>
+	</g>
+</svg>

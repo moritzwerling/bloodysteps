@@ -1,0 +1,104 @@
+%%%%%%%%%%%%%%%%%%%% author.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample root file for your "contribution" to a contributed volume
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%% Springer %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% RECOMMENDED %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\documentclass[graybox]{svmult}
+\documentclass[deutsch]{svmult}
+\usepackage{import}
+% choose options for [] as required from the list
+% in the Reference Guide
+
+\usepackage{type1cm}        % activate if the above 3 fonts are
+                            % not available on your system
+%
+\usepackage{makeidx}         % allows index generation
+\usepackage{graphicx}        % standard LaTeX graphics tool
+                             % when including figure files
+\usepackage{transparent}
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+
+
+\usepackage{placeins} % for FloatBarrier
+
+\usepackage{newtxtext}       % 
+\usepackage{newtxmath}       % selects Times Roman as basic font
+\usepackage{mathtools} %matrix* environment which allows alignment specifier
+
+\usepackage{comment}
+\usepackage{capt-of} % side by side figures in a figure-env need captionof to generate captions
+
+
+% My Own Macros
+\newcommand{\refFig}[1]{\figurename~\ref{fig:#1}}
+\newcommand{\refEq}[1]{(\ref{eq:#1})}
+\newcommand{\sus}[1]{\protect\raisebox{-0.33ex}{\scriptsize #1}} %subscript index in text-mode
+
+% Symbols with Prime (subscript too low otherwise)
+\newcommand{\aXDPrime}{a_{x\mathrm{d}}\hspace{-0.8em}^\prime\hspace{0.52em}}
+\newcommand{\kappaDPrime}{\kappa_\mathrm{d}\hspace{-0.39em}^\prime\hspace{0.1em}}
+\newcommand{\deltaDPrime}{\delta_\mathrm{d}\hspace{-0.39em}^\prime\hspace{0.1em}}
+\newcommand{\tauXDPrime}{\tau_{x\mathrm{d}}\hspace{-0.8em}^\prime\hspace{0.52em}}
+
+
+\newcommand{\aXD}{a_{x\mathrm{d}}}
+\newcommand{\aXT}{a_{x,\mathrm{traj}}}
+\newcommand{\vXT}{v_{x,\mathrm{traj}}}
+
+
+\definecolor{light-gray}{gray}{0.7}
+
+
+\usepackage{pgfplots}
+\usepackage{tikz} 
+
+\newlength\figureheight 
+\newlength\figurewidth 
+\setlength\figureheight{6cm} 
+\setlength\figurewidth{16cm}
+
+%%%%%%%%%% End of our changes
+
+% see the list of further useful packages
+% in the Reference Guide
+
+\makeindex             % used for the subject index
+                       % please use the style svind.ist with
+                       % your makeindex program
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+\title*{Optimal Trajectory Planning}
+% Use \titlerunning{Short Title} for an abbreviated version of
+% your contribution title if the original one is too long
+\author{Moritz Werling}
+% Use \authorrunning{Short Title} for an abbreviated version of
+% your contribution title if the original one is too long
+\institute{Moritz Werling \at BMW Group,  München and Karlsruhe Institut of Technology,  Karlsruhe, \email{moritz.werling@bmw.de}}
+%
+% Use the package "url.sty" to avoid
+% problems with special characters
+% used in your e-mail or web address
+%
+\maketitle
+\input{Kapitel/00_Abstract.tex}
+\input{Kapitel/01_Einleitung.tex}
+%\input{Kapitel/02_3EM.tex}
+%\input{Kapitel/03_Modellierung.tex}
+%\input{Kapitel/04_Bahnfuehrung.tex}
+%\input{Kapitel/05_Fahrzeugfuehrung.tex}
+%\input{Kapitel/06_Fahrversuche.tex}
+
+
+\input{references}
+\printindex
+\end{document}

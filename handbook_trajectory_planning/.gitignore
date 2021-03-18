@@ -1,0 +1,16 @@
+*.aux
+*.log
+*.DS_Store
+/main_IntegratedLongitudinalLateral.synctex.gz
+/main_IntegratedLongitudinalLateral.pdf
+*-eps-converted-to.pdf
+*.bbl
+*.blg
+*.toc
+*.idx
+*.thm
+/setup_page.tex
+/Bilder/LongLatOverview/LongLat_Overview_tmp.txt
+/Bilder/DO_allg/DO_Selective_tmp.txt
+/Bilder/Zff/Zff_tmp.txt
+/Bilder/EpsIdent/EpsIdent_tmp.txt
