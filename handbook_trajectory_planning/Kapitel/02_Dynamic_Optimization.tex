@@ -25,13 +25,22 @@ we seek on the interval %t ∈[¬0,t_f ]
 the input trajectory u(t) that minimizes the cost functional J while steering (in the truest sense of the word) the system from its initial state $x_0$ to an end state $x(t_f )$, so that the equality and inequality constraints are fulfilled at all times. The optimal input trajectory is usually denoted by 
 %u^* (t) 
 and the resulting state trajectory by %x^* (t), 
-see Fig. \ref{fig:example_of_optimal_trajectory}. Notice that J comprises integral costs l and end point costs V and is not only a functional of the input u(t) but also of the states x(t). Furthermore, if the final time $t_f$ is not given, it then becomes part of the optimization, so that the length of the trajectory will also be optimized.
+see Fig. \ref{fig:dynamische_Optimierung_endvorgabe}. Notice that J comprises integral costs l and end point costs V and is not only a functional of the input u(t) but also of the states x(t). Furthermore, if the final time $t_f$ is not given, it then becomes part of the optimization, so that the length of the trajectory will also be optimized.
 
-\begin{figure}[htp!]
-\centering
-%\includegraphics{Bilder/04/2DOF.eps}
-\caption{Example of an optimal trajectory} %x^* (t) in R^2 with inequality constraint h≤0, a fixed final end time t_f, and end constraints g=0.}
-\label{fig:example_of_optimal_trajectory}
+\begin{figure}[h]
+\psfrag{1}[cr][cr][1.0]{$x_1$}
+\psfrag{2}[br][br][1.0]{$x_2$}
+\psfrag{x}[tc][tc][1.0]{$\bs{x}^\ast(t)$}
+\psfrag{0}[cr][cr][1.0]{$\bs{x}_0$}
+\psfrag{e}[tl][tl][1.0]{$t_f$}
+\psfrag{o}[tl][tl][1.0]{$0$}
+\psfrag{t}[bc][bc][1.0]{$t$}
+\psfrag{g}[bc][bc][1.0]{$\bs{g}=\bs 0$}
+\psfrag{h}[tc][tc][1.0]{$h>0$}
+	\centering
+  	\includegraphics[width=1.\textwidth,clip, trim = 0cm 0cm 0cm 0cm]{pics/2_Darstellung_dynamische_Optimierung_endvorgabe.eps}
+  	%\caption{Figure 1} %[Veranschaulichung der Lösung des Optimalsteuerungsproblems]{Veranschaulichung der Lösung $\bs{x}^\ast (t)\in \mathbb{R}^2$ eines Optimalsteuerungsproblems mit Endbedingung $\bs{g}=\bs 0$ und Ungleichungsbeschränkung $h\leq 0$ für $x_2$ sowie fester Endzeit $t_f$}
+    \label{fig:dynamische_Optimierung_endvorgabe}
 \end{figure}
 
 \subsection{Problem Formulation for DAS and Automated Driving}
