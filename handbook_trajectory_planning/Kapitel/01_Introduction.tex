@@ -1,4 +1,4 @@
-\section{Introduction}\label{S:Intro}
+\section{Introduction}\label{S:57.1}
 
 Advanced collision avoidance systems, lane keeping support, traffic jam assistance, and remote valet parking; they all operate on the actuators to relieve the drivers of the lateral and/or longitudinal vehicle control or make it safer for them. Well-defined tasks, such as staying in the middle of the marked lane while following the vehicle ahead, can be handled by a set-point controller \cite{handbuchFAS_Gayko2012}. And yet standard automated parking maneuvers already require a calculated trajectory\footnote{More precisely: a path, which does not have any time dependency} that must be adapted to the available parking space. As systems need to cover more and more situations, the number of degrees of freedom increase, which makes a trajectory parameterization very complex, especially when the vehicle must take numerous obstacles into account. This calls for a systematic approach based on mathematical optimization (as opposed to heuristic approaches such as potential field and elastic bands methods, see e.g. \cite{krogh1984generalized}, \cite{Brandt2008}, with their inherent limitations, cf. \cite{koren1991potential}.
 In the chapter at hand, we address real-time trajectory optimization\footnote{Notice, that in control theory the term trajectory planning usually implies that there is no feedback of the actual system states on the trajectory. The dynamical system is then only stabilized by a downstream trajectory tracking controller, which is not always advisable. We therefore use the term trajectory optimization instead to be independent of the utilized stabilization concept.}, a task that an automated vehicle faces when it travels through its environment, also referred to as motion planning in robotics \cite{latombe1990robot}; \cite{lavalle2006pa}. The focus will be on methods that engage with the longitudinal and lateral vehicle movement. However, the results can be transferred to novel warning systems that can also
@@ -7,13 +7,13 @@ Speaking most generally, a trajectory optimization method is sought that can han
 Using more technical terms, the method should be easy to implement, parameterize, adapt, scale well with the number of vehicle states and the length of the optimization horizon, incorporate nonlinear, high fidelity vehicle models, combine the lateral and longitudinal motion, be complete \footnote{A complete algorithm always finds the solution if it exists.}, allow for both grid maps and object lists representations (with predicted future poses) of the obstacles, be numerically stable, and transparent in its convergence behavior (if applicable). Also, the calculation effort must be low to allow for short optimization cycles on (low performance) electronic control units so that the vehicle can quickly react to sudden changes in the environment.
 Unfortunately, there is no such single method that has all these properties. And, most likely, there will never be one. However, different optimization methods can be combined to get as close as possible to the above requirements. The next section therefore gives a closer look into the basic principles of trajectory optimization and their application.
 
-\section{Dynamic Optimization}\label{DO}
+\section{Dynamic Optimization}\label{S:57.2}
 
 When engineers speak about optimization, they usually refer to static optimization, in which the optimization variables  $\bs{p}$  are finite, also called parameters (e.g., finding the most efficient operating point of an engine). Then optimal refers to some well-defined optimization criterion, usually the minimization of a cost function $J(\bs{p})$ (e.g., fuel consumption per hour). 
 Trajectory optimization is different in that the optimization variables are functions $\bs{x}(t)$ of an independent variable $t$, usually time. It is also called dynamic or infinite-dimensional optimization. Evaluating $\bs{x}(t)$ therefore requires a cost functional (a “function of a function”), which quantifies the “quality” of the trajectory $\bs{x}(t)$ by a scalar value. 
 Due to the vehicular focus, a special case will be considered, one that requires the trajectory $\bs{x}(t)$ to be consistent with some dynamical system model which has an input u. Without such model, the optimization cannot incorporate the inherent properties and physical limitations of the vehicle. This special case of dynamic optimization is called an optimal control problem (e.g., \cite{Lewis_OC}).
 
-\subsection{Optimal Control Problem}
+\subsection{Optimal Control Problem}\label{S:57.2.1}
 A fairly general formulation of the optimal control problem (OCP) reads:
 
 Minimize the cost functional
@@ -50,16 +50,16 @@ see Fig. \ref{fig:dynamische_Optimierung_endvorgabe}. Notice that $J$ comprises 
     \label{fig:dynamische_Optimierung_endvorgabe}
 \end{figure}
 
-\subsection{Problem Formulation for DAS and Automated Driving}
-Coming back to the automotive application, equation \eqref{equ:optimalsteuerungsproblem} of the previous section describes the dynamics of the vehicle. This state space model also includes the planar motion, either relative to some reference such as the lane center, see Sect. \ref{sec:example_application_ALC}, or relative to a stationary origin, see Sect. TODO 57.3.3.4. Undesired vehicle motion such as deviations from the lane center, detours, dangerous vehicle states (e.g., large slip angles), or uncomfortable jerks, e.g., caused by hectic steering actions will be penalized in the cost functional (1). The free space prediction between the generally moving obstacles can be described by the inequality constraints (4). And the end constraints (3) can be utilized to require that the optimized vehicle trajectory will be aligned to the road at the end of the optimization interval. As will be explained in Sect. 57.5, this final state plays an important role for the stability of the “replanning” algorithm, therefore special costs 
+\subsection{Problem Formulation for DAS and Automated Driving}\label{S:57.2.2}
+Coming back to the automotive application, equation \eqref{equ:optimalsteuerungsproblem} of the previous section describes the dynamics of the vehicle. This state space model also includes the planar motion, either relative to some reference such as the lane center, see Sect. \ref{S:57.3.1.2}, or relative to a stationary origin, see Sect. \ref{S:57.3.3.4}. Undesired vehicle motion such as deviations from the lane center, detours, dangerous vehicle states (e.g., large slip angles), or uncomfortable jerks, e.g., caused by hectic steering actions will be penalized in the cost functional (1). The free space prediction between the generally moving obstacles can be described by the inequality constraints (4). And the end constraints (3) can be utilized to require that the optimized vehicle trajectory will be aligned to the road at the end of the optimization interval. As will be explained in Sect. \ref{S:57.5}, this final state plays an important role for the stability of the “replanning” algorithm, therefore special costs 
 $V(\bs{x}(t_f), t_f)$ can be introduced in (1). 
 
-\subsection{Solving the Optimal Control Problem}
+\section{Solving the Optimal Control Problem}\label{S:57.3}
 All known approaches to the OCP can be assigned to one of the following three principles, see e.g. \cite{diehl_fast_multipleshooting}.
-\subsubsection{Approach I: Calculus of Variations}
-The classical approach to the OCP is \textit{calculus of variations}, which delivers valuable insight in the solution. 
+\subsection{Approach I: Calculus of Variations}\label{S:57.3.1}
+The classical approach to the OCP is \textit{calculus of variatins}, which delivers valuable insight in the solution. 
 
-\textbf{Theoretical Background: Hamilton Equations}
+\subsubsection{Theoretical Background: Hamilton Equations}\label{S:57.3.1.1}
 
 Static optimization problems can be tackled by \textit{differential calculus}. It is well known that the first derivative of a function $J(\bs p)$  is equal to zero at a minimum (or any other stationary point). For multivariate problems we can write $\nabla\!J(\bs x) = \bs 0$
 which leads to a set of (algebraic) equations that the optimum 
@@ -101,9 +101,9 @@ so that
 \begin{align}
 \bs x(t_f) = \bs x_f \label{equ:fester_endpunkt}
 \end{align}
-Either way, this results in a boundary value problem, which in general needs to be solved numerically. This so-called indirect approach is very accurate but not as flexible as the direct approach that we will introduce in Sect. 57.3.2. However, for simple OCPs the resultant boundary value problem can be solved analytically, leading to fast computable optimal trajectory primitives with broad applications (see Sect. 57.4).
+Either way, this results in a boundary value problem, which in general needs to be solved numerically. This so-called indirect approach is very accurate but not as flexible as the direct approach that we will introduce in Sect. \ref{S:57.3.2}. However, for simple OCPs the resultant boundary value problem can be solved analytically, leading to fast computable optimal trajectory primitives with broad applications (see Sect. \ref{S:57.4}).
 
-\subsubsection{Example Application: Automated Lane Change}\label{sec:example_application_ALC}
+\subsubsection{Example Application: Automated Lane Change}\label{S:57.3.1.2}
 
 \begin{figure}[h]
 \centering
@@ -121,7 +121,7 @@ Either way, this results in a boundary value problem, which in general needs to 
     \label{fig:polytraj}
 \end{figure}
 
-\subsubsection{Further Readings}
+\subsubsection{Further Readings}\label{S:57.3.1.3}
 
 
 \begin{figure}[ht]
@@ -140,12 +140,13 @@ Either way, this results in a boundary value problem, which in general needs to 
 
 
 
-\subsubsection{Approach II: Direct Optimization Techniques}
+\subsection{Approach II: Direct Optimization Techniques}\label{S:57.3.2}
+\subsection{	Theoretical Background: Finite Parameterization Approximation}\label{S:57.3.2.1}
 
 
 Finite parameterization of the input and sampling of the constraints
 
-\subsubsection{Example Application: Emergency Obstacle Avoidance}
+\subsubsection{Example Application: Emergency Obstacle Avoidance}\label{S:57.3.2.2}
 
 
 \begin{figure}	
@@ -167,20 +168,23 @@ Finite parameterization of the input and sampling of the constraints
 
 Automatic obstacle avoidance with combined braking and steering at the friction limit; the safety margin d"safety"  is shown as a grey circle around the stationary pedestrian depicted as a black dot; the lane boundaries given by d"max"  are drawn as grey dotted lines.
 
-\subsubsection{Further Readings}
+\subsubsection{Further Readings}\label{S:57.3.2.3}
 
-\subsubsection{Approach III: Dynamic Programming}
+\subsubsection{Approach III: Dynamic Programming}\label{S:57.3.3}
+\subsubsection{Theroetical Backgorund: Bellman’s Principle of Optimality}\label{S:57.3.3.1}
 
-\subsubsection{Example Application: Optimal Overtaking}
+\subsubsection{Value Iteration}\label{57.3.3.2}
 
-\subsubsection{Further Readings}
+\subsubsection{Example Application: Optimal Overtaking}\label{S:57.3.3.3}
+
+\subsubsection{Further Readings}\label{S:57.3.3.4}
 
 
-\section{Comparison of the Approaches}
+\section{Comparison of the Approaches}\label{S:57.4}
 
-\section{Receding Horizon Optimization}\label{S:xx}
+\section{Receding Horizon Optimization}\label{S:57.5}
 
-\section{Conclusion}\label{S:yy}
+\section{Conclusion}\label{S:57.6}
 
 \newpage
 [Finite parameterization of the input]
@@ -245,20 +249,6 @@ Automatic obstacle avoidance with combined braking and steering at the friction 
     \label{fig:fussgaenger_draufsicht}
 \end{figure}
 	
-%\begin{figure}	
-%\centering
-	%\def\xlabel{$t$ in $\unit{s}$}
-	%\def\ylabelA{$v$ in $\unitfrac{m}{s}$}	
-	%\def\ylabelB{$\delta$ in $\unit{rad}$}	
-	%\def\ylabelC{$u_1$ in $\unitfrac{rad}{s}$}
-	%\def\ylabelD{$a_t$ in $\unitfrac{m}{s^2}$}	
-	%\def\ylabelE{$a_n$ in $\unitfrac{m}{s^2}$}
-	%\input{../../ha/bilder/5_AuswertungSingleshooting_signals.tex}
-	%\renewcommand{\matlabtextA}{\normalsize }
-  %\includegraphics[width=1.0 \linewidth,trim = 0cm 0cm 0cm 0cm]{5_AuswertungSingleshooting_signals.eps}
-    %\caption[Signalverläufe bei kombiniertem Bremsen und Ausweichen]{Signalverläufe zu Abb.\,\ref{fig:fussgaenger_draufsicht} mit optimaler Steuerung $u_1$, Lenkwinkel $\delta$,  Quer- und Längsbeschleunigung $a_t, a_n$ sowie Geschwindigkeit $v$; Die vertikalen Linien markieren die Zeitpunkte der Draufsichten, die horizontalen gestrichelten Linien die Nebenbedingungen.}
-    %\label{fig:fussgaenger_draufsicht_signale}
-	%\end{figure}
 	
 	\newpage
 	[Bellman's principle of optimality]
