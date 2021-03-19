@@ -105,12 +105,67 @@ Either way, this results in a boundary value problem, which in general needs to 
 
 \subsubsection{Example Application: Automated Lane Change}\label{sec:example_application_ALC}
 
+\begin{figure}[h]
+\centering
+	\psfrag{t}[bc][bc]{$s(t)$}
+	\psfrag{1}[cr][cr]{$x_1$}
+	\psfrag{x}[cc][cc]{$\bs x^\ast$}
+	\psfrag{0}[ct][ct]{$\bs x_0$}
+	\psfrag{a}[cb][cb]{\scriptsize (a)}
+	\psfrag{b}[ct][ct]{\scriptsize (b)}
+	\psfrag{c}[ct][ct]{\scriptsize (c)}
+	\psfrag{e}[bc][bc]{$t_f^\ast$}
+	\centering
+  	\includegraphics[width=.8\textwidth,clip, trim = 0cm 0cm 0cm 0cm]{6_Polytraj.eps}
+  \caption{Optimal lane changes for (a) a given end time and end state; (b) a given end time and a free end state; (c) a free end time and a free end state}
+    \label{fig:polytraj}
+\end{figure}
+
 \subsubsection{Further Readings}
+
+
+\begin{figure}[ht]
+\centering
+\input{pics/6_Hamilton_constraint}
+\renewcommand{\matlabtextA}{\normalsize }
+	\def\ylabelV{$x_2$ in $\unitfrac{m}{s}$}
+	\def\ylabelA{$x_3$ in $\unitfrac{m}{s^2}$}
+	\def\xlabelT{$t$ in $\unit{s}$}
+	\def\xlabelX{$x_1$ in $\unit{m}$}
+	\centering
+  	\includegraphics[width=1.\textwidth,clip, trim = 0cm 0cm 0cm 0cm]{6_Hamilton_constraint.eps}
+  \caption{Minimal jerk-square minimal time stopping trajectories with acceleration constraint with $a\geq -10 \unitfrac{m}{s^2}$}
+    \label{fig:poly_mit_unb}
+\end{figure}
+
 
 
 \subsubsection{Approach II: Direct Optimization Techniques}
 
+
+Finite parameterization of the input and sampling of the constraints
+
 \subsubsection{Example Application: Emergency Obstacle Avoidance}
+
+
+\begin{figure}	
+\centering
+	\def\xlabel{$t$ in $\unit{s}$}
+	\def\ylabelA{$v$ in $\unitfrac{m}{s}$}	
+	\def\ylabelB{$\delta$ in $\unit{rad}$}	
+	\def\ylabelC{$u_1$ in $\unitfrac{rad}{s}$}
+	\def\ylabelD{$a_t$ in $\unitfrac{m}{s^2}$}	
+	\def\ylabelE{$a_n$ in $\unitfrac{m}{s^2}$}
+	\input{pics/5_AuswertungSingleshooting_signals.tex}
+	\renewcommand{\matlabtextA}{\normalsize }
+  \includegraphics[width=1.0 \linewidth,trim = 0cm 0cm 0cm 0cm]{5_AuswertungSingleshooting_signals.eps}
+    \caption[Signalverläufe bei kombiniertem Bremsen und Ausweichen]{Signalverläufe zu Abb.\,\ref{fig:fussgaenger_draufsicht} mit optimaler Steuerung $u_1$, Lenkwinkel $\delta$,  Quer- und Längsbeschleunigung $a_t, a_n$ sowie Geschwindigkeit $v$; Die vertikalen Linien markieren die Zeitpunkte der Draufsichten, die horizontalen gestrichelten Linien die Nebenbedingungen \cite{werling2012cdc}.}
+    \label{fig:fussgaenger_draufsicht_signale}
+\end{figure}
+	
+
+
+Automatic obstacle avoidance with combined braking and steering at the friction limit; the safety margin d"safety"  is shown as a grey circle around the stationary pedestrian depicted as a black dot; the lane boundaries given by d"max"  are drawn as grey dotted lines.
 
 \subsubsection{Further Readings}
 
@@ -126,6 +181,237 @@ Either way, this results in a boundary value problem, which in general needs to 
 \section{Receding Horizon Optimization}\label{S:xx}
 
 \section{Conclusion}\label{S:yy}
+
+\newpage
+[Finite parameterization of the input]
+\begin{figure}[h]
+\centering
+	\psfrag{0}[cr][cr][1.0]{$\bs{x}_0$}
+	\psfrag{1}[cb][cb][1.0]{$\bs{u}_0$}
+	\psfrag{2}[cb][cb][1.0]{$\bs{u}_1$}
+	\psfrag{3}[cb][cb][1.0]{$\bs{u}_2$}
+	\psfrag{f}[cl][cl][1.0]{$\bs{x}(t_f)$}
+	\psfrag{7}[cl][cl][1.0]{$g=0$}
+	\psfrag{t}[ct][ct][1.0]{$t$}
+	\psfrag{a}[ct][ct][1.0]{$0$}
+	\psfrag{b}[ct][ct][1.0]{$t_f$}
+	\psfrag{x}[cb][cb][1.0]{$\bs{x}(t) = \bs{\phi}(t,\bar{\bs{u}})$}
+	\psfrag{u}[cb][cb][1.0]{$\bs{u}(t) = \bs{\psi}(t,\bar{\bs{u}})$}
+ %\includegraphics[width=0.5\textwidth,clip, trim = 0cm 0cm 0cm 0cm]{2_Darstellung_dynamische_Optimierung.eps}
+%\hspace{.5cm}
+ \includegraphics[width=1.0\textwidth,clip, trim = 0cm 0cm 0cm 0cm]{2_Darstellung_endliche_Parametrierung.eps}
+	%\caption[Endliche Parametrierung]{Endliche Parametrierung mittels abschnittsweise konstanter Eingänge} 
+	\label{fig:parametrisierte_nmpc}
+\end{figure}
+%
+
+\newpage
+ [Physical acceleration limits] \hspace{1.8cm} [System states]
+\begin{figure}[h]%
+\centering
+\begin{minipage}{0.45\textwidth}%
+    \psfrag{1}[rb][rb][1.0]{$a_t$}
+    \psfrag{2}[cb][cb][1.0]{$a_n$}
+    \psfrag{3}[lc][lc][1.0]{$c_t$}
+    \psfrag{4}[ct][ct][1.0]{$c_n$}
+    \includegraphics[width=1.0\textwidth,clip, trim = 0cm 0cm 0cm 0cm]{5_KammscherKreis}
+    %\caption[Elliptische Näherung der zulässigen Fahrzeugbeschleunigung]{Elliptische Näherung der zulässigen Gesamtfahrzeugbeschleunigung}
+    \label{fig:kammscherKreis}
+\end{minipage}
+\qquad
+\begin{minipage}{0.45\textwidth}%
+\psfrag{1}[tc][tc][1.0]{$s_r$}
+    \psfrag{2}[rb][rb][1.0]{$\kappa_r(s_r)$}
+    \psfrag{3}[lb][lb][1.0]{$d_r$}
+    \psfrag{4}[rb][rb][1.0]{$[x_1, x_2]$}
+    \psfrag{5}[lt][lt][1.0]{$v$}
+    \psfrag{6}[c][c][1.0]{$\theta$}
+    \psfrag{7}[lt][lt][1.0]{$\theta_r$}
+    \includegraphics[width=1.0\textwidth,clip, trim = 1.5cm 0cm 0cm 0cm]{5_vehicleAndReferenceCurveStates.eps}
+    %\caption[Fahrzeugdynamik entlang einer Referenzkurve]{Systemzustände des vereinfachten Fahrzeugmodells entlang einer Referenzkurve}
+    \label{fig:systemStates}
+\end{minipage}%
+\end{figure}%
+
+\newpage
+[Combined braking and steering]
+\begin{figure}[h]
+	\centering
+	\input{pics/5_AuswertungSingleshooting_szene}
+	\renewcommand{\matlabtextA}{\scriptsize}
+	\includegraphics[width=1.0 \linewidth,trim = 0cm 0cm 0cm 0cm]{5_AuswertungSingleshooting_szene.eps}		
+	%def\xlabel{$t$ in \unit{s}}
+%    \caption[Unfallvermeidung durch Bremsen und Ausweichen]{Ergebnis des Optimalsteuerungsproblems zur Vermeidung eines Fußgängerunfalls durch kombiniertes Bremsen und Ausweichen unter Ausnutzung des Kamm'schen Kreises.}
+    \label{fig:fussgaenger_draufsicht}
+\end{figure}
+	
+%\begin{figure}	
+%\centering
+	%\def\xlabel{$t$ in $\unit{s}$}
+	%\def\ylabelA{$v$ in $\unitfrac{m}{s}$}	
+	%\def\ylabelB{$\delta$ in $\unit{rad}$}	
+	%\def\ylabelC{$u_1$ in $\unitfrac{rad}{s}$}
+	%\def\ylabelD{$a_t$ in $\unitfrac{m}{s^2}$}	
+	%\def\ylabelE{$a_n$ in $\unitfrac{m}{s^2}$}
+	%\input{../../ha/bilder/5_AuswertungSingleshooting_signals.tex}
+	%\renewcommand{\matlabtextA}{\normalsize }
+  %\includegraphics[width=1.0 \linewidth,trim = 0cm 0cm 0cm 0cm]{5_AuswertungSingleshooting_signals.eps}
+    %\caption[Signalverläufe bei kombiniertem Bremsen und Ausweichen]{Signalverläufe zu Abb.\,\ref{fig:fussgaenger_draufsicht} mit optimaler Steuerung $u_1$, Lenkwinkel $\delta$,  Quer- und Längsbeschleunigung $a_t, a_n$ sowie Geschwindigkeit $v$; Die vertikalen Linien markieren die Zeitpunkte der Draufsichten, die horizontalen gestrichelten Linien die Nebenbedingungen.}
+    %\label{fig:fussgaenger_draufsicht_signale}
+	%\end{figure}
+	
+	\newpage
+	[Bellman's principle of optimality]
+%\section*{Dynamic Programming}
+\begin{figure}[h]
+	\psfrag{0}[cr][cr][1.0]{$\bs x_0$}
+	\psfrag{f}[cl][cl][1.0]{$\bs x_f$}
+	\psfrag{t}[ct][ct][1.0]{$t$}
+	\psfrag{a}[ct][ct][1.0]{$0$}
+	\psfrag{b}[ct][ct][1.0]{$t_f$}
+	\psfrag{e}[lb][lb][1.0]{(a)}
+	\psfrag{y}[tr][tr][1.0]{$\bs x^\ast(t)$}
+	\psfrag{z}[br][br][1.0]{(b)}
+	\psfrag{n}[tl][tl][1.0]{(c)}
+	\psfrag{x}[cb][cb][1.0]{$\bs x^\ast(t_1)$}
+	\psfrag{g}[ct][ct][1.0]{$t_1$}
+	\centering
+ \includegraphics[width=1.0\textwidth,clip, trim = 0cm 0cm 0cm 0cm]{7_Darstellung_Bellmanprinzip.eps}
+	%\caption{Zur Verdeutlichung des Bellman'schen Optimalitätsprinzips} 
+	\label{fig:Darstellung_Bellmanprinzip}
+\end{figure} 
+
+\newpage 
+[Discrete decision process]
+\begin{figure}[h]
+	\psfrag{0}[tc][tc][1.0]{0}
+	\psfrag{1}[tc][tc][1.0]{1}
+	\psfrag{2}[tc][tc][1.0]{2}
+	\psfrag{3}[tc][tc][1.0]{3}
+	\psfrag{4}[tc][tc][1.0]{$k_f$}
+	\psfrag{5}[tc][tc][1.0]{$x(0) = x_0$}
+	\psfrag{6}[bc][bc][1.0]{$x(k_f) = x_f$}
+	\psfrag{t}[bc][bc][1.0]{$k$}
+	\psfrag{o}[bl][bl][1.0]{$x^\ast(k)$}
+	\psfrag{x}[bl][bl][1.0]{$x$}
+	\psfrag{u}[tr][tr][1.0]{$u^\ast(0)$}
+	\psfrag{g}[b][b][1.0]{$8$}
+	\psfrag{a}[b][b][1.0]{$6$}
+	\psfrag{b}[b][b][1.0]{$5$}
+	\psfrag{c}[b][b][1.0]{$8$}
+	\psfrag{s}[b][b][1.0]{$10$}
+	\psfrag{v}[b][b][1.0]{$9$}
+	\psfrag{d}[b][b][.7]{$2$}
+	\psfrag{e}[b][b][.7]{$4$}
+	\psfrag{f}[b][b][.7]{$1$}
+	\psfrag{h}[b][b][.7]{$6$}
+	\psfrag{i}[b][b][.7]{$5$}
+	\psfrag{j}[b][b][.7]{$8$}
+	\psfrag{m}[tr][tr][1.0]{$\min$}
+	\psfrag{k}[b][b][.7]{$3$}
+	\psfrag{l}[b][b][.7]{$5$}
+	\psfrag{n}[b][b][.7]{$6$}
+	\psfrag{p}[br][br][.7]{$1$}
+	\psfrag{q}[br][br][.7]{$4$}
+	\psfrag{r}[b][b][.7]{$3$}
+	\psfrag{z}[b][b][1.0]{$11$}
+	\psfrag{y}[tr][tr][1.0]{$\argmin{}$}
+	\centering
+  	\includegraphics[width=0.98\textwidth,clip, trim = 0cm 0cm 0cm 0cm]{7_dynamische_programmierung_veranschaulichung.eps}
+	%\caption[Anwendungsbeispiel der Dynamischen Programmierung]{Anwendung der Dynamischen Programmierung auf ein kombinatorisches Problem}
+	\label{fig:dynamische_programmierung_veranschaulichung}
+\end{figure} 
+
+%\renewcommand{\algorithmiccomment}[1]{// #1}
+%\floatname{algorithm}{Algorithmus}
+
+\newpage
+[Value iteration]
+\begin{algorithm}[h]
+ %\caption{Rückwärtsgerichtete Wert-Iteration}
+ \begin{algorithmic}[1]
+	%\FORALL{$\bs x \in \mathcal X(k_f-1)$}
+%\STATE $G(\bs x) \leftarrow \infty$
+%\ENDFOR
+	\STATE $G^\ast(\bs x_f,k_f) \leftarrow 0$
+	\FOR {$k=k_f-1$ \TO $0$}
+		\FORALL{$\bs x \in \mathcal X$}
+			\STATE $G^\ast(\bs x(k),k) = \underset{\bs u(k)}{\min}\{\,l(\bs x(k), \bs u(k), k) + G^\ast(\bs f(\bs x(k), \bs u(k), k),k+1)\,\}$
+		\ENDFOR
+	\ENDFOR
+ \end{algorithmic}
+ \label{alg:valueiteration}
+ \end{algorithm}
+
+\newpage 
+[Dynamic programming example]
+\begin{figure}[h]
+	\psfrag{0}[l][l][.7]{0}
+	\psfrag{O}[t][t][.7]{0}
+	\psfrag{1}[t][t][.7]{1}
+	\psfrag{2}[t][t][.7]{2}
+	\psfrag{3}[t][t][.7]{3}
+	\psfrag{4}[t][t][.7]{4}
+	\psfrag{5}[t][t][.7]{5}
+	\psfrag{6}[t][t][.7]{6}
+	\psfrag{7}[t][t][.7]{7}
+	\psfrag{8}[t][t][.7]{8}
+	\psfrag{9}[t][t][.7]{9}
+	\psfrag{a}[t][t][.7]{10}
+	\psfrag{t}[t][t][1.0]{$k$}
+	\psfrag{u}[r][r][1.0]{$u$}
+	\psfrag{v}[r][r][1.0]{$v_\text{lat}$}
+	\psfrag{d}[r][r][1.0]{$d$}
+	\centering
+	\centering
+  	\includegraphics[width=0.98\textwidth,clip, trim = 0cm 0cm 0cm 0cm]{dp_example.eps}
+	%\caption[Anwendungsbeispiel der Dynamischen Programmierung]{Anwendung der Dynamischen Programmierung auf ein kombinatorisches Problem}
+	\label{fig:dynamische_programmierung_veranschaulichung}
+\end{figure} 
+
+
+
+
+\newpage
+[State lattice for structured environments]
+\begin{figure}[h]
+\centering
+  	\includegraphics[width=.8\textwidth,clip, trim = 0cm 0cm 0cm 0cm]{7_Lattice_strasse.eps}
+	%\caption[Zustandsgitter für eine strukturierte Umgebung]{Zustandsgitter für eine strukturierte Umgebung wie Straßen; Steuermenge in Schwarz; Sollen dynamische Hindernisse berücksichtigt werden, muss die Zeit $t$ explizit berücksichtigt werden, sodass sich Wert-Iterationen zur Optimierung anbieten \cite{zieg09spatemp, mcnaughton}; Darstellung basierend auf \cite{McNaughton2011diss}}
+	\label{fig:lattice_strasse}
+\end{figure}
+
+\newpage
+[State lattice for unstructured environments]
+\begin{figure}[h]
+\centering
+  	\includegraphics[width=.75\textwidth,clip, trim = 0cm 0cm 0cm 0cm]{7_Lattice.eps}
+	%\caption[Wiederkehrendes Sampling im Zustandsraum]{Wiederkehrendes Sampling im Zustandsraum führt zu einem Zustandsgitter, hier für die Vorwärtsfahrt in einer unstrukturierten Umgebung wie auf Parkplätzen; es werden alle in drei Expansionsschritten erreichbaren Zustände in Schwarz dargestellt; Darstellung basierend auf \cite{mcnaughton}}
+	\label{fig:lattice}
+\end{figure}
+
+\newpage
+%\section*{Receding Horizon Optimization}
+[Receding horizon optimization]
+\begin{figure}[h]
+\centering
+    \psfrag{x}[lb][lb][1.]{$\bs x(t)$}
+		\psfrag{s}[lb][lb][1.]{$\bar{\bs x}^\ast(\tau)$}
+		\psfrag{u}[lt][lt][1.]{$\bs u(t)$}
+		\psfrag{w}[lt][lt][1.]{$\bar{\bs u}^\ast(\tau)$}
+		\psfrag{V}[tr][tr][1.]{past}
+		\psfrag{Z}[tl][tl][1.]{future}
+		\psfrag{D}[tc][tc][1.]{$\Delta t$}
+		\psfrag{T}[tc][tc][1.]{receding horizon $T$}
+		\psfrag{t}[tc][tc][1.]{$t,\tau$}
+		\psfrag{k}[tc][tc][1.]{$t_k$}
+		\psfrag{1}[tc][tc][1.]{$t_{k-1}$}
+		\psfrag{2}[tc][tc][1.]{$t_{k-2}$}
+		\psfrag{3}[tc][tc][1.]{$t_{k-3}$}
+	\includegraphics[width=1.\textwidth,clip, trim = 0cm 0cm 0cm 0cm]{2_mpc_grundidee_u_x.eps}
+	%\caption[Grundidee der modellprädiktiven Regelung]{Grundidee der modellprädiktiven Regelung; dick, schwarz: intern zum Zeitpunkt $t_k$ optimierte Zustands- und Stellgrößenverläufen; dünn, schwarz:  intern optimierte Verläufe der Vergangenheit; dick, grau: sich tatsächlich ergebende Verläufe des geschlossenen Regelkreises}
+	\label{fig:2_mpc_grundidee_u_x}
+\end{figure}
 
 
 
