@@ -1,0 +1,95 @@
+\select@language {ngerman}
+\select@language {ngerman}
+\addvspace {13\p@ }
+\contentsline {figure}{\numberline {Abb. 1.1}{\ignorespaces Weiterentwicklungstendenzen aus Sicht aktiver Fahreingriffe}}{4}{figure.caption.3}
+\contentsline {figure}{\numberline {Abb. 1.2}{\ignorespaces Gliederung der Arbeit dargestellt am modellpr\IeC {\"a}diktiven Regelkreis\relax }}{7}{figure.caption.4}
+\addvspace {13\p@ }
+\contentsline {figure}{\numberline {Abb. 2.1}{\ignorespaces Modifiziertes Drei-Ebenen-Modell}}{11}{figure.caption.5}
+\contentsline {figure}{\numberline {Abb. 2.2}{\ignorespaces Arbeitsweise einer Trajektorienplanung mit Folgeregelung\relax }}{14}{figure.caption.6}
+\contentsline {figure}{\numberline {Abb. 2.3}{\ignorespaces Signalverl\IeC {\"a}ufe bei der Trajektorienplanung}}{15}{figure.caption.7}
+\contentsline {figure}{\numberline {Abb. 2.4}{\ignorespaces Arbeitsweise der Optimalsteuerung}}{16}{figure.caption.8}
+\contentsline {figure}{\numberline {Abb. 2.5}{\ignorespaces Signalverl\IeC {\"a}ufe der Optimalsteuerung}}{16}{figure.caption.9}
+\contentsline {figure}{\numberline {Abb. 2.6}{\ignorespaces Arbeitsweise der modellpr\IeC {\"a}diktiven Regelung}}{17}{figure.caption.10}
+\contentsline {figure}{\numberline {Abb. 2.7}{\ignorespaces Signalverl\IeC {\"a}ufe der modellpr\IeC {\"a}diktiven Regelung}}{17}{figure.caption.11}
+\contentsline {figure}{\numberline {Abb. 2.8}{\ignorespaces Lenks\IeC {\"a}ulen-basiertes und Zahnstangen-basiertes EPS-System}}{19}{figure.caption.12}
+\contentsline {figure}{\numberline {Abb. 2.9}{\ignorespaces Herk\IeC {\"o}mmliches Regelungsprinzip der elektrischen Servolenkung}}{20}{figure.caption.13}
+\contentsline {figure}{\numberline {Abb. 2.10}{\ignorespaces Moderne Handmomentregelung der elektrischen Servolenkung}}{21}{figure.caption.14}
+\contentsline {figure}{\numberline {Abb. 2.11}{\ignorespaces Kaskadierter Lenkwinkelregelkreis}}{22}{figure.caption.15}
+\contentsline {figure}{\numberline {Abb. 2.12}{\ignorespaces Elektrohydraulisches Bremssystem}}{24}{figure.caption.16}
+\contentsline {figure}{\numberline {Abb. 2.13}{\ignorespaces Vereinfachte Darstellung eines Saugeinspritzer-Motors}}{25}{figure.caption.17}
+\contentsline {figure}{\numberline {Abb. 2.14}{\ignorespaces Drehmomentorientierte Regelung eines Saugmotors}}{26}{figure.caption.18}
+\contentsline {figure}{\numberline {Abb. 2.15}{\ignorespaces Qualitativer Verlauf der Schaltkennlinien}}{28}{figure.caption.19}
+\contentsline {figure}{\numberline {Abb. 2.16}{\ignorespaces Funktionsweise eines Beschleunigungssensors}}{30}{figure.caption.20}
+\contentsline {figure}{\numberline {Abb. 2.17}{\ignorespaces Funktionsweise eines Drehratensensors}}{30}{figure.caption.21}
+\contentsline {figure}{\numberline {Abb. 2.18}{\ignorespaces Bewegungskinematik des Fahrzeugs}}{32}{figure.caption.22}
+\contentsline {figure}{\numberline {Abb. 2.19}{\ignorespaces Mit Drift verbundene ortsfeste Koordinaten}}{35}{figure.caption.23}
+\contentsline {figure}{\numberline {Abb. 2.20}{\ignorespaces Einzelmodule in der Mehrobjektverfolgung}}{37}{figure.caption.24}
+\contentsline {figure}{\numberline {Abb. 2.21}{\ignorespaces Repr\IeC {\"a}sentationsformen des Fahrzeugumfelds}}{39}{figure.caption.25}
+\contentsline {figure}{\numberline {Abb. 2.22}{\ignorespaces Zustandsmenge einer unvermeidlichen Kollision durch Bremsen}}{42}{figure.caption.26}
+\contentsline {figure}{\numberline {Abb. 2.23}{\ignorespaces Erreichbare Schwerpunktpositionen}}{43}{figure.caption.27}
+\addvspace {13\p@ }
+\contentsline {figure}{\numberline {Abb. 3.1}{\ignorespaces Veranschaulichung der L\IeC {\"o}sung des Optimalsteuerungsproblems}}{49}{figure.caption.28}
+\contentsline {figure}{\numberline {Abb. 3.2}{\ignorespaces Grundidee der modellpr\IeC {\"a}diktiven Regelung}}{51}{figure.caption.29}
+\contentsline {figure}{\numberline {Abb. 3.3}{\ignorespaces Systemgr\IeC {\"o}\IeC {\ss }endefinition der modellpr\IeC {\"a}diktiven Abstandsregelung\relax }}{53}{figure.caption.30}
+\contentsline {figure}{\numberline {Abb. 3.4}{\ignorespaces Trajektorien des modellpr\IeC {\"a}diktiven ACC-Regelkreises}}{55}{figure.caption.31}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Rekursive Unl\IeC {\"o}sbarkeit f\IeC {\"u}r $T=0.5 {\rm s}$}}}{55}{figure.caption.31}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Instabilit\IeC {\"a}t f\IeC {\"u}r $T=0.5 {\rm s}$}}}{55}{figure.caption.31}
+\contentsline {figure}{\numberline {Abb. 3.5}{\ignorespaces Invariante Mengen f\IeC {\"u}r das ACC-Beispiel}}{57}{figure.caption.32}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Invariante Mengen}}}{57}{figure.caption.32}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {2d-Scheibe mit $a_\text {ego} = 0\tmspace +\thinmuskip {.1667em} \unitfrac {m}{s^2}$}}}{57}{figure.caption.32}
+\contentsline {figure}{\numberline {Abb. 3.6}{\ignorespaces Veranschaulichung von Stabilit\IeC {\"a}tsdefinition und -kriterium}}{59}{figure.caption.33}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Lyapunov-Stabilit\IeC {\"a}t}}}{59}{figure.caption.33}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Lyapunov-Funktion}}}{59}{figure.caption.33}
+\contentsline {figure}{\numberline {Abb. 3.7}{\ignorespaces Trajektorienzeitverl\IeC {\"a}ufe der modellpr\IeC {\"a}diktiven Regelkreise}}{65}{figure.caption.34}
+\contentsline {figure}{\numberline {Abb. 3.8}{\ignorespaces Funktionsweise vom ESP}}{66}{figure.caption.35}
+\contentsline {figure}{\numberline {Abb. 3.9}{\ignorespaces Modellpr\IeC {\"a}diktive Regelung mit unterlagerter Folgeregelung\relax }}{69}{figure.caption.36}
+\contentsline {figure}{\numberline {Abb. 3.10}{\ignorespaces Modellpr\IeC {\"a}diktive Regelung mit Integratorerweiterung\relax }}{69}{figure.caption.37}
+\contentsline {figure}{\numberline {Abb. 3.11}{\ignorespaces Modellpr\IeC {\"a}diktive Regelung mit asymptotischer Folgeregelung\relax }}{70}{figure.caption.38}
+\contentsline {figure}{\numberline {Abb. 3.12}{\ignorespaces Modellpr\IeC {\"a}diktive Regelung mit nachgelagerter Folgeregelung\relax }}{71}{figure.caption.39}
+\contentsline {figure}{\numberline {Abb. 3.13}{\ignorespaces Kinematisches Einspurmodell des Fahrzeuggespanns}}{74}{figure.caption.40}
+\contentsline {figure}{\numberline {Abb. 3.14}{\ignorespaces Realisierbare Knickwinkel\IeC {\"a}nderungsraten}}{78}{figure.caption.41}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {kurzer Anh\IeC {\"a}nger ($l_t < l_{t,\text {lim}}$)}}}{78}{figure.caption.41}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {langer Anh\IeC {\"a}nger ($l_t > l_{t,\text {lim}}$)}}}{78}{figure.caption.41}
+\contentsline {figure}{\numberline {Abb. 3.15}{\ignorespaces Zul\IeC {\"a}ssiger Absolutknickwinkel}}{79}{figure.caption.42}
+\contentsline {figure}{\numberline {Abb. 3.16}{\ignorespaces Aufbau der asymptotischen Kr\IeC {\"u}mmungsfolgeregelung}}{80}{figure.caption.43}
+\contentsline {figure}{\numberline {Abb. 3.17}{\ignorespaces Draufsichten des Fahrversuchs mit Kr\IeC {\"u}mmungsregler}}{81}{figure.caption.44}
+\contentsline {figure}{\numberline {Abb. 3.18}{\ignorespaces Signalverl\IeC {\"a}ufe des Fahrversuchs mit Kr\IeC {\"u}mmungsregler}}{82}{figure.caption.45}
+\addvspace {13\p@ }
+\contentsline {figure}{\numberline {Abb. 4.1}{\ignorespaces Zur Verdeutlichung des Bellman'schen Optimalit\IeC {\"a}tsprinzips}}{86}{figure.caption.46}
+\contentsline {figure}{\numberline {Abb. 4.2}{\ignorespaces Anwendungsbeispiel der Dynamischen Programmierung}}{88}{figure.caption.47}
+\contentsline {figure}{\numberline {Abb. 4.3}{\ignorespaces Dijkstra-Suche zur Bestimmung des k\IeC {\"u}rzesten Wegs}}{92}{figure.caption.50}
+\contentsline {figure}{\numberline {Abb. 4.4}{\ignorespaces A*-Suche zur Bestimmung des k\IeC {\"u}rzesten Wegs}}{95}{figure.caption.52}
+\contentsline {figure}{\numberline {Abb. 4.5}{\ignorespaces Wiederkehrendes Sampling im Zustandsraum}}{97}{figure.caption.53}
+\contentsline {figure}{\numberline {Abb. 4.6}{\ignorespaces Zustandsgitter f\IeC {\"u}r eine strukturierte Umgebung}}{98}{figure.caption.54}
+\contentsline {figure}{\numberline {Abb. 4.7}{\ignorespaces Suchbaum f\IeC {\"u}r die Vorw\IeC {\"a}rtsfahrt}}{99}{figure.caption.55}
+\contentsline {figure}{\numberline {Abb. 4.8}{\ignorespaces Nachteile des euklidischen Abstands als Heuristik}}{100}{figure.caption.56}
+\contentsline {figure}{\numberline {Abb. 4.9}{\ignorespaces Gezielte Problemrelaxierung}}{101}{figure.caption.57}
+\addvspace {13\p@ }
+\contentsline {figure}{\numberline {Abb. 5.1}{\ignorespaces Beschr\IeC {\"a}nktes statisches Optimierungsproblem}}{105}{figure.caption.58}
+\contentsline {figure}{\numberline {Abb. 5.2}{\ignorespaces Endliche Parametrierung}}{106}{figure.caption.59}
+\contentsline {figure}{\numberline {Abb. 5.3}{\ignorespaces Grundidee von Mehrfachschie\IeC {\ss }verfahren}}{108}{figure.caption.60}
+\contentsline {figure}{\numberline {Abb. 5.4}{\ignorespaces Endliche Parametrierung durch flachen Ausgang}}{110}{figure.caption.61}
+\contentsline {figure}{\numberline {Abb. 5.5}{\ignorespaces Fahrzeugdynamik entlang einer Referenzkurve}}{115}{figure.caption.62}
+\contentsline {figure}{\numberline {Abb. 5.6}{\ignorespaces Elliptische N\IeC {\"a}herung der zul\IeC {\"a}ssigen Fahrzeugbeschleunigung}}{115}{figure.caption.62}
+\contentsline {figure}{\numberline {Abb. 5.7}{\ignorespaces Restriktionen zur Vorgabe der Ausweichrichtung}}{118}{figure.caption.63}
+\contentsline {figure}{\numberline {Abb. 5.8}{\ignorespaces Quadratischer Kostenanstieg in der Umgebung eines Hindernisses}}{120}{figure.caption.64}
+\contentsline {figure}{\numberline {Abb. 5.9}{\ignorespaces Unfallvermeidung durch Bremsen und Ausweichen}}{122}{figure.caption.65}
+\contentsline {figure}{\numberline {Abb. 5.10}{\ignorespaces Signalverl\IeC {\"a}ufe bei kombiniertem Bremsen und Ausweichen}}{123}{figure.caption.66}
+\addvspace {13\p@ }
+\contentsline {figure}{\numberline {Abb. 6.1}{\ignorespaces Zul\IeC {\"a}ssige Variationen um die optimale L\IeC {\"o}sung}}{127}{figure.caption.67}
+\contentsline {figure}{\numberline {Abb. 6.2}{\ignorespaces Ruck-optimaler Spurwechsel}}{131}{figure.caption.68}
+\contentsline {figure}{\numberline {Abb. 6.3}{\ignorespaces M\IeC {\"o}gliche Minima der Hamiltonfunktion}}{135}{figure.caption.69}
+\contentsline {figure}{\numberline {Abb. 6.4}{\ignorespaces Systemtrajektorien des Doppelintegrators}}{137}{figure.caption.70}
+\contentsline {figure}{\numberline {Abb. 6.5}{\ignorespaces Ruck-Zeit-optimale Zielbremsungen}}{143}{figure.caption.71}
+\contentsline {figure}{\numberline {Abb. 6.6}{\ignorespaces Pr\IeC {\"a}dizierte Fahrkurve und Optimaltrajektorie}}{145}{figure.caption.72}
+\contentsline {figure}{\numberline {Abb. 6.7}{\ignorespaces Ausweichvorgang in den Koordinaten der Ursprungskurve}}{146}{figure.caption.73}
+\contentsline {figure}{\numberline {Abb. 6.8}{\ignorespaces Aufbau der Riccati-basierten Trajektorienplanung}}{151}{figure.caption.75}
+\contentsline {figure}{\numberline {Abb. 6.9}{\ignorespaces Fahrzeuginnenansicht bei der Anfahrt auf Fu\IeC {\ss }g\IeC {\"a}ngerattrappe}}{152}{figure.caption.76}
+\contentsline {figure}{\numberline {Abb. 6.10}{\ignorespaces Vogelperspektive auf Fahrzeug und Fu\IeC {\ss }g\IeC {\"a}nger}}{153}{figure.caption.77}
+\contentsline {figure}{\numberline {Abb. 6.11}{\ignorespaces Zustandsverl\IeC {\"a}ufe der Trajektorienplanung}}{154}{figure.caption.78}
+\contentsline {figure}{\numberline {Abb. 6.12}{\ignorespaces Zustandsverl\IeC {\"a}ufe des ausweichenden Fahrzeugs}}{155}{figure.caption.79}
+\addvspace {13\p@ }
+\addvspace {13\p@ }
+\addvspace {13\p@ }
+\contentsline {figure}{\numberline {Abb. A.1}{\ignorespaces Beispielhafte Baumstruktur der Koordinatensysteme}}{168}{figure.caption.81}
+\contentsline {figure}{\numberline {Abb. A.2}{\ignorespaces Stabilit\IeC {\"a}tsbeweis der modellpr\IeC {\"a}diktiven Regelung}}{169}{figure.caption.82}

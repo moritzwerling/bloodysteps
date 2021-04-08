@@ -1,0 +1,1270 @@
+\begin{thebibliography}{100}
+
+\bibitem{alamir2010use}
+{\sc Alamir, M.}, {\sc A.~Murilo}, {\sc R.~Amari}, {\sc P.~Tona}, {\sc
+  R.~F{\"u}rhapter} \btxandlong{}\ {\sc P.~Ortner}: {\em On the Use of
+  Parameterized NMPC in Real-time Automotive Control}.
+\newblock Automotive Model Predictive Control, \btxpageslong{}\ 139--149, 2010.
+
+\bibitem{allen1991real}
+{\sc Allen, P.K.}, {\sc B.~Yoshimi} \btxandlong{}\ {\sc A.~Timcenko}: {\em
+  Real-time visual servoing}.
+\newblock \Btxinlong{}\ {\em International Conference on Robotics and
+  Automation}, \btxpageslong{}\ 851--856. IEEE, 1991.
+
+\bibitem{allgower1993nichtlinearer}
+{\sc Allgöwer, F.} \btxandlong{}\ {\sc E.D. Gilles}: {\em Nichtlinearer
+  Reglerentwurf auf der Grundlage exakter Linearisierungstechniken}.
+\newblock VDI Berichte, 1026:209--234, 1993.
+
+\bibitem{azt2006}
+{\sc {Allianz Zentrum für Technik}}: {\em Wirkungspotentiale von ACC und Lane
+  Guard System bei Nutzfahrzeugen}.
+\newblock Technischer Report, 2006.
+
+\bibitem{altafini2001some}
+{\sc Altafini, C.}: {\em Some properties of the general n-trailer}.
+\newblock International Journal of Control, 74:409--424, 2001.
+
+\bibitem{Althoff2010}
+{\sc Althoff, M.}: {\em Reachability Analyses and its Application to the Safety
+  Assessment of Autonomous Cars}.
+\newblock \btxphdthesis{}, {Technische Universit{\"a}t M{\"u}nchen}, 2010.
+
+\bibitem{althoff2009model}
+{\sc Althoff, M.}, {\sc O.~Stursberg} \btxandlong{}\ {\sc M.~Buss}: {\em
+  Model-based probabilistic collision detection in autonomous driving}.
+\newblock IEEE Transactions on Intelligent Transportation Systems,
+  10(2):299--310, 2009.
+
+\bibitem{anderson2010optimal}
+{\sc Anderson, S.J.}, {\sc S.C. Peters}, {\sc T.E. Pilutti} \btxandlong{}\ {\sc
+  K.~Iagnemma}: {\em An optimal-control-based framework for trajectory
+  planning, threat assessment, and semi-autonomous control of passenger
+  vehicles in hazard avoidance scenarios}.
+\newblock International Journal of Vehicle Autonomous Systems, 8(2):190--216,
+  2010.
+
+\bibitem{arnold2008mpt}
+{\sc Arnold, E.}, {\sc J.~Neupert}, {\sc O.~Sawodny} \btxandlong{}\ {\sc
+  K.~Schneider}: {\em Modell-prädiktive Trajektoriengenerierung für
+  flachheitsbasierte Folgeregelungen am Beispiel eines Hafenmobilkrans}.
+\newblock at - Automatisierungstechnik, 56(8):395--405, 2008.
+
+\bibitem{bacha2008odin}
+{\sc Bacha, A.}, {\sc C.~Bauman}, {\sc R.~Faruque}, {\sc M.~Fleming}, {\sc
+  C.~Terwelp}, {\sc C.~Reinholtz}, {\sc D.~Hong}, {\sc A.~Wicks}, {\sc
+  T.~Alberi}, {\sc D.~Anderson} \btxetalshort{.}: {\em Odin: Team VictorTango's
+  entry in the DARPA Urban Challenge}.
+\newblock Journal of Field Robotics, 25(8), 2008.
+
+\bibitem{Barth2008}
+{\sc Barth, A.} \btxandlong{}\ {\sc U.~Franke}: {\em Where will the oncoming
+  vehicle be the next second?}
+\newblock \Btxinlong{}\ {\em Intelligent Vehicles Symposium}, \btxpageslong{}\
+  1068--1073. IEEE, 2008.
+
+\bibitem{behrendt2011paralleles}
+{\sc Behrendt, S.}, {\sc P.~D{\"u}now}, {\sc C.~Steinbrecher} \btxandlong{}\
+  {\sc B.P. Lampe}: {\em Paralleles Rechnen von modellpr{\"a}diktiven
+  Regelungen auf der Optimierungsebene}.
+\newblock at - Automatisierungstechnik, 59(5):280--288, 2011.
+
+\bibitem{bellmann_DP}
+{\sc Bellman, R.}: {\em {The theory of dynamic programming}}.
+\newblock \Btxnumberlong{}\ RAND-P-550. Rand Corporation Santa Monica CA, 1954.
+
+\bibitem{Bender2007}
+{\sc Bender, E.}, {\sc M.~Darms}, {\sc M.~Schorn}, {\sc U.~St{\"a}hlin}, {\sc
+  R.~Isermannm}, {\sc H.~Winner} \btxandlong{}\ {\sc K.~Landau}: {\em
+  Antikollisionssystem Proreta - Auf dem Weg zum unfallvermeidenden Fahrzeug:
+  Teil 1: Grundlagen des Systems}.
+\newblock ATZ, 109(4):336--341, 2007.
+
+\bibitem{bertsekas2007}
+{\sc Bertsekas, D.P.}: {\em {Dynamic programming and optimal control}}.
+\newblock Athena Scientific Belmont, MA, 1995.
+
+\bibitem{birck2010potenziale}
+{\sc Birck, S.}: {\em Potenziale und Risiken {\"a}lterer Kraftfahrer mit
+  Unf{\"a}llen und ihre Darstellung in der Lokalpresse}.
+\newblock \btxphdthesis{}, Universit{\"a}t Bonn, 2010.
+
+\bibitem{Bishop2005}
+{\sc Bishop, R.}: {\em Intelligent Vehicle Technology and Trends}.
+\newblock Artech House Publishers, 2005.
+
+\bibitem{Buskens09}
+{\sc Bükens, C.}: {\em Echtzeitanpassung des klassischen {R}iccati-{R}eglers}.
+\newblock Automatisierungstechnik, 57(6):269--278, 2009.
+
+\bibitem{boissonnat1994note}
+{\sc Boissonnat, J.-D.}, {\sc A.~Cerezo} \btxandlong{}\ {\sc J.~Leblond}: {\em
+  A note on shortest paths in the plane subject to a constraint on the
+  derivative of the curvature}.
+\newblock Report\ 2160, INRIA, 1994.
+
+\bibitem{borenstein1997}
+{\sc Borenstein, J.}, {\sc H.R. Everett}, {\sc L.~Feng} \btxandlong{}\ {\sc
+  D.~Wehe}: {\em Mobile Robot Positioning - Sensors and Techniques}.
+\newblock Journal of Robotic Systems, 14:231--249, 1997.
+
+\bibitem{borger2013fahrerintentionserkennung}
+{\sc B{\"o}rger, J.}: {\em Fahrerintentionserkennung und Kurspr{\"a}diktion mit
+  erweiterten Maschinellen Lernverfahren}.
+\newblock \btxphdthesis{}, Universität Ulm, 2013.
+
+\bibitem{borrelli2014predictive}
+{\sc Borrelli, F.}, {\sc A.~Bemporad} \btxandlong{}\ {\sc M.~Morari}: {\em
+  Predictive control for linear and hybrid systems}.
+\newblock 2014.
+\newblock In preparation.
+
+\bibitem{Brandt2008}
+{\sc Brandt, T.}: {\em A predictive potential field concept for shared vehicle
+  guidance}.
+\newblock \btxphdthesis{}, Universität Paderborn, 2008.
+
+\bibitem{brechtel2010recursive}
+{\sc Brechtel, S.}, {\sc T.~Gindele} \btxandlong{}\ {\sc R.~Dillmann}: {\em
+  Recursive importance sampling for efficient grid-based occupancy filtering in
+  dynamic environments}.
+\newblock \Btxinlong{}\ {\em International Conference on Robotics and
+  Automation}, \btxpageslong{}\ 3932--3938. IEEE, 2010.
+
+\bibitem{breuer20012bremsenhandbuch}
+{\sc Breuer, B.} \btxandlong{}\ {\sc K.H. Bill}: {\em {Bremsenhandbuch:
+  Grundlagen, Komponenten, Systeme, Fahrdynamik}}.
+\newblock Springer Vieweg, 2012.
+
+\bibitem{brockett1983asa}
+{\sc Brockett, R.W.}: {\em {Asymptotic stability and feedback stabilization}}.
+\newblock Defense Technical Information Center, 1983.
+
+\bibitem{bast2012_rechtsfolgen}
+{\sc {Bundesanstalt für Straßenwesen}}: {\em Rechtsfolgen zunehmender
+  Fahrzeugautomatisierung}.
+\newblock Gemeinsamer Schlussbericht, Januar 2012.
+
+\bibitem{burkert2015grosse}
+{\sc Burkert, A.}: {\em Das gro{\ss}e Gesch{\"a}ft mit den Daten}.
+\newblock ATZ Elektronik, 10(4):8--13, 2015.
+
+\bibitem{fraunhoferstudie2015}
+{\sc Cacilo, A.}, {\sc S.~Schmidt}, {\sc Ph. Wittlinger}, {\sc F.~Herrmann},
+  {\sc O.~Sawade}, {\sc H.~Doderer} \btxandlong{}\ {\sc V.~Scholz}: {\em
+  Hochautomatisiertes Fahren auf der Autobahn - Industriepolitische
+  Schlussfolgerungen}.
+\newblock Studie im Auftrag des Bundesministeriums für Wirtschaft und Energie,
+  Fraunhofer-Institut für Arbeitswirtschaft und Organsiation IAO, 2015.
+
+\bibitem{chlond2009mobilitatspanel}
+{\sc Chlond, B.}, {\sc M.~Kagerbauer}, {\sc P.~Ottmann} \btxandlong{}\ {\sc
+  D.~Zumkeller}: {\em Mobilit{\"a}tspanel: Pkw-Fahrleistungen und
+  Treibstoffverbrauch im Vergleich: Die Datenquelle zur Analyse der
+  Pkw-Nutzung}.
+\newblock Internationales Verkehrswesen, 61(3):71--75, 2009.
+
+\bibitem{dang2007kontinuierliche}
+{\sc Dang, T.}: {\em Kontinuierliche Selbstkalibrierung von Stereokameras}.
+\newblock \btxphdthesis{}, Universität Karlsruhe (TH), 2007.
+
+\bibitem{dang2012steering}
+{\sc Dang, T.}, {\sc J.~Desens}, {\sc W.~Franke}, {\sc D.~Gavrila}, {\sc
+  L.~Sch{\"a}fers} \btxandlong{}\ {\sc W.~Ziegler}: {\em Steering and evasion
+  assist}.
+\newblock \Btxinlong{}\ {\em Handbook of Intelligent Vehicles},
+  \btxpageslong{}\ 759--782. Springer, 2012.
+
+\bibitem{de2009flatness}
+{\sc De~Don{\'a}, J.A.}, {\sc F.~Suryawan}, {\sc M.M. Seron} \btxandlong{}\
+  {\sc J.~L{\'e}vine}: {\em A flatness-based iterative method for reference
+  trajectory generation in constrained NMPC}.
+\newblock \Btxinlong{}\ {\em Nonlinear Model Predictive Control},
+  \btxpageslong{}\ 325--333. Springer, 2009.
+
+\bibitem{dickmans1989sod}
+{\sc Dickmans, E.D.}: {\em {Subject-object discrimination in 4D dynamic scene
+  interpretation for machine vision}}.
+\newblock \Btxinlong{}\ {\em Workshop on Visual Motion}, \btxpageslong{}\
+  298--304, 1989.
+
+\bibitem{diehl_fast_multipleshooting}
+{\sc Diehl, M.}, {\sc H.G. Bock}, {\sc H.~Diedam} \btxandlong{}\ {\sc P.B.
+  Wieber}: {\em Fast Direct Multiple Shooting Algorithms for Optimal Robot
+  Control}.
+\newblock Fast Motions in Biomechanics and Robotics, 340:65--93, 2006.
+
+\bibitem{diehl_numerical_methods}
+{\sc Diehl, M.}, {\sc H.J. Ferreau} \btxandlong{}\ {\sc N.~Haverbeke}: {\em
+  Efficient Numerical Methods for Nonlinear MPC and Moving Horizon Estimation}.
+\newblock \Btxinlong{}\ {\em Nonlinear model predictive control},
+  \btxpageslong{}\ 391--417. Springer, 2009.
+
+\bibitem{Diewald2013}
+{\sc Diewald, F.}: {\em Objektklassifikation und Freiraumdetektion auf Basis
+  bildgebender Radarsensorik für die Fahrzeugumfelderfassung}.
+\newblock \btxphdthesis{}, Universität Ulm, 2013.
+
+\bibitem{NHTSA2006100car}
+{\sc Dingus, T.}: {\em The 100-car naturalistic driving study, Phase II,
+  Results of the 100-car field experiment}.
+\newblock \Btxtechreplong{}\ DOT HS 810 593, National Highway Traffic Safety
+  Administration, US Department of Transportation, 2006.
+
+\bibitem{dold2010robuste}
+{\sc Dold, J.} \btxandlong{}\ {\sc O.~Stursberg}: {\em Robuste
+  modellpr{\"a}diktive Regelung kommunizierender Fahrzeugkolonnen}.
+\newblock at - Automatisierungstechnik, 58(4):207--216, 2010.
+
+\bibitem{dolgov2010path}
+{\sc Dolgov, D.}, {\sc S.~Thrun}, {\sc M.~Montemerlo} \btxandlong{}\ {\sc
+  J.~Diebel}: {\em Path planning for autonomous vehicles in unknown
+  semi-structured environments}.
+\newblock The International Journal of Robotics Research, 29(5):485--501, 2010.
+
+\bibitem{donges1982aas}
+{\sc Donges, E.}: {\em {Aspekte der Aktiven Sicherheit bei der F{\"u}hrung von
+  Personenkraftwagen}}.
+\newblock Automobil-Industrie, 2:183--190, 1982.
+
+\bibitem{handbuchFAS_Donges2012}
+{\sc Donges, E.}: {\em Fahrerverhaltensmodelle}.
+\newblock \Btxinlong{}\ {\sc Winner, H.}, {\sc S.~Hakuli} \btxandlong{}\ {\sc
+  G.~Wolf}\ (\btxeditorslong{}): {\em Handbuch Fahrerassistenzsysteme},
+  \btxpageslong{}\ 15--23. Vieweg + Teubner Verlag, Wiesbaden, 2012.
+
+\bibitem{donges1996regelsysteme}
+{\sc Donges, E.} \btxandlong{}\ {\sc K.~Naab}: {\em Regelsysteme zur
+  Fahrzeugf{\"u}hrung und -stabilisierung in der Automobiltechnik}.
+\newblock Automatisierungstechnik, 44(5):226--236, 1996.
+
+\bibitem{dreyer_sks}
+{\sc Dreyer, R.}: {\em Sportküstenschifferschein}.
+\newblock Delius Klasing, 2004.
+
+\bibitem{dubins1957cml}
+{\sc Dubins, L.E.}: {\em On curves of minimal length with a constraint on
+  average curvature and with prescribed initial and terminal positions and
+  tangents}.
+\newblock American Journal of Mathematics, 79(3):497--516, 1957.
+
+\bibitem{daimler_faz_2013}
+{\sc Ebus, T.}: {\em Lass die Finger weg, jetzt fahre ich!}
+\newblock Frankfurter Allgemeine Zeitung, 10.09.2013.
+
+\bibitem{eigel2010integrierte}
+{\sc Eigel, T.}: {\em Integrierte L{\"a}ngs- und Querf{\"u}hrung von
+  Personenkraftwagen mittels Sliding-Mode-Regelung}.
+\newblock \btxphdthesis{}, Technische Universität Braunschweig, 2010.
+
+\bibitem{eskandarian2012handbook}
+{\sc Eskandarian, A.}: {\em Handbook of Intelligent Vehicles}.
+\newblock Springer, 2012.
+
+\bibitem{falcone2011predictiveassessment}
+{\sc Falcone, P.}, {\sc M.~Ali} \btxandlong{}\ {\sc J.~Sjoberg}: {\em
+  Predictive threat assessment via reachability analysis and set invariance
+  theory}.
+\newblock IEEE Transactions on Intelligent Transportation Systems,
+  12(4):1352--1361, 2011.
+
+\bibitem{Falcone2007}
+{\sc Falcone, P.}, {\sc F.~Borrelli}, {\sc J.~Asgari}, {\sc H.~E. Tseng}
+  \btxandlong{}\ {\sc D.~Hrovat}: {\em Predictive Active Steering Control for
+  Autonomous Vehicle Systems}.
+\newblock IEEE Transactions on Control Systems Technology, 15(3):566--580,
+  2007.
+
+\bibitem{fallah2012controller}
+{\sc Fallah, M.S}, {\sc A.~Khajepour}, {\sc B.~Fidan}, {\sc S.-K. Chen}
+  \btxandlong{}\ {\sc B.~Litkouhi}: {\em Controller development using optimal
+  torque distribution for driver handling assistance}.
+\newblock \Btxinlong{}\ {\em American Control Conference}, \btxpageslong{}\
+  2910--2915. IEEE, 2012.
+
+\bibitem{ferguson2008detection}
+{\sc Ferguson, D.}, {\sc M.~Darms}, {\sc C.~Urmson} \btxandlong{}\ {\sc
+  S.~Kolski}: {\em Detection, prediction, and avoidance of dynamic obstacles in
+  urban environments}.
+\newblock \Btxinlong{}\ {\em Intelligent Vehicles Symposium}, \btxpageslong{}\
+  1149--1154. IEEE, 2008.
+
+\bibitem{Ferguson2008}
+{\sc Ferguson, D.}, {\sc T.M. Howard} \btxandlong{}\ {\sc M.~Likhachev}: {\em
+  Motion Planning in Urban Environments: Part I}.
+\newblock \Btxinlong{}\ {\em International Conference on Intelligent Robots and
+  Systems}, \btxpageslong{}\ 1063--1069. IEEE/RSJ, 2008.
+
+\bibitem{Ferguson2008b}
+{\sc Ferguson, D.}, {\sc T.M. Howard} \btxandlong{}\ {\sc M.~Likhachev}: {\em
+  Motion Planning in Urban Environments: Part II}.
+\newblock \Btxinlong{}\ {\em International Conference on Intelligent Robots and
+  Systems}, \btxpageslong{}\ 1070--1076. IEEE/RSJ, 2008.
+
+\bibitem{taktilesinternet2014}
+{\sc Fettweis, G.}, {\sc H.~Boche}, {\sc T.~Wiegand}, {\sc E.~Zielinski}, {\sc
+  H.~Schotten}, {\sc P.~Merz}, {\sc S.~Hirche}, {\sc A.~Festag}, {\sc
+  W.~Häffner}, {\sc M.~Meyer}, {\sc R.~Steinbach, E.and~Kraemer}, {\sc
+  R.~Steinmetz}, {\sc F.~Hofmann}, {\sc P.~Eisert}, {\sc R.~Scholl}, {\sc
+  F.~Ellinger} \btxandlong{}\ {\sc I.~Weiß, E.~Riedel}: {\em Taktiles
+  Internet}.
+\newblock VDE-Positionspapier, Informationstechnische Gesellschaft im VDE
+  (ITG), 2014.
+
+\bibitem{Findeisen2002}
+{\sc Findeisen, R.} \btxandlong{}\ {\sc F.~Allg{\"o}wer}: {\em An Introduction
+  to Nonlinear Model Predictive Control}.
+\newblock \Btxinlong{}\ {\em 21st Benelux Meeting on Systems and Control},
+  \btxvolumelong{}~11. Institute for Systems Theory in Engineering, University
+  of Stuttgart, 2002.
+
+\bibitem{Findeisen2003}
+{\sc Findeisen, R.}, {\sc L.~Imsland}, {\sc F.~Allgower} \btxandlong{}\ {\sc
+  B.A. Foss}: {\em State and output feedback nonlinear model predictive
+  control: An overview}.
+\newblock European journal of control, 9(2-3):190--206, 2003.
+
+\bibitem{Fiorini1998}
+{\sc Fiorini, P.} \btxandlong{}\ {\sc Z.~Shiller}: {\em Motion Planning in
+  Dynamic Environments using Velocity Obstacles}.
+\newblock International Journal of Robotics Research, 17(7):760--722, July
+  1998.
+
+\bibitem{fliess1995fad}
+{\sc Fliess, M.}, {\sc J.~L{\'e}vine}, {\sc P.~Martin} \btxandlong{}\ {\sc
+  P.~Rouchon}: {\em {Flatness and defect of non-linear systems: introductory
+  theory and examples}}.
+\newblock International Journal of Control, 61(6):1327--1361, 1995.
+
+\bibitem{foellingeroptimal}
+{\sc Föllinger, O.}: {\em Optimale Regelung und Steuerung: Eine Einführung
+  für Ingenieure}.
+\newblock Methoden der Regelungs- und Automatisierungstechnik. Oldenbourg,
+  München, 1994.
+
+\bibitem{fox1997dynamic}
+{\sc Fox, D.}, {\sc W.~Burgard} \btxandlong{}\ {\sc S.~Thrun}: {\em The dynamic
+  window approach to collision avoidance}.
+\newblock IEEE Robotics \& Automation Magazine, 4(1):23--33, 1997.
+
+\bibitem{fraichard2007short}
+{\sc Fraichard, T.}: {\em A short paper about motion safety}.
+\newblock \Btxinlong{}\ {\em International Conference on Robotics and
+  Automation}, \btxpageslong{}\ 1140--1145. IEEE, 2007.
+
+\bibitem{Frasch2013b}
+{\sc Frasch, J.~V.}, {\sc A.~J. Gray}, {\sc M.~Zanon}, {\sc H.~J. Ferreau},
+  {\sc S.~Sager}, {\sc F.~Borrelli} \btxandlong{}\ {\sc M.~Diehl}: {\em An
+  auto-generated nonlinear {MPC} algorithm for real-Timeime obstacle avoidance
+  of ground vehicles}.
+\newblock \Btxinlong{}\ {\em {P}roceedings of the {E}uropean {C}ontrol
+  {C}onference}, 2013.
+
+\bibitem{fuchshumer2005nvd}
+{\sc Fuchshumer, S.}, {\sc K.~Schlacher} \btxandlong{}\ {\sc T.~Rittenschober}:
+  {\em Nonlinear vehicle dynamics control - A flatness based approach}.
+\newblock \Btxinlong{}\ {\em Conference on Decision and Control},
+  \btxpageslong{}\ 6492--6497. IEEE, 2005.
+
+\bibitem{furst2009autosar}
+{\sc F{\"u}rst, S.}, {\sc J.~M{\"o}ssinger}, {\sc S.~Bunzel}, {\sc T.~Weber},
+  {\sc F.~Kirschke-Biller}, {\sc P.~Heitk{\"a}mper}, {\sc G.~Kinkelin}, {\sc
+  K.~Nishikawa} \btxandlong{}\ {\sc K.~Lange}: {\em AUTOSAR--A Worldwide
+  Standard is on the Road}.
+\newblock \Btxinlong{}\ {\em 14th International VDI Congress Electronic Systems
+  for Vehicles}, \btxvolumelong{}~62, 2009.
+
+\bibitem{gandhi2007pedestrian}
+{\sc Gandhi, T.} \btxandlong{}\ {\sc M.M. Trivedi}: {\em Pedestrian protection
+  systems: Issues, survey, and challenges}.
+\newblock IEEE Transactions on Intelligent Transportation Systems,
+  8(3):413--430, 2007.
+
+\bibitem{geiger2012we}
+{\sc Geiger, A.}, {\sc P.~Lenz} \btxandlong{}\ {\sc R.~Urtasun}: {\em Are we
+  ready for autonomous driving? The KITTI vision benchmark suite}.
+\newblock \Btxinlong{}\ {\em Conference on Computer Vision and Pattern
+  Recognition}, \btxpageslong{}\ 3354--3361. IEEE, 2012.
+
+\bibitem{gerdts2009generating}
+{\sc Gerdts, M.}, {\sc S.~Karrenberg}, {\sc B.~M{\"u}ller-Be{\ss}ler}
+  \btxandlong{}\ {\sc G.~Stock}: {\em Generating locally optimal trajectories
+  for an automatically driven car}.
+\newblock Optimization and Engineering, 10(4):439--463, 2009.
+
+\bibitem{patentDE19812485B4}
+{\sc Gerhardt, J.} \btxandlong{}\ {\sc W.~Hess}: {\em Verfahren und Vorrichtung
+  zum Betreiben einer Brennkraftmaschine}, 2007.
+\newblock Patent DE19812485B4.
+
+\bibitem{gdv2009}
+{\sc {Gesamtverband der Deutschen Versicherungswirschaft e.V.}}: {\em
+  Jahresbericht 2009, Studie der Unfallforschung der Versicherer}, 2009.
+
+\bibitem{gindele2010probabilistic}
+{\sc Gindele, T.}, {\sc S.~Brechtel} \btxandlong{}\ {\sc R.~Dillmann}: {\em A
+  probabilistic model for estimating driver behaviors and vehicle trajectories
+  in traffic environments}.
+\newblock \Btxinlong{}\ {\em International Conference on Intelligent
+  Transportation Systems}, \btxpageslong{}\ 1625--1631. IEEE, 2010.
+
+\bibitem{glattfelder1983soc}
+{\sc Glattfelder, A.H.}, {\sc W.~Schaufelberger} \btxandlong{}\ {\sc
+  H.~F{\"a}ssler}: {\em {Stability of override control systems}}.
+\newblock International Journal of Control, 37(5):1023--1037, 1983.
+
+\bibitem{gonzalez2009backing}
+{\sc Gonz{\'a}lez-Cantos, A.} \btxandlong{}\ {\sc A.~Ollero}: {\em Backing-up
+  maneuvers of autonomous tractor-trailer vehicles using the qualitative theory
+  of nonlinear dynamical systems}.
+\newblock The International Journal of Robotics Research, 28(1):49--65, 2009.
+
+\bibitem{graf2003neue}
+{\sc Graf, K.} \btxandlong{}\ {\sc C.~Wurmthaler}: {\em Eine neue
+  Kaskadenstruktur}.
+\newblock at - Automatisierungstechnik, 51(3):113--118, 2003.
+
+\bibitem{Graichen2012}
+{\sc Graichen, K.}: {\em Nichtlineare modellpr{\"a}diktive Regelung basierend
+  auf Fixpunktiterationen}.
+\newblock at - Automatisierungstechnik, 60(8):442--451, 2012.
+
+\bibitem{graichen2014SkriptOpt}
+{\sc Graichen, K.}: {\em Methoden der Optimierung und optimalen Steuerung}.
+\newblock Vorlesungsskript, Universität Ulm, 2014.
+
+\bibitem{graichen_suboptimal}
+{\sc Graichen, K.}, {\sc M.~Egretzberger} \btxandlong{}\ {\sc A.~Kugi}: {\em
+  Ein suboptimaler Ansatz zur schnellen modellpr{\"a}diktiven Regelung
+  nichtlinearer Systeme}.
+\newblock at - Automatisierungstechnik, 58(8):447--456, 2010.
+
+\bibitem{habilgroell}
+{\sc Gr{\"o}ll, L.}: {\em Methodik zur Integration von Vorwissen in die
+  Modellbildung}.
+\newblock KIT Scientific Publishing, 2015.
+\newblock Habilitationsschrift, Karlsruher Institut für Technologie (KIT).
+
+\bibitem{gruhle2010steuerung}
+{\sc Gruhle, W.-D.}: {\em Steuerung und Regelung von Automatikgetrieben}.
+\newblock \Btxinlong{}\ {\sc Isermann, R.}\ (\btxeditorlong{}): {\em
+  Elektronisches Management motorischer Fahrzeugantriebe}, \btxpageslong{}\
+  288--305. Springer, 2010.
+
+\bibitem{Grundhoff2011}
+{\sc Grundhoff, S.~von}: {\em Fährt sich wie von selbst}.
+\newblock Zeit Online, 2011.
+
+\bibitem{gruene2011nonlinear}
+{\sc Gr{\"u}ne, L.} \btxandlong{}\ {\sc J.~Pannek}: {\em Nonlinear Model
+  Predictive Control: Theory and Algorithms}.
+\newblock Springer, 2011.
+
+\bibitem{gu2013focused}
+{\sc Gu, T.}, {\sc J.~Snider}, {\sc J.~M. Dolan} \btxandlong{}\ {\sc J.~Lee}:
+  {\em Focused Trajectory Planning for autonomous on-road driving}.
+\newblock \Btxinlong{}\ {\em Intelligent Vehicles Symposium, 2013 IEEE},
+  \btxpageslong{}\ 547--552. IEEE, 2013.
+
+\bibitem{hagenmeyer2004flachheitsbasierter}
+{\sc Hagenmeyer, B.} \btxandlong{}\ {\sc M.~Zeitz}: {\em Flachheitsbasierter
+  Entwurf von linearen und nichtlinearen Vorsteuerungen}.
+\newblock at - Automatisierungstechnik, 52(1):3--12, 2004.
+
+\bibitem{hattori2006optimum}
+{\sc Hattori, Y.}, {\sc E.~Ono} \btxandlong{}\ {\sc S.~Hosoe}: {\em Optimum
+  vehicle trajectory control for obstacle avoidance problem}.
+\newblock IEEE/ASME Transactions on Mechatronics, 11(5):507--512, 2006.
+
+\bibitem{CNN2012_legal}
+{\sc Heather, K.}: {\em Self-driving cars now legal in California}.
+\newblock CNN, Oktober 2012.
+
+\bibitem{Heissing2008}
+{\sc Hei{\ss}ing, B.} \btxandlong{}\ {\sc M.~Ersoy}: {\em Fahrwerkhandbuch}.
+\newblock Vieweg + Teubner Verlag, 2. Auflage \btxeditionlong{}, 2008.
+
+\bibitem{herceg2013multi}
+{\sc Herceg, M.}, {\sc M.~Kvasnica}, {\sc C.N. Jones} \btxandlong{}\ {\sc
+  M.~Morari}: {\em Multi-parametric toolbox 3.0}.
+\newblock \Btxinlong{}\ {\em European Control Conference}, \btxpageslong{}\
+  502--510. IEEE, 2013.
+
+\bibitem{Hillenbrand2006}
+{\sc Hillenbrand, J.}, {\sc A.~M. Spieker} \btxandlong{}\ {\sc K.~Kroschel}:
+  {\em A Multilevel Collision Mitigation Approach;Its Situation Assessment,
+  Decision Making, and Performance Tradeoffs}.
+\newblock IEEE Transactions on Intelligent Transportation Systems,
+  7(4):528--540, 2006.
+
+\bibitem{hillenbrand2011funktionale}
+{\sc Hillenbrand, M.}: {\em Funktionale Sicherheit nach ISO 26262 in der
+  Konzeptphase der Entwicklung von Elektrik/Elektronik Architekturen von
+  Fahrzeugen}.
+\newblock \btxphdthesis{}, Karlsruher Institut für Technologie (KIT), 2012.
+
+\bibitem{himmelsbach2008lidar}
+{\sc Himmelsbach, M.}, {\sc F.~von Hundelshausen} \btxandlong{}\ {\sc H.-J.
+  W{\"u}nsche}: {\em LIDAR-based perception for offroad navigation}.
+\newblock \Btxinlong{}\ {\em Fahrerassistenzworkshop}, 2008.
+
+\bibitem{hippe2004neue}
+{\sc Hippe, P.}: {\em Eine neue Methode zur Regelung von Strecken mit
+  Stellbegrenzung}.
+\newblock at - Automatisierungstechnik, 52(9):421--431, 2004.
+
+\bibitem{horn2006zweidimensionale}
+{\sc Horn, J.}: {\em Zweidimensionale Geschwindigkeitsmessung texturierter
+  Oberfl{\"a}chen mit fl{\"a}chenhaften bildgebenden Sensoren}.
+\newblock \btxphdthesis{}, Universität Karlsruhe (TH), 2006.
+
+\bibitem{houenou2013vehicle}
+{\sc Houenou, Adam}, {\sc Philippe Bonnifait}, {\sc V{\'e}ronique Cherfaoui}
+  \btxandlong{}\ {\sc Wen Yao}: {\em Vehicle trajectory prediction based on
+  motion model and maneuver recognition}.
+\newblock \Btxinlong{}\ {\em Intelligent Robots and Systems (IROS), 2013
+  IEEE/RSJ International Conference on}, \btxpageslong{}\ 4363--4369. IEEE,
+  2013.
+
+\bibitem{howard2007optimal}
+{\sc Howard, T.M.} \btxandlong{}\ {\sc A.~Kelly}: {\em {Optimal rough terrain
+  trajectory generation for wheeled mobile robots}}.
+\newblock The International Journal of Robotics Research, 26(2):141--166, 2007.
+
+\bibitem{Huckle2006}
+{\sc Huckle, T.} \btxandlong{}\ {\sc S.~Schneider}: {\em Numerische Methoden:
+  Eine Einf{\"u}hrung f{\"u}r Informatiker, Naturwissenschaftler, Ingenieure
+  und Mathematiker}.
+\newblock Springer, Berlin, 2 \btxeditionlong{}, 2006.
+
+\bibitem{Hult2013Thesis}
+{\sc Hult, R.}: {\em Path Planning for Highly Automated Vehicles}.
+\newblock \btxmastthesis{}, Chalmers University of Technology, 2013.
+
+\bibitem{irle2009zwei}
+{\sc Irle, P.}, {\sc L.~Gr{\"o}ll} \btxandlong{}\ {\sc M.~Werling}: {\em Zwei
+  Zug{\"a}nge zur Projektion auf 2d-Kurven f{\"u}r die Bahnregelung autonomer
+  Fahrzeuge}.
+\newblock at - Automatisierungstechnik, 57(8):403--410, 2009.
+
+\bibitem{isermann2006frm}
+{\sc Isermann, R.}: {\em {Fahrdynamikregelung: Modellbildung,
+  Fahrerassistenzsysteme, Mechatronik}}.
+\newblock Vieweg Verlag, 2006.
+
+\bibitem{isermann2010mechatronische}
+{\sc Isermann, R.}: {\em Mechatronische Fahrzeugantriebe}.
+\newblock \Btxinlong{}\ {\em Elektronisches Management motorischer
+  Fahrzeugantriebe}, \btxpageslong{}\ 1--35. Springer, 2010.
+
+\bibitem{isermann2008anticollision}
+{\sc Isermann, R.}, {\sc M.~Schorn} \btxandlong{}\ {\sc U.~St{\"a}hlin}: {\em
+  Anticollision system PRORETA with automatic braking and steering}.
+\newblock Vehicle System Dynamics, 46(S1):683--694, 2008.
+
+\bibitem{isidori1995ncs}
+{\sc Isidori, A.}: {\em {Nonlinear Control Systems}}.
+\newblock Springer, 1995.
+
+\bibitem{ISO26262}
+{\sc {ISO/DIS 26262}}: {\em Road vehicles -- Functional safety}.
+\newblock Final Draft International Standard, August 2012.
+
+\bibitem{Johansen2011}
+{\sc Johansen, T.A.}: {\em Introduction to nonlinear model predictive control
+  and moving horizon estimation}.
+\newblock Selected Topics on Constrained and Nonlinear Control,
+  \btxpageslong{}\ 1--53, 2011.
+
+\bibitem{kalman1960new}
+{\sc Kalman, R.E.} \btxetalshort{.}: {\em A new approach to linear filtering
+  and prediction problems}.
+\newblock Journal of Basic Engineering, 82:35--45, 1960.
+
+\bibitem{jfr2008}
+{\sc Kammel, S.}, {\sc J.~Ziegler}, {\sc B.~Pitzer}, {\sc M.~Werling}, {\sc
+  T.~Gindele}, {\sc D.~Jagszent}, {\sc J.~Schr\"oder}, {\sc M.~Thuy}, {\sc
+  M.~Goebl}, {\sc F.~v.~Hundelshausen}, {\sc O.~Pink}, {\sc C.~Freese}
+  \btxandlong{}\ {\sc C.~Stiller}: {\em {Team AnnieWAY's autonomous system for
+  the DARPA Urban Challenge 2007}}.
+\newblock Journal of Field Robotics, 25(9):615 -- 639, 2008.
+
+\bibitem{karch2007mechatronische}
+{\sc Karch, G.} \btxandlong{}\ {\sc S.~Gr{\"u}ner}: {\em Mechatronische
+  Lenksysteme}.
+\newblock at - Automatisierungstechnik, 55(6):281--289, 2007.
+
+\bibitem{Karrenberg2008}
+{\sc Karrenberg, S.}: {\em Zur Erkennung unvermeidbarer Kollisionen von
+  Kraftfahrzeugen mit Hilfe von Stellvertretertrajektorien}.
+\newblock \btxphdthesis{}, {Technische Universit{\"a}t Carolo-Wilhelmina zu
+  Braunschweig}, 2008.
+
+\bibitem{keller2011active}
+{\sc Keller, C.G.}, {\sc T.~Dang}, {\sc H.~Fritz}, {\sc A.~Joos}, {\sc C.~Rabe}
+  \btxandlong{}\ {\sc D.M. Gavrila}: {\em Active pedestrian safety by automatic
+  braking and evasive steering}.
+\newblock IEEE Transactions on Intelligent Transportation Systems,
+  12(4):1292--1304, 2011.
+
+\bibitem{kelly2003reactive}
+{\sc Kelly, A.} \btxandlong{}\ {\sc B.~Nagy}: {\em {Reactive nonholonomic
+  trajectory generation via parametric optimal control}}.
+\newblock The International Journal of Robotics Research, 22(7-8):583--601,
+  2003.
+
+\bibitem{kessler2007konzept}
+{\sc Ke{\ss}ler, G.C.}, {\sc J.P. Maschuw}, {\sc N.~Zambou} \btxandlong{}\ {\sc
+  A.~Bollig}: {\em Konzept zur Sollwertgenerierung und Modellgest{\"u}tzten
+  Pr{\"a}diktiven Regelung f{\"u}r die Querf{\"u}hrung von
+  Nutzfahrzeugkonvois}.
+\newblock at - Automatisierungstechnik, 55(6):298--305, 2007.
+
+\bibitem{khalil2002nonlinear}
+{\sc Khalil, Hassan~K.}: {\em Nonlinear Systems}.
+\newblock Prentice Hall Upper Saddle River, dritte \btxeditionlong{}, 2002.
+
+\bibitem{kiencke2005automotive}
+{\sc Kiencke, U.} \btxandlong{}\ {\sc L.~Nielsen}: {\em Automotive Control
+  Systems: For Engine, Driveline, and Vehicle}.
+\newblock Springer, 2005.
+
+\bibitem{knepper2006high}
+{\sc Knepper, R.} \btxandlong{}\ {\sc A.~Kelly}: {\em High performance state
+  lattice planning using heuristic look-up tables}.
+\newblock \Btxinlong{}\ {\em International Conference on Intelligent Robots and
+  Systems}, \btxpageslong{}\ 3375--3380. IEEE, 2006.
+
+\bibitem{kohlhepp2007elastic}
+{\sc Kohlhepp, P.}, {\sc M.~Strand}, {\sc G.~Bretthauer} \btxandlong{}\ {\sc
+  R.~Dillmann}: {\em The Elastic View Graph Framework for Autonomous,
+  Surface-based 3D-SLAM Part I: Concept and Local Layer (Schritthaltendes
+  fl{\"a}chenbasiertes 3D-SLAM mit elastisch gekoppelten Teilkarten)}.
+\newblock at--Automatisierungstechnik, 55(3):136--145, 2007.
+
+\bibitem{Konig2008}
+{\sc K{\"o}nig, L.}: {\em Ein virtueller Testfahrer f{\"u}r den querdynamischen
+  Grenzbereich}.
+\newblock \btxphdthesis{}, {Universit{\"a}t Stuttgart}, 2008.
+
+\bibitem{Konig2007}
+{\sc K{\"o}nig, L.}, {\sc J.~Neubeck} \btxandlong{}\ {\sc J.~Wiedemann}: {\em
+  Nichtlineare Lenkregler f{\"u}r den querdynamischen Grenzbereich}.
+\newblock at - Automatisierungstechnik, 55(6):314--321, 2007.
+
+\bibitem{kok95}
+{\sc Krstic, M.}, {\sc I.~Kanellakopoulos} \btxandlong{}\ {\sc P.V. Kokotovic}:
+  {\em Nonlinear and adaptive control design}.
+\newblock John Wiley and Sons, 1995.
+
+\bibitem{lategahn2013mapping}
+{\sc Lategahn, H.}: {\em Mapping and Localization in Urban Environments Using
+  Cameras}.
+\newblock \btxphdthesis{}, Karlsruher Institut für Technologie (KIT), 2013.
+
+\bibitem{lategahn2012motion}
+{\sc Lategahn, H.}, {\sc A.~Geiger}, {\sc B.~Kitt} \btxandlong{}\ {\sc
+  C.~Stiller}: {\em Motion-without-structure: Real-time multipose optimization
+  for accurate visual odometry}.
+\newblock \Btxinlong{}\ {\em Intelligent Vehicles Symposium}, \btxpageslong{}\
+  649--654. IEEE, 2012.
+
+\bibitem{latombe1990robot}
+{\sc Latombe, J.C.}: {\em {Robot Motion Planning}}.
+\newblock Springer Verlag, 1990.
+
+\bibitem{lavalle2006pa}
+{\sc LaValle, S.M.}: {\em {Planning Algorithms}}.
+\newblock Cambridge University Press, 2006.
+
+\bibitem{lawitzkyinteractive}
+{\sc Lawitzky, A.}, {\sc D.~Althoff}, {\sc C.F. Passenberg}, {\sc
+  G.~Tanzmeister}, {\sc D.~Wollherr} \btxandlong{}\ {\sc M.~Buss}: {\em
+  Interactive Scene Prediction for Automotive Applications}.
+\newblock \Btxinlong{}\ {\em Intelligent Vehicles Symposium}, \btxpageslong{}\
+  1028--1033. IEEE, 2013.
+
+\bibitem{Lawitzky2014ICRA}
+{\sc Lawitzky, A.}, {\sc A.~Nicklas}, {\sc D.~Wollherr} \btxandlong{}\ {\sc
+  Buss M.}: {\em Determining States of Inevitable Collision using Reachability
+  Analysis}.
+\newblock \Btxinlong{}\ {\em International Conference on Intelligent Robots and
+  Systems}, \btxpageslong{}\ 4142--4147. IEEE, 2014.
+
+\bibitem{tno2007_stateestimator}
+{\sc Leenen, R.}, {\sc N.J. Schouten} \btxandlong{}\ {\sc J.~Zuurbier}: {\em
+  Central State Estimator for Vehicle Control Systems}.
+\newblock \Btxinlong{}\ {\em Society of Automotive Engineers of Japan},
+  \btxnumberlong{}\ 20075048 \btxinserieslong{}\ {\em 70-07}, 2007.
+
+\bibitem{lefevre2012risk}
+{\sc Lef{\`e}vre, S.}, {\sc C.~Laugier} \btxandlong{}\ {\sc
+  J.~Iba{\~n}ez-Guzm{\'a}n}: {\em Risk assessment at road intersections:
+  comparing intention and expectation}.
+\newblock \Btxinlong{}\ {\em Intelligent Vehicles Symposium}, \btxpageslong{}\
+  165--171. IEEE, 2012.
+
+\bibitem{lienkamp20rechtliche}
+{\sc Lennart, S.L.}, {\sc F.~Diermeyer} \btxandlong{}\ {\sc M.~Lienkamp}: {\em
+  Rechtliche Aspekte beim automatisierten und teleoperierten Fahren}.
+\newblock ATZextra, 20(7):38--41.
+
+\bibitem{levinson2010robust}
+{\sc Levinson, J.} \btxandlong{}\ {\sc S.~Thrun}: {\em Robust vehicle
+  localization in urban environments using probabilistic maps}.
+\newblock \Btxinlong{}\ {\em International Conference on Robotics and
+  Automation}, \btxpageslong{}\ 4372--4378. IEEE, 2010.
+
+\bibitem{lewandowitz2011markenspezifische}
+{\sc Lewandowitz, L.}: {\em Markenspezifische Auswahl, Parametrierung und
+  Gestaltung der Produktgruppe Fahrerassistenzsysteme}.
+\newblock \btxphdthesis{}, Karlsruher Institut für Technologie (KIT), 2011.
+
+\bibitem{Lewis_OC}
+{\sc Lewis, F.} \btxandlong{}\ {\sc V.~Syrmos}: {\em Optimal Control}.
+\newblock John Wiley \& Sons, Inc., 1995.
+
+\bibitem{li2003surveymodels}
+{\sc Li, X.R.} \btxandlong{}\ {\sc V.P. Jilkov}: {\em Survey of maneuvering
+  target tracking. Part I. Dynamic models}.
+\newblock IEEE Transactions on Aerospace and Electronic Systems,
+  39(4):1333--1364, 2003.
+
+\bibitem{liebemann2004safety}
+{\sc Liebemann, E.K.}, {\sc K.~Meder}, {\sc J.~Schuh} \btxandlong{}\ {\sc
+  G.~Nenninger}: {\em Safety and performance enhancement: the Bosch electronic
+  stability control (ESP)}.
+\newblock SAE Paper, 20004:21--0060, 2004.
+
+\bibitem{likhachev2009planning}
+{\sc Likhachev, M.} \btxandlong{}\ {\sc D.~Ferguson}: {\em {Planning long
+  dynamically feasible maneuvers for autonomous vehicles}}.
+\newblock The International Journal of Robotics Research, 28(8):933--945, 2009.
+
+\bibitem{Lin1998}
+{\sc Lin, M.C.} \btxandlong{}\ {\sc S.~Gottschalk}: {\em Collision detection
+  between geometric models: a survey}.
+\newblock \Btxinlong{}\ {\em Proceedings of IMA Conference on Mathematics of
+  Surfaces 1998}, 1998.
+
+\bibitem{lindberg2012entwicklung}
+{\sc Lindberg, T.}: {\em Entwicklung einer ABK-Metapher für gruppierte
+  Fahrerassistenzsysteme}.
+\newblock \btxphdthesis{}, Technische Universität Berlin, 2011.
+
+\bibitem{Liu2010}
+{\sc Liu, C.}, {\sc W.H. Chen} \btxandlong{}\ {\sc J.~Andrews}: {\em
+  Optimisation based control framework for autonomous vehicles: Algorithm and
+  experiment}.
+\newblock \Btxinlong{}\ {\em International Conference on Mechatronics and
+  Automation}, \btxpageslong{}\ 1030--1035, 2010.
+
+\bibitem{lunze2005regelungstechnik}
+{\sc Lunze, J.}: {\em Regelungstechnik 1: Systemtheoretische Grundlagen,
+  Analyse und Entwurf einschleifiger Regelungen}, \btxvolumelong{}~1.
+\newblock Springer Verlag, 2005.
+
+\bibitem{lunze2012regelungstechnik}
+{\sc Lunze, J.}: {\em Regelungstechnik 2: Mehrgr{\"o}{\ss}ensysteme, Digitale
+  Regelung}.
+\newblock Springer Verlag, 2012.
+
+\bibitem{mahlisch2009filtersynthese}
+{\sc M{\"a}hlisch, M.}: {\em Filtersynthese zur simultanen Minimierung von
+  Existenz-, Assoziations-und Zustandsunsicherheiten in der
+  Fahrzeugumfelderfassung mit heterogenen Sensordaten}.
+\newblock \btxphdthesis{}, Universität Ulm, 2009.
+
+\bibitem{markgraf2002autonomes}
+{\sc Markgraf, C.}: {\em Autonomes Fahren mit Hilfe der Magnetnageltechnik}.
+\newblock \btxphdthesis{}, Universität Hannover, 2002.
+
+\bibitem{martinez2009collision}
+{\sc Martinez-Gomez, L.} \btxandlong{}\ {\sc T.~Fraichard}: {\em Collision
+  avoidance in dynamic environments: An ICS-based solution and its comparative
+  evaluation}.
+\newblock \Btxinlong{}\ {\em International Conference on Robotics and
+  Automation}, \btxpageslong{}\ 100--105. IEEE, 2009.
+
+\bibitem{maurer2005fahrerassistenzsysteme}
+{\sc Maurer, M.} \btxandlong{}\ {\sc C.~Stiller}: {\em {Fahrerassistenzsysteme
+  mit maschineller Wahrnehmung}}.
+\newblock Springer, 2005.
+
+\bibitem{McNaughton2011diss}
+{\sc McNaughton, M.}: {\em Parallel Algorithms for Real-time Motion Planning}.
+\newblock \btxphdthesis{}, {Carnegie Mellon University}, 2011.
+
+\bibitem{mcnaughton}
+{\sc McNaughton, M.}, {\sc C.~Urmson}, {\sc J.M. Dolan} \btxandlong{}\ {\sc
+  J.W. Lee}: {\em Motion Planning for Autonomous Driving with a Conformal
+  Spatiotemporal Lattice}.
+\newblock \Btxinlong{}\ {\em International Conference on Robotics and
+  Automation}, \btxpageslong{}\ 4889--4895. IEEE, 2011.
+
+\bibitem{mitschke2004dynamik}
+{\sc Mitschke, M.} \btxandlong{}\ {\sc H.~Wallentowitz}: {\em {Dynamik der
+  Kraftfahrzeuge}}.
+\newblock Springer, 2004.
+
+\bibitem{Muller-Bessler2006}
+{\sc Müller-Beßler, B.}, {\sc G.~Stock} \btxandlong{}\ {\sc J.~Hoffmann}:
+  {\em Reproducible driving near the stability limit}.
+\newblock \Btxtechreplong{}, Volkswagen AG, 2006.
+
+\bibitem{montemerlo2008junior}
+{\sc Montemerlo, M.}, {\sc J.~Becker}, {\sc S.~Bhat}, {\sc H.~Dahlkamp}, {\sc
+  D.~Dolgov}, {\sc S.~Ettinger}, {\sc D.~Haehnel}, {\sc T.~Hilden}, {\sc
+  G.~Hoffmann}, {\sc B.~Huhnke} \btxetalshort{.}: {\em {Junior: The Stanford
+  entry in the Urban Challenge}}.
+\newblock Journal of Field Robotics, 25(9), 2008.
+
+\bibitem{moosmann2012interlacing}
+{\sc Moosmann, F.}: {\em Interlacing Self-Localization, Moving Object Tracking
+  and Mapping for 3D Range Sensors}.
+\newblock \btxphdthesis{}, {Karlsruher Institut f{\"u}r Technologie (KIT)},
+  2012.
+
+\bibitem{Moras2011ICRA}
+{\sc Moras, J.}, {\sc V.~Cherfaoui} \btxandlong{}\ {\sc P.~Bonnifait}: {\em
+  Credibilist occupancy grids for vehicle perception in dynamic environments}.
+\newblock \Btxinlong{}\ {\em International Conference on Robotics and
+  Automation}, \btxpageslong{}\ 84--89. IEEE, 2011.
+
+\bibitem{moravec1985high}
+{\sc Moravec, H.} \btxandlong{}\ {\sc A.~Elfes}: {\em High resolution maps from
+  wide angle sonar}.
+\newblock \Btxinlong{}\ {\em International Conference on Robotics and
+  Automation}, \btxpageslong{}\ 116--121. IEEE, 1985.
+
+\bibitem{morin2008hrc}
+{\sc Morin, P.} \btxandlong{}\ {\sc C.~Samson}: {\em Springer Handbook of
+  Robotics}, \btxchapterlong{}\ Motion control of wheeled mobile robots,
+  \btxpageslong{}\ 799--826.
+\newblock Springer, 2008.
+
+\bibitem{nanao2011vehicle}
+{\sc Nanao, M.} \btxandlong{}\ {\sc T.~Ohtsuka}: {\em Vehicle dynamics control
+  for collision avoidance considering physical limitations}.
+\newblock \Btxinlong{}\ {\em SICE Annual Conference}, \btxpageslong{}\
+  688--693. IEEE, 2011.
+
+\bibitem{nocedal2006numerical}
+{\sc Nocedal, J.} \btxandlong{}\ {\sc S.J. Wright}: {\em Numerical
+  Optimization}.
+\newblock Springer Science + Business Media, 2006.
+
+\bibitem{odenthal2003ubertragung}
+{\sc Odenthal, D.}, {\sc T.~B{\"u}nte}, {\sc H.-D. Heitzer} \btxandlong{}\ {\sc
+  C.~Eicker}: {\em {\"U}bertragung des Lenkgef{\"u}hls einer Servo-Lenkung auf
+  Steer-by-Wire}.
+\newblock at - Automatisierungstechnik, 51(7):329--337, 2003.
+
+\bibitem{papageorgiou2012optimierung}
+{\sc Papageorgiou, M.}: {\em Optimierung: Statische, dynamische, stochastische
+  Verfahren}.
+\newblock Springer, 2012.
+
+\bibitem{park2009obstacle}
+{\sc Park, J.M.}, {\sc D.W. Kim}, {\sc Y.S. Yoon}, {\sc H.J. Kim}
+  \btxandlong{}\ {\sc K.S. Yi}: {\em Obstacle avoidance of autonomous vehicles
+  based on model predictive control}.
+\newblock Proceedings of the Institution of Mechanical Engineers, Part D:
+  Journal of Automobile Engineering, 223(12):1499--1516, 2009.
+
+\bibitem{pfeffer2013lenkungshandbuch}
+{\sc Pfeffer, P.} \btxandlong{}\ {\sc M.~Harrer}: {\em Lenkungshandbuch:
+  Lenksysteme, Lenkgef{\"u}hl, Fahrdynamik von Kraftfahrzeugen}.
+\newblock Springer, 2013.
+
+\bibitem{pink2010bildbasierte}
+{\sc Pink, O.}: {\em Bildbasierte Selbstlokalisierung von
+  Stra{\ss}enfahrzeugen}.
+\newblock \btxphdthesis{}, {Karlsruher Institut f{\"u}r Technologie (KIT)},
+  2010.
+
+\bibitem{pivtoraiko2007optimal}
+{\sc Pivtoraiko, M.}, {\sc R.A. Knepper} \btxandlong{}\ {\sc A.~Kelly}: {\em
+  {Optimal, smooth, nonholonomic mobile robot motion planning in state
+  lattices}}.
+\newblock \Btxtechreplong{}, Robotics Institute, Carnegie Mellon University,
+  Pittsburgh, PA, 2007.
+
+\bibitem{pivtoraiko2009differentially}
+{\sc Pivtoraiko, M.}, {\sc R.A. Knepper} \btxandlong{}\ {\sc A.~Kelly}: {\em
+  Differentially constrained mobile robot motion planning in state lattices}.
+\newblock Journal of Field Robotics, 26(3):308--333, 2009.
+
+\bibitem{piyabongkarn2007use}
+{\sc Piyabongkarn, D.}, {\sc J.Y. Lew}, {\sc R.~Rajamani}, {\sc J.A. Grogg}
+  \btxandlong{}\ {\sc Q.~Yuan}: {\em On the use of torque-biasing systems for
+  electronic stability control: Limitations and possibilities}.
+\newblock IEEE Transactions on Control Systems Technology, 15(3):581--589,
+  2007.
+
+\bibitem{pradalier2008robust}
+{\sc Pradalier, C.} \btxandlong{}\ {\sc K.~Usher}: {\em Robust trajectory
+  tracking for a reversing tractor trailer}.
+\newblock Journal of Field Robotics, 25(6-7):378--399, 2008.
+
+\bibitem{press2007numerical}
+{\sc Press, W.H.}, {\sc S.A. Teukolsky}, {\sc W.T. Vetterling} \btxandlong{}\
+  {\sc B.P. Flannery}: {\em {Numerical recipes: The Art of Scientific
+  Computing}}.
+\newblock Cambridge University Press, 2007.
+
+\bibitem{preusse2001fahrzeugfuhrung}
+{\sc Preu{\ss}e, C.}, {\sc H.~Keller} \btxandlong{}\ {\sc K.J. Hunt}: {\em
+  Fahrzeugführung durch ein Fahrermodell}.
+\newblock at - Automatisierungstechnik, 12(49):540--546, 2001.
+
+\bibitem{prokop2001modeling}
+{\sc Prokop, G.}: {\em Modeling human vehicle driving by model predictive
+  online optimization}.
+\newblock Vehicle System Dynamics, 35(1):19--53, 2001.
+
+\bibitem{rathgeber_ecc2014}
+{\sc Rathgeber, C.}, {\sc F.~Winkler}, {\sc D.~Odenthal} \btxandlong{}\ {\sc
+  S.~Müller}: {\em Lateral Trajectory Tracking Control for Autonomous
+  Vehicles}.
+\newblock \Btxinlong{}\ {\em European Control Conference}, \btxpageslong{}\
+  1024--1029, 2014.
+
+\bibitem{rauskolb2008caroline}
+{\sc Rauskolb, F.W.}, {\sc K.~Berger}, {\sc C.~Lipski}, {\sc M.~Magnor}, {\sc
+  K.~Cornelsen}, {\sc J.~Effertz}, {\sc T.~Form}, {\sc F.~Graefe}, {\sc
+  S.~Ohl}, {\sc W.~Schumacher} \btxetalshort{.}: {\em {Caroline: An
+  autonomously driving vehicle for urban environments}}.
+\newblock Journal of Field Robotics, 25(9):674--724, 2008.
+
+\bibitem{rawlings2000tutorial}
+{\sc Rawlings, J.B.}: {\em Tutorial overview of model predictive control}.
+\newblock Control Systems, IEEE, 20(3):38--52, 2000.
+
+\bibitem{reeds1990optimal}
+{\sc Reeds, J.A.} \btxandlong{}\ {\sc L.A. Shepp}: {\em {Optimal paths for a
+  car that goes both forwards and backwards}}.
+\newblock Pacific Journal of Mathematics, 145(2):367--393, 1990.
+
+\bibitem{reif2010sensoren}
+{\sc Reif, K.}: {\em Sensoren im Kraftfahrzeug}.
+\newblock Springer, 2010.
+
+\bibitem{reinisch1974kybernetische}
+{\sc Reinisch, K.}: {\em Kybernetische Grundlagen und Beschreibung
+  kontinuierlicher Systeme}.
+\newblock Verlag Technik, 1974.
+
+\bibitem{reinisch2012diss}
+{\sc Reinisch, P.}: {\em Eine risikoadaptive Eingriffsstrategie f{\"u}r
+  Gefahrenbremssysteme}.
+\newblock \btxphdthesis{}, Universit{\"a}t Duisburg-Essen, 2012.
+
+\bibitem{rohrmuller2008probabilistic}
+{\sc Rohrmuller, F.}, {\sc M.~Althoff}, {\sc D.~Wollherr} \btxandlong{}\ {\sc
+  M.~Buss}: {\em Probabilistic mapping of dynamic obstacles using markov chains
+  for replanning in dynamic environments}.
+\newblock \Btxinlong{}\ {\em International Conference on Intelligent Robots and
+  Systems}, \btxpageslong{}\ 2504--2510. IEEE, 2008.
+
+\bibitem{roppenecker2009zustandsregelung}
+{\sc Roppenecker, G.}: {\em Zustandsregelung linearer Systeme - Eine
+  Neubetrachtung}.
+\newblock at - Automatisierungstechnik, 57(10):491--498, 2009.
+
+\bibitem{rothfuss1997fnz}
+{\sc Rothfu{\ss}, R.}, {\sc J.~Rudolph} \btxandlong{}\ {\sc M.~Zeitz}: {\em
+  {Flachheit: Ein neuer Zugang zur Steuerung und Regelung nichtlinearer
+  Systeme}}.
+\newblock at - Automatisierungstechnik, 45(11):517--525, 1997.
+
+\bibitem{rouchon1993flatness2}
+{\sc Rouchon, P.}, {\sc M.~Fliess}, {\sc J.~L{\'e}vine} \btxandlong{}\ {\sc
+  P.~Martin}: {\em Flatness and motion planning: the car with n trailers}.
+\newblock \Btxinlong{}\ {\em European Control Conference}, \btxpageslong{}\
+  1518--1522, 1993.
+
+\bibitem{rouchon1993flatness1}
+{\sc Rouchon, P.}, {\sc M.~Fliess}, {\sc J.~L{\'e}vine} \btxandlong{}\ {\sc
+  P.~Martin}: {\em Flatness, motion planning and trailer systems}.
+\newblock \Btxinlong{}\ {\em Conference on Decision and Control},
+  \btxpageslong{}\ 2700--2705. IEEE, 1993.
+
+\bibitem{ryu2004integrating}
+{\sc Ryu, J.} \btxandlong{}\ {\sc J.C. Gerdes}: {\em Integrating inertial
+  sensors with GPS for vehicle dynamics control}.
+\newblock Journal of Dynamic Systems, Measurement, and Control,
+  126(2):243--254, 2004.
+
+\bibitem{sampei1986tsn}
+{\sc Sampei, M.} \btxandlong{}\ {\sc K.~Furuta}: {\em On time scaling for
+  nonlinear systems: Application to linearization}.
+\newblock IEEE Transactions on Automatic Control, 31(5):459--462, 1986.
+
+\bibitem{sampei1988robot}
+{\sc Sampei, M.} \btxandlong{}\ {\sc K.~Furuta}: {\em Robot control in the
+  neighborhood of singular points}.
+\newblock IEEE Journal of Robotics and Automation, 4(3):303--309, 1988.
+
+\bibitem{sampei1995arbitrary}
+{\sc Sampei, M.}, {\sc T.~Tamura}, {\sc T.~Kobayashi} \btxandlong{}\ {\sc
+  N.~Shibui}: {\em Arbitrary path tracking control of articulated vehicles
+  using nonlinear control theory}.
+\newblock IEEE Transactions on Control Systems Technology, 3:125--131, 1995.
+
+\bibitem{Schaller2008}
+{\sc Schaller, T.}, {\sc J~Schiehlen} \btxandlong{}\ {\sc B.~Gradenegger}: {\em
+  Stauassistenz -- Unterstützung des Fahrers in der Quer- und Längsführung:
+  Systementwicklung und Kundenakzeptanz}.
+\newblock \Btxinlong{}\ {\em 3. Tagung Aktive Sicherheit durch
+  Fahrerassistenz}, 2008.
+
+\bibitem{schmidt2014fahrstrategien}
+{\sc Schmidt, C.}: {\em Fahrstrategien zur Unfallvermeidung im
+  Stra{\ss}enverkehr f{\"u}r Einzel-und Mehrobjektszenarien}.
+\newblock Dissertation, Karlsruher Institut f{\"u}r Technologie (KIT), 2014.
+
+\bibitem{schmidt2012hierarchischer}
+{\sc Schmidt, S.} \btxandlong{}\ {\sc R.~Kasper}: {\em Ein hierarchischer
+  Ansatz zur optimalen Bahnplanung und Bahnregelung f{\"u}r ein autonomes
+  Fahrzeug}.
+\newblock at - Automatisierungstechnik, 60(12):743--754, 2012.
+
+\bibitem{Schramm2010}
+{\sc Schramm, D.}, {\sc M.~Hiller} \btxandlong{}\ {\sc R.~Bardini}: {\em
+  Modellbildung und Simulation der Dynamik von Kraftfahrzeugen}.
+\newblock Springer-Verlag, Berlin, 2010.
+
+\bibitem{schwarz2009generisches}
+{\sc Schwarz, C.}, {\sc C.~Weyand} \btxandlong{}\ {\sc D.~Z{\"o}bel}: {\em
+  Generisches Verfahren zur pr{\"a}zisen Pfadverfolgung f{\"u}r
+  Serienfahrzeuggespanne}.
+\newblock \Btxinlong{}\ {\em Autonome Mobile Systeme}, \btxpageslong{}\
+  97--104, 2009.
+
+\bibitem{Siciliano2008}
+{\sc Siciliano, B.} \btxandlong{}\ {\sc O.~Khatib}\ (\btxeditorslong{}): {\em
+  Springer Handbook of Robotics}.
+\newblock Springer, Berlin, 2008.
+
+\bibitem{soehnitz}
+{\sc S{\"o}hnitz, I.}: {\em {Querregelung eines autonomen Straßenfahrzeugs}}.
+\newblock \btxphdthesis{}, Technische Universität Braunschweig, 2001.
+
+\bibitem{soueres1998optimal}
+{\sc Soueres, P.} \btxandlong{}\ {\sc J.~Boissonnat}: {\em Optimal trajectories
+  for nonholonomic mobile robots}.
+\newblock Robot Motion Planning and Control, Lecture Notes in Control and
+  Information Sciences, 229:93--170, 1998.
+
+\bibitem{Stangl2013}
+{\sc Stangl, A.}: {\em Incremental Path Planning for Collision-Free Waypoint
+  Navigation of Mobile Robots}.
+\newblock \btxmastthesis{}, Technische Universität München, 2013.
+
+\bibitem{StatistischesBundesamtDeutschland2012}
+{\sc {Statistisches Bundesamt Deutschland}}: {\em Zahl der Verkehrstoten 2011
+  um {9,4\%} gestiegen}.
+\newblock Pressemitteilung Nr. 065, Februar 2012.
+
+\bibitem{stiller2008probabilistische}
+{\sc Stiller, C.}, {\sc S.~Kammel}, {\sc I.~Lulcheva} \btxandlong{}\ {\sc
+  J.~Ziegler}: {\em {Probabilistische Methoden in der Umfeldwahrnehmung
+  Kognitiver Automobile}}.
+\newblock at - Automatisierungstechnik, 56(11):563--574, 2008.
+
+\bibitem{patentDE102010030986}
+{\sc Strecker, J.} \btxandlong{}\ {\sc T.~Werner}: {\em Verfahren zur
+  Bestimmung einer Zahnstangenkraft für eine Lenkvorrichtung in einem
+  Fahrzeug}, 2012.
+\newblock Patent DE102010030986.
+
+\bibitem{Sundar1997}
+{\sc Sundar, S.} \btxandlong{}\ {\sc Z.~Shiller}: {\em Optimal obstacle
+  avoidance based on the Hamilton-Jacobi-Bellman equation}.
+\newblock IEEE Transactions on Robotics and Automation, 13(2):305--310, 1997.
+
+\bibitem{svaricek2006nln}
+{\sc Svaricek, F.}: {\em {Nulldynamik linearer und nichtlinearer Systeme:
+  Definitionen, Eigenschaften und Anwendungen}}.
+\newblock at - Automatisierungstechnik, 54(7):310--322, 2006.
+
+\bibitem{tan1999development}
+{\sc Tan, H-S.}, {\sc J.~Guldner}, {\sc S.~Patwardhan}, {\sc C.~Chen}
+  \btxandlong{}\ {\sc B.~Bougler}: {\em Development of an automated steering
+  vehicle based on roadway magnets-a case study of mechatronic system design}.
+\newblock IEEE/ASME Transactions on Mechatronics, 4(3):258--272, 1999.
+
+\bibitem{Tanzmeister2014Grid}
+{\sc Tanzmeister, G.}, {\sc J.~Thomas}, {\sc Wollherr D.} \btxandlong{}\ {\sc
+  M~Buss}: {\em Grid-based Mapping and Tracking in Dynamic Environments using a
+  Uniform Evidential Environment Representation}.
+\newblock \Btxinlong{}\ {\em International Conference on Robotics and
+  Automation}. IEEE, 2014.
+\newblock under review.
+
+\bibitem{Tanzmeister2014ConfSpaceCosts}
+{\sc Tanzmeister, T.}, {\sc M.~Friedl}, {\sc D.~Wollherr} \btxandlong{}\ {\sc
+  M.~Buss}: {\em Efficient Evaluation of Collisions and Costs using Grid Maps
+  for Autonomous Vehicle Motion Planning}.
+\newblock under review.
+
+\bibitem{Thrun2005}
+{\sc Thrun, S.}, {\sc W.~Burgard} \btxandlong{}\ {\sc D.~Fox}: {\em
+  Probabilistic Robotics}.
+\newblock Intelligent Robotics and Autonomous Agents. MIT Press, 2005.
+
+\bibitem{tilbury1992steering}
+{\sc Tilbury, D.}, {\sc J.P. Laumond}, {\sc R.~Murray}, {\sc S.~Sastry}
+  \btxandlong{}\ {\sc G.~Walsh}: {\em Steering car-like systems with trailers
+  using sinusoids}.
+\newblock \Btxinlong{}\ {\em International Conference on Robotics and
+  Automation}, \btxpageslong{}\ 1993--1998. IEEE, 1992.
+
+\bibitem{patentDE69007902T2}
+{\sc Togai, K.}, {\sc Y.~Danno}, {\sc M.~Yoshida}, {\sc M.~Shimada}
+  \btxandlong{}\ {\sc K.~Ueda}: {\em Ausgangsleistungssteuerung für
+  Verbrennungsmotor}, 1994.
+\newblock Patent DE69007902T2.
+
+\bibitem{trachtler2005integrierte}
+{\sc Tr{\"a}chtler, A.}: {\em Integrierte Fahrdynamikregelung mit ESP, aktiver
+  Lenkung und aktivem Fahrwerk}.
+\newblock at - Automatisierungstechnik, 53(1):11--19, 2005.
+
+\bibitem{unbehauen1989regelungstechnik}
+{\sc Unbehauen, H.}: {\em Regelungstechnik}.
+\newblock Springer, 1989.
+
+\bibitem{UnitedNations1993}
+{\sc {United Nations}}: {\em Convention on Road Traffic}.
+\newblock Wien, November 1968.
+
+\bibitem{urmson2008adu}
+{\sc Urmson, C.}, {\sc J.~Anhalt}, {\sc D.~Bagnell}, {\sc C.~Baker}, {\sc
+  R.~Bittner}, {\sc MN~Clark}, {\sc J.~Dolan}, {\sc D.~Duggins}, {\sc
+  T.~Galatali}, {\sc C.~Geyer} \btxetalshort{.}: {\em Autonomous driving in
+  urban environments: Boss and the Urban Challenge}.
+\newblock Journal of Field Robotics, 25(8), 2008.
+
+\bibitem{handbookIV_vanArem2012}
+{\sc {van Arem}, B.}: {\em A Strategic Approach to Intelligent Functions in
+  Vehicles}.
+\newblock \Btxinlong{}\ {\sc Eskandarian, A.}\ (\btxeditorlong{}): {\em
+  Handbook of intelligent vehicles}, \btxpageslong{}\ 17--29. Springer, 2012.
+
+\bibitem{vanderborght2013variable}
+{\sc Vanderborght, B.}, {\sc A.~Albu-Sch{\"a}ffer}, {\sc A.~Bicchi}, {\sc
+  E.~Burdet}, {\sc D.~Caldwell}, {\sc R.~Carloni}, {\sc M.~Catalano}, {\sc
+  O.~Eiberger}, {\sc W.~Friedl} \btxandlong{}\ {\sc G.~Ganesh}: {\em Variable
+  impedance actuators: A review}.
+\newblock Robotics and Autonomous Systems, 61(12):1601--1614, 2013.
+
+\bibitem{venhovens2000stop}
+{\sc Venhovens, P.}, {\sc K.~Naab} \btxandlong{}\ {\sc B.~Adiprasito}: {\em
+  Stop and go cruise control}.
+\newblock International journal of automotive technology, 1(2):61--69, 2000.
+
+\bibitem{vietinghoff2008nichtlineare}
+{\sc Vietinghoff, A.~von}: {\em Nichtlineare Regelung von Kraftfahrzeugen in
+  querdynamisch kritischen Fahrsituationen}.
+\newblock \btxphdthesis{}, Universit{\"a}t Karlsruhe (TH), 2008.
+
+\bibitem{wahl2003ora}
+{\sc Wahl, A.} \btxandlong{}\ {\sc E.D. Gilles}: {\em {Optimale Regelverfahren
+  zur automatischen Bahnf{\"u}hrung von Binnenschiffen}}.
+\newblock at - Automatisierungstechnik, 51(6):255--264, 2003.
+
+\bibitem{waldmann2009entwicklung}
+{\sc Waldmann, P.}: {\em Entwicklung eines Fahrzeugf{\"u}hrungssystems zum
+  Erlernen der Ideallinie auf Rennstrecken}.
+\newblock \btxphdthesis{}, Technischen Universität Cottbus, 2009.
+
+\bibitem{walter_ecc2014}
+{\sc Walter, M.}, {\sc N.~Nitzsche}, {\sc D.~Odenthal} \btxandlong{}\ {\sc
+  S.~Müller}: {\em Lateral vehicle guidance control for autonomous and
+  cooperative driving}.
+\newblock \Btxinlong{}\ {\em European Control Conference}, \btxpageslong{}\
+  2667--2672, 2014.
+
+\bibitem{telegraph2012_google}
+{\sc Warman, M.}: {\em {Google's robot cars pass driving test}}.
+\newblock The Telegraph, May 2012.
+
+\bibitem{weilkes2005zukunftige}
+{\sc Weilkes, M.}, {\sc L.~B{\"u}rkle}, {\sc T.~Rentschler} \btxandlong{}\ {\sc
+  M.~Scherl}: {\em Zuk{\"u}nftige Fahrzeugf{\"u}hrungsassistenz -- Kombinierte
+  L{\"a}ngs- und Querregelung}.
+\newblock at - Automatisierungstechnik, 53(1):4--10, 2005.
+
+\bibitem{werivframe08}
+{\sc Werling, M.}, {\sc M.~Goebl}, {\sc O.~Pink} \btxandlong{}\ {\sc
+  C.~Stiller}: {\em A hardware and software framework for cognitive
+  automobiles}.
+\newblock \Btxinlong{}\ {\em Intelligent Vehicles Symposium}, \btxpageslong{}\
+  1080--1085. IEEE, 2008.
+
+\bibitem{werivcontrol08}
+{\sc Werling, M.} \btxandlong{}\ {\sc L.~Gr\"oll}: {\em Low-level Controllers
+  Realizing High-level Decisions in an Autonomous Vehicle}.
+\newblock \Btxinlong{}\ {\em Intelligent Vehicles Symposium}, \btxpageslong{}\
+  1113--1119. IEEE, 2008.
+
+\bibitem{atSonderheft08}
+{\sc Werling, M.}, {\sc L.~Gr\"oll} \btxandlong{}\ {\sc G.~Bretthauer}: {\em
+  Ein Multiregler zur Erprobung vollautonomen Fahrens}.
+\newblock at - Automatisierungstechnik, 56(11):585--591, 2008.
+
+\bibitem{Werling2010a}
+{\sc Werling, M.}, {\sc L.~Gr{\"o}ll} \btxandlong{}\ {\sc G.~Bretthauer}: {\em
+  Invariant Trajectory Tracking With a Full-Size Autonomous Road Vehicle}.
+\newblock IEEE Transactions on Robotics, 26(4):758--765, 2010.
+
+\bibitem{handbuchFAS_Winner}
+{\sc Winner, H.}, {\sc S.~Hakuli} \btxandlong{}\ {\sc G.~Wolf}: {\em Handbuch
+  Fahrerassistenzsysteme}.
+\newblock Vieweg+Teubner Verlag, Wiesbaden, 2012.
+
+\bibitem{xu2011micro}
+{\sc Xu, W.}, {\sc W.~Yao}, {\sc H.~Zhao} \btxandlong{}\ {\sc H.~Zha}: {\em A
+  vehicle model for micro-traffic simulation in dynamic urban scenarios}.
+\newblock \Btxinlong{}\ {\em International Conference on Robotics and
+  Automation}, \btxpageslong{}\ 2267--2274. IEEE, 2011.
+
+\bibitem{Yoon2009}
+{\sc Yoon, Y.}, {\sc J.~Shin}, {\sc H.J. Kim}, {\sc Y.~Park} \btxandlong{}\
+  {\sc S.~Sastry}: {\em Model-predictive active steering and obstacle avoidance
+  for autonomous ground vehicles}.
+\newblock Control Engineering Practice, 17(7):741--750, 2009.
+
+\bibitem{BHB2012_vanZanten_bremsanlage}
+{\sc Zanten, A.~van}: {\em Die Bremsanlage in Fahrerassistenzsystemen}.
+\newblock \Btxinlong{}\ {\em Bremsenhandbuch}, \btxpageslong{}\ 463--490.
+  Springer Vieweg, Breuer, B. and Bill, K.H. \btxeditionlong{}, 2012.
+
+\bibitem{zeitz2010differenzielle}
+{\sc Zeitz, M.}: {\em Differenzielle Flachheit: Eine n{\"u}tzliche Methodik
+  auch f{\"u}r lineare SISO-Systeme}.
+\newblock at - Automatisierungstechnik, 58(1):5--13, 2010.
+
+\bibitem{zieg09spatemp}
+{\sc Ziegler, J.} \btxandlong{}\ {\sc C.~Stiller}: {\em {Spatiotemporal state
+  lattices for fast trajectory planning in dynamic on-road driving scenarios}}.
+\newblock \Btxinlong{}\ {\em International Conference on Intelligent Robots and
+  Systems}, \btxpageslong{}\ 1879--1884. IEEE/RSJ, 2009.
+
+\bibitem{zieglerfastcollision2010}
+{\sc Ziegler, J.} \btxandlong{}\ {\sc C.~Stiller}: {\em Fast Collision Checking
+  for Intelligent Vehicle Motion Planning}.
+\newblock \Btxinlong{}\ {\em Intelligent Vehicles Symposium}, \btxpageslong{}\
+  518--522. IEEE, 2010.
+
+\bibitem{zieglerIV08}
+{\sc Ziegler, J.}, {\sc M.~Werling} \btxandlong{}\ {\sc J.~Schr\"oder}: {\em
+  Navigating car-like robots in unstructured environments using an obstacle
+  sensitive cost function}.
+\newblock \Btxinlong{}\ {\em Intelligent Vehicles Symposium}, \btxpageslong{}\
+  787--791. IEEE, 2008.
+
+\end{thebibliography}

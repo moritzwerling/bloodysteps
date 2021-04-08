@@ -1,0 +1,59 @@
+\chapter{Empfehlungen für den Entwurf optimaler Fahreingriffe}
+
+Dieses Kapitel gibt eine kurze Zusammenstellung wichtiger Empfehlungen für den Entwurf und die Entwicklung optimaler Fahreingriffe. Im Unterschied zu den vorangegangen Kapiteln, die einen Schwerpunkt auf die mathematischen Zusammenhänge der verschiedenen Entwurfsmethodiken legen, basieren die nachfolgenden kapitelübergreifenden Empfehlungen auf in der erfolgreichen Praxis wiederkehrende Muster, welche auch als Erfolgsmethoden\index{Erfolgsmethoden} ("`best-practices"') bezeichnet werden. Sie wurden bereits im Rahmen von \citeltex{werling_handbook} veröffentlicht.
+
+%In den meisten Fällen stellen sie eine kapitelübergreifende Zusammenfassung dar.
+
+\section{Kombination der Optimierungsmethoden}
+Bei Betrachtung der Dynamischen Programmierung aus Kap.\,\ref{chap:dynamische_Optimierung_dynamisch} und der Direkten Optimierung aus Kap.\,\ref{chap:dynamische_Optimierung_direkt} ist zusammenfassend festzuhalten, dass die beiden Herangehensweisen orthogonale Leistungsvermögen aufweisen, siehe Tab.\,\ref{tab:vergleichOpt}. Die Dynamische Programmierung leidet bekanntermaßen unter dem \emph{Fluch der Dimensionalität}\index{Fluch der Dimensionalität} \cite{bellmann_DP,foellingeroptimal}, in dem Sinne, dass sie mit Hinblick auf die Anzahl der Systemzustände schlecht skaliert. Ihre direkte Anwendung ist demnach auf Systeme mit wenigen Systemzuständen beschränkt ($<$3-4), welche auch nur recht grob diskretisiert werden dürfen. In der Direkten Optimierung hingegen können Systemmodelle mit einer große Anzahl ($>$4) von kontinuierlichen Systemzuständen berücksichtigt und hieraus direkt die kontinuierlichen Systemstellgrößen  $\bs u(t)$ bestimmt werden. Im Gegenzug dazu kommt die Direkte Optimierung aufgrund der numerischen Limitierungen (insbesondere lokale Konvergenz) der unterlagerten Optimierung nicht mit beliebigen Kostenfunktionalen zurecht. Darüber hinaus wächst die Laufzeit exponentiell mit der Anzahl der Optimierungsvariablen, sodass die Länge des Optimierungshorizonts auf wenige Sekunden beschränkt bleiben muss. Im Unterschied dazu können in der Dynamischen Programmierung nahezu beliebige Kosten behandelt werden und es wird immer das globale Optimum gefunden. Des Weiteren skaliert die Dynamische Programmierung viel besser in Bezug auf die Länge des Optimierungshorizonts, was sich beispielsweise an der linearen Laufzeit der in Abschn.\,\ref{sec:wertiteratrion} vorgestellten Wertiteration verdeutlicht. 
+
+Anbetracht dessen ist es bei der Lösung komplexer, vorausschauender Trajektorienoptimierungsaufgaben in der Praxis unabdingbar, die zuvor beschriebenen Optimierungsmethoden vorteilhaft zu kombinieren. Die Lösung der Dynamische Programmierung\index{Dynamische Programmierung} liefert dann nur einen "`groben Plan"', der entweder als Referenztrajektorie (siehe z.B. \cite{Ferguson2008, Ferguson2008b, gu2013focused}) und/oder als Startlösung für die lokal arbeitende Direkte Optimierungsmethode\index{Direkte Optimierung} dient. Letztere berücksichtigt dann ein detaillierteres Fahrzeugmodell und verbessert die Lösung der Dynamischen Programmierung auf einem reduzierten Optimierungshorizont hin zu einer physikalisch fahrbaren Trajektorie. Die Optimaltrajektorie wird dann entweder an einen unterlagerten Regelkreis weitergeleitet oder liefert direkt die Fahrzeugstellgrößen.
+In vielen Fällen sind geschlossene Lösungen der Indirekten Optimierungsmethode\index{Indirekte Optimierung} dazu geeignet, die Dynamische Programmierung zu beschleunigen. Dies kann z.B. in Form von A*-Heuristiken \cite{zieglerIV08} oder analytischen Expansionen \cite{dolgov2010path} erfolgen, welche beide, salopp gesprochen, die verbleibende Trajektorie bis zum Ziel approximieren, sodass sich insgesamt der rechentechnisch beherrschbare Optimierungshorizont deutlich verlängern kann. Analog hierzu können geschlossene Lösungen der Indirekten Optimierungsmethode auch als approximative Zielkosten bei der Direkten Optimierung herangezogen werden, sodass sich der Optimierungshorizont virtuell verlängert, siehe Abschn.\,\ref{sec:mpc_acc} und Tab.\,\ref{tab:vergleichOpt}.
+
+\begin{center}
+\begin{table}[h]
+\noindent
+\resizebox{\linewidth}{!}{
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\cline{2-4} Methode
+\cellcolor{gray!60} 
+& \cellcolor{gray!40} Viele Zustände & \cellcolor{gray!40} Kont.\ Zustände & \cellcolor{gray!40} Glob.\ Optimum & \cellcolor{gray!40} Langer Horizont\\
+\hline
+%\rowcolor{white!50}
+\cellcolor{gray!60} {DP} & $\bs\ominus$ & $\bs\ominus$ & $\bs\oplus$ & $\bs\oplus$ \\
+\hline
+\cellcolor{gray!60} {DO} & $\bs\oplus$ & $\bs\oplus$ & $\bs\ominus$ & $\bs\ominus$ \\
+\hline
+\cellcolor{gray!60} {DP + DO} & $\bs\oplus$ & $\bs\oplus$ & $\bs\oplus$ & $\bs\oplus$ \\
+\hline
+\cellcolor{gray!60} {DP + DO + IO} & $\bs\oplus$ & $\bs\oplus$ & $\bs\oplus$ & $\bs\oplus \bs\oplus$ \\
+\hline 
+\multicolumn{5}{|c|}{\cellcolor{gray!20} DP: Dynamische Programmierung \quad DO: Direkte Optimierung \quad IO: Indirekte Optimierung}\\
+\hline
+\end{tabular}}
+\caption{Optimierungsmethoden und deren Kombination im direkten Vergleich}
+\label{tab:vergleichOpt}
+\end{table}
+\end{center}
+
+\section{Iterativer Funktionsentwurf\index{Funktionsentwurf}}
+Die Software einer guten Fahrerassistenzfunktion entsteht nicht im Büro, wo der Ingenieur alle Eventualitäten im Kopf durchspielt, Anforderungen an eine Implementierung ableitet und diese schließlich programmtechnisch umsetzt. Den allermeisten Herausforderungen wird erstmalig auf dem Testgelände und im Realverkehr begegnet. Häufig wird nämlich die Qualität der Umfeldsensorik überschätzt, sodass in den fahrzeugverhaltensgenerierenden Modulen später ein großer Aufwand entsteht, die Sensorik-Defizite situationsabhängig zu kompensieren. Gleichzeitig stellen sich manche vorhergesagten Probleme als praktisch unbedeutend heraus. Wichtig ist es daher, möglich schnell ein Gefühl für die wirklichen Knackpunkte der betrachteten Aufgabe einschließlich deren Auftretenshäufigkeiten zu entwickeln, um den einfachsten Algorithmus zu entwerfen, der das Hauptproblem zufriedenstellend löst. Trotzdem lässt es sich über die Entwicklungszeit hinweg meist nicht vermeiden, dass neu identifizierte Sondersituationen eine Erweiterung des Algorithmenkerns erfordern (das sogenannten "`Anbauen von Balkonen"'). An dieser Stelle sei angemerkt, dass es sich bereits in einer frühen Entwicklungsphase lohnt, den gesamten Geschwindigkeitsbereich im Konzept zu adressieren, da geschwindigkeitsabhängige Fallunterscheidungen immer wieder zu ungewollten Effekten führen.
+
+Weiter sei empfohlen, dass sich der Funktionsentwurf auf ein natürliches, menschenähnliches und vorausschauendes Fahrverhalten fokussiert. Dieser zielt nämlich nicht nur auf einen guten Systemkomfort ab, sondern führt zu weniger Irritationen im Straßenverkehr und damit zu einem geringeren Unfallpotential. So viel anspruchsvoller sich die Implementierung einer guten Situationsprädiktion mit einer vorausschauenden Systemreaktion erweisen kann, so stark vereinfacht sich dann möglicherweise der Fahreingriff. Schließlich werden durch eine frühzeitige Reaktion physikalische Grenzbereiche gemieden und das Fahrzeug nur im gut beherrschbaren, linearen Dynamikbereich bewegt. Einen wesentlichen Beitrag zu einem natürlichen Fahrverhalten liefern auch die "`weichen"' Risikomaße der Verkehrspsychologie, allen voran die \emph{time-to-collision} aus Abschn.\,\ref{sec:ttc}, welche in die "`harten"' Optimierungskriterien, wenn immer möglich, aufgenommen werden sollten.
+
+\section{Durchgängige Entwicklungstoolkette}
+Anbetracht des vorhergehenden Abschnitts vermag es widersprüchlich erscheinen, dass die größten Ineffizienzen bei der Entwicklung neuer Fahrerassistenzsysteme erfahrungsgemäß im praktischen Erprobungsbetrieb entstehen. Als Begründung sind die nicht kontrollierbaren und damit nicht reproduzierbaren Eingangsdaten des Realversuchs zu nennen, die eine systematische, effiziente Fehlersuche verhindern. Auch erfordert jeder praktische Fahrversuch einen nicht zu unterschätzenden Vorbereitungs-, Wartungs- und Koordinationsaufwand. Der Schlüssel zu einem effizienten Erprobungsbetriebs ist daher das Aufzeichnen von Eingangsdaten und das Nachstellen der Anwendungsfälle am Büroarbeitsplatz. Die dazu erforderliche Toolkette ist zugegebenermaßen aufwändig zu erstellen, zahlt sich jedoch mittelfristig vielfach aus. \\
+Grundsätzlich kann im Zusammenhang der Toolkette zwischen einem \emph{Open-loop-}\index{Open-loop-Test} und einem \emph{Closed-loop-Test}\index{Closed-loop-Test} unterschieden werden, wobei bei ersterem die im Realversuch aufgezeichneten Eingangsdaten dem zu evaluierenden Algorithmus lediglich eingespielt werden, um auf grundlegende Implementierungsfehler in der Trajektorienoptimierung zu stoßen. \\
+Bei einem Closed-loop-Test hingegen wird der Einfluss der Trajektorienoptimierung und unterlagerten Regelung auf die Systemdynamik untersucht, welche wiederum die Eingangsdaten beeinflusst und sich dadurch der Regelkreis schließt. Damit müssen die Fahrzeugreaktion und das -umfeld (rauschbehaftet!) simuliert werden, was einen wesentlich größeren Aufwand gegenüber dem Open-loop-Test darstellt. Die Simulation des Egofahrzeugs und der Fremdobjekte sollte hierbei so einfach wie möglich gehalten, jedoch permanent um die im Realversuch angetroffenen Effekte erweitert werden. Wird letzteres versäumt, beispielsweise durch das hastende Hinarbeiten auf einen festen Demo-Meilenstein im Projekt, wird die Simulation von der Algorithmik "`abgehängt"' und verliert schnell ihre Bedeutung in der Toolkette, begleitet von großen Effizienzeinbußen.
+%Als zielführend hat sich darüber hinaus die Simulation von Systemrauschen (Messrauschen, Parameterungenauigkeiten etc.) bewährt, anhand derer die Algorithmen parametriert (Wichtungsmatrizen im Gütekriterium) werden können.
+
+Des Weiteren ist eine zentrale Visualisierung bei der \iA vorliegenden Datenkomplexität und den unterschiedlichen Evaluationsmodi (Realversuch, Open-loop- und Close-loop-Test) von der ersten Minute an unabdingbar und permanent zu erweitern. Idealerweise liefert sie die Möglichkeit, skriptbasiert Datenplots und Szenenansichten für wissenschaftliche Veröffentlichungen oder die interne Dokumentation zu erstellen und Videos für Präsentationen zu exportieren.
+
+Abschließend sei erwähnt, dass bei umfangreichen Entwicklungsprojekten mit großen Teams, wie sie beim automatisierten Fahren vorzufinden sind, Algorithmen nur im Gesamtsystem getestet und evaluiert werden können. Der Koordinations- und Qualitätssicherungsaufwand ist hier weitaus höher, sodass spezielle Softwaretechniken wie Versionsverwaltung, automatisierte Tests und Softwaremetriken selbstverständlich sind.
+
+%Als Nebenprodukt dieser langjährigen Umsetzungsphasen sei abschließend mit folgender Empfehlung eine Parallele zwischen der "`optimalen Arbeitsweise"' eines modellprädiktiven Reglers und eines Forschungs- bzw.\ Entwicklungsteams gezogen:
+%%Das Prinzip gilt übrigens erfahrungsgemäß auch für die Entwicklung von Fahrerassistenzsystemen:
+%\begin{flushright}
+%\emph{Lieber unter vereinfachenden Annahmen kurzzeitig planen und sodann erproben -- anstelle monatelang ohne Rückmeldung an einer Lösung optimieren.}
+%\end{flushright}

@@ -1,0 +1,391 @@
+\documentclass[openany,ngerman]{book}
+
+\usepackage[utf8]{inputenc}%(only for the pdftex engine)
+%\usepackage[utf8, latin1]{inputenc}
+%\RequirePackage[no-math]{fontspec}%(only for the luatex or the xetex engine)
+\usepackage[small]{dgruyter}
+\usepackage{microtype}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Start Moritz Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{exscale,delarray}
+\usepackage{exscale,times,delarray}
+\usepackage[vflt]{floatflt}
+%\usepackage{hz_bibgerm}
+\usepackage{bibgerm}
+\usepackage{cite} % Reihenfolge wird sortiert (Anmerkung von Althoff)
+%\usepackage[latin1]{inputenc}
+%\usepackage{hz_ngerman} %eigene Def. mit \def\figurename{Bild}
+%\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[pass]{geometry}
+\usepackage{graphicx}
+\usepackage[normalsize,hang]{subfigure} % in subfigure.cfg: \ExecuteOptions{tight,TABTOPCAP}
+\usepackage{rotating}
+
+\usepackage{fancyhdr}
+
+%\usepackage[intlimits,fleqn]{amsmath}
+\usepackage{amssymb}
+\usepackage[mathscr]{eucal}
+\usepackage{longtable}
+
+%mo neu:
+\usepackage{amsthm}
+\usepackage{psfrag}
+\usepackage[usenames]{color}
+\usepackage{longtable}
+\usepackage{units}
+%%%\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{listings}
+\usepackage{fancyvrb}
+%\usepackage{fancybox}
+%\usepackage[Bjornstrup]{fncychap} % 
+\usepackage{multibib}
+
+\usepackage{makeidx}
+\makeindex
+
+% 2. u. 3. Literaturverzeichnis
+\newcites{ltex}{Im Rahmen der Arbeit entstandene Ver\"offentlichungen}
+%\newcites{stex}{Im Rahmen der Arbeit betreute studentische Abschlussarbeiten und Dissertationen}
+
+
+%mo Lebenslauf:
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}  
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+% Automatische Umwandlung von .eps in .pdf
+%\usepackage[pdf]{pstricks}
+%\usepackage{epstopdf}
+%\epstopdfsetup{update} % only regenerate pdf files when eps file is newer
+
+%\setlength{\mathindent}{0.75cm} %
+\allowdisplaybreaks[1]
+
+
+\input{../misc/wer_hyphen_dg2.tex}   % Silbentrennung
+\graphicspath{{../bilder/}{./logos/}}
+\input{../misc/wer_commands_dg.tex} % Abkürzungen etc.
+
+\usepackage{hyperref}       %als letztes laden! config steht in hyperref.cfg
+\hypersetup{
+    colorlinks=false, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+}
+
+%\relpenalty=9999
+%\binoppenalty=9999
+%\clubpenalty = 10000
+%\widowpenalty = 10000
+%\displaywidowpenalty = 10000
+
+%\includeonly{1_Einleitung}
+%\includeonly{2_Grundlagen}
+%\includeonly{3_Fahrzeugstabilisierung}	
+%%\includeonly{4_Statische_Optimierung}
+%\includeonly{5_Direkte_Optimierung}
+%\includeonly{6_Indirekte_Optimierung}
+%\includeonly{7_Dynamische_Programmierung}
+%%\includeonly{_Stabilitaet}
+%\includeonly{8_Empfehlungen}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% End Moritz Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[ruled,vlined]{algorithm2e}
+
+\title{Optimale aktive Fahreingriffe
+für Sicherheits- und Komfortsysteme in Fahrzeugen}
+%\title{Aktive Fahreingriffe für \\
+%Sicherheits- und Komfortassistenzsysteme }
+% Untertitel: Methoden der automatischen Fahrzeugführung
+% Sicherheits- und Komfortsysteme mit aktiven Fahreingriffen.
+% Assistenzsysteme mit aktiven Fahreingriffen.
+% Fahrerassistenzsysteme mit aktiven Lenk- und Bremseingriffe
+% Fahrerassistenzsysteme mit aktiven Eingriffen
+% ... Aktorikeingriffen
+% Eingriffen in die Fahrzeuglängs- und -querdynamik
+% Fahrerassistenzsysteme mit aktiven Eingriffen in Lenkung, Bremse und Antrieb.
+\author{Moritz Werling}
+
+%\author{Max Mustermann}
+%\title{Funktion als Teil der literarischen Darstellung}
+\distributionseries{De\,Gruyter Studium}
+\seriestitle{XXX Übergreifende Fragestellung zu Methode und Darstellungsweise}
+\seriessubtitle{XXX Studien und Vorunter suchungen zur kommentierten Überlieferung und Wirkung der Abweichungen vom Text~der Ausgabe und Fassung}
+\serieseditor{XXX Max Mustermann und Moritz Maier}
+\seriesvolume{XXX 5/31}
+\subtitle{XXX Unterscheidung als Hilfs- und Orientierungsbegriff zur Dekodierung}
+\editor{XXX Max Mustermann als Editor}
+\collaborator{XXX Mustermann Stiftung}
+\edition{1. Auf\/lage}
+%\publisherlogo{dg-mouton}
+\classification[Mathematics Subject Classification 2010]{35-02, 65-02, 65C30, 65C05, 65N35, 65N75, 65N80}
+\authorinfo{Auch beim Konzept der ästhetischen Bildung von Wissen und dessen möglichst rasche und erfolgsorientierte Anwendung verspielen Einsichten und Gewinne ohne den Bezug auf die um 1900 entwickelten Argumentationen.\\\vskip\baselineskip Auch umfasst die Untersuchung in der Hauptsache den Zeitraum zwischen dem Inkrafttreten und der Darstellung in seiner heute geltenden Fassung. Ihre Funktion als Teil der literarischen Darstellung und narrativen Technik enthält auch einen vollständigen textkritischen Apparat und ein Verzeichnis der Stellen.}
+\copyrighttext{Copyright-Text}
+\isbn{978-3-11-021808-4}
+\eisbnpdf{978-3-11-021809-1}
+\issn{0179-0986}
+\cover{Cover-Firma}
+\typesetter{le-tex publishing services GmbH, Leipzig}
+\printbind{Druckerei XYZ}
+
+%\includeonly{%
+%preface,
+%chapter01,
+%...
+%}
+
+
+\begin{document}
+
+% Original vorlage
+%
+%\frontmatter
+%\maketitle
+%\dedication{...\\ ...}
+%%\include{preface}
+%
+%\mainmatter
+
+
+%%%\pagestyle{empty}%
+\frontmatter
+\maketitle
+%\dedication{...\\ ...}
+%\include{preface}
+
+\cleardoublepage%
+
+%%%\pagenumbering{Roman} %
+%%%\setcounter{page}{1} %
+%%%\pagestyle{fancy} %
+
+\input{Kurzfassung_dg.tex}
+\vfill \pagebreak %
+
+{\footnotesize
+\input{Danksagung_dg.tex}
+}
+\cleardoublepage%
+ \vspace*{\fill} %
+ \begin{center}
+ \large Meiner Familie
+ \end{center}
+ \vfill\pagebreak %
+\tableofcontents 
+
+\cleardoublepage%
+%\include{wer_symbole}
+%%%\vfill \pagebreak \pagenumbering{arabic}
+
+
+\mainmatter
+
+
+\include{1_Einleitung_dg}
+
+\include{2_Grundlagen_dg}
+
+\include{3_Fahrzeugstabilisierung_dg}	
+
+\include{7_Dynamische_Programmierung_dg}
+
+%\include{4_Statische_Optimierung_dg}
+
+\include{5_Direkte_Optimierung_dg}
+
+\include{6_Indirekte_Optimierung_dg}
+
+
+
+\include{8_Empfehlungen_dg}
+
+\include{8_Zusammenfassung_dg}
+
+%\appendix
+\begin{appendix}  
+\cleardoublepage
+\include{Appendix_dg}
+\end{appendix}
+
+
+\cleardoublepage
+\input{../misc/wer_symbole_dg}
+
+\cleardoublepage
+% \phantomsection
+\markboth{}{}%{Abbildungsverzeichnis}{Abbildungsverzeichnis}
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+
+
+%\citeltex{Werling_Vernetzung2012}
+%\citeltex{werling2012walting}
+%\citeltex{werling2012cdc}
+%\citeltex{werling2012optimal}
+%\citeltex{Althoff2012}
+%\citeltex{althoff2012line}
+%\citeltex{Levinson2011}
+%\citeltex{eichhorn2013Maneuverprediction}
+%\citeltex{werling2012trajektorienregelung}
+%\citeltex{werling2014anhaenger}
+%\citeltex{Werling2014trailer}
+%\citeltex{werling2014powerslide}
+
+% Studentische Arbeiten
+%\nocitestex{schuetz2011}
+%\nocitestex{heidingsfeld2012}
+%\nocitestex{galler2012}
+%\nocitestex{rass2012}
+%\nocitestex{medler2012}
+%\nocitestex{doerr2012}
+%%\nocitestex{eichhorn2014}
+%\nocitestex{gutjahr2016}
+%\nocitestex{hiller2014}
+%\nocitestex{hoppe2014}
+
+% Andreas ITS Holland (oder so)
+% at Anhänger
+% TITS Anhänger
+% at Riccati
+% Engl. Riccati
+% Driften Vehicle dynamics
+% Waltigen driften
+
+\cleardoublepage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\backmatter
+%\bibliographystyle{plain}
+%\printbibliography[env=bibnumeric]
+
+%\chapter{Literaturverzeichnis}
+\bibliographystyle{gerplain}
+\bibliography{../ZT3_ASuV_Habil_Moritz}
+
+\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+\markboth{}{}%\markboth{Literaturverzeichnis}{Literaturverzeichnis}
+
+%\nociteltex{*}
+\bibliographystyleltex{gerplain}
+\cleardoublepage
+%\markboth{Literaturverzeichnis}{Literaturverzeichnis}
+\addcontentsline{toc}{chapter}{Im Rahmen der Arbeit entstandene Veröffentlichungen}
+%\chapter{Im Rahmen der Arbeit entstandene Veröffentlichungen}
+\bibliographyltex{../ZT3_ASuV_Habil_Moritz}
+
+%\cleardoublepage%
+%\bibliographystylestex{gerplain}
+%\addcontentsline{toc}{chapter}{Betreute studentische Abschlussarbeiten und Dissertationen}
+%\chapter{Betreute studentische Abschlussarbeiten und Dissertationen}
+%\bibliographystex{../../../../_Gemeinsam/ZT3_ASuV}
+
+
+
+
+
+
+
+
+%falls Lebenslauf gew\"{u}nscht
+%\cleardoublepage%
+%\pagestyle{empty} %
+%\input{Lebenslauf.tex} 
+
+
+
+\printindex
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%here comes an example for a contribution header:
+%\contribution
+%
+%  \contributionauthor{Max Müller}
+%  \affil{Institute of Marine Biology, National Taiwan Ocean University, 2 Pei-Ning Road Keelung
+%    20224, Taiwan (R.O.C), e-mail: klpang@ntou.edu.tw}
+%  \runningauthor{Müller}
+%  \contributiontitle{Was ist so anders am Neuroenhancement? Pharmakologische und mentale Selbstveränderung im ethischen Vergleich}
+%  \runningtitle{Was ist so anders am Neuroenhancement?}
+%  \contributionsubtitle{Pharmakologische und mentale Selbstveränderung im ethischen Vergleich}
+%  \abstract{Konzept der ästhetischen Bildung von Wissen und dessen möglichst rasche und
+%    erfolgsorientierte Anwendung verspielen Einsichten und Gewinne ohne den Bezug auf die um 1900
+%    entwickelten Argumentationen. Auch umfasst der literarischen Übergreifende Fragestellung zur
+%    besseren Darstellungsweise enthält auch einen vollständigen textkritischen Apparat und ein
+%    Verzeichnis der Stellen.}
+%  \keywords{Funktion, Überlieferung, Untersuchung, Hauptsache, Zeitraum, Darstellung, Inkrafttreten,
+%    Fassung}
+%  \classification{65C05, 62M20, 93E11, 62F15, 86A22}
+%
+%\makecontributiontitle
+%  \DOI{10.1515/futur-2012-0001}

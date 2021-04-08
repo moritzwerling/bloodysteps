@@ -1,0 +1,152 @@
+\chapter{Zusammenfassung}
+Die Automation im Fahrzeug wird weiter fortschreiten und unsere Benutzungsgewohnheiten grundlegend wandeln. Wie schnell sich die Entwicklung vollziehen wird, ist aufgrund der gesellschaftlichen und gesetzlichen Einflussnahme auf eine technische Lösung nur schwer abzuschätzen. Einigkeit herrscht jedoch unter den Automobilherstellern und Zulieferern darüber, dass schon jetzt Fahrerassistenzsysteme einen großen Kaufanreiz bieten und die von der Öffentlichkeit wahrgenommene Innovationskraft stärken. \\
+Vor diesem Hintergrund richtet sich die Arbeit vor allem an Entwicklungsingenieure, industrielle Forscher, wissenschaftliche Universitätsmitarbeiter und Promotionsstudenten, die sich automatisierten und assistierenden Fahrfunktionen mit dem Ziel eines sichereren, wirtschaftlicheren und komfortableren Straßenverkehrs widmen. 
+In der Arbeit wird erstmalig ein systematisierter Überblick über die damit verbundenen Aufgabenstellungen, geeignete Problemformulierungen und praxiserprobte Lösungsmethoden gegeben.  Zudem liefern neue Fahrfunktionen und Algorithmen anschauliche Erläuterungen zu den größtenteils mathematisch-theoretischen Inhalten.
+
+Eine große Herausforderung beim Entwurf neuer Fahrfunktionen besteht darin, die Wechselwirkungen zwischen Optimierung und Stabilisierung gedanklich zu durchdringen. Dieser Herausforderung wird in Kapitel~2 durch die Algorithmisierung der menschlichen Fahraufgaben über ein modifiziertes Drei-Ebenen-Modell begegnet, was auf einen kaskadierten, modellprädiktiven Regelkreis führt. Als Angelpunkt der Arbeit und im Sinne eines Rahmenwerks berechnet er hierarchisch Fahreingriffe durch das rasch aufeinanderfolgende Lösen von Optimalsteuerungsproblemen. Des Weiteren stabilisiert der Regelkreis das Fahrzeug durch unterlagerte Regelungen robust gegen Störungen und Modellfehler. Darauf bezugnehmend werden gängige Begrifflichkeiten von Regelungstechnikern und Robotikern erläutert -- die Hauptprotagonisten aktiver Fahreingriffe -- und Gemeinsamkeiten und Unterschiede herausgearbeitet. Die anschließende Beschreibung der wichtigen Randthemengebiete des modellprädiktiven Regelkreises skizziert das große Gesamtbild einer Fahrfunktion und unterstreicht die Wichtigkeit einer interdisziplinären Zusammenarbeit in der Fahrerassistenz. 
+
+Kapitel~3 greift die praktischen und theoretischen Errungenschaften der Regelungstechnik auf, die mit der als modellprädiktiver Regelkreisentwurf formulierten Aufgabenstellung verbunden sind. Es erfolgt die mathematische Problemformulierung eines für die Fahraufgabe passenden Optimalsteuerungsproblems, das über ein permanentes Lösen auf den modellprädiktiven Regelkreis führt. 
+Anhand eines anschaulichen Beispiels der Fahrerassistenz werden Realisierbarkeits- und Stabilitätsbetrachtungen vorgenommen, die aufgrund des in der Praxis grundsätzlich beschränkten Optimierungshorizonts für die Fahrzeuganwendung von großem Interesse sind.  Darauf aufbauend wird ein etabliertes modellprädiktives Regelungsschema vorgestellt, das den Optimierungshorizont gewissermaßen virtuell erweitert, ohne die erforderliche Rechenleistung zu strapazieren. \\
+Den der Praxis anhaftenden Modellunsicherheiten und Störungen wird bei der anschließenden Robustheitsbetrachtung mit dem Einsatz unterlagerter Regelungen begegnet. Typischerweise wird in der Regelungstheorie die optimierte Eingangsgröße direkt gestellt oder aber die optimale Trajektorie als Referenzsignal einer nachfolgenden Trajektorienfolgeregelung zugeführt. Damit wird die Strecke entweder über die Optimierung oder die Folgeregelung stabilisiert. Das vorgestellte neuartige Zustandsrückführungskonzept hingegen basiert auf der Einbettung eines klassischen Reglers in den modellprädiktiven Regelkreis. Damit kann die Stabilisierung der Systemzustände gezielt auf die Optimierung und die unterlagerte Regelung verteilt werden, um flexibel den praktischen Anforderungen in Bezug auf Störverhalten, Zykluszeit und Modularität Rechnung zu tragen. Die beschriebene Herangehensweise ist keinesfalls auf die Fahrzeuganwendung beschränkt, spielt aber gerade dort ihre Überlegenheit aus.
+
+Zur praktischen Umsetzung eines modellprädiktiven Regelkreises ist der entscheidende Faktor das hinreichend schnelle Lösen des Optimalsteuerungsproblems während der Laufzeit. Die drei dazu bekannten, grundverschiedenen Herangehensweisen werden in den verbleibenden Kapiteln vorgestellt und anhand von für die Fahrzeuganwendung geeigneten Algorithmen und Verfahren anschaulich erläutert.
+
+Kapitel~4 stellt das Prinzip der Dynamischen Programmierung vor, das als einziges eine globale Lösung für kombinatorisch anspruchsvolle Problemstellungen findet und daher in einer hierarchischen Optimierung ganz zu Beginn einzusetzen ist. Zur Anwendung muss das Optimalsteuerungsproblem sowohl in der Zeit als auch in der Stellgröße diskretisiert werden, sodass ein vielstufiger Entscheidungsprozess entsteht. Wird zusätzlich die Diskretisierung so gewählt, dass unterschiedliche Stellgrößenkombinationen auf dieselben Zustandswerte führen, dann kann über das Optimalitätsprinzip von Bellman das Problem sehr effizient durch Rekursion gelöst werden. Die unterschiedlichen Verfahren bringen jedoch allesamt zwei große Nachteile mit sich. Sie skalieren sehr schlecht mit der Größe des Systemzustandsvektors einerseits, und die erforderliche Diskretisierung der Stellgröße führt auf ein ungewolltes Steuerverhalten andererseits. Damit können nur wenige Systemzustände des Fahrzeugs, etwa die Position und Orientierung, berücksichtigt werden und es bedarf einer anschließenden Feinoptimierung auf Basis der anderen  Optimierungsmethoden. 
+
+Die in Kapitel~5 vorgestellten direkten Optimierungsmethoden basieren darauf, das Optimalsteuerungsproblem durch ein statisches Optimierungsproblem zu approximieren, sodass nur noch über eine endliche Anzahl von Parametern optimiert werden muss. Die Approximation kann über eine zeitliche Problemdiskretisierung erfolgen, sie muss es aber nicht. Der große Vorteil der Methodik besteht jedoch darin, dass der Parametervektor aus kontinuierlichen Werten besteht, sodass Diskretisierungseffekte eine untergeordnete Rolle spielen. Als nachteilig erweist sich die lokale Natur der statischen Optimierungsverfahren, die eine hinreichend gute Startlösung benötigen. Für komplexe Aufgabenstellungen sind die direkten Optimierungsmethoden folglich mit der dynamischen Programmierung zu kombinieren.
+
+In Kapitel~6 wird schließlich die dritte, auf dem Maximumprinzip von Pontryagin basierende Optimierungsmethodik vorgestellt, die im Rahmen der Arbeit als indirekte Trajektorienoptimierungsmethode bezeichnet wird. Sie leitet sich aus der Variationsrechnung her und verzichtet gänzlich auf eine Approximation des Optimalsteuerungsproblems. Jedoch stellt sie sich als vergleichsweise unflexibel in Anbetracht der für die Fahrzeuganwendung wichtigen Nebenbedingungen heraus. Für stark vereinfachte Problemstellungen liefert sie, neben tiefen Einblicken in die Problemstruktur, quasi-analytische Lösungen. Sie können häufig als Kostenabschätzung in die Dynamische Programmierung und direkte Optimierungsmethodik eingebettet werden, um dort für eine drastische Beschleunigung der Rechenzeit bzw.\ für eine Erweiterung des Optimierungshorizonts zu sorgen. Für simple Anwendungsfälle liefert sie recheneffiziente Lösungen, die bereits auf heutigen Steuergeräten im Millisekundenbereich ausgeführt werden können.
+
+Kapitel~7 stellt zusammenfassend die wesentlichen Eigenschaften der Optimierungsmethoden gegenüber und gibt Empfehlungen zu deren Kombination bei besonders herausfordernden dynamischen Optimierungsaufgaben, wie sie beim hochautomatisierten Fahren anzutreffen sind. Des Weiteren werden allgemeingültige Erfolgsmethoden für den Neuling auf dem Themengebiet beschrieben, die auf eine effiziente Erprobung neuer Algorithmen abzielen. Hierzu zählen die Realisierung kurzer Iterationsschleifen und die Schaffung einer durchgängige Entwicklungstoolkette, die im Zusammenspiel mit dem mathematischen Grundwissen der vorhergehenden Kapitel für einen schnellen Projektfortschritt unabdingbar sind. \\
+
+Die wesentlichen Ergebnisse der Arbeit sind:
+\begin{itemize}
+	\item Eingehende Beschreibung der automatischen Fahraufgabe als modellprädiktiver Regelkreis, der als Entwurfsmuster für moderne Assistenzsysteme mit aktiven Fahreingriffen heranzuziehen ist
+	\item Übersichtsartige Darstellung der Grundfunktionsweisen der Module der Fahrzustands- und Umfelderfassung sowie der Aktuatorik einschließlich der in der Praxis etablierten Schnittstellen zur zentralen Fahrerassistenzfunktion
+	\item Verdeutlichung der Herausforderungen und Vorstellung von Lösungsansätzen hinsichtlich Durchführbarkeits-, Stabilitäts- und Robustheitseigenschaften modellprädiktiver Fahreingriffe
+	\item Didaktisch aufbereitete Darstellung moderner Manöveroptimierungsmethoden der dynamischen Optimierung, Vermittlung der dazugehörigen Mathematikgrundlagen in einer vereinheitlichten Beschreibung und deren Bewertung hinsichtlich Anwendbarkeit in der Praxis
+	\item Erläuterung der theoretischen Methoden anhand einer Vielzahl von Praxisbeispielen, die über die Kapitel verteilt die hohe Praxisrelevanz der behandelten Thematik unterstreichen
+\end{itemize}
+
+%Die über die Kapitel verteilten Beispiele unterstreichen die hohe Praxisrelevanz der behandelten Thematik. Die Mehrheit der vorgestellten Anwendungen wurde in Fahrzeugprojekten des Karlsruher Instituts für Technologie und der BMW Forschung und Technik GmbH implementiert und evaluiert.
+
+Es verbleibt darauf hinzuweisen, dass die technische Entwicklung auf dem Gebiet der Fahrzeugautomatisierung aktuell eine bemerkenswerte Geschwindigkeit aufweist. Mit jeder neuen Fahrzeuggeneration kommen Assistenzsysteme mit einer verbesserten oder gänzlich neuen Sicherheits- oder Komfortfunktion auf den Markt. Das nächste große Ziel stellt die Hochautomatisierung auf Autobahnen dar, bei der der Fahrer die Fahrzeit produktiv nutzen kann, da er das System nicht mehr dauerhaft überwachen muss. Die technische Marktreife einer solchen Technologie wird ab 2020 erwartet \cite{fraunhoferstudie2015}. \\
+Parallel zu den technischen Voraussetzungen muss dringend an der Schaffung eines rechtlichen Rahmenwerks gearbeitet werden, das es langfristig international zu harmonisieren gilt. Neben neuen Zulassungsvoraussetzung ist auch juristisch zu klären, wer für das verbleibende Restrisiko haftet  \cite{lienkamp20rechtliche}, d.h. wenn der Fahrer zeitweise nicht mehr Teil der Regelschleife ist und es zu einem Unfall kommt.
+
+Im Hinblick auf die Vollautomatisierung, bei der sich im Fahrzeug, wenn überhaupt, nur noch Mitfahrer befinden, sind neue Geschäftsmodelle zu erwarten. Die deutsche Automobilbranche muss sich hier zukünftig gegen bestehende amerikanische IT-Unternehmen aber auch gegen neue Akteure behaupten, die auf ein vollautomatisiertes, urbanes Mobilitätsserviceangebot abzielen, welches das traditionelle Endkundengeschäft der Automobilindustrie in Frage stellt \cite{fraunhoferstudie2015}. Dieser Herausforderung kann nur durch eine möglichst baldige Bündelung der Kräfte von Herstellern und Zulieferern begegnet werden. Ein guter Anfang stellt der gemeinschaftliche Erwerb des Kartendiensts \emph{Here} durch die deutschen Premiumhersteller dar \cite{burkert2015grosse}. Weitere Anstrengungen zur Standardisierung von Schnittstellen und Funktionsmodulen sind zu unternehmen \cite{furst2009autosar}, wie auch die flächendeckende Einführung von breitbandigen, latenzarmen Mobilfunknetzen (s.\ "`Taktiles Internet"' \cite{taktilesinternet2014}) und weiterer Kommunikationsinfrastruktur in der Stadt zügig voranzutreiben. 
+
+
+\cleardoublepage
+
+
+%die sich hinsichtlich Approximationgenauigkeit, Skalierbarkeit, Rechenzeit, Felxibilität, grundlegend von einenader unterscheiden.
+
+
+
+% Beispiele noch gesondert aufführen
+
+%Zukünftige Fahrzeugarchitekturen sollten sich bei der Modularisierung und Schnittstellendefinition an ihm orientieren, da er Transparenz in das über meherer Komponenten rückgekoppelten System bringt.   
+
+% Was sind meine Errungenschaften:
+% - Ganzheitliche Betrachtungsweise auf System und aus Sicht verschiedener Disziplinen
+% - Betrachtung der Stabilität
+% - Betrachtung der kombination aus unterlagerter Regelung und Optimierung -> neu
+% - Beschreibung der angrenzenden Schnittstellen
+% - Darstellung der Optimierungsmethoden (DP, DM, IM, klassische Regelung) anhand von praktischen Beispielen aus der Fahrerassistenz, Komfort und Sicherheit
+% - Vermittlung des Gefühls für die Problemformulierung -> Es steht und fällt mit einer geeigneten Problemformulierung
+% Indirekte Methode gibt Einsicht in die Lösung
+% Möglichst viel Gleichanteil bei aktiven sicherheitsfunktkonen und komfort!
+
+% Verlängerung der Vorausschau bei nahezu gleichbleibendem Rechenaufwand
+
+
+% HAF wird kommen. Ziel der Industrie ist es, kompatible architektur aufzubauen in die algoirhmen so einepasst werden, dass sie auch als isolierte systeme eingesetzt werden können (Aktive Sicherheit), Absicherung vereinfacht sich.
+
+
+%Die ganzheitliche Betrachtungsweise motiviert
+%-> Möglichst viel Gleichanteil
+%eröffnet den Weg zu, ermöglicht
+%-> Freiheitsgrade
+%-> Verschiedene Facetten
+%-> Gedankengebilde in das neue Algorithmen eingeordnet werden können.
+%-> Kürzere Entwicklungszeiten
+%-> Gemeinsamkeiten der Problemstellung
+
+%[Was ist so schwierig daran?] Komplexes Zusammenspiel aus Problemformulierung, Optimierung, Hierarchische Aufteilung, Schnittstellen, Skalierbarkeit, 
+%Trennung zwischen Optimiersziel, Problemformulierung und Verfahren, Anforderungen an die Sensordaten, Auswirkungen auf Produktqualität
+%durchdringen, setzt ein tiefes Verständnis voraus
+%
+%Anregung geben, ohne bereits den Anspruch auf ein allumfassendes und abgeschlossenes Konzept zu erheben.
+%
+%
+%3,4,5: Vor- und Nachteile, überlappung, abwägen nach Einsatzgebiet
+%
+%Zwischenfazit für Optimierung: global, lokal, fahrzeugspezifisch -> Kombination!
+
+% Einige Verfahren aus der Robotik nicht behandelt, weil aus praktischer sicht mit großen einschränkungen:
+% Potentialfelder --> Sonderfall der Optimierung? System und Optimierung in einem schritt. Anpassung des gütekriteriums und modells nicht möglich --> Sackgasse
+% RRTs: Nicht geeignet für schnelle manöver, weil... (Begründung Julius aus ICRA-Paper von mir (nearest neighbor bestimmung kritisch etc..)
+
+
+%[Ausblick]
+%Probabilistische Komponente -> DP
+
+
+
+
+
+
+%Während sich die vorangegangenen direkten und indirekten Methoden, belegt durch entsprechende Literaturbeispiele, hervorragend für die Trajektorienoptimierung auf der Straße eignen, stoßen sie bei der Manöverplanung in unstrukturierter Umgebung wie Parkplätzen schnell an ihre Grenzen. Grund hierfür ist die \emph{kombinatorische} Note, die mit den vielen Möglichkeiten, ein jedes Hindernis zu passieren (rechts, links, vorwärts, rückwärts), einher geht.
+%Vereinfacht gesprochen fehlt hier zur Anwendung der direkten Optimierungsmethodik eine hinreichend gute Startlösung, und für die Problembehandlung mittels Maximumprinzips ist das Gesamtproblem mit seinen beliebig gearteten Hindernisformen schlichtweg zu kompliziert. \\
+
+
+
+
+% schneller algorithmus ist vielleicht früher darn, sodass er bestimmte kopplungseffekte nicht mehr berücksichtigen muss (s.\ \cite{eigel2010integrierte}) %die ganz unterschiedliche Längs-Quer-Kopplungseffekte
+
+%\cite{Werling2010a}
+
+%\cite{trachtler2005integrierte} % ESP mit Lenken
+%\cite{fuchshumer2005nvd} Flachheitsbsierte Fahrdynamikregelung (bereits zitiert)
+
+%Aus diesem Grund werden aus der Regelungstechnik bekannte Bedingungen an die Problemformulierung vorgestellt, welche die anhaltende Lösbarkeit und die Stabilität später im geschlossenen Regelkreises sicherstellen. Darüber hinaus werden Parallelen zu den bereits in Abschn.\,\ref{sec:ics} eingeführten \emph{Zuständen unvermeidlicher Kollisionen} aus der Robotik aufgezeigt.
+%Für solche kombinatorischen Aufgabenstellungen hält die Optimierungstheorie Lösungsverfahren der \emph{Dynamischen Programmierung} bereit, die auf dem \emph{
+
+
+
+%\cite{heine2006neuer} % Probabilistische MPC
+
+
+% Eigenschaften der Verfahen: Lokal, global, Ergebnis: Trajektorie oder nur Stellgesetzt, was wird überhaupt gebraucht?
+
+% Diskretisierung: indir: konitnuierlich, direkt: endlich aber kontinuierlich, DP: endlich, diskret
+
+% DP zur Entscheidungsfindung geeignet, vor allem bei Problabilisischen problemen auf die sich die Methodik problemlos erweitern lässt.
+
+% Aufgabe besteht darin, die verschiedenen Opt.methoden optimal zu kombinieren, wiederverwendbare module zu schaffen um die ABsicherung zu erleichtern.
+%Winner: Quo vadis, FAS? -> Ausblick?
+
+
+
+% Insgesamt: Kombination der Verfahren! Beispiel Parkplatz-A-star mit smoothing
+
+% Ha-Vorträge: Maximumsprinzip und parallelen in physik und technischer mechanik
+
+% Ausblick: parallelisierbarkeit
+
+
+% DB Geeignet für High-level-Entscheidungen: diskreisierungen tuen nicht weh, da fahrzeug nicht wirklich danach fährt, nicht-konvexes optimierungsproble, sodass lokale verfahren versagen.-> 
+%\cite{eidehall2011multi}
+%\citeltex{eichhorn2013Maneuverprediction} %Prädiktioneichhorn2013Maneuverprediction 
+%
+%\cite{du2011probabilistic} % Ausblick: Prob. TP
+%\cite{heine2006neuer}			 % Ausblick: Unsicherheiten bei Planung (hier allgemeine Systeme)
+%
+%\cite{reinl2009optimalsteuerung} % Mehrer Fahrzeuge
+%\cite{Frese2011} % Mehrer Fahrzeuge
+%\cite{mejia2010collision} % Ausblick: viele Fahrzeuge
+% Unrealistisch, dass Kooperative Manöver auf unterster ebene optimiert werden --> highlevel überwachung
+
+
+%Wie allgemein in der modellprädiktiven Regelung ist der Einsatz von Endbedingungen auch bei der Manöverplanung von großer Bedeutung. Da mit direkten Methoden aus Rechenzeitgründen der Optimierungshorizont nicht beliebig lange gewählt werden kann, bietet es sich nämlich an, das Fahrzeug durch Nebenbedingungen auf das "`Kommende"' vorzubereiten.
+% So kann gefordert werden, dass das Manöver am Ende des Optimierungshorizonts in der Fahrbahnmitte mit entsprechender Ausrichtung fährt und womöglich eine Sollgeschwindigkeit einhält. Darüber hinaus sollten als Endbedingung  die sog.\ ICS (s.\ Abschn.\,\ref{sec:ics}) vermieden werden, was jedoch praktisch noch kaum umgesetzt wurde (vgl.\ die im Rahmen der vorliegenden Arbeit entstandenen Publikationen 

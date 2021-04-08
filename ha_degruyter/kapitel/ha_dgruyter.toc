@@ -1,0 +1,135 @@
+\select@language {ngerman}
+\select@language {ngerman}
+\contentsline {schapter}{Kurzfassung}{V}{chapter*.1}
+\contentsline {schapter}{Danksagung}{VI}{chapter*.2}
+\contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Bedeutung und Einordnung}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Entwicklungsstand}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Ziele und Aufgaben}{5}{section.1.3}
+\contentsline {chapter}{\numberline {2}Problemstellung aktiver Fahreingriffe}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}Klassifikationsschema der menschlichen Fahraufgabe}{10}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Drei-Ebenen-Modell}{10}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Regelungstechnische Betrachtungsweise}{12}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Begriffserl\IeC {\"a}uterungen der Regelungstechnik und Robotik}{13}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Trajektorien- und Pfadplanung}{13}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Optimalsteuerung}{15}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Optimale und Modellpr\IeC {\"a}diktive Regelung}{15}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Aktorik und Stellgr\IeC {\"o}\IeC {\ss }en}{17}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Lenkaktorik}{18}{subsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.1.1}Systemkomponenten und -aufbau}{18}{subsubsection.2.3.1.1}
+\contentsline {subsubsection}{\numberline {2.3.1.2}Funktionsweise}{19}{subsubsection.2.3.1.2}
+\contentsline {subsection}{\numberline {2.3.2}Bremsaktorik}{23}{subsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.2.1}Systemkomponenten und -aufbau}{23}{subsubsection.2.3.2.1}
+\contentsline {subsubsection}{\numberline {2.3.2.2}Funktionsweise}{23}{subsubsection.2.3.2.2}
+\contentsline {subsection}{\numberline {2.3.3}Antrieb}{25}{subsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.3.1}Funktionsweise der Motorregelung}{25}{subsubsection.2.3.3.1}
+\contentsline {subsubsection}{\numberline {2.3.3.2}Funktionsweise der automatischen Getriebesteuerung}{27}{subsubsection.2.3.3.2}
+\contentsline {section}{\numberline {2.4}Sensorik, Mess- und Sch\IeC {\"a}tzgr\IeC {\"o}\IeC {\ss }en}{28}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Fahrzustandserfassung}{29}{subsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.1.1}Funktionsweise Sensorcluster\cite {Sensorcluster}}{29}{subsubsection.2.4.1.1}
+\contentsline {subsubsection}{\numberline {2.4.1.2}Geschwindigkeits- und Schwimmwinkesch\IeC {\"a}tzung}{31}{subsubsection.2.4.1.2}
+\contentsline {subsection}{\numberline {2.4.2}Eigenlokalisierung}{31}{subsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.2.1}Lokale Bestimmung von Egoposition und -ausrichtung}{33}{subsubsection.2.4.2.1}
+\contentsline {subsubsection}{\numberline {2.4.2.2}Globale Bestimmung von Egoposition und -ausrichtung}{34}{subsubsection.2.4.2.2}
+\contentsline {subsection}{\numberline {2.4.3}Fahrzeugumfeld-Modellierung und -Pr\IeC {\"a}diktion}{36}{subsection.2.4.3}
+\contentsline {subsubsection}{\numberline {2.4.3.1}Mehrobjektverfolgung}{36}{subsubsection.2.4.3.1}
+\contentsline {subsubsection}{\numberline {2.4.3.2}Belegungskarten}{38}{subsubsection.2.4.3.2}
+\contentsline {subsubsection}{\numberline {2.4.3.3}Umfeldpr\IeC {\"a}diktion}{38}{subsubsection.2.4.3.3}
+\contentsline {section}{\numberline {2.5}Systemaktivierung}{39}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Zust\IeC {\"a}nde einer unvermeidlichen Kollision}{41}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Subjektive Kritikalit\IeC {\"a}tsbewertung des Fahrers}{42}{subsection.2.5.2}
+\contentsline {section}{\numberline {2.6}Bewertung}{43}{section.2.6}
+\contentsline {chapter}{\numberline {3}Stabilit\IeC {\"a}t und Robustheit optimaler Fahrman\IeC {\"o}ver}{47}{chapter.3}
+\contentsline {section}{\numberline {3.1}Man\IeC {\"o}verplanung als Optimalsteuerungsproblem}{48}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Mathematische Formulierung}{48}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Modellpr\IeC {\"a}diktiver Regelkreis}{50}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Realisierbarkeits- und Stabilit\IeC {\"a}tsbetrachtungen}{51}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Beispiel modellpr\IeC {\"a}diktiver Abstandsregeltempomat}{52}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Invariante Mengen}{56}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Lyapunov-Stabilit\IeC {\"a}t}{58}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}MPC-Schema mit Garantien}{61}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}Robustheit durch unterlagerte Regelungen}{65}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Motivation unterlagerter Regelungen}{66}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Nicht-asymptotische Folgeregelung}{68}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Asymptotische Folgeregelung}{69}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Neuer Algorithmus zur Gespannstabilisierung}{72}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Nichtlineare Anh\IeC {\"a}ngerdynamik}{73}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Zeittransformation}{74}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Nichtlinearer Reglerentwurf}{75}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Nulldynamik und Sollwertvorgaben}{76}{subsection.3.4.4}
+\contentsline {subsubsection}{\numberline {3.4.4.1}Instantan stabilisierbare Maximalkr\IeC {\"u}mmung}{77}{subsubsection.3.4.4.1}
+\contentsline {subsubsection}{\numberline {3.4.4.2}Station\IeC {\"a}r stabilisierbare Maximalkr\IeC {\"u}mmung}{77}{subsubsection.3.4.4.2}
+\contentsline {subsubsection}{\numberline {3.4.4.3}Automatische Korrektur der manuellen Kr\IeC {\"u}mmungsvorgaben}{79}{subsubsection.3.4.4.3}
+\contentsline {subsection}{\numberline {3.4.5}Implementierung und Evaluation im Realversuch}{79}{subsection.3.4.5}
+\contentsline {section}{\numberline {3.5}Bewertung}{83}{section.3.5}
+\contentsline {chapter}{\numberline {4}Trajektorienoptimierung mittels Dynamischer Programmierung}{85}{chapter.4}
+\contentsline {section}{\numberline {4.1}Optimalit\IeC {\"a}tsprinzip und Rekursionsformel von Bellman}{85}{section.4.1}
+\contentsline {section}{\numberline {4.2}Suchalgorithmen}{87}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Wert-Iteration-Verfahren}{87}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Dijkstra-Suche}{90}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}A$^\ast $-Suche}{92}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Fahrzeugspezifische Problemformulierungen}{96}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Inverse Bewegungsprimitive}{96}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Vorw\IeC {\"a}rtssimulierte Bewegungsprimitive}{97}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Systematische Ableitung von Heuristiken}{99}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4}Bewertung}{101}{section.4.4}
+\contentsline {chapter}{\numberline {5}Trajektorienoptimierung mit direkten Methoden}{103}{chapter.5}
+\contentsline {section}{\numberline {5.1}Statische vs.\ dynamische Optimierung}{103}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Problemformulierung statische Optimierung}{104}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Grunds\IeC {\"a}tzliche Vorgehensweise der direkten Methode}{104}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Direkte Optimierungsverfahren}{105}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Direkte Einfachschie\IeC {\ss }verfahren}{105}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Direkte Mehrfachschie\IeC {\ss }verfahren}{107}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Flachheitsbasierte Ausgangsparametrierung}{108}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Fahrzeugspezifische Problemformulierungen}{110}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Systembeschreibung}{110}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Kostenfunktional}{111}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Nebenbedingungen}{112}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}Neuer Algorithmus f\IeC {\"u}r den aktiven Fu\IeC {\ss }g\IeC {\"a}ngerschutz}{113}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Systemmodellierung}{114}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Fahrphysikalische Restriktionen und Man\IeC {\"o}vervorgaben}{116}{subsection.5.4.2}
+\contentsline {subsubsection}{\numberline {5.4.2.1}Lenkdynamik, Reifentraktion und Fahrspurbreite}{116}{subsubsection.5.4.2.1}
+\contentsline {subsubsection}{\numberline {5.4.2.2}Vorgabe der Ausweichrichtung}{117}{subsubsection.5.4.2.2}
+\contentsline {subsubsection}{\numberline {5.4.2.3}Wahl eines geeigneten G\IeC {\"u}tekriteriums}{118}{subsubsection.5.4.2.3}
+\contentsline {subsubsection}{\numberline {5.4.2.4}Bewegungskosten}{119}{subsubsection.5.4.2.4}
+\contentsline {subsubsection}{\numberline {5.4.2.5}Ann\IeC {\"a}herungskosten f\IeC {\"u}r Fu\IeC {\ss }g\IeC {\"a}nger}{120}{subsubsection.5.4.2.5}
+\contentsline {subsection}{\numberline {5.4.3}Implementierung und Evaluation}{121}{subsection.5.4.3}
+\contentsline {section}{\numberline {5.5}Bewertung}{122}{section.5.5}
+\contentsline {chapter}{\numberline {6}Trajektorienoptimierung mit indirekten Methoden}{125}{chapter.6}
+\contentsline {section}{\numberline {6.1}Unbeschr\IeC {\"a}nkte Optimierungsprobleme}{126}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Probleml\IeC {\"o}sung mittels Variationsrechnung}{126}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Hamilton-Gleichungen und Transversalit\IeC {\"a}tsbedingungen}{128}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Anwendung auf optimalen Spurwechsel}{130}{subsection.6.1.3}
+\contentsline {section}{\numberline {6.2}Beschr\IeC {\"a}nkte Optimierungsprobleme}{134}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Pontryagins Maximumprinzip}{135}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Anwendungsbeispiel Doppelintegrator}{136}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Zustandsabh\IeC {\"a}ngige Eingangsbeschr\IeC {\"a}nkungen}{138}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4}Reine Zustandsbeschr\IeC {\"a}nkungen bei Notbremsung}{139}{subsection.6.2.4}
+\contentsline {section}{\numberline {6.3}Lineare Systemdynamik mit quadratischem Kostenfunktional}{142}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Problemformulierung}{142}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Riccati-Differentialgleichung}{144}{subsection.6.3.2}
+\contentsline {section}{\numberline {6.4}Neuer Riccati-basierter Ausweichalgorithmus}{145}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Formulierung des Optimalsteuerungsproblems}{145}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}L\IeC {\"o}sung des Optimalsteuerungsproblems}{147}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.3}R\IeC {\"u}ckw\IeC {\"a}rtsintegration und Zeittransformation}{148}{subsection.6.4.3}
+\contentsline {subsection}{\numberline {6.4.4}Zustandstransformation f\IeC {\"u}r unterlagerte Folgeregelung}{149}{subsection.6.4.4}
+\contentsline {subsection}{\numberline {6.4.5}Implementierung und Evaluation im Realversuch}{150}{subsection.6.4.5}
+\contentsline {section}{\numberline {6.5}Bewertung}{156}{section.6.5}
+\contentsline {chapter}{\numberline {7}Empfehlungen f\IeC {\"u}r den Entwurf optimaler Fahreingriffe}{159}{chapter.7}
+\contentsline {section}{\numberline {7.1}Kombination der Optimierungsmethoden}{159}{section.7.1}
+\contentsline {section}{\numberline {7.2}Iterativer Funktionsentwurf}{160}{section.7.2}
+\contentsline {section}{\numberline {7.3}Durchg\IeC {\"a}ngige Entwicklungstoolkette}{161}{section.7.3}
+\contentsline {chapter}{\numberline {8}Zusammenfassung}{163}{chapter.8}
+\contentsline {chapter}{\numberline {A}Herleitungen und Ausf\IeC {\"u}hrungen}{167}{appendix.A}
+\contentsline {section}{\numberline {A.1}Koordinatensysteme der lokalen und globalen Eigenlokalisierung}{167}{section.A.1}
+\contentsline {section}{\numberline {A.2}Rekursive L\IeC {\"o}sbarkeit und Stabilit\IeC {\"a}t der MPC}{168}{section.A.2}
+\contentsline {section}{\numberline {A.3}Herleitung der Anh\IeC {\"a}ngergierdynamik}{170}{section.A.3}
+\contentsline {schapter}{Abk\IeC {\"u}rzungen und Notationen}{171}{appendix*.83}
+\contentsline {chapter}{Abk\IeC {\"u}rzungen und Notationen}{171}{appendix*.83}
+\contentsline {chapter}{Abbildungsverzeichnis}{173}{table.A.2}
+\contentsline {schapter}{Abbildungsverzeichnis}{173}{appendix*.86}
+\contentsline {schapter}{Literatur}{175}{appendix*.87}
+\contentsline {chapter}{Literaturverzeichnis}{190}{appendix*.87}
+\contentsline {chapter}{Im Rahmen der Arbeit entstandene Ver\IeC {\"o}ffentlichungen}{191}{appendix*.87}
+\contentsline {schapter}{Im Rahmen der Arbeit entstandene Ver\"offentlichungen}{191}{appendix*.88}
+\contentsline {schapter}{Stichwortverzeichnis}{193}{appendix*.89}
