@@ -1,0 +1,187 @@
+
+%\chapter*{Symbolverzeichnis}
+%\markboth{Symbolverzeichnis}{Symbolverzeichnis}
+%\addcontentsline{toc}{chapter}{Symbolverzeichnis}
+\chapter*{Abkürzungen und Notationen}
+\markboth{}{}%{Abkürzungen und Notationen}{Abkürzungen und Notationen}
+\addcontentsline{toc}{chapter}{Abkürzungen und Notationen}
+
+% \arraystretch kann man nach belieben anpassen.
+% Am besten am Dateiende wieder auf Normalma{\ss} zur\"{u}ck \"{a}ndern.
+\renewcommand{\arraystretch}{1.18}
+\setlength{\tabcolsep}{0cm}
+
+% ******************************************************************************************
+\section*{Abk\"{u}rzungen}
+\vspace{-4mm}
+\begin{longtable}{p{26mm}p{89mm}}
+ABS & Antiblockiersystem \\
+ACC & Adaptive Cruise Control \\
+ASIL & Automotive Safety Integrity Levels \\
+CAN & Controller Area Network \\
+ASR & Antischlupfregelung \\
+CLF & Control-Lyapunov-Funktion \\
+C2X & Car-to-X (Fahrzeug-Kommunikation) \\
+DARPA & Defense Advanced Research Projects Agency \\
+EHB & elektro-hydraulische Bremse \\
+ESP & Elektronisches Stabilitätsprogramm \\
+EPS & electric power steering (elektrische Servolenkung) \\
+FAS	& Fahrerassistenzsysteme \\
+GPS & Global Positioning System \\
+ICS & Inevitable Collision States \\
+KD  & Kickdown \\
+LQ  & linear quadratisch \\
+LQR & Linear Quadratic Regulator \\
+MEM & mikro-elektro-mechanisch \\
+MPC & model predictive control (modellprädiktive Regelung) \\
+PID & proportional-integral-derivative (Regler) \\
+THZ & Tandemhauptbremszylinder \\
+TTB & time-to-brake \\
+TTC & time-to-collision \\
+TTR & time-to-react\\
+TTS & time-to-steer \\
+SQP & sequentielles quadratisches Programm \\
+\end{longtable}
+
+\vspace{1cm}
+
+% ******************************************************************************************
+\section*{Notationsvereinbarungen}
+\vspace{-4mm}
+\begin{longtable}{p{26mm}p{89mm}}
+Skalare         & nicht fett, kursiv: $a$, $b$, $c$, $A$, $B$, $C$ \ldots\\
+Vektoren        & klein, fett, kursiv: $\vektor{a}$, $\vektor{b}$, $\vektor{c}$\ldots\\
+Matrizen        & groß, fett, kursiv, $\mmatrix{A}$, $\mmatrix{B}$, $\mmatrix{C}$, \ldots\\
+Mengen          & kalligraphisch, gro{\ss}: $\mathcal{A}$, $\mathcal{B}$, $\mathcal{C}$, \ldots\\
+%Konstanten, Bezeichner & nicht kursiv: $\textrm{a}$, $\textrm{b}$, $\textrm{c}$, \ldots
+$()^\ast$ 	& Optimale Lösung für die Variable\\
+$\bar{()}$ 	& interne Optimierungsvariable\\
+$()_d$				& Variable zur Beschreibung des Sollwerts \\
+%$()_t, ()_n$	& tangentiale \bzw normale Komponente \\
+$\dot{()}$	& Zeitableitung \\
+${()'}$			& Wegableitung \\
+$:=$        & Definition \\
+${\rm argmax}$ &  Argument mit dem maximalen Wert \\
+${\rm argmin}$ &  Argument mit dem minimalen Wert \\
+$\max$ & Maximum \\
+$\min$ & Minimum \\
+\end{longtable}
+
+%\section*{Allgemeine Symbole}
+%\vspace{-4mm}
+%\begin{longtable}{p{26mm}p{89mm}}
+%$:=$ & Definition \\
+%$\det(\cdot)$ & Determinante \\
+%$\|\cdot\|$	& Euklidische Norm \\
+%$\vektor{a}^\T, \mmatrix{A}^\T$		& Transponierte des Vektors $\vektor{a}$ \bzw der Matrix $\mmatrix{A}$ \\
+%$y$ 			& Systemausgang \\
+%$u$				& Stellgröße \\
+%$l$ 				& Abstand der Fahrzeugachsen \\
+%$l_h, l_v$ 	& Abstand der hinteren und vorderen Fahrzeugachse zum Schwerpunkt \\
+%$m$					& Fahrzeugmasse \\
+%$\varsigma$	& Sollfahrtrichtung \\
+%$\psi$			& Fahrzeugorientierung \\
+%$r$					& Gierrate \\
+%$\theta$		& Kurswinkel \\
+%$\kappa$		& Krümmung \\
+%$\kappa'$		& bogenbezogene Krümmungsänderung \\
+%$v$					& Geschwindigkeit \\
+%$a$					& Beschleunigung \\
+%$\beta$		& Schwimmwinkel \\
+%$\vektor{n}_x, \vektor{t}_x$ & durch $x$ spezifizierter Normal- und Tangentialvektor \\
+%$\mathcal{T}_x$ & durch $x$ spezifizierte Trajektorie
+%\end{longtable}
+
+%\section*{Symbole im zweiten Kapitel} % allgemein stab
+%\vspace{-4mm}
+%\begin{longtable}{p{26mm}p{89mm}}
+%$J$					& Kostenfunktional \\
+%$\vektor{x}$					& Zustandsvektor \\
+%$s$					& zurückgelegte Wegstrecke \\
+%$\gamma$		& Kurvenparameter \\
+%$\Gamma$		& Sollkurve \\
+%
+%\end{longtable}
+%\newpage
+%
+%\section*{Symbole im dritten Kapitel} % TP
+%\vspace{-4mm}
+%\begin{longtable}{p{26mm}p{89mm}}
+%$\Gamma$ & Referenzkurve \\
+%$\vektor{x}$  & geplante Trajektorie \\
+%$c_0, \ldots, c_5$ & Polynomkoeffizienten \\
+%$s$					& zurückgelegte Wegstrecke des Fußpunkts \\
+%$s_\text{ref}$ & Referenztrajektorie von $s$ \\
+%$d$					& Euklidischer Abstand zur Referenzkurve \\
+%$d_\text{ref}$ & Referenztrajektorie von $d$ \\
+%$J_x$		& durch $x$ spezifiziertes Kostenfunktional \\
+%$f_0, h_0$ & Energiefunktion und Endkosten \\
+%$\vektor{z}$ 	& Zielmannigfaltigkeit \\
+%$\tau$ & Ankunftszeitpunkt auf Zielmannigfaltigkeit \\
+%$k_x$	& durch $x$ spezifizierter Wichtungsfaktor \\
+%%$k_\tau, k_\sigma, k_\nu, k_s, k_{\xi_1}, k_s$ & Wichtungsfaktoren \\
+%$\xi_{\text{ref}}$ & Referenztrajektorie von $\xi$ \\
+%$\delta_i, \sigma_i, \nu_i$ & Endabstände zur Referenztrajektorie\\
+%$\smallDelta t$ & Anstiegsdauer des Sicherheitsabstands \\
+%
+%
+%\end{longtable}
+%
+%\section*{Symbole im vierten Kapitel} % Regelung
+%\vspace{-4mm}
+%\begin{longtable}{p{26mm}p{89mm}}
+%$s$					& zurückgelegte Wegstrecke \\
+%$q, Q$			& generalisierte Koordinate und Kraft \\
+%$\xi_1$			& fiktive Regelstellgröße \\
+%$e_{x}$			& Trackingfehler \bzgl $x$ \\
+%$x_1, x_2$ 	& Koordinaten des Referenzpunkts \\
+%%$v$					& absolute Geschwindigkeit des Referenzpunkts \\
+%$\lambda$		& Vorausschaulänge \bzgl Referenzpunkt \\
+%$\delta, \delta_L$		& Lenkwinkel und Lenkradwinkel \\
+%$\gamma$		& Verteilungsverhältnis der Antriebskraft \\
+%$u_1, u_2, u_{\dot \delta}$	& reale Systemeingänge \\
+%$w_1, w_2$	& virtuelle Systemeingänge \\
+%$L$ & Lagrangefunktion \\
+%$T$ & kinematische Energie \\
+%$\mmatrix{R}$ & Rotationsmatrix \\
+%$\varsigma$ & Sollfahrtrichtung \\
+%$\kappa_\delta$ & fiktiver Systemeingang \\
+%$[\mathcal{L}_f\vektor{g}](\vektor{x})$ & erste Lie-Ableitung von $\vektor{g}(\vektor{x})$ \bzgl $\vektor{f}(\vektor{x})$  \\
+%$[\mathcal{L}^2_f\vektor{g}](\vektor{x})$ & zweite Lie-Ableitung von $\vektor{g}(\vektor{x})$ \bzgl $\vektor{f}(\vektor{x})$  \\
+%$\tilde{\vektor{z}}_t, \tilde{\vektor{z}}_n$ & Zustände der exakt e/a-linearisierten Teilsysteme \\
+%$\zeta$	& Dämpfungsgrad \\
+%$ c_v, c_h$ & Seitensteifigkeit der Vorder- und Hinterachse \\
+%$v_s$ & Geschwindigkeitsschwellwert für Reglerumschaltung \\
+%
+%$A, B, C$ & Parameter der Reifen-Fahrbahn-Paarung \\
+%$\alpha$ 	& Reifenschräglaufwinkel \\
+%$\rho$			& relativer Grad \\
+%$\vektor{s}$			& vektorieller Reifenschlupf \\
+%$\vektor{F}$			& vektorielle Reifenkraft \\
+%$F_x$			& durch $x$ spezifizierte Reifenkraftkomponente \\
+%$c_x$			& durch $x$ spezifizierter Schwellwertparameter \\
+%$a_x$			& durch $x$ spezifizierte Beschleunigungskomponente \\
+%$\vektor{x}$				& Zustandsvektor \\
+%%$\vektor{f}$				& Zeitliche Änderung des Zustandsvektors \\
+%$k_1, k_2, k_3, k_4$ & Reglerparameter beim kinematischen Einspurmodell \\
+%$k_{t0}, k_{t1}, k_{n0}, k_{n1}$ & Reglerparameter beim dynamischen Einspurmodell \\
+%$V, V_c$	& Lyapunov-Funktionskandidaten \\
+%$J$ 				& Fahrzeugdrehträgheit \\
+%
+%\end{longtable}
+%
+%\section*{Symbole im fünften Kapitel} 
+%\vspace{-4mm}
+%\begin{longtable}{p{26mm}p{89mm}}
+%$F_M$ & gangnormiertes Motorkennfeld \\
+%$i$ & aktueller Gang \\
+%$k$ & gangabhängige Antriebsübersetzung \\
+%$F_W$ & Fahrwiderstand \\
+%$b$	& Bremskonstante \\
+%$p_{\text{Bremse}}$ & Bremsdruck \\
+%$\phi_{\text{Gas}}$ & Drosselklappenstellung \\
+%\end{longtable}
+%
+%
+%\renewcommand{\arraystretch}{1}
+%\setlength\tabcolsep{6\lineskip}

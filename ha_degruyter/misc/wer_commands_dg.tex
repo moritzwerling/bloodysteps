@@ -1,0 +1,249 @@
+%****************************************************************************
+%                                                                           *
+%  Projekt: DISSERTATION                                                    *
+%           Befehle, Makros etc.                                            *
+%                                                                           *
+%                                                                           *
+%                                                                           *
+%                                                                           *
+%  Autor:   Werling                                                         *
+%                                                                           *
+%  Datum:   19.09.2008                                                      *
+%                                                                           *
+%****************************************************************************
+
+\newcommand{\dhe}{d.\,h.\ }
+\newcommand{\uU}{u.\,U.\ }
+\newcommand{\Dhe}{D.\,h.\ }
+\newcommand{\eV}{e.\,V.\ }
+\newcommand{\zB}{z.\,B.\ }
+\newcommand{\s}{s.\ }
+\newcommand{\oae}{o.\,\"{a}.\ }
+%\newcommand{\uU}{u.\,U.\ }
+\newcommand{\ua}{u.\,a.\ }
+%\newcommand{\ia}{i.\,a.\ }
+%\newcommand{\iA}{i.\,A.\ }
+\newcommand{\iA}{i.\,Allg.\ }
+%\newcommand{\og}{o.\,g.\ }
+\newcommand{\bzw}{bzw.\ }
+\newcommand{\vgl}{vgl.\ }
+\newcommand{\etc}{etc.\ }
+\newcommand{\evtl}{evtl.\ }
+\newcommand{\ca}{ca.\ }
+\newcommand{\sog}{sog.\ }
+\newcommand{\ggf}{ggf.\ }
+\newcommand{\insbes}{insbes.\ }
+\newcommand{\engl}[1]{engl. \textit{#1}}
+\newcommand{\mindex}[1]{#1\index{#1}}
+
+\newcommand{\bzgl}{bzgl.\ }
+\newcommand{\zzgl}{zzgl.\ }
+\newcommand{\hk}[1]{\glqq #1\grqq}
+%\newcommand{\EALin}{{E/A-Linearisierung}}
+% Englisch
+\newcommand{\wrt}{w.r.\,t.\ }
+\newcommand{\eg}{e.\,g.\ }
+
+
+
+% Einheiten
+%\newcommand{\nm}{\,\text{nm}}
+%\newcommand{\mum}{\,\mu\text{m}}
+%\newcommand{\mm}{\,\text{mm}}
+%\newcommand{\ms}{\,\text{ms}}
+%\newcommand{\s}{\,\text{s}}
+%\newcommand{\mn}{\,\text{min}}
+%\newcommand{\m}{\,\text{m}}
+
+
+\DeclareMathOperator{\falt}{\ast} %
+\DeclareMathOperator{\falttwod}{\ast\ast} %
+\newcommand{\korr}{\circledast} %
+\newcommand{\korrtwod}{\circledast\circledast} %
+\DeclareMathOperator{\definition}{\;\raisebox{0.07ex}{\ensuremath{:}}\!\!=\;} %
+\newcommand{\vektor}[1]{\boldsymbol{#1}}
+\newcommand{\mmatrix}[1]{\boldsymbol{#1}}
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+\newcommand{\grad}{\ensuremath{^\circ}}
+\newcommand{\Bilin}[1]{ \text{Bilin}\!\left\{#1\right\} }
+\newcommand{\supp}[1]{ \text{supp}\!\left\{#1\right\} }
+\newcommand{\rect}[1]{ \text{rect}\!\left(#1\right) }
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\betrag}[1]{\left|#1\right|}
+\newcommand{\transp}[1]{#1^\textrm{T}}
+\newcommand{\menge}[1]{\mathcal{#1}}
+\newcommand{\operator}[1]{\mathscr{#1}}
+%\newcommand{\eqref}[1]{(\ref{#1})}
+\newcommand{\glref}[1]{\eqref{#1}}  %eigentlich \"{u}berfl\"{u}ssig...
+\newcommand{\var}{\textrm{var}}
+\newcommand{\const}{\textrm{const.}}
+\newcommand{\kursiv}[1]{\emph{#1}}
+%\newcommand{\sollsein}{\mbox{$\;\stackrel{!}{=}\;$}}
+\DeclareMathOperator{\sollsein}{\;\stackrel{!}{=}\;} %
+\newcommand{\phase}[1]{\angle\!\left\{#1\right\}}
+\newcommand{\fourier}[1]{\operator{F}\!\left\{#1\right\}}
+\newcommand{\fuerdiegilt}{\;|\;}
+\newcommand{\fueralle}{\forall\;}
+\newcommand{\median}[1]{\underset{#1}{\text{Median}}}
+
+\newcommand{\EXP}[1]{\exp\!\left(#1\right)}
+\newcommand{\GAMMA}[1]{\Gamma\!\left(#1\right)}
+\newcommand{\EWO}[1]{\textrm{E}\!\left\{#1\right\}}
+\newcommand{\J}{\textrm{j}}
+\newcommand{\argmax}[2]{\arg \max_{#1}\!\left\{#2\right\}}
+\newcommand{\MIN}[2]{\min_{#1}\!\left\{#2\right\}}
+\newcommand{\MAX}[2]{\max_{#1}\!\left\{#2\right\}}
+\newcommand{\mittelwert}[1]{\overline{#1}}
+
+\newcommand{\smallDelta}{{\scriptstyle {\Delta}}}
+
+%\newtheorem{note}{Notiz für mich:}
+\newtheorem{todo}{Todo:}
+
+
+% ----------- Vereinbarungen ----------------
+% Satzzeichen nach Formel:  \;.
+% Integrale:                \int_{i=0}^{\infty} f(x) \; \textrm{d} x
+% modulo:                   a \bmod b
+% Bilder:                   114,5 breit (\textwidth=115mm)
+% Koordinatensysteme:       \{ \vektor{e}_\xi, \vektor{e}_\eta \}
+% Kommazahlen:              1{,}5   (beseitigt zus\"{a}tzlichen Zwischenraum nach dem ,)
+% Gedankenstrich:           ---
+% $2\frac{1}{2}$D-Informationen
+% Beschriftungen in Bildern klein: "gemitteltes Profil"
+% subfigure-Beschriftungen gro{\ss}:  (a)~Reine Translation
+% cases:
+%   \rect{x} = \begin{cases} %
+%   1 \;, & x \in \left[-\frac{1}{2},\frac{1}{2}\right] \;, \\
+%   0 \;, & \text{sonst} \;.
+%   \end{cases}
+
+% weitergehend
+% im Folgenden
+% im Wesentlichen
+% zum einen - zum anderen
+% 4--fach, $i$--tes Objekt $180\grad$--periodisch
+\newcommand{\lat}{\text{lat}}
+\newcommand{\lon}{\text{lon}}
+\newcommand{\vl}{v_\lambda}
+\newcommand{\betal}{\beta_\lambda}
+\newcommand{\dl}{d_\lambda}
+%\newcommand{\dpsi}{\Delta \psi} Veraltet!
+\newcommand{\dtheta}{\,{\scriptstyle \!\Delta}\theta}
+\newcommand{\dotdtheta}{{\scriptstyle \Delta} \dot\theta}
+\newcommand{\ddotdtheta}{{\scriptstyle \Delta} \ddot\theta}
+
+\newcommand  {\diff}[2]{\frac{{\rm d}#1}{{\rm d}#2}}
+\newcommand {\ddiff}[2]{\frac{{\rm d}^2#1}{{\rm d}#2^2}}
+\newcommand{\dddiff}[2]{\frac{{\rm d}^3#1}{{\rm d}#2^3}}
+\newcommand{\entsp}{\mathrel{\widehat{=}}}
+
+\newcommand  {\pardiff}[2]{\frac{\partial #1}{\partial#2}}
+
+
+\newcommand{\sRA}{s_{_{\text {R\!A}}}}
+\newcommand{\dRA}{d_{_{\text {R\!A}}}}
+\newcommand{\vRA}{v_{_{\text {R\!A}}}}
+\newcommand{\rRA}{r_{_{\text {R\!A}}}}
+\newcommand{\kappaRA}{\kappa_{_{\text {R\!A}}}}
+\newcommand{\CoG}{\text{CoG}}
+\newcommand{\SP}{\text{SP}}
+
+\newcommand{\thetad}{{\theta_{\!d}}}
+
+% Ableitungsoperatoren
+\newcommand  {\Prime}[1]{\diff{}  {\sigma}{\left(#1\right)}}
+\newcommand {\PPrime}[1]{\ddiff{} {\sigma}{\left(#1\right)}}
+\newcommand{\PPPrime}[1]{\dddiff{}{\sigma}{\left(#1\right)}}
+
+\renewcommand{\Dot}[1] {\diff{}{t}\left(#1\right)}
+\newcommand{\DDot}[1] {\ddiff{}{t}\left(#1\right)}
+\newcommand{\DDDot}[1]{\dddiff{}{t}\left(#1\right)}
+
+\newcommand{\ued}{u_{1,d}}
+
+\newcommand{\scp}[2]{\langle#1,#2\rangle}
+
+\newcommand{\vect}{{\vec t}}
+\newcommand{\vecn}{{\vec n}}
+\newcommand{\vecy}{{\vec y}}
+
+% Minimierung
+\newcommand{\argmin}[1]{\begin{array}[t]{c}{\rm argmin}\\ [-1.25ex] \scriptstyle { #1 } \\ \end{array}}
+
+\newcommand{\sgn}[1]{{\,\rm sgn(#1)\,}}
+\renewcommand{\vector}[1]{\left(\begin{array}{c}#1\end{array}\right)}
+
+\newcommand{\vecarray}[1]{\left[\begin{array}{c} #1  \end{array}\right]}
+\newcommand{\mtrx}[2]{\left[\begin{array}{#1} #2  \end{array}\right]}
+
+\newcommand{\cog}{\text{\tiny \!CoG}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{satz}{Satz}[chapter]
+%\newtheorem{mydef}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newtheorem{beweis}{Beweis}
+
+\newcommand{\vecx}{{\vec{x}}}
+\newcommand{\vecr}{{\vec{r}}}
+\newcommand{\veca}{{\vec{a}}}
+\newcommand{\vecv}{{\vec{v}}}
+
+\newcommand{\opt}{{\text{ \rm opt}}}
+
+
+    % Debuginformationen
+\usepackage[normalem]{ulem}
+\newcommand{\TODO}[1]{{\color{red} [\,\textbf{#1}\,]}}
+\newcommand{\stich}[1]{{\color{blue} \textit{#1}}}
+\newcommand{\TODOlist}[1]{{\color{red}\textbf{\begin{enumerate}#1\end{enumerate}}}}
+\newcommand{\expl}[1]{{\color{OliveGreen}\textbf{[Hinweis]}\\ #1 }}
+\newcommand{\notes}[1]{}
+
+\newcommand{\T}{{{\rm T}}}
+
+%\newcommand{\myplus}{
+%\begin{minipage}{10mm}
+ %\begin{center}
+ 	%\includegraphics[width = 0.3cm]{plus}
+ 	%\end{center}
+ %\end{minipage}
+%}
+%\newcommand{\myminus}{
+%\begin{minipage}{10mm}
+ %\begin{center}
+ 	%\includegraphics[width = 0.3cm]{minus}
+ 	%\end{center}
+ %\end{minipage}
+%}
+
+\newcommand{\ND}{^0}
+\newcommand{\xuND}{\vektor{x}\ND\!\!\!,\,\vektor{u}\ND}
+\newcommand{\Traj}{\mathcal{T}}
+
+
+\theoremstyle{remark}
+\newtheorem{bemerkung}{Bemerkung}
+\newtheorem{modell}{Modell}
+
+\theoremstyle{definition}
+\newtheorem{mydef}{Definition}[chapter]
+
+\newcommand{\negspace}{\!\!\!\!\!\!}
+\newcommand{\bldx}{\boldsymbol x}
+\newcommand{\Lie}{\mathcal{L}}
+
+\newcommand{\zitat}[2]{
+\begin{flushright}
+``\emph{#1}'' \\
+\vspace{.3cm}
+#2
+\end{flushright}
+}
+
+\newcommand{\abb}[1]{Abb.\,\ref{#1}}
+\newcommand{\abschn}[1]{Abschn.\,\ref{#1}}
+\newcommand{\kap}[1]{Kap.\,\ref{#1}}
