@@ -1,9 +1,9 @@
 \section{Introduction}\label{S:57.1}
 
-Advanced collision avoidance systems, lane keeping support, traffic jam assistance, and remote valet parking; they all operate on the actuators to relieve the drivers of the lateral and/or longitudinal vehicle control or make it safer for them. Well-defined tasks, such as staying in the middle of the marked lane while following the vehicle ahead, can be handled by a set-point controller \cite{handbuchFAS_Gayko2012}. And yet standard automated parking maneuvers already require a calculated trajectory\footnote{More precisely: a path, which does not have any time dependency} that must be adapted to the available parking space. As systems need to cover more and more situations, the number of degrees of freedom increase, which makes a trajectory parameterization very complex, especially when the vehicle must take numerous obstacles into account. This calls for a systematic approach based on mathematical optimization (as opposed to heuristic approaches such as potential field and elastic bands methods, see e.g. \cite{krogh1984generalized}, \cite{Brandt2008}, with their inherent limitations, cf. \cite{koren1991potential}.
-In the chapter at hand, we address real-time trajectory optimization\footnote{Notice, that in control theory the term trajectory planning usually implies that there is no feedback of the actual system states on the trajectory. The dynamical system is then only stabilized by a downstream trajectory tracking controller, which is not always advisable. We therefore use the term trajectory optimization instead to be independent of the utilized stabilization concept.}, a task that an automated vehicle faces when it travels through its environment, also referred to as motion planning in robotics \cite{latombe1990robot}; \cite{lavalle2006pa}. The focus will be on methods that engage with the longitudinal and lateral vehicle movement. However, the results can be transferred to novel warning systems that can also
+Advanced collision avoidance systems, lane keeping support, traffic jam assistance, and remote valet parking; they all operate on the actuators to relieve the drivers of the lateral and/or longitudinal vehicle control or make it safer for them. Well-defined tasks, such as staying in the middle of the marked lane while following the vehicle ahead, can be handled by a set-point controller \cite{handbuchFAS_Gayko2012}. And yet standard automated parking maneuvers already require a calculated trajectory\footnote{More precisely: a path, which does not have any time dependency} that must be adapted to the available parking space. As systems need to cover more and more situations, the number of degrees of freedom increase, which makes a trajectory parameterization very complex, especially when the vehicle must take numerous obstacles into account. This calls for a systematic approach based on mathematical optimization (as opposed to heuristic approaches such as potential field and elastic bands methods, see e.g. \cite{krogh1984generalized, Brandt2008}, with their inherent limitations, cf. \cite{koren1991potential}.
+In the chapter at hand, we address real-time trajectory optimization\footnote{Notice, that in control theory the term trajectory planning usually implies that there is no feedback of the actual system states on the trajectory. The dynamical system is then only stabilized by a downstream trajectory tracking controller, which is not always advisable. We therefore use the term trajectory optimization instead to be independent of the utilized stabilization concept.}, a task that an automated vehicle faces when it travels through its environment, also referred to as motion planning in robotics \cite{latombe1990robot, lavalle2006pa}. The focus will be on methods that engage with the longitudinal and lateral vehicle movement. However, the results can be transferred to novel warning systems that can also
 benefit from an optimal trajectory prediction, see e.g. \cite{eichhorn2013Maneuverprediction}. 
-Speaking most generally, a trajectory optimization method is sought that can handle both structured (e.g. streets) and unstructured environments (parking lots), one that works amongst cluttered static obstacles and in moving traffic as well as exhibits a natural, human-like, anticipatory driving behavior.
+Generally speaking, a trajectory optimization method is sought that can handle both structured (e.g. streets) and unstructured environments (parking lots), one that works amongst cluttered static obstacles and in moving traffic as well as exhibits a natural, human-like, anticipatory driving behavior.
 Using more technical terms, the method should be easy to implement, parameterize, adapt, scale well with the number of vehicle states and the length of the optimization horizon, incorporate nonlinear, high fidelity vehicle models, combine the lateral and longitudinal motion, be complete \footnote{A complete algorithm always finds the solution if it exists.}, allow for both grid maps and object lists representations (with predicted future poses) of the obstacles, be numerically stable, and transparent in its convergence behavior (if applicable). Also, the calculation effort must be low to allow for short optimization cycles on (low performance) electronic control units so that the vehicle can quickly react to sudden changes in the environment.
 Unfortunately, there is no such single method that has all these properties. And, most likely, there will never be one. However, different optimization methods can be combined to get as close as possible to the above requirements. The next section therefore gives a closer look into the basic principles of trajectory optimization and their application.
 
@@ -15,6 +15,7 @@ Due to the vehicular focus, a special case will be considered, one that requires
 
 \subsection{Optimal Control Problem}\label{S:57.2.1}
 A fairly general formulation of the optimal control problem (OCP) reads:
+
 Minimize the cost functional
 \begin{subequations} \label{equ:optimalsteuerungsproblem}
 \begin{align} \label{equ:opt_funktional}
@@ -26,12 +27,12 @@ Minimize the cost functional
 \end{align} 
 \quad as well as the equality and inequality constraints
 \begin{align} 	
-	\bs{g}(\bs{x}(t_f),t_f) &= \bs{0}  \label{equ:zm} \\ 	
+	\bs{g}(\bs{x}(t_f),t_f) &= \bs{0}  \label{equ:opt_gleichungen} \\ 	
 	\bs{h}(\bs{x}(t),\bs{u}(t),t) & \leq \bs{0},  \quad \forall t \in[t_0, t_f] 	\label{equ:opt_ungleichungen} \;. 
 \end{align} 
 \end{subequations}
-In other words, for our (possibly nonlinear and time variant) system with state $\bs{x} \in \mathbb R^n$ and input $\bs{u} \in \mathbb R^m$ we seek on the interval $t\in[t_0, t_f]$ the input trajectory u(t) that minimizes the cost functional J while steering (in the truest sense of the word) the system from its initial state $x_0$ to an end state $\bs{x}(t_f)$, so that the equality and inequality constraints are fulfilled at all times. The optimal input trajectory is usually denoted by $\bs{u}^\ast(t)$ and the resulting state trajectory by $\bs{x}^\ast(t)$, 
-see Fig. \ref{fig:dynamische_Optimierung_endvorgabe}. Notice that $J$ comprises integral costs $l$ and end point costs $V$ and is not only a functional of the input $\bs{u}(t)$ but also of the states $\bs{x}(t)$. Furthermore, if the final time $t_f$ is not given, it then becomes part of the optimization, so that the length of the trajectory will also be optimized.
+In other words, for our (possibly nonlinear and time variant) system with state $\bs{x} \in \mathbb R^n$ and input $\bs{u} \in \mathbb R^m$ we seek on the interval $t\in[t_0, t_f]$ the input trajectory $\bs{u}(t)$ that minimizes the cost functional $J$ while steering (in the truest sense of the word) the system from its initial state $\bs{x}_0$ to an end state $\bs{x}(t_f)$, so that the equality and inequality constraints are fulfilled at all times. The optimal input trajectory is usually denoted by $\bs{u}^\ast(t)$ and the resulting state trajectory by $\bs{x}^\ast(t)$, 
+see Fig. \ref{fig:dynamische_Optimierung_endvorgabe}. Notice that $J$ comprises integral costs $l$ and end point costs $V$ and is not only a functional of the input $\bs{u}(t)$ but also of the states $\bs{x}(t)$. Furthermore, if the final time $t_f$ is not given, it becomes part of the optimization, so that the length of the trajectory will also be optimized.
 \begin{figure}[ht]
 \psfrag{1}[cr][cr][1.0]{$x_1$}
 \psfrag{2}[br][br][1.0]{$x_2$}
@@ -44,28 +45,28 @@ see Fig. \ref{fig:dynamische_Optimierung_endvorgabe}. Notice that $J$ comprises 
 \psfrag{h}[tc][tc][1.0]{$h\leq0$}
 	\centering
   	\includegraphics[width=1.\textwidth,clip, trim = 0cm 0cm 0cm 0cm]{pics/2_Darstellung_dynamische_Optimierung_endvorgabe.eps}
-  	\caption[Example of an optimal trajectory]{Example of an optimal trajectory $\bs{x}^\ast (t)\in \mathbb{R}^2$ with end constraints $\bs{g}=\bs 0$ at a fixed final end time $t_f$ and inequality constraint $h\leq 0$ for $x_2$}
+  	\caption[Example of an optimal trajectory]{Example of an optimal trajectory $\bs{x}^\ast (t)\in \mathbb{R}^2$ with end constraints $\bs{g}=\bs 0$ at a fixed end time $t_f$ and inequality constraint $h\leq 0$ for $x_2$}
     \label{fig:dynamische_Optimierung_endvorgabe}
 \end{figure}
 
 \subsection{Problem Formulation for DAS and Automated Driving}\label{S:57.2.2}
-Coming back to the automotive application, equation \eqref{equ:optimalsteuerungsproblem} of the previous section describes the dynamics of the vehicle. This state space model also includes the planar motion, either relative to some reference such as the lane center, see Sect. \ref{S:57.3.1.2}, or relative to a stationary origin, see Sect. \ref{S:57.3.3.4}. Undesired vehicle motion such as deviations from the lane center, detours, dangerous vehicle states (e.g., large slip angles), or uncomfortable jerks, e.g., caused by hectic steering actions will be penalized in the cost functional (1). The free space prediction between the generally moving obstacles can be described by the inequality constraints (4). And the end constraints (3) can be utilized to require that the optimized vehicle trajectory will be aligned to the road at the end of the optimization interval. As will be explained in Sect. \ref{S:57.5}, this final state plays an important role for the stability of the “replanning” algorithm, therefore special costs 
-$V(\bs{x}(t_f), t_f)$ can be introduced in (1). 
+Coming back to the automotive application, equation \eqref{equ:opt_systemdynamik} of the previous section describes the dynamics of the vehicle. This state space model also includes the planar motion, either relative to some reference such as the lane center, see Sect. \ref{S:57.3.1.2}, or relative to a stationary origin, see Sect. \ref{S:57.3.3.4}. Undesired vehicle motion such as deviations from the lane center, detours, dangerous vehicle states (e.g., large slip angles), or uncomfortable jerks, e.g., caused by hectic steering actions will be penalized in the cost functional \eqref{equ:opt_funktional}. The free space prediction between the generally moving obstacles can be described by the inequality constraints \eqref{equ:opt_ungleichungen}. And the end constraints \eqref{equ:opt_gleichungen} can be utilized to require that the optimized vehicle trajectory will be aligned to the road at the end of the optimization interval. As will be explained in Sect. \ref{S:57.5}, this final state plays an important role for the stability of the “replanning” algorithm, therefore special costs 
+$V(\bs{x}(t_f), t_f)$ can be introduced in \eqref{equ:opt_funktional}. 
 
 \section{Solving the Optimal Control Problem}\label{S:57.3}
 All known approaches to the OCP can be assigned to one of the following three principles, see e.g. \cite{diehl_fast_multipleshooting}.
 \subsection{Approach I: Calculus of Variations}\label{S:57.3.1}
-The classical approach to the OCP is \textit{calculus of variatins}, which delivers valuable insight in the solution. 
+The classical approach to the OCP is \textit{calculus of variations}, which delivers valuable insight in the solution. 
 
 \subsubsection{Theoretical Background: Hamilton Equations}\label{S:57.3.1.1}
 
-Static optimization problems can be tackled by \textit{differential calculus}. It is well known that the first derivative of a function $J(\bs p)$  is equal to zero at a minimum (or any other stationary point). For multivariate problems we can write $\nabla\!J(\bs x) = \bs 0$
+Static optimization problems can be tackled by \textit{differential calculus}. It is well known that the first derivative of a function $J(\bs p)$  is equal to zero at a minimum (or any other stationary point). For multivariate problems we can write $\nabla\!J(\bs p) = 0$
 which leads to a set of (algebraic) equations that the optimum 
 $\bs{p}^\ast$ must satisfy. The extension to problems with equality constraints requires the method of so-called \textit{Lagrange-multipliers}, yielding first order necessary conditions for optimality.
 Analogously for dynamic optimization, variational calculus requires that the first variation of the functional $J(\bs{u}(t))$
 vanishes for the optimal control function $\bs{u}^\ast$
 which is often written as $\delta J(\bs{u}(t))=0$. 
-In order to incorporate the system dynamics in the OCP, which constitute (differential) equality constraints, we can also apply the Lagrange-multiplier method. This yields a set of differential equations, the so-called Hamilton equations:
+In order to incorporate the system dynamics in the OCP, which constitute (differential) equality constraints, we can also apply the Lagrange-multiplier method. This yields a set of differential equations, the so-called \textit{Hamilton equations}:
 
 %x ̇=f(x,u,t)	(57.1))
 %λ ̇=-∂l/∂x-[∂f/∂x]^"T"  λ	(57.2))
@@ -79,28 +80,23 @@ In order to incorporate the system dynamics in the OCP, which constitute (differ
 \end{alignat}
 \end{subequations}
 
-\begin{align}
-\bs x(t_0) = \bs x_0 \label{equ:fester_anfangszustand}
-\end{align}
-
-
-
-They are \textit{first order necessary conditions} for our OCP, when there are no inequality constraints (4) involved. The function $\bs \lambda(t)$
+They are \textit{first order necessary conditions} for our OCP (leaving out the inequality
+constraints \eqref{equ:opt_ungleichungen}). The function $\bs \lambda(t)$
 constitutes the Lagrange-multipliers, here called \textit{co-states}. Besides the initial condition
 \begin{align}
 \bs x(t_0) = \bs x_0 \label{equ:fester_anfangszustand}
 \end{align}
 the optimal trajectory must fulfill the (algebraic)\textit{ transversality conditions}, depending on whether the end state $\bs x(t_f)$
-is constraint by TODO (3) and/or the final time $t_f$ is given (see e.g. \cite{Lewis_OC}). 
+is constraint by \eqref{equ:opt_gleichungen} and/or the final time $t_f$ is given, see e.g. \cite{Lewis_OC}. 
 The simplest condition requires a fixed end state $\bs x_f$ at a given end time  $t_f$
 so that
 \begin{align}
 \bs x(t_f) = \bs x_f \label{equ:fester_endpunkt}
 \end{align}
-Either way, this results in a boundary value problem, which in general needs to be solved numerically. This so-called indirect approach is very accurate but not as flexible as the direct approach that we will introduce in Sect. \ref{S:57.3.2}. However, for simple OCPs the resultant boundary value problem can be solved analytically, leading to fast computable optimal trajectory primitives with broad applications (see Sect. \ref{S:57.4}).
+Either way, this results in a \textit{boundary value problem}, which in general needs to be solved numerically. This so-called \textit{indirect approach} is very accurate but, from experience, not as flexible as the direct approach that we will introduce in Sect. \ref{S:57.3.2}. However, for simple OCPs the resultant boundary value problem can be solved analytically, leading to fast computable optimal trajectory primitives with broad applications (see Sect. \ref{S:57.4}).
 
 \subsubsection{Example Application: Automated Lane Change}\label{S:57.3.1.2}
-We will now apply the described method to the generation of optimal lane change primitives. The lateral motion across the road can be modelled as a triple integrator system with states $\bs x = [x_1, x_2, x_3]^\T$ , namely the position, the lateral velocity, and the lateral acceleration, respectively, all within the reference frame of some curve, see Fig. \ref{fig:polytraj}.
+We will now apply the described method to the generation of optimal lane change primitives. The lateral motion across the road can be modelled as a triple integrator system with states $\bs x = [x_1, x_2, x_3]^\T$ , namely the position, the lateral velocity, and the lateral acceleration, respectively, all within the reference frame of some curve, see Fig. \ref{fig:polytraj}. \\
 Then, the system dynamics are described by 
 \begin{align}
 	\dot{\bs x} = \bs f(\bs x, u) = [x_2, x_3, u ]^\T
@@ -119,8 +115,8 @@ at a given end time $t_f$. Amongst all trajectories we seek for the one that min
 	J &= %\int_{0}^{t_f}l(u(t)) {\rm d} t = 
 	\int_{0}^{t_f}\frac{1}{2} u(t)^2 {\rm d} t \label{equ:integrator_J}
 \end{align}
-so that the movement feels most pleasant to the passengers. Notice that the final cost here has no influence on the solution due to the fixed end state, so that we can set $V=0$ in \eqref{equ:opt_funktional}.
-With $\bs \lambda =\lambda_1, \lambda_2, \lambda_3]^\T$ , evaluating the so-called control equation \eqref{equ:hamilton_steuergleichung} we obtain
+so that the movement feels most pleasant to the passengers. Notice that the final cost here has no influence on the solution due to the fixed end state, so that we can set $V=0$ in \eqref{equ:opt_funktional}. \\
+With $\bs \lambda =[\lambda_1, \lambda_2, \lambda_3]^\T$ , evaluating the so-called control equation \eqref{equ:hamilton_steuergleichung} we obtain
 \begin{align}
 	0 &=  u + \lambda_3 \quad \Rightarrow \quad u = -\lambda_3 \;. \label{equ:integrator_u}
 \end{align}
@@ -129,22 +125,22 @@ The co-state equation \eqref{equ:hamilton_dgl_adj} yields
 	\dot {\bs \lambda} = 
 	\mtrx{c}{\dot{\lambda_1} \\ \dot{\lambda_2} \\ \dot{\lambda_3}}=
 	 %-\frac{\partial H}{\partial \bs x} = %\mtrx{ccc}{0 & 0 & 0 \\ 1 & 0 & 0 \\ 0 & 1 & 0} \cdot \mtrx{c}{\lambda_1 \\ \lambda_2 \\ \lambda_3} =  
-	\mtrx{c}{0 \\ \lambda_1 \\ \lambda_2}
+	\mtrx{c}{0 \\ -\lambda_1 \\ -\lambda_2}
 \end{align*}
 and therefore, we get
 \begin{alignat}{3}
 \nonumber
-	\dot \lambda_1 &= 0 \quad  & &\Rightarrow &\quad \lambda_1(t) &= c_1 \\
+	\dot \lambda_1 &= 0 \quad  & &\Rightarrow &\quad \lambda_1(t) &= -c_1 \\
 \nonumber
-	\dot \lambda_2 &= \lambda_1 & &\Rightarrow  & \lambda_2(t) &= c_1 t + c_2 \\
+	\dot \lambda_2 &= -\lambda_1 & &\Rightarrow  & \lambda_2(t) &= c_1 t + c_2 \\
 \label{equ:lambda_3}
-	\dot \lambda_3 &= \lambda_2 & &\Rightarrow  & \lambda_3(t) &= \frac{1}{2}c_1 t^2 + c_2 t + c_3 \; , 
+	\dot \lambda_3 &= -\lambda_2 & &\Rightarrow  & \lambda_3(t) &= -\frac{1}{2}c_1 t^2 - c_2 t - c_3 \; , 
 \end{alignat}
 With $\lambda_3$ from \eqref{equ:lambda_3} it can be seen from \eqref{equ:integrator_u} that the optimal control input function is a third order polynomial with yet unknown integration constants $c_1, \ c_2,$ and $c_3$. Substituting $u(t)$ in the state equation \eqref{equ:stateeqlc} we find the optimal trajectory to 
 \begin{alignat}{3}
-	\dot x_3 &= -\lambda_3 \;\;  & &\Rightarrow &\;\; x_3(t) &= -\frac{1}{6}c_1 t^3 - \frac{1}{2}c_2 t^2 - c_3 t - c_4 \\
-	\dot x_2 &= x_3 & &\Rightarrow  & x_2(t) &= -\frac{1}{24} c_1 t^4 - \frac{1}{6}c_2 t^3 - \frac{1}{2} c_3 t^2 - c_4 t - c_5 \\
-	\dot x_1 &= x_2 & &\Rightarrow  & x_1(t) &= -\frac{1}{120} c_1 t^5 - \frac{1}{24} c_2 t^4 - \frac{1}{6}c_3 t^3 -\frac{1}{2}c_4 t^2 - c_5 t - c_6
+	\dot x_3 &= \lambda_3 \;\;  & &\Rightarrow &\;\; x_3(t) &= \frac{1}{6}c_1 t^3  + \frac{1}{2}c_2 t^2 + c_3 t + c_4 \\
+	\dot x_2 &= x_3 & &\Rightarrow  & x_2(t) &=\frac{1}{24} c_1 t^4 + \frac{1}{6}c_2 t^3 + \frac{1}{2} c_3 t^2 + c_4 t + c_5 \\
+	\dot x_1 &= x_2 & &\Rightarrow  & x_1(t) &=\frac{1}{120} c_1 t^5 + \frac{1}{24} c_2 t^4 + \frac{1}{6}c_3 t^3 +\frac{1}{2}c_4 t^2 + c_5 t + c_6
 	\label{equ:x_dots}
 \end{alignat}
 with additional integration constants $c_4,c_5,$ and $c_6$. To comply with the initial state \eqref{equ:x_0} and end constraint \eqref{equ:x_f} the integration constants need to be chosen accordingly. As \eqref{equ:lambda_3}-\eqref{equ:x_dots} are linear with respect to the constants this can be done by simple linear algebra, leading to the trajectory (a) in Fig. \ref{fig:polytraj} 
@@ -152,7 +148,7 @@ with additional integration constants $c_4,c_5,$ and $c_6$. To comply with the i
 Similarly, we can find the solution to the OCP with a free end state (and a free end time). In this case we require the end state to be as close to (and as soon at) the reference as possible by setting
 \begin{align*}
 V(x) &=k_1 x_1 (t_f)^2+k_2 x_2(t_f)^2 + k_3 x_3(t_f)^2 ,&& k_i>0\\
-(V(x) &=k_t t_f+k_1 x_1 (t_f)^2+k_2 x_2(t_f)^2 + k_3 x_3(t_f)^2 ,&& k_i,k_t>0 )
+(V(x) &=k_1 x_1 (t_f)^2+k_2 x_2(t_f)^2 + k_3 x_3(t_f)^2 + k_t t_f,&& k_i,k_t>0 )
 \end{align*}
 The new transversality conditions will only lead to a different end state and end time, see (b) and (c) in Fig \ref{fig:polytraj}. However, the optimal function class, that is the 5th-order polynomial, will stay the same.
 
@@ -174,14 +170,14 @@ The new transversality conditions will only lead to a different end state and en
 
 \subsubsection{Further Readings}\label{S:57.3.1.3}
 
-The previous calculations can be analogously carried out for the longitudinal movement, which leads to a very comfortable braking characteristic \cite{gutjahr2014automatic} %  (Gutjahr and Werling 2014). 
+The previous calculations can be analogously carried out for the longitudinal movement, which leads to a very comfortable braking characteristic \cite{gutjahr2014automatic}. 
 The longitudinal and lateral movements can also be combined by a regular local and temporal sampling of target states across and along the street. 
-This leads to a reactive algorithm which prevents collisions with static and moving obstacles (Werling et al. 2012).\textbf{which???}
+This leads to a reactive algorithm  \cite{wericra2010}, which prevents collisions with static and moving obstacles widely used in academia and industry.
 The variational approach was generalized to problems with input constraints, known as \textit{Pontryagin's minimum principle}.
  As for the vehicular application, it yields the shortest path connecting two poses of a vehicle with a limited turn radius \cite{dubins1957cml,reeds1990optimal,boissonnat1994note}. %(Dubins 1957; Reeds and Shepp 1990; Boissonnat et al. 1994). 
-Even more involved is finding variational solutions to problems with state constraints such as the optimal braking application in Fig. \ref{fig:poly_mit_unb} \textbf{which???}(e.g., Bryson and Ho 1975).
-Numerical solutions to the first order necessary conditions can be found by so-called indirect methods (see e.g.  \cite{Graichen2012} )% Graichen 2012) 
-which provide very accurate results in general. Contrary to direct methods, as described in the sequel, they need to determine initial conditions for the co-states, which has made the applications unsuitable for an automotive online application yet.
+Even more involved is finding variational solutions to problems with state constraints such as the optimal braking application in Fig. \ref{fig:poly_mit_unb} from \cite{werling2015habil}.
+Numerical solutions to the first order necessary conditions can be found by so-called indirect methods (see e.g.  \cite{Graichen2012}),
+which provide very accurate results in general. Contrary to direct methods, as described in the sequel, they need to determine initial conditions for the co-states, which makes the application challenging for an automotive online application.
 
 
 
@@ -207,7 +203,7 @@ which provide very accurate results in general. Contrary to direct methods, as d
 
 
 \subsection{	Theoretical Background: Finite Parameterization Approximation}\label{S:57.3.2.1}
-Direct optimization is probably the most widely explored approach in model-predictive control. It approximates the dynamic optimization problem of the OCP to a static one, as the latter can be efficiently solved by well-established numerical solvers. The essence of this approach is a \textit{finite-dimensional parameterization} of the input, state, or output trajectory.
+Direct optimization is probably the most widely explored approach in \textit{model-predictive control}. It approximates the dynamic optimization problem of the OCP to a static one, as the latter can be efficiently solved by well-established numerical solvers. The essence of this approach is a \textit{finite-dimensional parameterization} of the input, state, or output trajectory.
 Here, we will introduce a very common method called single shooting. In a first step, we chose a finite dimensional parameterization of the input
 \begin{align*}
 	\bs{u}(t) = \bs{\psi}(t,\bar{\bs{u}}) = \bs{u}_i, \, t\in[t_i, t_{i+1}) \quad \text{und} \quad \bar{\bs{u}} = [\bs{u}_0, \bs{u}_1, \ldots, \bs{u}_{N-1}]^\T.
@@ -221,7 +217,8 @@ This constitutes an initial value problem, which can be solved by an ordinary di
 \bs{x}(t) = \bs{\phi}(t,\bar{\bs{u}}).
 \end{align*}
 Furthermore, it is standard practice that the inequality constraints are only required to hold at $N$ discrete equidistant points in time $t_i,i=1,\dots,N,$ so that the number of inequality constraints is also finite. 
-Thus, the OCP was transformed to the following static optimization problem:\\
+Thus, the OCP was transformed to the following static optimization problem:
+
 Minimize the cost function
 \begin{subequations}
 \begin{align}
