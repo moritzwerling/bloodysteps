@@ -260,120 +260,141 @@ Loosely speaking, for a first guess $\bar{\bs{u}}_0$ the system will be simulate
 
 
 \subsubsection{Example Application: Emergency Obstacle Avoidance}\label{S:57.3.2.2}
+\newcommand{\mat}{\bs} % style for normal matrix variables (not Batch matrices)
+%\newcommand{\vect}{\bs} % style for normal vector svariables (not Batch vectors)
+The direct optimization based on a non-linear model has been successfully demonstrated in \cite{werling2012cdc}. However, the computational demand is too high for today's electronic control units, since a sequence of \emph{quadratic program} (QP) need to be solved. In order to reduce the computational effort to a few milliseconds, \cite{Falcone2007, carvalho2013predictive}, for instance, approximate the formulation of trajectory optimization directly as a QP and a solution can be found in a single step. We now sketch the approach from \cite{gutjahr2016lateral}, which has the potential to cover a wide range of series applications.
+In doing so, we focus on the lateral motion along a reference curve $\Gamma$ such as a lane center. 
 
-The direct method will now be applied to a combined steering and braking maneuver as part of a possible future \emph{active safety} system \cite{werling2012cdc}. % (Werling and Liccardo 2012). 
-For simplicity, we will approximate the vehicle dynamics by the static \emph{one-track model} with only two parameters, the wheel base l and the characteristic speed $v_\mathrm{ch}$. We then get
+We assume in a first step, that the longitudinal profile $v(t)$ is given from an upstream algorithm. 
+\begin{figure}[t]
+  \psfrag{1}[cc][cc][1.0]{$\left(x_1, x_2\right)$}
+	\psfrag{2}[cc][cc][1.0]{$v$}
+	\psfrag{3}[cc][cc][1.0]{$\theta$}
+	\psfrag{4}[cc][cc][1.0]{$\theta_r$}
+	\psfrag{5}[cc][cc][1.0]{$d_r$}
+	%\psfrag{6}[cc][cc][1.0]{$\mathrm{MP}_r(s_r)$}
+	\psfrag{7}[cc][cc][1.0]{$s_r$}
+	\psfrag{8}[cc][cc][1.0]{$\kappa_r(s_r)$}
+	\psfrag{9}[cc][cc][1.0]{$\Gamma$}
+    \centering
+    \includegraphics[width=0.94\columnwidth]{SystemStates_Reference.eps}
+    \caption{Kinematic vehicle model with respect to a given reference curve $\Gamma$}
+    \label{fig:SystemStates}
+\end{figure}
+% When having a closer look at the system model \eqref{equ:NlinSysModel}, it is interesting to see, that when interpreting $v(t)$ as a given time-varying system parameter the only nonlinearities arise from the trigonometric function in \eqref{equ:NlinSysModel1} and the relation between the vehicle speed $v(t)$ and the projected reference speed $v_r$ in \eqref{equ:NlinSysModel4}. 
+The difference in orientation $\theta-\theta_r$, see Fig.\,\ref{fig:SystemStates}, is typically smaller than $20^\circ$ \cite{turri2013linear} and $d_r$ is small with respect to the reference curve's radius $r_r = \tfrac{1}{\kappa_r}$. We therefore model $\sin(\alpha)\approx \alpha$ and $\cos(\alpha)\approx 1$. Furthermore $\tfrac{d_r}{r_r} = d_r \kappa_r \ll 1$, which give us for the system state $\vektor x = \left[d_r, \theta, \kappa, \theta_r, \kappa_r\right]^{\text{T}}$ the following linear time-variant model
 \begin{align}
-\label{equ:thetadot}
-\dot \theta &= \frac{v}{l \left[ 1 + \left[\frac{v}{v_{\text{ch}}}\right]^2\right]} \delta
+	\dot{\vektor x}(t) &= \mat A_C(t) \vektor x(t) + \mat B_C(t) u(t) + \mat E_C(t) z(t), \; \vektor x(t_0) = \vektor x_0
+	\label{equ:LinSysModel}
 \end{align}
-where $\delta$ denotes the steering angle at the wheels, $v$ is the velocity, and $\theta$ describes the course angle of the vehicle in some stationary reference frame. To avoid discontinuities in the steering angle trajectory, we extend the model by
+where
 \begin{align*}
-\dot \delta &= u
+	\mat A_C(t) &= \small \mtrx{ccccc}{0 & v(t) & 0 & -v(t) & 0 \\ 0 & 0 & v(t) & 0 & 0\\ 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & v(t) \\ 0 & 0 & 0 & 0 & 0},\normalsize\\
+	\mat B_C(t) &= \small \mtrx{c}{0, 0, 1, 0, 0}^{\text{T}} \normalsize, \quad \mat E_C(t) = \small \mtrx{c}{0, 0, 0, 0, 1}^{\text{T}},
 \end{align*}
-so that the steering rate serves as the system input. We parameterize it by a \emph{piecewise constant} input
-\begin{align*}
-u(t)=\psi(t,\bar{\bs{u}}))=u_i, \quad  t \in [t_i,t_{i+1}) \quad \text{and} \quad \bar{\bs{u}} = [u_0,u_1,\dots,u_{N-1}]^\T
-\end{align*}
-with $N$ equidistant intervals.
-Throughout the maneuver the brake should be engaged as much as physically reasonable and therefore it is required that the vehicle accelerations stay right on the \emph{friction ellipse}
+Notice, that the state has been extended by the instantly driven curvature $\kappa$ of the reference point, see Fig.\,\ref{fig:SystemStates}, to ensure continuous curvatures, as well as the reference value $\kappa_r$ and its integral $\theta_r$ of $\Gamma$. The latter simulates the curvature influence as a known disturbance.
 
-\begin{align} \label{equ:ellipse}
-\left[\frac{a_t}{c_t}\right]^2 + \left[\frac{a_n}{c_n}\right]^2 -1 = 0.
-\end{align}
-see Fig \ref{fig:kammscherKreis}, where the lateral and longitudinal acceleration are given by $a_n=v \dot{\theta}$ and $a_t=\dot{v}$.
-% [Physical acceleration limits] \hspace{1.8cm} [System states]
-\begin{figure}[h]%
-\centering
-    \psfrag{1}[rb][rb][1.0]{$a_t$}
-    \psfrag{2}[cb][cb][1.0]{$a_n$}
-    \psfrag{3}[lc][lc][1.0]{$c_t$}
-    \psfrag{4}[ct][ct][1.0]{$c_n$}
-    \includegraphics[width=0.5\textwidth,clip, trim = 0cm 0cm 0cm 0cm]{5_KammscherKreis}
-    \caption[Physical acceleration limits]{Physical acceleration limits}
-    \label{fig:kammscherKreis}
-\end{figure}%
-Solving the equation for $a_n$ leads to the longitudinal dynamics 
-\begin{align} \label{equ:replacement}
-	\dot v = -c_t \sqrt{1-[v\dot\theta / c_n]^2}
-\end{align}
-of the full braking vehicle, where $\dot{\theta}$ must be replaced by the expression in \eqref{equ:thetadot}. 
-In other words, the steering angle $\delta$ directly influences how much the vehicle can slow down. 
-Hence, there is no need to optimize the braking power by a separate optimization variable. 
-Next, the planar vehicle motion will be modelled. 
-Choosing street relative coordinates bears some calculative advantages over Cartesian coordinates $[x_1,x_2]$ in the cost functional. We therefore describe the vehicle motion (approximately) by
-
-\begin{subequations} \label{equ:dgl_mdl_nmpc_2}
+To minimize the number of constraints, we define the system output based on the idea of approximating the vehicle shape by several circles  \cite{zieglerfastcollision2010}, in our case three, see Fig.\,\ref{fig:SystemOutputs}. With $l_1 = 0, l_2 = \tfrac{l}{2}, l_3 = l$, we define the circles' center positions with respect to the reference curve $\Gamma$ by
 \begin{align}
-\label{equ:d_r_dot}
-\dot d_r &= v \sin(\theta - \theta_r) \\
-\dot \theta_r &= v \cos(\theta - \theta_r)\kappa_r(s_r) \\
-\label{equ:s_r_dot}
-\dot s_r &= v,
+	d_i = d_r + l_i \sin(\theta - \theta_r) \approx d + l_i(\theta - \theta_r), \quad i = 1, 2, 3.
+	\label{equ:CCSystemOut}
 \end{align}
-\end{subequations}
-with the curve offset $d_r$ with respect to the center of the lane, the curve’s orientation $\theta_r$ and curvature $\kappa_r$  as well as the curve length parameter $s_r$.
-All variables referred to the vehicle projection point on the curve, see Fig.\,\ref{fig:systemStates}. The set of ordinary differential equations \eqref{equ:thetadot}-\eqref{equ:s_r_dot} is particularly non-stiff so that it can be integrated by the simple first order Runge-Kutta scheme.
-% [Physical acceleration limits] \hspace{1.8cm} [System states]
-\begin{figure}[h]%
-\centering
-\psfrag{1}[tc][tc][1.0]{$s_r$}
-    \psfrag{2}[rb][rb][1.0]{$\kappa_r(s_r)$}
-    \psfrag{3}[lb][lb][1.0]{$d_r$}
-    \psfrag{4}[rb][rb][1.0]{$[x_1, x_2]$}
-    \psfrag{5}[lt][lt][1.0]{$v$}
-    \psfrag{6}[c][c][1.0]{$\theta$}
-    \psfrag{7}[lt][lt][1.0]{$\theta_r$}
-    \includegraphics[width=0.5\textwidth,clip, trim = 1.5cm 0cm 0cm 0cm]{5_vehicleAndReferenceCurveStates.eps}
-    \caption[System states]{System states relative to the road center}
-    \label{fig:systemStates}
-\end{figure}%
-For the costs we choose
-\begin{align}
-\label{equ:integralcosts}
-J = \int_{t_0}^{t_f}{ \left[ u^2 + k_1 (\theta-\theta_r)+k_2(\kappa - \kappa_r) \right] }dt \quad \text{with} \quad  \kappa = \frac{\delta}{l \left[ 1 + \left[\frac{v}{v_{\text{ch}}}\right]^2\right]}
-\end{align}
-to avoid excessive steering rates as well as large deviations from the reverence curve heading and curvature. The costs can be simply calculated by integrating the running costs $l$ in parallel to the system dynamics, that is $\dot{J}=l(\bs{x},u)$.
-To formulate inequality constraints that prevent the vehicle from colliding with the obstacle, for a given trajectory we define the point in time $t_{d,\mathrm{min}}$, when the (possibly moving) obstacle is the closest to the vehicle. 
-The projection of the distance vector $\bs{\xi}^\T(d_r(t_{d,\mathrm{min}}),s_r(t_{d,\mathrm{min}},t_{d,\mathrm{min}})$ to the obstacle onto the normal vector $\bs{n}\left(\theta(t_{d,\mathrm{min}})\right)$ of the vehicle course has to yield some safety clearance $d_\mathrm{safety}$. Therefore
 
-\begin{align*}
-\bs{\xi}^\T\left(d_r(t_{d,\mathrm{min}}),s_r(t_{d,\mathrm{min}})\right)^\T \ \cdot \bs{n}\left(\theta(t_{d,\mathrm{min}})\right) +d_\mathrm{safety} \leq 0
-\end{align*}
-
-has to hold, when we want to force the vehicle to pass on the left side of the obstacle. 
-Also, we require the optimal trajectory to stay within the left lane boundaries, which can be expressed as
-\begin{align*}
-d_r(t_i) - \left[ d_max \right] \leq 0 \quad i=1,\dots,N.
-\end{align*}
-The resultant so-called \emph{nonlinear program} executes with $N=20, t_f=2.0\mathrm{s}$ , and an initial guess of $\bar{\bs{u}}_0=\bs{0}$ in approximately 100ms  on an i5-520M (2.4 GHz). A pedestrian example is shown in Fig.\,\ref{fig:fussgaenger_draufsicht}. As can be seen, the vehicle uses the full friction potential (bottom left) while braking and evading the pedestrian (black dot within gray safety margin) without leaving the given lane boundary (dotted line).
-%[Combined braking and steering]
 \begin{figure}[h]
-	\centering
-	\input{pics/5_AuswertungSingleshooting_szene}
-	\renewcommand{\matlabtextA}{\scriptsize}
-	\includegraphics[width=1.0 \linewidth,trim = 0cm 0cm 0cm 0cm]{5_AuswertungSingleshooting_szene.eps}		
-	%def\xlabel{$t$ in \unit{s}}
-    \caption[Combined braking and steering]{Automatic obstacle avoidance with combined braking and steering at the friction limit; the safety margin $d_\mathrm{safety}$  is shown as a grey circle around the stationary pedestrian depicted as a black dot; the lane boundaries given by $d_\mathrm{max}$  are drawn as grey dotted lines.}
-    \label{fig:fussgaenger_draufsicht}
+	\psfrag{0}[lc][lc][1.0]{$\tfrac{l}{2}$}
+	\psfrag{1}[lc][lc][1.0]{$\tfrac{l}{2}$}
+	\psfrag{2}[lc][lc][1.0]{$v$}
+	\psfrag{3}[cb][cb][1.0]{$\theta-\theta_r$}
+	\psfrag{4}[cc][cc][1.0]{$\theta_r$}
+	\psfrag{5}[rb][rb][1.0]{$d_1$}
+	\psfrag{6}[rb][rb][1.0]{$d_2$}
+	\psfrag{7}[rb][rb][1.0]{$d_3$}
+	\psfrag{9}[rb][rb][1.0]{$\Gamma$}
+    \centering
+    \includegraphics[width=0.9\columnwidth]{SystemOutputs.eps}
+    \caption{Visualization of the defined system outputs}
+    \label{fig:SystemOutputs}
 \end{figure}
 
-%Fig nicht in Word Dokument
-%\begin{figure}	
-%\centering
-%	\def\xlabel{$t$ in $\unit{s}$}
-%	\def\ylabelA{$v$ in $\unitfrac{m}{s}$}	
-%	\def\ylabelB{$\delta$ in $\unit{rad}$}	
-%	\def\ylabelC{$u_1$ in $\unitfrac{rad}{s}$}
-%	\def\ylabelD{$a_t$ in $\unitfrac{m}{s^2}$}	
-%	\def\ylabelE{$a_n$ in $\unitfrac{m}{s^2}$}
-%	\input{pics/5_AuswertungSingleshooting_signals.tex}
-%	\renewcommand{\matlabtextA}{\normalsize }
- % \includegraphics[width=1.0 \linewidth,trim = 0cm 0cm 0cm 0cm]{5_AuswertungSingleshooting_signals.eps}
-%    \caption[Signalverläufe bei kombiniertem Bremsen und Ausweichen]{\textbf{Figure nicht ist nicht im Word Dokument}Signalverläufe zu Abb.\,\ref{fig:fussgaenger_draufsicht} mit optimaler Steuerung $u_1$, Lenkwinkel $\delta$,  Quer- und Längsbeschleunigung $a_t, a_n$ sowie Geschwindigkeit $v$; Die vertikalen Linien markieren die Zeitpunkte der Draufsichten, die horizontalen gestrichelten Linien die Nebenbedingungen \cite{werling2012cdc}.}
-%    \label{fig:fussgaenger_draufsicht_signale}
-%\end{figure}
+Next, we follow the idea of a finite parameterization of the input and transform the continuous-time vehicle prediction model \eqref{equ:LinSysModel} and \eqref{equ:SysOutput} into its equivalent time-discrete form in one step. Assuming the system matrix $\mat A_C(t)$ as well as the system input $u(t)$ and the system disturbance $z(t)$ to be constant within each discretization interval $k$ with length $T_s$, we can use the \textit{Laplace transformation}, see \cite{gutjahr2016lateral} for details, to get the time-discrete, time-varying system model
+\begin{align}
+	\begin{aligned}
+		\vektor x(k+1) &= \mat A(k) \vektor x(k) + \mat B(k) u(k) + \mat E(k) z(k), \\
+						\vektor y(k) &= \mat C(k) \vektor x(k),\quad \quad \bs x(0) = \bs x_0. 
+	\end{aligned}
+	\label{equ:DisPreMod}
+\end{align}
+As we want to minimize the discretization error caused by the system disturbance $z(k)$ and keep $z(k)$ constant within each discretization interval we define
+\begin{align}
+	z(k) = \frac{\kappa_r(k+1) - \kappa_r(k)}{T_s}
+	\label{equ:FFOHkappaR}
+\end{align}
+approximating the reference curvature as a forward first order hold.
 
+In the third step, we define upper and lower limits for the system output based on the perceived environment and the vehicle dynamics. 
+
+As depicted in Fig.\,\ref{fig:SystemOutputs}, the system output \eqref{equ:CCSystemOut} can be interpreted as a normal distance between the reference curve $\Gamma$ and the center position of each circle. 
+Due to the presence of moving traffic the maximum admissible deviation, that is how far each circle can be shifted form the center to either side before intersecting an object, obstacle or the lane markings, is not only dependent on the vehicle's position $s_r$ along the reference curve $\Gamma$, but also on the time step $k$, namely \begin{align}
+	d_{i,\text{min}}\left(s_r(k),k\right) \leq d_i(k) \leq d_{i,\text{max}}\left(s_r(k),k\right), \; i = 1,2,3,
+	\label{equ:ColAvoiConstraint}
+\end{align}
+where $s_r(k)$ is given by the integration of the desired future velocity profile.
+
+
+Also, we would like to account for the limited turning circle by introducing a fixed time-invariant upper $\kappa_{\text{max},\delta}$ and lower $\kappa_{\text{min},\delta}$ for the $\kappa$ signal in the system output. Additionally, to account for the total wheel traction, we combine these bounds by a time-varying term which is dependent on $v(k)$ so that
+\begin{align*}
+	\underbrace{\max \left(\kappa_{\text{min},\delta},\kappa_{\text{min},\mu}(k)\right)}_{\kappa_{\text{min}}} \leq \kappa(k) \leq \min \underbrace{\left(\kappa_{\text{max},\delta},\kappa_{\text{max},\mu}(k)\right)}_{\kappa_{\text{max}}},
+	%\label{equ:KappaConstraint}
+\end{align*}
+where $\kappa_{\text{min},\mu}(k) = \kappa_{\text{min}}\left(v(k),\mu\right)$ and $\kappa_{\text{max},\mu}(k) = \kappa_{\text{max}}\left(v(k),\mu\right)$ are derived using the relations stated by the so-called \emph{Kamm's circle} based on an the estimated friction parameter $\mu$.
+
+Lastly, as the steering actuator can only supply a certain maximum power, the vehicle's steering rate is limited. We therefore confine the curvature's rate of change, that is the system input, by box constraints
+\begin{align}
+	u_{\text{min}} \leq u(k) \leq u_{\text{max}}.
+	\label{equ:InputConstraint}
+\end{align}
+
+In the last step of the problem modelling, we define a quadratic running cost function of the form 
+\begin{align}
+	l\left(\vektor x(k), u(k)\right) = w_d d_r^2 + w_\theta [\theta - \theta_r]^2 + w_\kappa [\kappa-\kappa_r]^2 + w_u u^2
+	\label{equ:CostFunction}
+\end{align}
+with $w_d, w_\theta, w_\kappa, w_u > 0$. The first three terms penalize deviations from the reference curve $\Gamma$ whereas the last term encourages a smoothing behavior.
+After some straightforward but laborious transformations, we substitute the system state in the cost function and the output constraint equation and finally get a quadratic program of the form
+\newcommand{\U}{\bar{\mathbf u}}
+\newcommand{\Z}{\mathbf z}
+\newcommand{\X}{\mathbf x}
+\newcommand{\Q}{\bs{\mathcal Q}}
+\newcommand{\R}{\bs{\mathcal R}}
+\newcommand{\bv}[1]{\mathbf #1} % style used for Batch vectors
+\begin{align}
+	J
+	&= \U^\T \mat H \U + \mat F \U \\
+	%& \qquad + 2 \Z^\T \mat V \vect x_0 \vect + \Z^\T \mat Z \Z + \vect x_0^\T \mat Y \vect x_0
+	\mat A_c  \U &\leq \bv b_c
+\end{align}
+for the input vector $\U$, where $\mat H, \mat F, \mat A_c, \bv b_c$ are suitably sized matrices and vectors as functions of the initial state $\bs x_0$ the disturbance signal $\kappa_r(k)$ and the velocity reference $v(k)$ as well as the predicted environment.
+
+The minimization constitutes a quadratic program, which needs to be updated and solved as the vehicle drives along the reference curve, see e.g. the parking scenario in Fig.\,\ref{fig:LowSpeedBirdView}.
+
+
+
+
+\begin{figure*}[t!]
+\centering
+\input{./pics/LowSpeed_UseCase_birdview.tex}
+%\framebox{
+\renewcommand{\matlabtextA}{\tiny}
+	%\def\ylabelDr{$d_{1,\text{min}} \leq d_1 \leq d_{1,\text{max}}$}
+	\def\ylabelDr{$d_1$}
+	\def\ylabelKappa{$\kappa_r, \kappa$ in \unitfrac{1}{m}}
+	\def\xlabelDr{$s_r$ in \unit{m}}
+	%\def\xlabelKappa{$s_r$ in \unit{m}}
+	\def\xlabelKappa{$k$}
+\includegraphics[width=1.\columnwidth,trim = 0cm .0cm 0cm 0cm]{LowSpeed_UseCase_birdview.eps}
+\caption{Bird's eye view of the moving vehicle for the parking scenario at three consecutive instants of time with its correspondent results for the lateral position for the rear axle $d_1$ and the curvature $\kappa$, where the blue bold line represents the optimized trajectory}
+\label{fig:LowSpeedBirdView}
+\end{figure*}
 
 \subsubsection{Further Readings}\label{S:57.3.2.3}
 
@@ -382,7 +403,6 @@ Nevertheless, many other numerical methods exist such as \emph{multi-shooting} \
 As for all direct optimization methods they lead to a static optimization problem, which can be most successfully solved by \emph{sequential quadratic programming} (SQP) techniques or \emph{interior point methods} (IP), see \cite{nocedal2006numerical}.
 As an alternative to a finite parameterization of the input, for flat systems \cite{rouchon1993flatness1}
 the flat output can be parameterized instead \cite{kang2012online}, which has been successfully demonstrated in complex inner-city scenarios by \cite{ziegler2014trajectory}.
-In order to reduce the computational effort to a few milliseconds, \cite{Falcone2007, carvalho2013predictive} for instance, approximated the formulation of trajectory optimization as a \emph{quadratic problem} (QP). This way no iterations are required as the solution can be found in a single step.
 
 \subsection{Approach III: Dynamic Programming}\label{S:57.3.3}
 Certain tasks such as parking in several moves or finding the way through multiple moving obstacles are \emph{combinatorial} (non-convex) \emph{problems}. They cannot be tackled by (local) \textit{direct optimization methods} as the latter rely on an initial solution. However, \emph{dynamic programming} is a principle from \cite{bellman_DP} 
