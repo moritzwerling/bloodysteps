@@ -14,7 +14,7 @@ Trajectory optimization is different in that the optimization variables are func
 Due to the vehicular focus, a special case will be considered, one that requires the trajectory $\bs{x}(t)$ to be consistent with some dynamical system model which has an input u. Without such model, the optimization cannot incorporate the inherent properties and physical limitations of the vehicle. This special case of dynamic optimization is called an optimal control problem (e.g., \cite{Lewis_OC}).
 
 \subsection{Optimal Control Problem}\label{S:57.2.1}
-A fairly general formulation of the optimal control problem (OCP) reads:
+A fairly general formulation of the optimal control problem (OCP) reads: \\
 
 Minimize the cost functional
 \begin{subequations} \label{equ:optimalsteuerungsproblem}
@@ -32,7 +32,7 @@ Minimize the cost functional
 \end{align} 
 \end{subequations}
 In other words, for our (possibly nonlinear and time variant) system with state $\bs{x} \in \mathbb R^n$ and input $\bs{u} \in \mathbb R^m$ we seek on the interval $t\in[t_0, t_f]$ the input trajectory $\bs{u}(t)$ that minimizes the cost functional $J$ while steering (in the truest sense of the word) the system from its initial state $\bs{x}_0$ to an end state $\bs{x}(t_f)$, so that the equality and inequality constraints are fulfilled at all times. The optimal input trajectory is usually denoted by $\bs{u}^\ast(t)$ and the resulting state trajectory by $\bs{x}^\ast(t)$, 
-see Fig. \ref{fig:dynamische_Optimierung_endvorgabe}. Notice that $J$ comprises integral costs $l$ and end point costs $V$ and is not only a functional of the input $\bs{u}(t)$ but also of the states $\bs{x}(t)$. Furthermore, if the final time $t_f$ is not given, it becomes part of the optimization, so that the length of the trajectory will also be optimized.
+see Fig.\,\ref{fig:dynamische_Optimierung_endvorgabe}. Notice that $J$ comprises integral costs $l$ and end point costs $V$ and is not only a functional of the input $\bs{u}(t)$ but also of the states $\bs{x}(t)$. Furthermore, if the final time $t_f$ is not given, it becomes part of the optimization, so that the length of the trajectory will also be optimized.
 \begin{figure}[ht]
 \psfrag{1}[cr][cr][1.0]{$x_1$}
 \psfrag{2}[br][br][1.0]{$x_2$}
@@ -96,7 +96,7 @@ so that
 Either way, this results in a \textit{boundary value problem}, which in general needs to be solved numerically. This so-called \textit{indirect approach} is very accurate but, from experience, not as flexible as the direct approach that we will introduce in Sect. \ref{S:57.3.2}. However, for simple OCPs the resultant boundary value problem can be solved analytically, leading to fast computable optimal trajectory primitives with broad applications (see Sect. \ref{S:57.4}).
 
 \subsubsection{Example Application: Automated Lane Change}\label{S:57.3.1.2}
-We will now apply the described method to the generation of optimal lane change primitives. The lateral motion across the road can be modelled as a triple integrator system with states $\bs x = [x_1, x_2, x_3]^\T$ , namely the position, the lateral velocity, and the lateral acceleration, respectively, all within the reference frame of some curve, see Fig. \ref{fig:polytraj}. \\
+We will now apply the described method to the generation of optimal lane change primitives. The lateral motion across the road can be modelled as a triple integrator system with states $\bs x = [x_1, x_2, x_3]^\T$ , namely the position, the lateral velocity, and the lateral acceleration, respectively, all within the reference frame of some curve, see Fig.\,\ref{fig:polytraj}. \\
 Then, the system dynamics are described by 
 \begin{align}
 	\dot{\bs x} = \bs f(\bs x, u) = [x_2, x_3, u ]^\T
@@ -143,7 +143,7 @@ With $\lambda_3$ from \eqref{equ:lambda_3} it can be seen from \eqref{equ:integr
 	\dot x_1 &= x_2 & &\Rightarrow  & x_1(t) &=\frac{1}{120} c_1 t^5 + \frac{1}{24} c_2 t^4 + \frac{1}{6}c_3 t^3 +\frac{1}{2}c_4 t^2 + c_5 t + c_6
 	\label{equ:x_dots}
 \end{alignat}
-with additional integration constants $c_4,c_5,$ and $c_6$. To comply with the initial state \eqref{equ:x_0} and end constraint \eqref{equ:x_f} the integration constants need to be chosen accordingly. As \eqref{equ:lambda_3}-\eqref{equ:x_dots} are linear with respect to the constants this can be done by simple linear algebra, leading to the trajectory (a) in Fig. \ref{fig:polytraj} 
+with additional integration constants $c_4,c_5,$ and $c_6$. To comply with the initial state \eqref{equ:x_0} and end constraint \eqref{equ:x_f} the integration constants need to be chosen accordingly. As \eqref{equ:lambda_3}-\eqref{equ:x_dots} are linear with respect to the constants this can be done by simple linear algebra, leading to the trajectory (a) in Fig.\,\ref{fig:polytraj} 
 \\
 Similarly, we can find the solution to the OCP with a free end state (and a free end time). In this case we require the end state to be as close to (and as soon at) the reference as possible by setting
 \begin{align*}
@@ -175,7 +175,7 @@ The longitudinal and lateral movements can also be combined by a regular local a
 This leads to a reactive algorithm  \cite{wericra2010}, which prevents collisions with static and moving obstacles widely used in academia and industry.
 The variational approach was generalized to problems with input constraints, known as \textit{Pontryagin's minimum principle}.
  As for the vehicular application, it yields the shortest path connecting two poses of a vehicle with a limited turn radius \cite{dubins1957cml,reeds1990optimal,boissonnat1994note}. %(Dubins 1957; Reeds and Shepp 1990; Boissonnat et al. 1994). 
-Even more involved is finding variational solutions to problems with state constraints such as the optimal braking application in Fig. \ref{fig:poly_mit_unb} from \cite{werling2015habil}.
+Even more involved is finding variational solutions to problems with state constraints such as the optimal braking application in Fig.\,\ref{fig:poly_mit_unb} from \cite{werling2017optimale}.
 Numerical solutions to the first order necessary conditions can be found by so-called indirect methods (see e.g.  \cite{Graichen2012}),
 which provide very accurate results in general. Contrary to direct methods, as described in the sequel, they need to determine initial conditions for the co-states, which makes the application challenging for an automotive online application.
 
@@ -202,13 +202,15 @@ which provide very accurate results in general. Contrary to direct methods, as d
 \subsection{Approach II: Direct Optimization Techniques}\label{S:57.3.2}
 
 
-\subsection{	Theoretical Background: Finite Parameterization Approximation}\label{S:57.3.2.1}
 Direct optimization is probably the most widely explored approach in \textit{model-predictive control}. It approximates the dynamic optimization problem of the OCP to a static one, as the latter can be efficiently solved by well-established numerical solvers. The essence of this approach is a \textit{finite-dimensional parameterization} of the input, state, or output trajectory.
-Here, we will introduce a very common method called single shooting. In a first step, we chose a finite dimensional parameterization of the input
+
+\subsubsection{Theoretical Background: Finite Parameterization Approximation}\label{S:57.3.2.1}
+
+We will now introduce a very common method called single shooting. In a first step, we chose a finite dimensional parameterization of the input
 \begin{align*}
-	\bs{u}(t) = \bs{\psi}(t,\bar{\bs{u}}) = \bs{u}_i, \, t\in[t_i, t_{i+1}) \quad \text{und} \quad \bar{\bs{u}} = [\bs{u}_0, \bs{u}_1, \ldots, \bs{u}_{N-1}]^\T.
+	\bs{u}(t) = \bs{\psi}(t,\bar{\bs{u}})
 \end{align*}
-such as a piecewise constant interpolation (see  Fig. \ref{fig:parametrisierte_nmpc}), a polynomial, or a spline. The input trajectory is therefore fully described by the finite parameter vector $\bar{\bs{u}}$. The system dynamics \eqref{equ:opt_systemdynamik} now read
+such as a piecewise constant interpolation (see  Fig.\,\ref{fig:parametrisierte_nmpc}), a polynomial, or a spline. The input trajectory is therefore fully described by the finite parameter vector $\bar{\bs{u}}$. The system dynamics \eqref{equ:opt_systemdynamik} now read
 \begin{align*}
 	\dot{\bs{x}}(t) = \bs{f}(\bs{x}(t),\bs{\psi}(t,\bar{\bs{u}}),t), \quad &\bs{x}(t_0) = \bs{x}_0\; , 
 \end{align*}
@@ -216,23 +218,23 @@ This constitutes an initial value problem, which can be solved by an ordinary di
 \begin{align*}
 \bs{x}(t) = \bs{\phi}(t,\bar{\bs{u}}).
 \end{align*}
-Furthermore, it is standard practice that the inequality constraints are only required to hold at $N$ discrete equidistant points in time $t_i,i=1,\dots,N,$ so that the number of inequality constraints is also finite. 
-Thus, the OCP was transformed to the following static optimization problem:
+Furthermore, it is standard practice that the inequality constraints are only required to hold at $N$ discrete equidistant points in time $t_i,i=1,\dots,N,$ so that the number of inequality constraints is also finite. \\
+Thus, the OCP was transformed to the following static optimization problem: \\
 
 Minimize the cost function
 \begin{subequations}
 \begin{align}
-J(\bs{\phi}(t,\bar{\bs{u}}),\bs{\psi}(t,\bar{\bs{u}}),t)) = 
+J(\bar{\bs{u}},t) = 
 	\int_{t_0}^{t_f} l(\bs{\phi}(t,\bar{\bs{u}}),\bs{\psi}(t,\bar{\bs{u}}),t)\,{\rm d} t + V(\bs{\phi}(t_f,\bar{\bs{u}}))
 \label{equ:diroptcost}
 \end{align}
-subject to the equality and inequality constraints
+\quad subject to the equality and inequality constraints
 \begin{align}
 	 &\bs{g}(\bs{\phi}(t_f,\bar{\bs{u}}),t_f) = \bs{0} \label{equ:diropteqcon}\\ 	
 	&\bs{h}(\bs{\phi}(t_i,\bar{\bs{u}}),\bs{\psi}(t_i,\bar{\bs{u}}))  \leq \bs{0},  \quad  i=0,\ldots,N \label{equ:diroptineqcon}\;. 
 \end{align} 
 \end{subequations}
-Loosely speaking, for a first guess $\bar{\bs{u}}_0$ the system will be simulated in a “single shoot” for $t \in [0,t_f]$  starting from $x_0$. Then, the total costs J are evaluate as well as the constraints $\bs{g}$ and $\bs{h}$ in \eqref{equ:diroptcost}, \eqref{equ:diropteqcon}, and \eqref{equ:diroptineqcon}, respectively. These values are then fed back to a numerical solver, which repeats this procedure by a variation of $\bar{\bs{u}}$to conclude how to modify the parameter so that $J$ gets smaller without violating $\bs{g}=\bs{0}$ and $\bs{h}\leq\bs{0}$. When the solution does not significantly change any more or a certain number of iterations have been reached, the optimization will be terminated.
+Loosely speaking, for a first guess $\bar{\bs{u}}_0$ the system will be simulated in a “single shoot” for $t \in [t_0,t_f]$  starting from $\bs{x}_0$. Then, the total costs $J$ are evaluate as well as the constraints $\bs{g}$ and $\bs{h}$ in \eqref{equ:diroptcost}, \eqref{equ:diropteqcon}, and \eqref{equ:diroptineqcon}, respectively. These values are then fed back to a numerical solver, which repeats this procedure by a variation of $\bar{\bs{u}}$ to conclude how to modify the parameter so that $J$ gets smaller without violating $\bs{g}=\bs{0}$ and $\bs{h}\leq\bs{0}$. When the solution does not significantly change any more or a certain number of iterations have been reached, the optimization will be terminated.
 
 
 
@@ -311,7 +313,7 @@ Choosing street relative coordinates bears some calculative advantages over Cart
 \end{align}
 \end{subequations}
 with the curve offset $d_r$ with respect to the center of the lane, the curve’s orientation $\theta_r$ and curvature $\kappa_r$  as well as the curve length parameter $s_r$.
-All variables referred to the vehicle projection point on the curve, see Fig. \ref{fig:systemStates}. The set of ordinary differential equations \eqref{equ:thetadot}-\eqref{equ:s_r_dot} is particularly non-stiff so that it can be integrated by the simple first order Runge-Kutta scheme.
+All variables referred to the vehicle projection point on the curve, see Fig.\,\ref{fig:systemStates}. The set of ordinary differential equations \eqref{equ:thetadot}-\eqref{equ:s_r_dot} is particularly non-stiff so that it can be integrated by the simple first order Runge-Kutta scheme.
 % [Physical acceleration limits] \hspace{1.8cm} [System states]
 \begin{figure}[h]%
 \centering
@@ -344,7 +346,7 @@ Also, we require the optimal trajectory to stay within the left lane boundaries,
 \begin{align*}
 d_r(t_i) - \left[ d_max \right] \leq 0 \quad i=1,\dots,N.
 \end{align*}
-The resultant so-called \emph{nonlinear program} executes with $N=20, t_f=2.0\mathrm{s}$ , and an initial guess of $\bar{\bs{u}}_0=\bs{0}$ in approximately 100ms  on an i5-520M (2.4 GHz). A pedestrian example is shown in Fig.\ref{fig:fussgaenger_draufsicht}. As can be seen, the vehicle uses the full friction potential (bottom left) while braking and evading the pedestrian (black dot within gray safety margin) without leaving the given lane boundary (dotted line).
+The resultant so-called \emph{nonlinear program} executes with $N=20, t_f=2.0\mathrm{s}$ , and an initial guess of $\bar{\bs{u}}_0=\bs{0}$ in approximately 100ms  on an i5-520M (2.4 GHz). A pedestrian example is shown in Fig.\,\ref{fig:fussgaenger_draufsicht}. As can be seen, the vehicle uses the full friction potential (bottom left) while braking and evading the pedestrian (black dot within gray safety margin) without leaving the given lane boundary (dotted line).
 %[Combined braking and steering]
 \begin{figure}[h]
 	\centering
@@ -375,30 +377,25 @@ The resultant so-called \emph{nonlinear program} executes with $N=20, t_f=2.0\ma
 
 \subsubsection{Further Readings}\label{S:57.3.2.3}
 
-Single shooting has been intensively studied for many vehicular applications such by \cite{kelly2003reactive,Falcone2007,howard2007optimal,Yoon2009,gerdts2009generating, park2009obstacle}.% (Kelly and Nagy 2003), (Falcone et al. 2007), (Howard and Kelly 2007), (Yoon et al. 2009), (Gerdts et al. 2009), and (Park et al. 2009). 
-Nevertheless, many other numerical methods exist such as \emph{multi-shooting} (Bock and Plitt 1984)\textbf{which???} and \emph{collocation} (Hargraves and Paris 1987)\textbf{which???} that might gain in importance in the future when dealing with instable vehicle models in challenging driving conditions. 
-As for all direct optimization methods they lead to a static optimization problem, which can be most successfully solved by \emph{sequential quadratic programming} (SQP) techniques or \emph{interior point methods} (IP), see \cite{nocedal2006numerical}.%(Nocedal and Wright 2006).
-As an alternative to a finite parameterization of the input, for flat systems \cite{rouchon1993flatness1}\textbf{orflatness2???}%(Rouchon et al. 1993) 
-the flat output can be parameterized instead \cite{kang2012online},%(Kang 2012),
- which has been successfully demonstrated in complex inner-city scenarios by \cite{ziegler2014trajectory}. %(Ziegler et al. 2014).
-In order to reduce the computational effort to a few milliseconds, \cite{Falcone2007}%(Falcone et al. 2007)
- and \cite{carvalho2013predictive},%(Carvalho et al. 2013),
-for instance, approximated the formulation of trajectory optimization as a \emph{quadratic problem} (QP). This way no iterations are required as the solution can be found in a single step.
+Single shooting has been intensively studied for many vehicular applications such by \cite{kelly2003reactive,Falcone2007,howard2007optimal,Yoon2009,gerdts2009generating, park2009obstacle}. 
+Nevertheless, many other numerical methods exist such as \emph{multi-shooting} \cite{bock-direct-multiple-shooting} and \emph{collocation} \cite{hargraves1987direct} that might gain in importance in the future when dealing with instable vehicle models in challenging driving conditions. 
+As for all direct optimization methods they lead to a static optimization problem, which can be most successfully solved by \emph{sequential quadratic programming} (SQP) techniques or \emph{interior point methods} (IP), see \cite{nocedal2006numerical}.
+As an alternative to a finite parameterization of the input, for flat systems \cite{rouchon1993flatness1}
+the flat output can be parameterized instead \cite{kang2012online}, which has been successfully demonstrated in complex inner-city scenarios by \cite{ziegler2014trajectory}.
+In order to reduce the computational effort to a few milliseconds, \cite{Falcone2007, carvalho2013predictive} for instance, approximated the formulation of trajectory optimization as a \emph{quadratic problem} (QP). This way no iterations are required as the solution can be found in a single step.
 
 \subsection{Approach III: Dynamic Programming}\label{S:57.3.3}
-Certain tasks such as parking in several moves or finding the way through multiple moving obstacles are \emph{combinatorial} (non-convex) \emph{problems}. They cannot be tackled by (local) direct optimization methods as the latter rely on an initial solution. However, \emph{dynamic programming} is a principle from \cite{bellmann_DP} %(Bellman 1954)
+Certain tasks such as parking in several moves or finding the way through multiple moving obstacles are \emph{combinatorial} (non-convex) \emph{problems}. They cannot be tackled by (local) \textit{direct optimization methods} as the latter rely on an initial solution. However, \emph{dynamic programming} is a principle from \cite{bellman_DP} 
 that significantly reduces the computational burden of these combinatorial problems, so that the \emph{global optimum} can be efficiently obtained. It is therefore no surprise that it can be found in numerous (discrete) optimization algorithms.
 
 
 \subsubsection{Theroetical Backgorund: Bellman’s Principle of Optimality}\label{S:57.3.3.1}
 Richard \emph{Bellman’s principle of optimality} states:
 
-\begin{mydef}
-“An optimal policy has the property that whatever the initial state and initial decision are, the remaining decisions must constitute an optimal policy with regard to the state resulting from the first decision.” 
-\end{mydef}
-In other words, an optimal trajectory is composed of optimal sub-trajectories. This can be understood by looking at Fig. \ref{fig:Darstellung_Bellmanprinzip}, which shows the optimal trajectory $\bs{x}^\ast (t)$ in black connecting $\bs{x_0}$ with $\bs{x_f}$. The sub-trajectory (b), bringing $\bs{x^\ast} (t_1 )$ to $\bs{x_f}$, must be optimal, too. Otherwise, there would be another sub-trajectory (c) (grey), that would lead to a better total trajectory (a)+(c), which is contrary to the optimal trajectory $x^\ast (t)$ comprising (a)+(b).
-%[Bellman's principle of optimality]
-%\section*{Dynamic Programming}
+\begin{definition}
+“An \textit{optimal policy} has the property that whatever the initial state and initial decision are, the remaining decisions must constitute an optimal policy with regard to the state resulting from the first decision.” 
+\end{definition}
+In other words, an optimal trajectory is composed of optimal sub-trajectories. This can be understood by looking at Fig.\,\ref{fig:Darstellung_Bellmanprinzip}, which shows the optimal trajectory $\bs{x}^\ast (t)$ in black connecting $\bs{x_0}$ with $\bs{x_f}$. The sub-trajectory (b), bringing $\bs{x^\ast} (t_1 )$ to $\bs{x_f}$, must be optimal, too. Otherwise, there would be another sub-trajectory (c) (grey), that would lead to a better total trajectory (a)+(c), which is contrary to the optimal trajectory $x^\ast (t)$ comprising (a)+(b).
 \begin{figure}[h]
 	\psfrag{0}[cr][cr][1.0]{$\bs x_0$}
 	\psfrag{f}[cl][cl][1.0]{$\bs x_f$}
@@ -416,6 +413,7 @@ In other words, an optimal trajectory is composed of optimal sub-trajectories. T
 	\caption[Bellman’s Principle of Optimality]{Illustration of Bellman’s Principle of Optimality} 
 	\label{fig:Darstellung_Bellmanprinzip}
 \end{figure} 
+
 The largest practical benefit from this principle is received when time-discretizing the OCP. We therefore consider the time-discrete process
 \begin{align} \label{equ:diskreter_prozess}
 	\bs x(k+1) = \bs f(\bs x(k), \bs u(k), k), \quad k=0,\ldots, k_f-1
@@ -426,26 +424,20 @@ and seek for the optimal steering sequence $\bs{u}^\ast (k)$ that minimizes the 
 \end{align}
 Notice, that constraints can be easily incorporated in \eqref{equ:diskrete_kosten} by setting the costs $l=\infty$ when the equality or inequality equations are violated.
 A basic element of dynamic programming is memorizing the costs of sub-trajectories. Therefore, we define the so-called \emph{cost-to-go}
-
 \begin{align*}
 	G = \sum_{\kappa = k}^{k_f-1} l(\bs x(\kappa), \bs u(\kappa),\kappa) % + V(\bs x(k_f))
 \end{align*}
 (notice the difference between $\kappa$ and $k$), which incur when going from an intermediate state $x(k)$ all the way to $k_f$.\\
 At this point, it should be noticed that the minimal cost-to-go, denoted by $G^\ast$, is nearly as good as the solution $u^\ast$ itself, as will be seen later. The minimal cost-to-go can be found in \emph{Bellman’s Recursion Formula}
-\begin{mydef}
 \begin{align*}
  G^\ast(\bs x(k),k) = \min_{\bs u(k)}\{\,l(\bs x(k), \bs u(k), k) + G^\ast(\bs f(\bs x(k), \bs u(k), k), k+1)\,\} \, ,
 \end{align*}
-\end{mydef}
 which can be derived from the principle of optimality in a few steps. 
-In words, it relates the minimal cost-to-go of the state $\bs{x}(k)$ at the $k^\mathrm{th}$  step, namely $G^\ast (\bs{x}(k),k)$, to the subsequent minimal cost-to-go $G^\ast (f(\bs{x}(k),\bs{u}(k),k),k+1)$ in consideration of the best choice of the possible inputs $\bs{u}(k)$ with its associated stage cost $l(\bs{x}(k),\bs{u}(k),k)$. The formula is used to break down the multi-staged OCP into simpler single-staged optimizations, which numerous algorithms exploit it to their advantage.
+In words, it relates the minimal cost-to-go of the state $\bs{x}(k)$ at the $k^\mathrm{th}$  step, namely $G^\ast (\bs{x}(k),k)$, to the subsequent minimal cost-to-go $G^\ast (f(\bs{x}(k),\bs{u}(k),k),k+1)$ in consideration of the best choice of the possible inputs $\bs{u}(k)$ with its associated stage cost $l(\bs{x}(k),\bs{u}(k),k)$. The formula is used to break down the multi-staged OCP into simpler single-staged optimizations, which numerous algorithms exploit to their advantage.
 
-\subsubsection{Value Iteration}\label{57.3.3.2}
-
-
-A very suitable and likewise simple algorithm to solving OCPs is \emph{value-iteration} that we will present in its backwards form. 
+\subsubsection{Dynamic Programming in a Temporal Decision Process}\label{57.3.3.2}
 We assume that the system input can only take discrete values from a given set, which depends on the current state and the current time, that is $\bs u(k) \in \mathcal U(\bs x(k),k)$. 
-The set ensures that the input will transfer the system from one discrete state $\bs x(k) \in \mathcal X(k)$ to the next. We therefore get a multi-stage decision process, such as the simple example in  Fig. \ref{fig:dynamische_programmierung_veranschaulichung} with three discrete states in each time step (except for the goal state $\bs{x}_f$). 
+The set ensures that the input will transfer the system from one discrete state $\bs x(k) \in \mathcal X(k)$ to the next. We therefore get a multi-stage decision process, such as the simple example in  Fig.\,\ref{fig:dynamische_programmierung_veranschaulichung} with three discrete states in each time step (except for the goal state $\bs{x}_f$). 
 
 %[Discrete decision process]
 \begin{figure}[h]
@@ -486,55 +478,40 @@ The set ensures that the input will transfer the system from one discrete state 
 	\caption[Discrete decision process]{Discrete decision process with the optimal trajectory}
 	\label{fig:dynamische_programmierung_veranschaulichung}
 \end{figure} 
-Even though the naive approach of evaluating all $3^3 = 27$ possibilities would here be feasible, this procedure is clearly prohibitive for realistically sized problems due to an exponential runtime of $\mathcal O(m^{k_f})$, where $m$ is the number of state transitions and $k_f$ the optimization horizon. 
+Even though the naive approach of evaluating all $3^3 = 27$ possibilities would here be feasible, this is clearly prohibitive for realistically sized problems due to an exponential runtime of $\mathcal O(m^{k_f})$, where $m$ is the number of state transitions and $k_f$ the optimization horizon. 
 However, we can apply the recursion formula, start with the last stage $k=k_{f-1}$, and work our way back to the first step. 
 In doing so we calculate the optimal cost-to-go of every state of each stage by contemplating all possible transients and memorize it. 
 This way it can be accessed when evaluating the optimal cost-to-go of the previous stage. Every stage can be done in $\mathcal O(m n)$, where $m$ and $n$ equals the number of its inputs and states. 
-This adds up to a total runtime of $\mathcal O(m n k_f)$, which is only linear in the length of the optimization horizon. Fig. \ref{alg:valueiteration} summarizes the algorithm.
+This adds up to a total runtime of $\mathcal O(m n k_f)$, which is only linear in the length of the optimization horizon. Alg.\,\ref{algo:dp} summarizes the algorithm.
 %
 %\begin{figure}[h]
 %  \caption[Value Iteration]{Value-iteration algorithm}
 %
 \begin{algorithm}
-  \caption[Value Iteration]{Value-iteration algorithm}
-
+  \caption[Dynamic Programming]{Dynamic Programming}
  \begin{algorithmic}[1]
-
-	%\FORALL{$\bs x \in \mathcal X(k_f-1)$}
-%\STATE $G(\bs x) \leftarrow \infty$
-%\ENDFOR
 	\STATE $G^\ast(\bs x_f,k_f) \leftarrow 0$
 	\FOR {$k=k_f-1$ \TO $0$}
 		\FORALL{$\bs x \in \mathcal X$}
 			\STATE $G^\ast(\bs x(k),k) = \underset{\bs u(k)}{\min}\{\,l(\bs x(k), \bs u(k), k) + G^\ast(\bs f(\bs x(k), \bs u(k), k),k+1)\,\}$
 		\ENDFOR
 	\ENDFOR
- \label{alg:valueiteration}
-
+\label{algo:dp}
  \end{algorithmic}
  \end{algorithm}
-%\end{figure}
-%
-The optimal input and state sequence $\bs{u}^\ast (k)$ and $\bs{x}^\ast (k)$ can now be found by an efficient forward search starting at $\bs{x}_0$ and alternating 
-
+The optimal input and state sequence $\bs{u}^\ast (k)$ and $\bs{x}^\ast (k)$ can now be found by an efficient forward search starting at $\bs{x}_0$ and alternating
 \begin{align} \label{equ:navigation_function}
 \bs u^\ast(k) = \argmin{\bs u(k)}\{\,l(\bs x(k), \bs u(k), k) + G^\ast(\bs f(\bs x(k), \bs u(k),k), k+1)\,\}
 \end{align}
-and \eqref{equ:diskreter_prozess} for every stage to the end, see black arrows in  Fig. \ref{fig:dynamische_programmierung_veranschaulichung}.
-
-
-
-
+and \eqref{equ:diskreter_prozess} for every stage to the end, see black arrows in  Fig.\,\ref{fig:dynamische_programmierung_veranschaulichung}.
 
 \subsubsection{Example Application: Optimal Overtaking}\label{S:57.3.3.3}
-
-A simplified problem setup and its solution can be found in Fig. \ref{fig:dynamische_programmierung_veranschaulichung}.
+A simplified problem setup and its solution can be found in Fig.\,\ref{fig:dynamische_programmierung_example}.
 Here, the lateral motion is optimized, so that the car can proceed at a constant speed without getting too close to the other vehicles. 
-The system state comprises of only the lateral position and velocity, hence 
+The system state comprises of the lateral position and velocity, hence 
 $\bs{x}(k)=\left[d(k),v_\mathrm{lat}(k)\right]^\T$ , which is discretized with $\Delta d=0.5 \mathrm{m}$  and $\Delta v_\mathrm{lat}  =0.5\mathrm{m/s}$  at $t_k=k\cdot \Delta t$ with $k=1,\dots,10$ and $\Delta t=1.0 \mathrm{s}$ . Furthermore, the input set $\mathcal{U}$, i.e., all lateral acceleration profiles, is chosen as a first order polynomial with $-10.0\mathrm{m/s^2} <u(t)< 10.0\mathrm{m/s^2}$. And lastly, the stage costs are defined as
-
 \begin{align*}
-l \left(\bs{x}(k),u(k),k\right) = \int_{t_k}^{t_k+\Delta t}{u(t) dt}+k\left[d(k)-d_\mathrm{nearest}(k)\right]^2 +C_\mathrm{collision}\left(\bs{x}(k),u(k),k\right)
+	l \left(\bs{x}(k),u(k),k\right) = \int_{t_k}^{t_k+\Delta t}{u(t)^2 {\rm d}t}+k\left[d(k)-d_\mathrm{nearest}(k)\right]^2 +C_\mathrm{collision}\left(\bs{x}(k),u(k),k\right)
 \end{align*}
 with $k=1.0$, where $d_\mathrm{nearest}(k)$ denotes the lateral coordinate of the lane center closest to $d(k)$. 
 The cost term $C_\mathrm{collision} \left(x(k),u(k),k\right)$ equals to zero if the vehicle does not collide within the interval $\left[t_k,t_k+\Delta t\right]$ and else equals to infinity. 
@@ -562,23 +539,18 @@ Due to the few system states with their coarse discretization, the (global) solu
 	\centering
   	\includegraphics[width=0.98\textwidth,clip, trim = 0cm 0cm 0cm 0cm]{dp_example.eps}
 	\caption[Dynamic programming example]{Dynamic programming example}
-	\label{fig:dynamische_programmierung_veranschaulichung}
+	\label{fig:dynamische_programmierung_example}
 \end{figure} 
 
 
 \subsubsection{Further Readings}\label{S:57.3.3.4}
-The presented value iteration scheme is especially suited for structured dynamic environments as shown by \cite{zieg09spatemp},%(Ziegler et al. 2009),
-\cite{McNaughton2011diss},%(McNaughton 2011), 
-as well as \cite{Gu2012}.%(Gu and Dolan 2012). 
-As can be seen in Fig. \ref{fig:lattice_strasse}, for natural, human like trajectories it is most advantageous to align the sampling along and across the road course. The costs usually penalize not only jerky, accelerant movements, and the approximation to obstacles, but also deviations from the desired road center. 
-As opposed to that, in unstructured environments, such as parking lots, there is no preferred direction, so that the sampling uniformly covers the $[x,y]$ plane as shown in  Fig. \ref{fig:lattice}. 
-As static obstacles dominate the problem, temporal aspects are usually neglected meaning that it is not important at what time a location is visited by the vehicle (see \cite{montemerlo2008junior},%(Montemerlo et al. 2008), 
-\cite{zieglerIV08},%(Ziegler et al. 2008), 
-\cite{pivtoraiko2009differentially},%(Pivtoraiko 2009),
-\cite{likhachev2009planning},%(Likhachev and Ferguson 2009),
-\cite{dolgov2010path}).% (Dolgov et al. 2010)). 
-This drastically simplifies the preeoblem, however, value iteration cannot be applied anymore due to the loss of the processing sequence given by $k$ (the decision graph becomes cyclic). Therefore, a substitute order needs to be chosen, one that still leads to the optimum: Investigating the state (expanding the node) with the lowest cost-to-come leads to \emph{Dijkstra's algorithm}, unlike considering the state with the lowest (under)estimate on the total cost, which results in \emph{A* algorithm}, an informed search.
- The latter is especially efficient in unstructured environments, as the costs are dominated by the covered distance, which can be well estimated by the Euclidean distance (the so-called heuristic), see \cite{bertsekas2007}.%(Bertsekas 1995).
+The presented iteration scheme is especially suited for structured dynamic environments as shown by \cite{zieg09spatemp, McNaughton2011diss},
+as well as \cite{Gu2012}.
+As can be seen in Fig.\,\ref{fig:lattice_strasse}, for natural, human like trajectories it is most advantageous to align the sampling along and across the road course. The costs usually penalize not only jerky, accelerant movements, and the approximation to obstacles, but also deviations from the desired road center. 
+As opposed to that, in unstructured environments, such as parking lots, there is no preferred direction, so that the sampling uniformly covers the $[x,y]$ plane as shown in  Fig.\,\ref{fig:lattice}. 
+As static obstacles dominate the problem, temporal aspects are usually neglected meaning that it is not important at what time a location is visited by the vehicle (see \cite{montemerlo2008junior, zieglerIV08, pivtoraiko2009differentially, likhachev2009planning, dolgov2010path}).
+This drastically simplifies the problem, however, the iteration cannot be applied anymore due to the loss of the processing sequence given by $k$ (the decision graph becomes cyclic). Therefore, a substitute order needs to be chosen, one that still leads to the optimum: Investigating the state (expanding the node) with the lowest cost-to-come leads to \emph{Dijkstra's algorithm}, unlike considering the state with the lowest (under)estimate on the total cost, which results in \emph{A* algorithm}, an informed search.
+ The latter is especially efficient in unstructured environments, as the costs are dominated by the covered distance, which can be well estimated by the Euclidean distance (the so-called heuristic), see \cite{bertsekas2007}.
 
 
 %[State lattice for unstructured environments]
@@ -604,11 +576,10 @@ This drastically simplifies the preeoblem, however, value iteration cannot be ap
 
 
 When we compare dynamic programming with direct optimization, we realize that the two approaches possess orthogonal capabilities, see table below.
- Dynamic programming suffers the so-called \emph{curse of dimension} \cite{bellman_DP} %(Bellman 1954)
-meaning that the approach does not scale well with the number of states. Its application is therefore limit to models with few system states (<3-4), and also requires their coarse discretization. Direct optimization, however, can incorporate system models with numerous and continuous system states (>4) and is therefore able to directly feed the system input $\bs{u}(t)$. In turn, direct optimization cannot deal with arbitrary cost functionals due to numerical limitations (local convergence) of the underlying solver. Also, its runtime usually grows exponentially with the number of optimization variables so that the length of the optimization horizon is restricted to a few seconds. As opposed to that, dynamic programming can handle arbitrary costs and will always lead to the global optimum. Furthermore, dynamic programming scales comparably well with the length of the optimization horizon (cf. the linear runtime of the value iteration scheme in  Sect. \ref{57.3.3.2}). 
-For complex, farsighted trajectory optimization tasks, the two approaches need to be combined. Dynamic programming will then yield only a “rough long-term plan”, which either serves as the reference trajectory (see e.g.\cite{Ferguson2008, Ferguson2008b, gu2013focused} %(Ferguson et al. 2008a), (Ferguson et al. 2008b) and (Gu et al. 2013)
-) and/or provide an initial guess \cite{kang2012online} %(Kang 2012) 
-for the locally working direct optimization method. The latter will take a detailed model of the vehicle into account and improves the dynamic programming solution on a reduced optimization horizon to a feasible trajectory (also see  Sect. \ref{57.5}). The optimal state trajectory is either forwarded to a low-level feedback steering/acceleration controller or the optimal input trajectory is directly fed to the vehicle actuators.
+ Dynamic programming suffers the so-called \emph{curse of dimension} \cite{bellman_DP} 
+meaning that the approach does not scale well with the number of states. Its application is therefore limit to models with few system states (<3-4) with a coarse discretization. Direct optimization, however, can incorporate system models with numerous and continuous system states (>4) and is therefore able to directly feed the system input $\bs{u}(t)$. In turn, direct optimization cannot deal with arbitrary cost functionals due to numerical limitations (local convergence) of the underlying solver. Also, its runtime usually grows exponentially with the number of optimization variables so that the length of the optimization horizon is restricted to a few seconds. As opposed to that, dynamic programming can handle arbitrary costs and will always lead to the global optimum. Furthermore, dynamic programming scales comparably well with the length of the optimization horizon (cf. the linear runtime of the dynamic programming iteration scheme in  Sect. \ref{57.3.3.2}). 
+For complex, farsighted trajectory optimization tasks, the two approaches need to be combined. Dynamic programming will then yield only a “rough long-term plan”, which either serves as the reference trajectory (see e.g.\cite{Ferguson2008, Ferguson2008b, gu2013focused}) and/or provide an initial guess \cite{kang2012online} %(Kang 2012) 
+for the locally working direct optimization method. The latter will take a detailed model of the vehicle into account and improves the dynamic programming solution on a reduced optimization horizon to a feasible trajectory. The optimal state trajectory is either forwarded to a low-level feedback steering/acceleration controller or the optimal input trajectory is directly fed to the vehicle actuators.
 Closed form solutions from the calculus of variations are thereby often used to speedup dynamic programming. This can be in the form of a heuristic for an informed search (see e.g. \cite{zieglerIV08} % (Ziegler et al. 2008))
 or a so-called analytical expansions \cite{dolgov2010path}, %(Dolgov et al. 2010),
 both of which, roughly speaking, approximate the remaining trajectory and therefore extend the computable optimization horizon, see  Tab.\,\ref{tab:vergleichOpt}.
@@ -619,9 +590,9 @@ both of which, roughly speaking, approximate the remaining trajectory and theref
 \resizebox{\linewidth}{!}{
 \begin{tabular}{|l|c|c|c|c|}
 \hline
-\cline{2-4} Methode
+\cline{2-4} Approach
 \cellcolor{gray!60} 
-& \cellcolor{gray!40} Viele Zustände & \cellcolor{gray!40} Kont.\ Zustände & \cellcolor{gray!40} Glob.\ Optimum & \cellcolor{gray!40} Langer Horizont\\
+& \cellcolor{gray!40} many states & \cellcolor{gray!40} continuous states & \cellcolor{gray!40} global optimum & \cellcolor{gray!40} long horizon\\
 \hline
 %\rowcolor{white!50}
 \cellcolor{gray!60} {DP} & $\bs\ominus$ & $\bs\ominus$ & $\bs\oplus$ & $\bs\oplus$ \\
@@ -630,12 +601,12 @@ both of which, roughly speaking, approximate the remaining trajectory and theref
 \hline
 \cellcolor{gray!60} {DP + DO} & $\bs\oplus$ & $\bs\oplus$ & $\bs\oplus$ & $\bs\oplus$ \\
 \hline
-\cellcolor{gray!60} {DP + DO + IO} & $\bs\oplus$ & $\bs\oplus$ & $\bs\oplus$ & $\bs\oplus \bs\oplus$ \\
+\cellcolor{gray!60} {DP + DO + IO} & $\bs\oplus$ & $\bs\oplus$ & $\bs\oplus$ & $\bs\oplus$ \\
 \hline 
-\multicolumn{5}{|c|}{\cellcolor{gray!20} DP: Dynamische Programmierung \quad DO: Direkte Optimierung \quad IO: Indirekte Optimierung}\\
+\multicolumn{5}{|c|}{\cellcolor{gray!20} DP: Dynamic Programming \quad DO: Direct Optimization \quad IO: Indirect Optimization}\\
 \hline
 \end{tabular} }
-\caption{Optimierungsmethoden und deren Kombination im direkten Vergleich}
+\caption{Comparison and combination of the approaches}
 \label{tab:vergleichOpt}
 \end{table}
 \end{center}
@@ -644,14 +615,11 @@ both of which, roughly speaking, approximate the remaining trajectory and theref
 
 \section{Receding Horizon Optimization}\label{S:57.5}
 
-The receding horizon approach is the gist of \emph{model-predictive control} (MPC, see e.g. \cite{rawlings2000tutorial}),%(Rawlings 2000)),
- which makes a numerical optimization practical for closed loop control. Therein, in each step $t_k$, the OCP is solved on a finite horizon $T$, which calculates the optimal open-loop trajectories $\bar{\bs{x}}^\ast(\tau)$ over $\tau \in [t_k,t_k+T]$, see Fig. \ref{fig:2_mpc_grundidee_u_x}. Only the first part of the optimal control $\bar{\bs{u}}^\ast(\tau)$ is implemented on $\Delta t$. Right in time the new solution is available of the OCP that has been shifted by $\Delta t$. In classical MPC, at each $t_k$ the current plant state is fed back as the new initial state of the OCP. Altogether, this leads to a closed control-loop that anticipates future events, such as input and state saturation, and takes control actions accordingly.
-This procedure is completely compatible with trajectory optimization for vehicles. Even more, its replanning mechanism can innately take the limited sensor range and predictability of the other traffic participants into account, which can fundamentally change the OCP from one optimization step to the other. Furthermore, the approach leaves additional degrees of freedom, which can be used to increase the overall robustness of the closed loop system. Firstly, the prediction model may not only include the plant but also the underlying fast low-level feedback or feedforward controllers, which are intended to simplify the resultant optimization model \eqref{equ:opt_systemdynamik}, see also Sect. \ref{57.6}. And secondly, the initial state of the OCP does not necessarily have to be the actual vehicle state but can also be the optimal trajectory of the last step sampled at the current time - or a combination of both. This works as long as the fed-back desired states of the optimal trajectory are tracked by an above-mentioned low-level feedback controller. However, as soon as components of the current vehicle state are used, that show up in the optimization constraints, so-called \emph{slack variables} need to be introduced in the optimization. They transform the otherwise hard inequalities into \emph{soft constraints} as they are referred to in the MPC lingo. This is required as otherwise the slightest disturbance or model uncertainty would ultimately lead to an initial state that the OCP with hard constraints does not have a solution for.
-MPC theory offers even more. It also deals with \emph{stability} issues of the closed-loop system such as in \cite{gruene2011nonlinear}.%(Grüne and Pannek 2011).
- More precisely, even for time-invariant system dynamics, constraints, and costs (typical of conventional control problems), the OCP solution changes over time due to the receding horizon, as indicated by Fig. \ref{fig:2_mpc_grundidee_u_x}. In the worst case the differences of the consecutive solutions build up and the system destabilizes. Well-established MPC-schemes therefore propose an augmentation of the cost functional and constraints, e.g., by a special terminal constraint (\emph{invariant set},  \cite{blanchini1999survey})%(Blanchini 1999))
-  and cost (\emph{control Lyapunov function}, \cite{gruene2011nonlinear})%(Grüne and Pannek 2011))
-   in order to guarantee stability. These schemes can also be transferred to the automotive application. Even more interesting for collision avoidance are the \emph{permanent feasibility} guarantees, which can prevent the sub-optimal short-sighted solutions from “dead ends” also known as \emph{inevitable collision states} (ICS, \cite{fraichard2007short})%(Fraichard 2007))
-    in robotics, but this is ongoing research (e.g. \textbf{which???}(Althoff et al. 2012),\cite{Lawitzky2014ICRA}).% (Lawitzky et al. 2014)).
+The receding horizon approach is the gist of \emph{model-predictive control} (MPC, see e.g. \cite{rawlings2000tutorial}), which makes a numerical optimization practical for closed loop control. Therein, in each step $t_k$, the OCP is solved on a finite horizon $T$, which calculates the optimal open-loop trajectories $\bar{\bs{x}}^\ast(\tau)$ over $\tau \in [t_k,t_k+T]$, see Fig.\,\ref{fig:2_mpc_grundidee_u_x}. Only the first part of the optimal control $\bar{\bs{u}}^\ast(\tau)$ is implemented on $\Delta t$. Right in time the new solution is available of the OCP that has been shifted by $\Delta t$. In classical MPC, at each $t_k$ the current plant state is fed back as the new initial state of the OCP. Altogether, this leads to a closed control-loop that anticipates future events, such as input and state saturation, and takes control actions accordingly. 
+
+This procedure is completely compatible with trajectory optimization for vehicles. Even more, its replanning mechanism can innately take the limited sensor range and predictability of the other traffic participants into account, which can fundamentally change the OCP from one optimization step to the other. Furthermore, the approach leaves additional degrees of freedom, which can be used to increase the overall robustness of the closed loop system. Firstly, the prediction model may not only include the plant but also the underlying fast low-level feedback or feedforward controllers, which are intended to simplify the resultant optimization model \eqref{equ:opt_systemdynamik}. And secondly, the initial state of the OCP does not necessarily have to be the actual vehicle state but can also be the optimal trajectory of the last step sampled at the current time - or a combination of both. This works as long as the fed-back desired states of the optimal trajectory are tracked by an above-mentioned low-level feedback controller. However, as soon as components of the current vehicle state are used, that show up in the optimization constraints, so-called \emph{slack variables} need to be introduced in the optimization. They transform the otherwise hard inequalities into \emph{soft constraints} as they are referred to in the MPC lingo. This is required as otherwise the slightest disturbance or model uncertainty would ultimately lead to an initial state that the OCP with hard constraints does not have a solution for.
+MPC theory offers even more. It also deals with \emph{stability} issues of the closed-loop system such as in \cite{gruene2011nonlinear}. More precisely, even for time-invariant system dynamics, constraints, and costs (typical of conventional control problems), the OCP solution changes over time due to the receding horizon, as indicated by Fig.\,\ref{fig:2_mpc_grundidee_u_x}. In the worst case the differences of the consecutive solutions build up and the system destabilizes. Well-established MPC-schemes therefore propose an augmentation of the cost functional and constraints, e.g., by a special terminal constraint (\emph{invariant set} \cite{blanchini1999survey})  and cost (\emph{control Lyapunov function} \cite{gruene2011nonlinear}) 
+   in order to guarantee stability. These schemes can also be transferred to the automotive application. Even more interesting for collision avoidance are the \emph{permanent feasibility} guarantees, which can prevent the sub-optimal short-sighted solutions from “dead ends” also known as \emph{inevitable collision states} (ICS, \cite{fraichard2007short}) in robotics, but this is ongoing research (e.g. \textbf{which???}(Althoff et al. 2012),\cite{Lawitzky2014ICRA}).
 
 
 
