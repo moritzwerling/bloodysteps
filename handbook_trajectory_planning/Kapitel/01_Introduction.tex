@@ -202,24 +202,23 @@ which provide very accurate results in general. Contrary to direct methods, as d
 \subsection{Approach II: Direct Optimization Techniques}\label{S:57.3.2}
 
 
-Direct optimization is probably the most widely explored approach in \textit{model-predictive control}. It approximates the dynamic optimization problem of the OCP to a static one, as the latter can be efficiently solved by well-established numerical solvers. The essence of this approach is a \textit{finite-dimensional parameterization} of the input, state, or output trajectory.
+Direct optimization is probably the most widely explored approach in \textit{model-predictive control} (MPC), see Sec.\,\ref{S:57.5}. It approximates the dynamic optimization problem of the OCP as a static one, since the latter can be efficiently solved by well-established numerical solvers. The essence of this approach is a \textit{finite-dimensional parameterization}, typically of the input, sometimes the state, or the output trajectory.
 
 \subsubsection{Theoretical Background: Finite Parameterization Approximation}\label{S:57.3.2.1}
-
-We will now introduce a very common method called single shooting. In a first step, we chose a finite dimensional parameterization of the input
+We will introduce a very common method for nonlinear MPC called single shooting. In a first step, we chose a finite dimensional parameterization of the input
 \begin{align*}
 	\bs{u}(t) = \bs{\psi}(t,\bar{\bs{u}})
 \end{align*}
 such as a piecewise constant interpolation (see  Fig.\,\ref{fig:parametrisierte_nmpc}), a polynomial, or a spline. The input trajectory is therefore fully described by the finite parameter vector $\bar{\bs{u}}$. The system dynamics \eqref{equ:opt_systemdynamik} now read
 \begin{align*}
-	\dot{\bs{x}}(t) = \bs{f}(\bs{x}(t),\bs{\psi}(t,\bar{\bs{u}}),t), \quad &\bs{x}(t_0) = \bs{x}_0\; , 
+	\dot{\bs{x}}(t) = \bs{f}(\bs{x}(t),\bs{\psi}(t,\bar{\bs{u}}),t), \quad &\bs{x}(t_0) = \bs{x}_0\; .
 \end{align*}
 This constitutes an initial value problem, which can be solved by an ordinary differential equations solver. We denote the resultant trajectory by 
 \begin{align*}
 \bs{x}(t) = \bs{\phi}(t,\bar{\bs{u}}).
 \end{align*}
 Furthermore, it is standard practice that the inequality constraints are only required to hold at $N$ discrete equidistant points in time $t_i,i=1,\dots,N,$ so that the number of inequality constraints is also finite. \\
-Thus, the OCP was transformed to the following static optimization problem: \\
+Thus, the OCP is transformed to the following static optimization problem: \\
 
 Minimize the cost function
 \begin{subequations}
@@ -234,9 +233,29 @@ J(\bar{\bs{u}},t) =
 	&\bs{h}(\bs{\phi}(t_i,\bar{\bs{u}}),\bs{\psi}(t_i,\bar{\bs{u}}))  \leq \bs{0},  \quad  i=0,\ldots,N \label{equ:diroptineqcon}\;. 
 \end{align} 
 \end{subequations}
-Loosely speaking, for a first guess $\bar{\bs{u}}_0$ the system will be simulated in a “single shoot” for $t \in [t_0,t_f]$  starting from $\bs{x}_0$. Then, the total costs $J$ are evaluate as well as the constraints $\bs{g}$ and $\bs{h}$ in \eqref{equ:diroptcost}, \eqref{equ:diropteqcon}, and \eqref{equ:diroptineqcon}, respectively. These values are then fed back to a numerical solver, which repeats this procedure by a variation of $\bar{\bs{u}}$ to conclude how to modify the parameter so that $J$ gets smaller without violating $\bs{g}=\bs{0}$ and $\bs{h}\leq\bs{0}$. When the solution does not significantly change any more or a certain number of iterations have been reached, the optimization will be terminated.
+Loosely speaking, for a first guess $\bar{\bs{u}}_0$ the system will be simulated in a “single shoot” for $t \in [t_0,t_f]$  starting from $\bs{x}_0$. Then, the total costs $J$ are evaluate as well as the constraints $\bs{g}$ and $\bs{h}$ in \eqref{equ:diroptcost}, \eqref{equ:diropteqcon}, and \eqref{equ:diroptineqcon}, respectively. These values are then fed back to a numerical solver, which repeats this procedure by a variation of $\bar{\bs{u}}$ to conclude how to modify the parameter so that $J$ gets smaller without violating $\bs{g}=\bs{0}$ and $\bs{h}\leq\bs{0}$. When the solution does not significantly change any more or a certain number of iterations has been reached, the optimization will be terminated. \\
 
+For a non-linear system model this approach is also referred to as \textit{non-linear programming} (NP). It has been successfully demonstrated, e.g., in \cite{werling2012cdc}. However, the computational demand is very high for today's electronic control units, since the NP needs to be broken down to a sequence of \emph{quadratic programs} (QP) at real-time. In order to reduce the computational effort to a few milliseconds, \cite{Falcone2007, carvalho2013predictive}, for instance, approximate the formulation of trajectory optimization directly as a QP
+\newcommand{\mat}{\bs} % style for normal matrix variables (not Batch matrices)
+%\newcommand{\vect}{\bs} % style for normal vector svariables (not Batch vectors)
+\newcommand{\U}{\bar{\mathbf u}}
+\newcommand{\Z}{\mathbf z}
+\newcommand{\X}{\mathbf x}
+\newcommand{\Q}{\bs{\mathcal Q}}
+\newcommand{\R}{\bs{\mathcal R}}
+\newcommand{\bv}[1]{\mathbf #1} % style used for Batch vectors
+\begin{subequations}
+\begin{align}
+	J
+	&= \U^\T \mat H \U + \mat F \U \\
+	%& \qquad + 2 \Z^\T \mat V \vect x_0 \vect + \Z^\T \mat Z \Z + \vect x_0^\T \mat Y \vect x_0
+	&\mat A_c  \U \leq \bv b_c
+	\label{equ:qp}
+\end{align}
+with suitably sized matrices $\mat H, \mat F, \mat A_c, \bv b_c$.
+\end{subequations}
 
+For the OCP \eqref{equ:optimalsteuerungsproblem}, this can be accomplished by a modelling of time-discrete, linear system dynamics \eqref{equ:DisPreMod}, linear state  \eqref{equ:ColAvoiConstraint},  \eqref{equ:KappaConstraint}  and input constraints  \eqref{equ:InputConstraint}, as well as quadratic costs \eqref{equ:CostFunction}, as shown in the sequel.
 
 \begin{figure}[h]
 \centering
@@ -260,9 +279,7 @@ Loosely speaking, for a first guess $\bar{\bs{u}}_0$ the system will be simulate
 
 
 \subsubsection{Example Application: Emergency Obstacle Avoidance}\label{S:57.3.2.2}
-\newcommand{\mat}{\bs} % style for normal matrix variables (not Batch matrices)
-%\newcommand{\vect}{\bs} % style for normal vector svariables (not Batch vectors)
-The direct optimization based on a non-linear model has been successfully demonstrated in \cite{werling2012cdc}. However, the computational demand is too high for today's electronic control units, since a sequence of \emph{quadratic program} (QP) need to be solved. In order to reduce the computational effort to a few milliseconds, \cite{Falcone2007, carvalho2013predictive}, for instance, approximate the formulation of trajectory optimization directly as a QP and a solution can be found in a single step. We now sketch the approach from \cite{gutjahr2016lateral}, which has the potential to cover a wide range of series applications.
+We now sketch the approach from \cite{gutjahr2016lateral}, which has the potential to cover a wide range of series applications.
 In doing so, we focus on the lateral motion along a reference curve $\Gamma$ such as a lane center. 
 
 We assume in a first step, that the longitudinal profile $v(t)$ is given from an upstream algorithm. 
@@ -316,7 +333,7 @@ To minimize the number of constraints, we define the system output based on the 
     \label{fig:SystemOutputs}
 \end{figure}
 
-Next, we follow the idea of a finite parameterization of the input and transform the continuous-time vehicle prediction model \eqref{equ:LinSysModel} and \eqref{equ:SysOutput} into its equivalent time-discrete form in one step. Assuming the system matrix $\mat A_C(t)$ as well as the system input $u(t)$ and the system disturbance $z(t)$ to be constant within each discretization interval $k$ with length $T_s$, we can use the \textit{Laplace transformation}, see \cite{gutjahr2016lateral} for details, to get the time-discrete, time-varying system model
+Next, we follow the idea of a finite parameterization of the input and transform the continuous-time vehicle prediction model \eqref{equ:LinSysModel} into its equivalent time-discrete form in one step. Assuming the system matrix $\mat A_C(t)$ as well as the system input $u(t)$ and the system disturbance $z(t)$ to be constant within each discretization interval $k$ with length $T_s$, we can use the \textit{Laplace transformation}, see \cite{gutjahr2016lateral} for details, to get the time-discrete, time-varying system model
 \begin{align}
 	\begin{aligned}
 		\vektor x(k+1) &= \mat A(k) \vektor x(k) + \mat B(k) u(k) + \mat E(k) z(k), \\
@@ -334,7 +351,8 @@ approximating the reference curvature as a forward first order hold.
 In the third step, we define upper and lower limits for the system output based on the perceived environment and the vehicle dynamics. 
 
 As depicted in Fig.\,\ref{fig:SystemOutputs}, the system output \eqref{equ:CCSystemOut} can be interpreted as a normal distance between the reference curve $\Gamma$ and the center position of each circle. 
-Due to the presence of moving traffic the maximum admissible deviation, that is how far each circle can be shifted form the center to either side before intersecting an object, obstacle or the lane markings, is not only dependent on the vehicle's position $s_r$ along the reference curve $\Gamma$, but also on the time step $k$, namely \begin{align}
+Due to the presence of moving traffic the maximum admissible deviation, that is how far each circle can be shifted form the center to either side before intersecting an object, obstacle or the lane markings, is not only dependent on the vehicle's position $s_r$ along the reference curve $\Gamma$, but also on the time step $k$, namely
+\begin{align}
 	d_{i,\text{min}}\left(s_r(k),k\right) \leq d_i(k) \leq d_{i,\text{max}}\left(s_r(k),k\right), \; i = 1,2,3,
 	\label{equ:ColAvoiConstraint}
 \end{align}
@@ -342,10 +360,10 @@ where $s_r(k)$ is given by the integration of the desired future velocity profil
 
 
 Also, we would like to account for the limited turning circle by introducing a fixed time-invariant upper $\kappa_{\text{max},\delta}$ and lower $\kappa_{\text{min},\delta}$ for the $\kappa$ signal in the system output. Additionally, to account for the total wheel traction, we combine these bounds by a time-varying term which is dependent on $v(k)$ so that
-\begin{align*}
+\begin{align}
 	\underbrace{\max \left(\kappa_{\text{min},\delta},\kappa_{\text{min},\mu}(k)\right)}_{\kappa_{\text{min}}} \leq \kappa(k) \leq \min \underbrace{\left(\kappa_{\text{max},\delta},\kappa_{\text{max},\mu}(k)\right)}_{\kappa_{\text{max}}},
-	%\label{equ:KappaConstraint}
-\end{align*}
+	\label{equ:KappaConstraint}
+\end{align}
 where $\kappa_{\text{min},\mu}(k) = \kappa_{\text{min}}\left(v(k),\mu\right)$ and $\kappa_{\text{max},\mu}(k) = \kappa_{\text{max}}\left(v(k),\mu\right)$ are derived using the relations stated by the so-called \emph{Kamm's circle} based on an the estimated friction parameter $\mu$.
 
 Lastly, as the steering actuator can only supply a certain maximum power, the vehicle's steering rate is limited. We therefore confine the curvature's rate of change, that is the system input, by box constraints
@@ -360,24 +378,7 @@ In the last step of the problem modelling, we define a quadratic running cost fu
 	\label{equ:CostFunction}
 \end{align}
 with $w_d, w_\theta, w_\kappa, w_u > 0$. The first three terms penalize deviations from the reference curve $\Gamma$ whereas the last term encourages a smoothing behavior.
-After some straightforward but laborious transformations, we substitute the system state in the cost function and the output constraint equation and finally get a quadratic program of the form
-\newcommand{\U}{\bar{\mathbf u}}
-\newcommand{\Z}{\mathbf z}
-\newcommand{\X}{\mathbf x}
-\newcommand{\Q}{\bs{\mathcal Q}}
-\newcommand{\R}{\bs{\mathcal R}}
-\newcommand{\bv}[1]{\mathbf #1} % style used for Batch vectors
-\begin{align}
-	J
-	&= \U^\T \mat H \U + \mat F \U \\
-	%& \qquad + 2 \Z^\T \mat V \vect x_0 \vect + \Z^\T \mat Z \Z + \vect x_0^\T \mat Y \vect x_0
-	\mat A_c  \U &\leq \bv b_c
-\end{align}
-for the input vector $\U$, where $\mat H, \mat F, \mat A_c, \bv b_c$ are suitably sized matrices and vectors as functions of the initial state $\bs x_0$ the disturbance signal $\kappa_r(k)$ and the velocity reference $v(k)$ as well as the predicted environment.
-
-The minimization constitutes a quadratic program, which needs to be updated and solved as the vehicle drives along the reference curve, see e.g. the parking scenario in Fig.\,\ref{fig:LowSpeedBirdView}.
-
-
+In some straightforward but laborious transformations we substitute the system state in the cost function and the output constraint equation and finally get the aspired quadratic program \eqref{equ:diroptineqcon}, which needs to be updated and solved as the vehicle drives along the reference curve. As can be seen in the parking scenario in Fig.\,\ref{fig:LowSpeedBirdView}, the vehicle stays close to the reference but smooths out its curvature without violating the lateral position and curvature constraints.
 
 
 \begin{figure*}[t!]
@@ -392,7 +393,7 @@ The minimization constitutes a quadratic program, which needs to be updated and 
 	%\def\xlabelKappa{$s_r$ in \unit{m}}
 	\def\xlabelKappa{$k$}
 \includegraphics[width=1.\columnwidth,trim = 0cm .0cm 0cm 0cm]{LowSpeed_UseCase_birdview.eps}
-\caption{Bird's eye view of the moving vehicle for the parking scenario at three consecutive instants of time with its correspondent results for the lateral position for the rear axle $d_1$ and the curvature $\kappa$, where the blue bold line represents the optimized trajectory}
+\caption{Bird's eye view of the moving vehicle for the parking scenario at three consecutive instants of time with its correspondent results for the lateral position for the rear axle $d_1$ and the curvature $\kappa$, where the blue bold line represents the optimized trajectory and the grey, black dotted line a reference curve.}
 \label{fig:LowSpeedBirdView}
 \end{figure*}
 
@@ -400,7 +401,7 @@ The minimization constitutes a quadratic program, which needs to be updated and 
 
 Single shooting has been intensively studied for many vehicular applications such by \cite{kelly2003reactive,Falcone2007,howard2007optimal,Yoon2009,gerdts2009generating, park2009obstacle}. 
 Nevertheless, many other numerical methods exist such as \emph{multi-shooting} \cite{bock-direct-multiple-shooting} and \emph{collocation} \cite{hargraves1987direct} that might gain in importance in the future when dealing with instable vehicle models in challenging driving conditions. 
-As for all direct optimization methods they lead to a static optimization problem, which can be most successfully solved by \emph{sequential quadratic programming} (SQP) techniques or \emph{interior point methods} (IP), see \cite{nocedal2006numerical}.
+Instead of SQP techniques so-called \emph{interior point methods} (IP) can be applied, see \cite{nocedal2006numerical}.
 As an alternative to a finite parameterization of the input, for flat systems \cite{rouchon1993flatness1}
 the flat output can be parameterized instead \cite{kang2012online}, which has been successfully demonstrated in complex inner-city scenarios by \cite{ziegler2014trajectory}.
 
@@ -600,7 +601,7 @@ When we compare dynamic programming with direct optimization, we realize that th
 meaning that the approach does not scale well with the number of states. Its application is therefore limit to models with few system states (<3-4) with a coarse discretization. Direct optimization, however, can incorporate system models with numerous and continuous system states (>4) and is therefore able to directly feed the system input $\bs{u}(t)$. In turn, direct optimization cannot deal with arbitrary cost functionals due to numerical limitations (local convergence) of the underlying solver. Also, its runtime usually grows exponentially with the number of optimization variables so that the length of the optimization horizon is restricted to a few seconds. As opposed to that, dynamic programming can handle arbitrary costs and will always lead to the global optimum. Furthermore, dynamic programming scales comparably well with the length of the optimization horizon (cf. the linear runtime of the dynamic programming iteration scheme in  Sect. \ref{57.3.3.2}). 
 For complex, farsighted trajectory optimization tasks, the two approaches need to be combined. Dynamic programming will then yield only a “rough long-term plan”, which either serves as the reference trajectory (see e.g.\cite{Ferguson2008, Ferguson2008b, gu2013focused}) and/or provide an initial guess \cite{kang2012online} %(Kang 2012) 
 for the locally working direct optimization method. The latter will take a detailed model of the vehicle into account and improves the dynamic programming solution on a reduced optimization horizon to a feasible trajectory. The optimal state trajectory is either forwarded to a low-level feedback steering/acceleration controller or the optimal input trajectory is directly fed to the vehicle actuators.
-Closed form solutions from the calculus of variations are thereby often used to speedup dynamic programming. This can be in the form of a heuristic for an informed search (see e.g. \cite{zieglerIV08} % (Ziegler et al. 2008))
+Closed form solutions from the calculus of variations are thereby often used to speedup dynamic programming. This can be in the form of a heuristic for an informed search (see e.g. \cite{zieglerIV08}) % (Ziegler et al. 2008))
 or a so-called analytical expansions \cite{dolgov2010path}, %(Dolgov et al. 2010),
 both of which, roughly speaking, approximate the remaining trajectory and therefore extend the computable optimization horizon, see  Tab.\,\ref{tab:vergleichOpt}.
 
@@ -621,7 +622,7 @@ both of which, roughly speaking, approximate the remaining trajectory and theref
 \hline
 \cellcolor{gray!60} {DP + DO} & $\bs\oplus$ & $\bs\oplus$ & $\bs\oplus$ & $\bs\oplus$ \\
 \hline
-\cellcolor{gray!60} {DP + DO + IO} & $\bs\oplus$ & $\bs\oplus$ & $\bs\oplus$ & $\bs\oplus$ \\
+\cellcolor{gray!60} {DP + DO + IO} & $\bs\oplus$ & $\bs\oplus$ & $\bs\oplus$ & $\bs\oplus\bs\oplus$ \\
 \hline 
 \multicolumn{5}{|c|}{\cellcolor{gray!20} DP: Dynamic Programming \quad DO: Direct Optimization \quad IO: Indirect Optimization}\\
 \hline
@@ -639,7 +640,7 @@ The receding horizon approach is the gist of \emph{model-predictive control} (MP
 
 This procedure is completely compatible with trajectory optimization for vehicles. Even more, its replanning mechanism can innately take the limited sensor range and predictability of the other traffic participants into account, which can fundamentally change the OCP from one optimization step to the other. Furthermore, the approach leaves additional degrees of freedom, which can be used to increase the overall robustness of the closed loop system. Firstly, the prediction model may not only include the plant but also the underlying fast low-level feedback or feedforward controllers, which are intended to simplify the resultant optimization model \eqref{equ:opt_systemdynamik}. And secondly, the initial state of the OCP does not necessarily have to be the actual vehicle state but can also be the optimal trajectory of the last step sampled at the current time - or a combination of both. This works as long as the fed-back desired states of the optimal trajectory are tracked by an above-mentioned low-level feedback controller. However, as soon as components of the current vehicle state are used, that show up in the optimization constraints, so-called \emph{slack variables} need to be introduced in the optimization. They transform the otherwise hard inequalities into \emph{soft constraints} as they are referred to in the MPC lingo. This is required as otherwise the slightest disturbance or model uncertainty would ultimately lead to an initial state that the OCP with hard constraints does not have a solution for.
 MPC theory offers even more. It also deals with \emph{stability} issues of the closed-loop system such as in \cite{gruene2011nonlinear}. More precisely, even for time-invariant system dynamics, constraints, and costs (typical of conventional control problems), the OCP solution changes over time due to the receding horizon, as indicated by Fig.\,\ref{fig:2_mpc_grundidee_u_x}. In the worst case the differences of the consecutive solutions build up and the system destabilizes. Well-established MPC-schemes therefore propose an augmentation of the cost functional and constraints, e.g., by a special terminal constraint (\emph{invariant set} \cite{blanchini1999survey})  and cost (\emph{control Lyapunov function} \cite{gruene2011nonlinear}) 
-   in order to guarantee stability. These schemes can also be transferred to the automotive application. Even more interesting for collision avoidance are the \emph{permanent feasibility} guarantees, which can prevent the sub-optimal short-sighted solutions from “dead ends” also known as \emph{inevitable collision states} (ICS, \cite{fraichard2007short}) in robotics, but this is ongoing research (e.g. \textbf{which???}(Althoff et al. 2012),\cite{Lawitzky2014ICRA}).
+   in order to guarantee stability. These schemes can also be transferred to the automotive application. Even more interesting for collision avoidance are the \emph{permanent feasibility} guarantees, which can prevent the sub-optimal short-sighted solutions from “dead ends” or "surprises" from the environment \cite{pek2020onlineveri, pek2020fail, shalev2017formal}.
 
 
 
